@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA547F124157AE900C23DB3 /* AppDelegate.swift */; };
-		FBA547F624157AE900C23DB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA547F524157AE900C23DB3 /* ViewController.swift */; };
-		FBA547F924157AE900C23DB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBA547F724157AE900C23DB3 /* Main.storyboard */; };
 		FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBA547FA24157AE900C23DB3 /* GamerCollection.xcdatamodeld */; };
 		FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA547FD24157AEA00C23DB3 /* Assets.xcassets */; };
 		FBA5480124157AEA00C23DB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBA547FF24157AEA00C23DB3 /* LaunchScreen.storyboard */; };
@@ -20,6 +18,7 @@
 		FBA54836241580B600C23DB3 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA54835241580B600C23DB3 /* BaseRouter.swift */; };
 		FBA54838241580C300C23DB3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA54837241580C300C23DB3 /* BaseViewController.swift */; };
 		FBA5483A241580D400C23DB3 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA54839241580D400C23DB3 /* BaseViewModel.swift */; };
+		FBA5483D2415834000C23DB3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5483C2415834000C23DB3 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +41,6 @@
 /* Begin PBXFileReference section */
 		FBA547EE24157AE900C23DB3 /* Gamer Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gamer Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA547F124157AE900C23DB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FBA547F524157AE900C23DB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FBA547F824157AE900C23DB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBA547FB24157AE900C23DB3 /* GamerCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GamerCollection.xcdatamodel; sourceTree = "<group>"; };
 		FBA547FD24157AEA00C23DB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBA5480024157AEA00C23DB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +56,7 @@
 		FBA54835241580B600C23DB3 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		FBA54837241580C300C23DB3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FBA54839241580D400C23DB3 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		FBA5483C2415834000C23DB3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				FBA548302415806200C23DB3 /* Base */,
+				FBA5483B2415832B00C23DB3 /* Extensions */,
 				FBA5482924157DC600C23DB3 /* Persistance */,
 			);
 			path = Common;
@@ -173,8 +172,6 @@
 		FBA5482824157DAA00C23DB3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FBA547F724157AE900C23DB3 /* Main.storyboard */,
-				FBA547F524157AE900C23DB3 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,6 +194,14 @@
 				FBA54839241580D400C23DB3 /* BaseViewModel.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		FBA5483B2415832B00C23DB3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FBA5483C2415834000C23DB3 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +309,6 @@
 			files = (
 				FBA5480124157AEA00C23DB3 /* LaunchScreen.storyboard in Resources */,
 				FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */,
-				FBA547F924157AE900C23DB3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,9 +333,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA5483D2415834000C23DB3 /* UIViewController+Extension.swift in Sources */,
 				FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */,
 				FBA54836241580B600C23DB3 /* BaseRouter.swift in Sources */,
-				FBA547F624157AE900C23DB3 /* ViewController.swift in Sources */,
 				FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */,
 				FBA548342415809000C23DB3 /* BaseDataManager.swift in Sources */,
 				FBA5483A241580D400C23DB3 /* BaseViewModel.swift in Sources */,
@@ -372,14 +376,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FBA547F724157AE900C23DB3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FBA547F824157AE900C23DB3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FBA547FF24157AEA00C23DB3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
