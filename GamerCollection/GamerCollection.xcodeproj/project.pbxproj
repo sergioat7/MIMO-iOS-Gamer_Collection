@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5F275C9CE2C5B2F4601ADBB /* Pods_GamerCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCDF646D360EE853928A2B33 /* Pods_GamerCollection.framework */; };
+		FB1DFEAF2416B96A000CAD7B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FB1DFEAE2416B96A000CAD7B /* SwiftPackageProductDependency */; };
+		FB1DFEB22416B9A0000CAD7B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FB1DFEB12416B9A0000CAD7B /* SwiftPackageProductDependency */; };
 		FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA547F124157AE900C23DB3 /* AppDelegate.swift */; };
 		FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBA547FA24157AE900C23DB3 /* GamerCollection.xcdatamodeld */; };
 		FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA547FD24157AEA00C23DB3 /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A8E107F63442C9DA439346D /* Pods-GamerCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamerCollection.release.xcconfig"; path = "Target Support Files/Pods-GamerCollection/Pods-GamerCollection.release.xcconfig"; sourceTree = "<group>"; };
+		532CA38BC69E427C4956E31D /* Pods-GamerCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamerCollection.debug.xcconfig"; path = "Target Support Files/Pods-GamerCollection/Pods-GamerCollection.debug.xcconfig"; sourceTree = "<group>"; };
+		CCDF646D360EE853928A2B33 /* Pods_GamerCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamerCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA547EE24157AE900C23DB3 /* Gamer Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gamer Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA547F124157AE900C23DB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBA547FB24157AE900C23DB3 /* GamerCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GamerCollection.xcdatamodel; sourceTree = "<group>"; };
@@ -64,6 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB1DFEAF2416B96A000CAD7B /* BuildFile in Frameworks */,
+				FB1DFEB22416B9A0000CAD7B /* BuildFile in Frameworks */,
+				F5F275C9CE2C5B2F4601ADBB /* Pods_GamerCollection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +93,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B1C18FEA9EF1837B7FAD04B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CCDF646D360EE853928A2B33 /* Pods_GamerCollection.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1EFE7973DA2FCBCD969B9F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				532CA38BC69E427C4956E31D /* Pods-GamerCollection.debug.xcconfig */,
+				2A8E107F63442C9DA439346D /* Pods-GamerCollection.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FBA547E524157AE900C23DB3 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +118,8 @@
 				FBA5480A24157AEA00C23DB3 /* GamerCollectionTests */,
 				FBA5481524157AEA00C23DB3 /* GamerCollectionUITests */,
 				FBA547EF24157AE900C23DB3 /* Products */,
+				D1EFE7973DA2FCBCD969B9F2 /* Pods */,
+				B1C18FEA9EF1837B7FAD04B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,15 +240,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBA5481B24157AEA00C23DB3 /* Build configuration list for PBXNativeTarget "GamerCollection" */;
 			buildPhases = (
+				BF8C6939F558C989D4E51189 /* [CP] Check Pods Manifest.lock */,
 				FBA547EA24157AE900C23DB3 /* Sources */,
 				FBA547EB24157AE900C23DB3 /* Frameworks */,
 				FBA547EC24157AE900C23DB3 /* Resources */,
+				6C2F1325846DC0E3A70B6421 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = GamerCollection;
+			packageProductDependencies = (
+				FB1DFEAE2416B96A000CAD7B /* SwiftPackageProductDependency */,
+				FB1DFEB12416B9A0000CAD7B /* SwiftPackageProductDependency */,
+			);
 			productName = GamerCollection;
 			productReference = FBA547EE24157AE900C23DB3 /* Gamer Collection.app */;
 			productType = "com.apple.product-type.application";
@@ -291,6 +326,10 @@
 				Base,
 			);
 			mainGroup = FBA547E524157AE900C23DB3;
+			packageReferences = (
+				FB1DFEAD2416B96A000CAD7B /* RemoteSwiftPackageReference */,
+				FB1DFEB02416B9A0000CAD7B /* RemoteSwiftPackageReference */,
+			);
 			productRefGroup = FBA547EF24157AE900C23DB3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -327,6 +366,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C2F1325846DC0E3A70B6421 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GamerCollection/Pods-GamerCollection-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GamerCollection/Pods-GamerCollection-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GamerCollection/Pods-GamerCollection-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF8C6939F558C989D4E51189 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GamerCollection-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FBA547EA24157AE900C23DB3 /* Sources */ = {
@@ -503,6 +584,7 @@
 		};
 		FBA5481C24157AEA00C23DB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 532CA38BC69E427C4956E31D /* Pods-GamerCollection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +604,7 @@
 		};
 		FBA5481D24157AEA00C23DB3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A8E107F63442C9DA439346D /* Pods-GamerCollection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -663,6 +746,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FB1DFEAD2416B96A000CAD7B /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		FB1DFEB02416B9A0000CAD7B /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwifterSwift/SwifterSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FB1DFEAE2416B96A000CAD7B /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB1DFEAD2416B96A000CAD7B /* RemoteSwiftPackageReference */;
+			productName = Alamofire;
+		};
+		FB1DFEB12416B9A0000CAD7B /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB1DFEB02416B9A0000CAD7B /* RemoteSwiftPackageReference */;
+			productName = SwifterSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		FBA547FA24157AE900C23DB3 /* GamerCollection.xcdatamodeld */ = {
