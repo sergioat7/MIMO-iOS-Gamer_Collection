@@ -12,6 +12,9 @@
 		FB1DFEB22416B9A0000CAD7B /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FB1DFEB12416B9A0000CAD7B /* SwifterSwift */; };
 		FB1DFEB62416BAE8000CAD7B /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DFEB52416BAE8000CAD7B /* LoadingScreen.swift */; };
 		FB1DFEB82416BAF2000CAD7B /* LoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1DFEB72416BAF2000CAD7B /* LoadingScreen.xib */; };
+		FB1DFEBD2416BE2C000CAD7B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DFEBC2416BE2C000CAD7B /* APIClient.swift */; };
+		FB1DFEBF2416BE62000CAD7B /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DFEBE2416BE62000CAD7B /* APIRequest.swift */; };
+		FB1DFEC12416BEA5000CAD7B /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DFEC02416BEA5000CAD7B /* ErrorResponse.swift */; };
 		FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA547F124157AE900C23DB3 /* AppDelegate.swift */; };
 		FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBA547FA24157AE900C23DB3 /* GamerCollection.xcdatamodeld */; };
 		FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA547FD24157AEA00C23DB3 /* Assets.xcassets */; };
@@ -49,6 +52,9 @@
 		CCDF646D360EE853928A2B33 /* Pods_GamerCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamerCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB1DFEB52416BAE8000CAD7B /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		FB1DFEB72416BAF2000CAD7B /* LoadingScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingScreen.xib; sourceTree = "<group>"; };
+		FB1DFEBC2416BE2C000CAD7B /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		FB1DFEBE2416BE62000CAD7B /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		FB1DFEC02416BEA5000CAD7B /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		FBA547EE24157AE900C23DB3 /* Gamer Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gamer Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA547F124157AE900C23DB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBA547FB24157AE900C23DB3 /* GamerCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GamerCollection.xcdatamodel; sourceTree = "<group>"; };
@@ -131,6 +137,23 @@
 			path = LoadingScreen;
 			sourceTree = "<group>";
 		};
+		FB1DFEBA2416BDC7000CAD7B /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				FB1DFEBC2416BE2C000CAD7B /* APIClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		FB1DFEBB2416BDEE000CAD7B /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				FB1DFEBE2416BE62000CAD7B /* APIRequest.swift */,
+				FB1DFEC02416BEA5000CAD7B /* ErrorResponse.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		FBA547E524157AE900C23DB3 = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +227,8 @@
 		FBA5482624157D9D00C23DB3 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				FB1DFEBA2416BDC7000CAD7B /* Client */,
+				FB1DFEBB2416BDEE000CAD7B /* Requests */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -439,9 +464,12 @@
 				FBA5483D2415834000C23DB3 /* UIViewController+Extension.swift in Sources */,
 				FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */,
 				FBA54836241580B600C23DB3 /* BaseRouter.swift in Sources */,
+				FB1DFEC12416BEA5000CAD7B /* ErrorResponse.swift in Sources */,
+				FB1DFEBD2416BE2C000CAD7B /* APIClient.swift in Sources */,
 				FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */,
 				FBA548342415809000C23DB3 /* BaseDataManager.swift in Sources */,
 				FBA5483A241580D400C23DB3 /* BaseViewModel.swift in Sources */,
+				FB1DFEBF2416BE62000CAD7B /* APIRequest.swift in Sources */,
 				FBA54838241580C300C23DB3 /* BaseViewController.swift in Sources */,
 				FBA5482B24157E4800C23DB3 /* CoreDataStack.swift in Sources */,
 				FB1DFEB62416BAE8000CAD7B /* LoadingScreen.swift in Sources */,
