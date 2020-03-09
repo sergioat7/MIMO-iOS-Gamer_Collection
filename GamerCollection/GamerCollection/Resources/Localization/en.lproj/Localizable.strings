@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  GamerCollection
+
+  Created by Sergio Aragonés on 09/03/2020.
+  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
+  
+*/
+
+"app_name" = "Gamer Collection";
+
+// Errors
+
+"ERROR_BUTTON_ACCEPT" = "Accept";
+"ERROR_SERVER" = "There was an error on getting data. Please, try again.";
