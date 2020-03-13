@@ -29,6 +29,8 @@
 		FBA54838241580C300C23DB3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA54837241580C300C23DB3 /* BaseViewController.swift */; };
 		FBA5483A241580D400C23DB3 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA54839241580D400C23DB3 /* BaseViewModel.swift */; };
 		FBA5483D2415834000C23DB3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5483C2415834000C23DB3 /* UIViewController+Extension.swift */; };
+		FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A366241C103600E91579 /* UIColor+Extension.swift */; };
+		FBB1A36A241C10E800E91579 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A369241C10E800E91579 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		FBA54837241580C300C23DB3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FBA54839241580D400C23DB3 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		FBA5483C2415834000C23DB3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		FBB1A366241C103600E91579 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		FBB1A369241C10E800E91579 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,7 @@
 		FBA5482724157DA300C23DB3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FBB1A368241C10DB00E91579 /* Constants */,
 				FBA548302415806200C23DB3 /* Base */,
 				FBA5483B2415832B00C23DB3 /* Extensions */,
 				FBA5482924157DC600C23DB3 /* Persistance */,
@@ -288,9 +293,34 @@
 		FBA5483B2415832B00C23DB3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FBA5483C2415834000C23DB3 /* UIViewController+Extension.swift */,
+				FBB1A365241C101B00E91579 /* UIColor */,
+				FBB1A364241C101700E91579 /* UIViewController */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBB1A364241C101700E91579 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FBA5483C2415834000C23DB3 /* UIViewController+Extension.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		FBB1A365241C101B00E91579 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				FBB1A366241C103600E91579 /* UIColor+Extension.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		FBB1A368241C10DB00E91579 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FBB1A369241C10E800E91579 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +518,8 @@
 				FBA5483A241580D400C23DB3 /* BaseViewModel.swift in Sources */,
 				FB1DFEBF2416BE62000CAD7B /* APIRequest.swift in Sources */,
 				FBA54838241580C300C23DB3 /* BaseViewController.swift in Sources */,
+				FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */,
+				FBB1A36A241C10E800E91579 /* Constants.swift in Sources */,
 				FBA5482B24157E4800C23DB3 /* CoreDataStack.swift in Sources */,
 				FB1DFEB62416BAE8000CAD7B /* LoadingScreen.swift in Sources */,
 			);
