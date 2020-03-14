@@ -41,6 +41,17 @@ extension UIViewController {
         return nil
     }
     
+    static func getRootTabBarViewController() -> UITabBarController? {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
+        let window = appDelegate.window
+        if let rootController = window?.rootViewController as? UITabBarController {
+            return rootController
+        }
+        
+        return nil
+    }
+    
     static func getCurrentWindow() -> UIWindow? {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
         return appDelegate.window

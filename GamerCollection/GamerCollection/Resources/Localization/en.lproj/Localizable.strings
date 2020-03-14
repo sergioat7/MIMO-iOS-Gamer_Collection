@@ -9,6 +9,14 @@
 
 "app_name" = "Gamer Collection";
 
+"GAMES" = "My Games";
+
+"SAGAS" = "My Sagas";
+
+"RANKING" = "My Ranking";
+
+"PROFILE" = "My Profile";
+
 // Errors
 
 "ERROR_BUTTON_ACCEPT" = "Accept";
