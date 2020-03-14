@@ -17,7 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let navigationController = UINavigationController()
-        //TODO load root view controller)
+        
+        if UserManager().isLoggedIn() {
+            //TODO load root view controller
+        } else {
+            //TODO load login view controller
+        }
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true
