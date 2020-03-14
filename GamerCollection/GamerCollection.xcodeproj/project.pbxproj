@@ -31,6 +31,11 @@
 		FBA5483D2415834000C23DB3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5483C2415834000C23DB3 /* UIViewController+Extension.swift */; };
 		FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A366241C103600E91579 /* UIColor+Extension.swift */; };
 		FBB1A36A241C10E800E91579 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A369241C10E800E91579 /* Constants.swift */; };
+		FBB1A36D241C221F00E91579 /* AuthorizationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A36C241C221F00E91579 /* AuthorizationHandler.swift */; };
+		FBB1A370241C273200E91579 /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A36F241C273200E91579 /* AuthData.swift */; };
+		FBB1A372241C273E00E91579 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A371241C273E00E91579 /* UserData.swift */; };
+		FBB1A375241C4AC500E91579 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A374241C4AC500E91579 /* UserManager.swift */; };
+		FBB1A378241C4D9400E91579 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FBB1A377241C4D9400E91579 /* KeychainAccess */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +86,10 @@
 		FBA5483C2415834000C23DB3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		FBB1A366241C103600E91579 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FBB1A369241C10E800E91579 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FBB1A36C241C221F00E91579 /* AuthorizationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationHandler.swift; sourceTree = "<group>"; };
+		FBB1A36F241C273200E91579 /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
+		FBB1A371241C273E00E91579 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		FBB1A374241C4AC500E91579 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB1A378241C4D9400E91579 /* KeychainAccess in Frameworks */,
 				FB1DFEAF2416B96A000CAD7B /* Alamofire in Frameworks */,
 				FB1DFEB22416B9A0000CAD7B /* SwifterSwift in Frameworks */,
 				F5F275C9CE2C5B2F4601ADBB /* Pods_GamerCollection.framework in Frameworks */,
@@ -254,10 +264,12 @@
 		FBA5482724157DA300C23DB3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				FBB1A368241C10DB00E91579 /* Constants */,
+				FBB1A36B241C221000E91579 /* Authorization */,
 				FBA548302415806200C23DB3 /* Base */,
+				FBB1A368241C10DB00E91579 /* Constants */,
 				FBA5483B2415832B00C23DB3 /* Extensions */,
 				FBA5482924157DC600C23DB3 /* Persistance */,
+				FBB1A373241C4AB000E91579 /* UserManager */,
 				FB1DFEB32416BAD1000CAD7B /* View */,
 			);
 			path = Common;
@@ -323,6 +335,40 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		FBB1A36B241C221000E91579 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				FBB1A36C241C221F00E91579 /* AuthorizationHandler.swift */,
+				FBB1A36E241C228D00E91579 /* Model */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		FBB1A36E241C228D00E91579 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBB1A36F241C273200E91579 /* AuthData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FBB1A373241C4AB000E91579 /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				FBB1A379241C579400E91579 /* Model */,
+				FBB1A374241C4AC500E91579 /* UserManager.swift */,
+			);
+			path = UserManager;
+			sourceTree = "<group>";
+		};
+		FBB1A379241C579400E91579 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBB1A371241C273E00E91579 /* UserData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -344,6 +390,7 @@
 			packageProductDependencies = (
 				FB1DFEAE2416B96A000CAD7B /* Alamofire */,
 				FB1DFEB12416B9A0000CAD7B /* SwifterSwift */,
+				FBB1A377241C4D9400E91579 /* KeychainAccess */,
 			);
 			productName = GamerCollection;
 			productReference = FBA547EE24157AE900C23DB3 /* Gamer Collection.app */;
@@ -420,6 +467,7 @@
 			packageReferences = (
 				FB1DFEAD2416B96A000CAD7B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				FB1DFEB02416B9A0000CAD7B /* XCRemoteSwiftPackageReference "SwifterSwift" */,
+				FBB1A376241C4D9400E91579 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = FBA547EF24157AE900C23DB3 /* Products */;
 			projectDirPath = "";
@@ -508,17 +556,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB1A375241C4AC500E91579 /* UserManager.swift in Sources */,
 				FBA5483D2415834000C23DB3 /* UIViewController+Extension.swift in Sources */,
 				FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */,
 				FBA54836241580B600C23DB3 /* BaseRouter.swift in Sources */,
 				FB1DFEC12416BEA5000CAD7B /* ErrorResponse.swift in Sources */,
 				FB1DFEBD2416BE2C000CAD7B /* APIClient.swift in Sources */,
+				FBB1A370241C273200E91579 /* AuthData.swift in Sources */,
+				FBB1A36D241C221F00E91579 /* AuthorizationHandler.swift in Sources */,
 				FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */,
 				FBA548342415809000C23DB3 /* BaseDataManager.swift in Sources */,
 				FBA5483A241580D400C23DB3 /* BaseViewModel.swift in Sources */,
 				FB1DFEBF2416BE62000CAD7B /* APIRequest.swift in Sources */,
 				FBA54838241580C300C23DB3 /* BaseViewController.swift in Sources */,
 				FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */,
+				FBB1A372241C273E00E91579 /* UserData.swift in Sources */,
 				FBB1A36A241C10E800E91579 /* Constants.swift in Sources */,
 				FBA5482B24157E4800C23DB3 /* CoreDataStack.swift in Sources */,
 				FB1DFEB62416BAE8000CAD7B /* LoadingScreen.swift in Sources */,
@@ -882,6 +934,14 @@
 				minimumVersion = 5.1.0;
 			};
 		};
+		FBB1A376241C4D9400E91579 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -894,6 +954,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FB1DFEB02416B9A0000CAD7B /* XCRemoteSwiftPackageReference "SwifterSwift" */;
 			productName = SwifterSwift;
+		};
+		FBB1A377241C4D9400E91579 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBB1A376241C4D9400E91579 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 

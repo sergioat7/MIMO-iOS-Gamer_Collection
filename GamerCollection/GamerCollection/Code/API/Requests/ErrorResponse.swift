@@ -6,7 +6,6 @@
 //  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
-struct ErrorResponse {
-    let error: Error?
-    let errorString = "ERROR_SERVER".localized()
+struct ErrorResponse: Decodable {
+    let error: String
 }

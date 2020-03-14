@@ -21,4 +21,10 @@ public protocol APIRequest {
     
     //Parameters to be appended in url
     var resourcePath: String { get }
+    
+    //Body of the parameter
+    var body: Parameters? { get }
+    
+    //Adapter
+    var adapter: RequestAdapter? { get }
 }

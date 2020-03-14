@@ -23,9 +23,13 @@ public class APIClient {
                                    failure: @escaping (ErrorResponse) -> Void) {
         
         let endpoint = self.endpoint(for: request)
+        let parameters = request.body
         let method = request.method
+        let adapter = request.adapter
         
-        let request = session.request(endpoint, method: method, encoding: JSONEncoding.default).validate()
+//        session.adapter = adapter
+        
+        let request = session.request(endpoint, method: method, parameters: parameters, encoding: JSONEncoding.default).validate()
         request.responseJSON { response in
             
             if let data = response.data {
@@ -33,14 +37,20 @@ public class APIClient {
                     let response = try JSONDecoder().decode(T.Response.self, from: data)
                     success(response)
                     return
+                } catch {}
+                
+                do {
+                    let response = try JSONDecoder().decode(ErrorResponse.self, from: data)
+                    failure(response)
+                    return
                 } catch {
-                    let errorResponse = ErrorResponse(error: nil)
-                    failure(errorResponse)
+                    let error = ErrorResponse(error: "ERROR_SERVER".localized())
+                    failure(error)
                     return
                 }
-            } else if let error = response.error {
-                let errorResponse = ErrorResponse(error: error)
-                failure(errorResponse)
+            } else if let _ = response.error {
+                let error = ErrorResponse(error: "ERROR_SERVER".localized())
+                failure(error)
                 return
             }
         }
