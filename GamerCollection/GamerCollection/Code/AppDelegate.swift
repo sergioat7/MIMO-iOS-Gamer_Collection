@@ -18,8 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         if UserManager().isLoggedIn() {
-            let navigationController = UINavigationController()
-            window?.rootViewController = navigationController
+            MainTabBarController.show()
         } else {
             LoginRouter().show()
         }

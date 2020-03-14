@@ -23,6 +23,7 @@
 		FB463C61241CFE53006F1A12 /* LoginApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C5B241CFE53006F1A12 /* LoginApiClient.swift */; };
 		FB463C62241CFE53006F1A12 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C5C241CFE53006F1A12 /* LoginViewModel.swift */; };
 		FB463C63241CFE53006F1A12 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C5D241CFE53006F1A12 /* LoginDataManager.swift */; };
+		FB463C68241D0678006F1A12 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C67241D0678006F1A12 /* MainTabBarController.swift */; };
 		FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA547F124157AE900C23DB3 /* AppDelegate.swift */; };
 		FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBA547FA24157AE900C23DB3 /* GamerCollection.xcdatamodeld */; };
 		FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA547FD24157AEA00C23DB3 /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		FB463C5B241CFE53006F1A12 /* LoginApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApiClient.swift; sourceTree = "<group>"; };
 		FB463C5C241CFE53006F1A12 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FB463C5D241CFE53006F1A12 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
+		FB463C67241D0678006F1A12 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FBA547EE24157AE900C23DB3 /* Gamer Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gamer Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA547F124157AE900C23DB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBA547FB24157AE900C23DB3 /* GamerCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GamerCollection.xcdatamodel; sourceTree = "<group>"; };
@@ -222,6 +224,14 @@
 			path = APIClient;
 			sourceTree = "<group>";
 		};
+		FB463C66241D0666006F1A12 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				FB463C67241D0678006F1A12 /* MainTabBarController.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
 		FBA547E524157AE900C23DB3 = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +329,7 @@
 		FBA5482824157DAA00C23DB3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FB463C66241D0666006F1A12 /* MainTabBar */,
 				FB463C57241CFE1D006F1A12 /* Login */,
 			);
 			path = Controllers;
@@ -601,6 +612,7 @@
 			files = (
 				FBB1A375241C4AC500E91579 /* UserManager.swift in Sources */,
 				FBA5483D2415834000C23DB3 /* UIViewController+Extension.swift in Sources */,
+				FB463C68241D0678006F1A12 /* MainTabBarController.swift in Sources */,
 				FB463C62241CFE53006F1A12 /* LoginViewModel.swift in Sources */,
 				FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */,
 				FBA54836241580B600C23DB3 /* BaseRouter.swift in Sources */,
