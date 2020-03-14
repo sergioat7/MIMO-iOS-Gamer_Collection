@@ -16,14 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let navigationController = UINavigationController()
         
         if UserManager().isLoggedIn() {
-            //TODO load root view controller
+            let navigationController = UINavigationController()
+            window?.rootViewController = navigationController
         } else {
-            //TODO load login view controller
+            LoginRouter().show()
         }
-        window?.rootViewController = navigationController
+        
         window?.makeKeyAndVisible()
         return true
     }
