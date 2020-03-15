@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Register View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="Register" id="BYZ-38-t0r" customClass="RegisterViewController" customModule="Gamer_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_name" translatesAutoresizingMaskIntoConstraints="NO" id="XgJ-6U-EzW">
+                                <rect key="frame" x="37.5" y="66.5" width="300" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XgJ-6U-EzW" secondAttribute="height" multiplier="3:1" id="kSk-uO-Cc2"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fCz-my-zWu">
+                                <rect key="frame" x="56.5" y="267.5" width="262.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dS8-Qb-3Nb">
+                                <rect key="frame" x="56.5" y="316.5" width="262.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aW4-Ft-JMU">
+                                <rect key="frame" x="56.5" y="365.5" width="262.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yho-vA-KZ2" customClass="ActionButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="449.5" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="pMD-HZ-pOW"/>
+                                </constraints>
+                                <state key="normal" title="REGISTER"/>
+                                <connections>
+                                    <action selector="register" destination="BYZ-38-t0r" eventType="touchUpInside" id="c41-tD-yBH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XgJ-6U-EzW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Td-1b-Xdo"/>
+                            <constraint firstItem="dS8-Qb-3Nb" firstAttribute="top" secondItem="fCz-my-zWu" secondAttribute="bottom" constant="15" id="5JU-6P-0d9"/>
+                            <constraint firstItem="XgJ-6U-EzW" firstAttribute="width" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.8" id="7sd-JC-qs9"/>
+                            <constraint firstItem="aW4-Ft-JMU" firstAttribute="trailing" secondItem="fCz-my-zWu" secondAttribute="trailing" id="8xA-wq-Vuw"/>
+                            <constraint firstItem="dS8-Qb-3Nb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8zY-9P-6Hy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Yho-vA-KZ2" secondAttribute="bottom" constant="5" id="Bgk-H6-TkB"/>
+                            <constraint firstItem="fCz-my-zWu" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.7" id="F8c-gv-z6L"/>
+                            <constraint firstItem="XgJ-6U-EzW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="J35-qk-7Gc"/>
+                            <constraint firstItem="dS8-Qb-3Nb" firstAttribute="leading" secondItem="fCz-my-zWu" secondAttribute="leading" id="OhX-jU-YIt"/>
+                            <constraint firstItem="fCz-my-zWu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pfu-W9-d7w"/>
+                            <constraint firstItem="fCz-my-zWu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XgJ-6U-EzW" secondAttribute="bottom" constant="5" id="S23-dh-uDV"/>
+                            <constraint firstItem="Yho-vA-KZ2" firstAttribute="top" secondItem="aW4-Ft-JMU" secondAttribute="bottom" constant="50" id="e1X-za-Uuv"/>
+                            <constraint firstItem="aW4-Ft-JMU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eUs-Kb-9TR"/>
+                            <constraint firstItem="aW4-Ft-JMU" firstAttribute="top" secondItem="dS8-Qb-3Nb" secondAttribute="bottom" constant="15" id="eWD-VO-wOO"/>
+                            <constraint firstItem="Yho-vA-KZ2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hUU-4l-BXZ"/>
+                            <constraint firstItem="XgJ-6U-EzW" firstAttribute="height" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.2" id="kpr-hF-Z68"/>
+                            <constraint firstItem="dS8-Qb-3Nb" firstAttribute="trailing" secondItem="fCz-my-zWu" secondAttribute="trailing" id="pZZ-AW-RPx"/>
+                            <constraint firstItem="aW4-Ft-JMU" firstAttribute="leading" secondItem="fCz-my-zWu" secondAttribute="leading" id="wA1-s5-Yr2"/>
+                            <constraint firstItem="dS8-Qb-3Nb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wK3-Zo-NXO"/>
+                            <constraint firstItem="XgJ-6U-EzW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.35" priority="750" id="wTe-65-8HW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="btRegister" destination="Yho-vA-KZ2" id="Cqj-dF-9Tj"/>
+                        <outlet property="tfPassword" destination="dS8-Qb-3Nb" id="BtV-eW-vh1"/>
+                        <outlet property="tfRepeatPassword" destination="aW4-Ft-JMU" id="5fy-UY-yk9"/>
+                        <outlet property="tfUsername" destination="fCz-my-zWu" id="o9C-1V-BPs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="134"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="app_name" width="746" height="512"/>
+    </resources>
+</document>

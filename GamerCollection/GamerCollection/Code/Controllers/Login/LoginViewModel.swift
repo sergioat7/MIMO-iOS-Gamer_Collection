@@ -14,6 +14,7 @@ protocol LoginViewModelProtocol: class {
      */
     func viewDidLoad()
     func login(username: String, password: String)
+    func register()
 }
 
 class LoginViewModel: BaseViewModel {
@@ -78,6 +79,10 @@ extension LoginViewModel: LoginViewModelProtocol {
         }, failure: { error in
             self.manageError(error: error)
         })
+    }
+    
+    func register() {
+        RegisterRouter().push()
     }
 }
 

@@ -19,6 +19,12 @@
 
 // Register
 
+"REGISTRATION" = "Registration";
+"REGISTRATION_USERNAME" = "Username";
+"REGISTRATION_PASSWORD" = "Password";
+"REGISTRATION_REPEAT_PASSWORD" = "Repeat password";
+"REGISTER" = "Register";
+
 // Games
 
 "GAMES" = "My Games";
