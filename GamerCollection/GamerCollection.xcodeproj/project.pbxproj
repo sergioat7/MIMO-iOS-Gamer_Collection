@@ -50,6 +50,7 @@
 		FB463CA4241D65DB006F1A12 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463CA3241D65DB006F1A12 /* LoginResponse.swift */; };
 		FB463CA6241D69DF006F1A12 /* LoginDataModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463CA5241D69DF006F1A12 /* LoginDataModelRequest.swift */; };
 		FB463CA9241D6AA5006F1A12 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463CA8241D6AA5006F1A12 /* Encodable+Extension.swift */; };
+		FB62877E241E3D2800F5FF6E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB62877D241E3D2800F5FF6E /* ActionButton.swift */; };
 		FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA547F124157AE900C23DB3 /* AppDelegate.swift */; };
 		FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBA547FA24157AE900C23DB3 /* GamerCollection.xcdatamodeld */; };
 		FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA547FD24157AEA00C23DB3 /* Assets.xcassets */; };
@@ -132,6 +133,7 @@
 		FB463CA3241D65DB006F1A12 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		FB463CA5241D69DF006F1A12 /* LoginDataModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModelRequest.swift; sourceTree = "<group>"; };
 		FB463CA8241D6AA5006F1A12 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		FB62877D241E3D2800F5FF6E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		FBA547EE24157AE900C23DB3 /* Gamer Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gamer Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA547F124157AE900C23DB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBA547FB24157AE900C23DB3 /* GamerCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GamerCollection.xcdatamodel; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		FB1DFEB32416BAD1000CAD7B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FB62877C241E3C2600F5FF6E /* Button */,
 				FB1DFEB42416BADB000CAD7B /* LoadingScreen */,
 			);
 			path = View;
@@ -407,6 +410,14 @@
 				FB463CA8241D6AA5006F1A12 /* Encodable+Extension.swift */,
 			);
 			path = Encodable;
+			sourceTree = "<group>";
+		};
+		FB62877C241E3C2600F5FF6E /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				FB62877D241E3D2800F5FF6E /* ActionButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		FBA547E524157AE900C23DB3 = {
@@ -821,6 +832,7 @@
 				FBB1A36D241C221F00E91579 /* AuthorizationHandler.swift in Sources */,
 				FB463C60241CFE53006F1A12 /* LoginViewController.swift in Sources */,
 				FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */,
+				FB62877E241E3D2800F5FF6E /* ActionButton.swift in Sources */,
 				FBA548342415809000C23DB3 /* BaseDataManager.swift in Sources */,
 				FB463C63241CFE53006F1A12 /* LoginDataManager.swift in Sources */,
 				FB463C91241D0C29006F1A12 /* RankingRouter.swift in Sources */,

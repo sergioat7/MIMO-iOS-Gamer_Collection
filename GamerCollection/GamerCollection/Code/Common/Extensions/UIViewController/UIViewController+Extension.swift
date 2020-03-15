@@ -57,15 +57,8 @@ extension UIViewController {
         return appDelegate.window
     }
     
-    func fullRemoveFromParent() {
-        
-        guard parent != nil else {
-            return
-        }
-        
-        willMove(toParent: nil)
-        view.removeFromSuperview()
-        removeFromParent()
+    static func hideNavigationBar(_ hide: Bool, animated: Bool) {
+        UIViewController.getCurrentNavigationController()?.setNavigationBarHidden(hide, animated: animated)
     }
 }
 

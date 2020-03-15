@@ -9,11 +9,29 @@
 
 "app_name" = "Gamer Collection";
 
+// Login
+
+"LOGIN_USERNAME" = "Username";
+"LOGIN_PASSWORD" = "Password";
+"LOGIN_ACCESS" = "Access";
+"LOGIN_NOT_ACCOUNT" = "Don't have an account yet? ";
+"LOGIN_REGISTER" = "Register here!";
+
+// Register
+
+// Games
+
 "GAMES" = "My Games";
+
+// Sagas
 
 "SAGAS" = "My Sagas";
 
+// Ranking
+
 "RANKING" = "My Ranking";
+
+// Profile
 
 "PROFILE" = "My Profile";
 
