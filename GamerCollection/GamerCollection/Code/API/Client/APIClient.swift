@@ -30,25 +30,31 @@ public class APIClient {
 //        session.adapter = adapter
         
         let request = session.request(endpoint, method: method, parameters: parameters, encoding: JSONEncoding.default).validate()
-        request.responseJSON { response in
+        request.response { response in
             
-            if let data = response.data {
+            let statusCode = response.response?.statusCode ?? -1
+            
+            if statusCode == 201 || statusCode == 204, let data = "{}".data(using: .utf8) {
                 do {
                     let response = try JSONDecoder().decode(T.Response.self, from: data)
                     success(response)
                     return
                 } catch {}
                 
+                let error = ErrorResponse(error: "ERROR_SERVER".localized())
+                failure(error)
+                return
+            } else if statusCode < 400, let data = response.data {
                 do {
-                    let response = try JSONDecoder().decode(ErrorResponse.self, from: data)
-                    failure(response)
+                    let response = try JSONDecoder().decode(T.Response.self, from: data)
+                    success(response)
                     return
                 } catch {
-                    let error = ErrorResponse(error: "ERROR_SERVER".localized())
-                    failure(error)
-                    return
+                    self.mapErrorData(data: data, failure: failure)
                 }
-            } else if let _ = response.error {
+            } else if statusCode >= 400 && statusCode < 500, let data = response.data {
+                self.mapErrorData(data: data, failure: failure)
+            } else {
                 let error = ErrorResponse(error: "ERROR_SERVER".localized())
                 failure(error)
                 return
@@ -62,6 +68,19 @@ public class APIClient {
         
         let urlString = "\(baseEndpoint)\(request.resourceName)\(request.resourcePath)"
         return URL(string: urlString)!
+    }
+    
+    private func mapErrorData(data: Data, failure: @escaping (ErrorResponse) -> Void) {
+        
+        do {
+            let response = try JSONDecoder().decode(ErrorResponse.self, from: data)
+            failure(response)
+            return
+        } catch {
+            let error = ErrorResponse(error: "ERROR_SERVER".localized())
+            failure(error)
+            return
+        }
     }
     
 }
