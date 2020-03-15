@@ -12,7 +12,7 @@ protocol LoginViewProtocol: BaseViewProtocol {
     /**
      * Add here your methods for communication VIEW_MODEL -> VIEW
      */
-    
+    func setUsernameTextField(username: String)
 }
 
 protocol LoginConfigurableViewProtocol: class {
@@ -64,6 +64,7 @@ class LoginViewController: BaseViewController {
         tfPassword.resignFirstResponder()
         let username = tfUsername.text ?? ""
         let password = tfPassword.text ?? ""
+        viewModel?.login(username: username, password: password)
     }
     
     @IBAction func register() {
@@ -99,6 +100,9 @@ class LoginViewController: BaseViewController {
 
 extension LoginViewController: LoginViewProtocol {
     
+    func setUsernameTextField(username: String) {
+        tfUsername.text = username
+    }
 }
 
 // MARK: - LoginViewProtocol

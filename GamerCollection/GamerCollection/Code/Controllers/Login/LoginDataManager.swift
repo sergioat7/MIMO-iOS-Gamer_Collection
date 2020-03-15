@@ -12,6 +12,10 @@ protocol LoginDataManagerProtocol: class {
     /**
      * Add here your methods for communication VIEW_MODEL -> DATA_MANAGER
      */
+    func getUsername(success: @escaping (String?) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func login(username: String, password: String, success: @escaping (LoginResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func storeUserData(userData: UserData)
+    func storeCredentials(authData: AuthData)
 }
 
 class LoginDataManager: BaseDataManager {
@@ -21,15 +25,36 @@ class LoginDataManager: BaseDataManager {
     // MARK: - Private variables
     
     private let apiClient: LoginApiClientProtocol
+    private let userManager: UserManager
     
     // MARK: - Initialization
     
-    init(apiClient: LoginApiClientProtocol) {
+    init(apiClient: LoginApiClientProtocol,
+         userManager: UserManager) {
         self.apiClient = apiClient
+        self.userManager = userManager
     }
 }
 
 extension LoginDataManager: LoginDataManagerProtocol {
     
+    func getUsername(success: @escaping (String?) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        userManager.getUserData(success: { userData in
+            success(userData.userName)
+        }, failure: failure)
+    }
+    
+    func login(username: String, password: String, success: @escaping (LoginResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        apiClient.login(username: username, password: password, success: success, failure: failure)
+    }
+    
+    func storeUserData(userData: UserData) {
+        userManager.storeUserData(userData: userData)
+    }
+    
+    func storeCredentials(authData: AuthData) {
+        userManager.storeCredentials(authData: authData)
+    }
 }
 

@@ -13,6 +13,7 @@ protocol BaseViewProtocol: class {
     
     func showLoading()
     func hideLoading()
+    func showError(message: String, handler: (() -> Void)?)
 }
 
 class BaseViewController: UIViewController {
