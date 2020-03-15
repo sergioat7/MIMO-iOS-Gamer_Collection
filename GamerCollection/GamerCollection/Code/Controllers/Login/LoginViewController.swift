@@ -71,7 +71,7 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func register() {
-        print("register")
+        viewModel?.register()
     }
     
     // MARK: - Overrides
@@ -138,6 +138,4 @@ extension LoginViewController: UITextFieldDelegate {
         }
         return true
     }
-    
-    
 }

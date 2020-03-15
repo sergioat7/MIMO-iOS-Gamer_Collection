@@ -17,6 +17,15 @@
 		FB1DFEC12416BEA5000CAD7B /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DFEC02416BEA5000CAD7B /* ErrorResponse.swift */; };
 		FB1DFEC52416DB83000CAD7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB1DFEC72416DB83000CAD7B /* Localizable.strings */; };
 		FB1DFECB2416DBD3000CAD7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB1DFECD2416DBD3000CAD7B /* Localizable.strings */; };
+		FB31D5BA241E7DF800B16558 /* RegisterView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB31D5B4241E7DF800B16558 /* RegisterView.storyboard */; };
+		FB31D5BB241E7DF800B16558 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5B5241E7DF800B16558 /* RegisterRouter.swift */; };
+		FB31D5BC241E7DF800B16558 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5B6241E7DF800B16558 /* RegisterViewController.swift */; };
+		FB31D5BD241E7DF800B16558 /* RegisterApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5B7241E7DF800B16558 /* RegisterApiClient.swift */; };
+		FB31D5BE241E7DF800B16558 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5B8241E7DF800B16558 /* RegisterViewModel.swift */; };
+		FB31D5BF241E7DF800B16558 /* RegisterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5B9241E7DF800B16558 /* RegisterDataManager.swift */; };
+		FB31D5C5241EB05200B16558 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5C4241EB05200B16558 /* RegisterRequest.swift */; };
+		FB31D5C9241EB08800B16558 /* RegisterDataModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5C8241EB08800B16558 /* RegisterDataModelRequest.swift */; };
+		FB31D5CB241EB17300B16558 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5CA241EB17300B16558 /* EmptyResponse.swift */; };
 		FB463C5E241CFE53006F1A12 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB463C58241CFE53006F1A12 /* LoginView.storyboard */; };
 		FB463C5F241CFE53006F1A12 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C59241CFE53006F1A12 /* LoginRouter.swift */; };
 		FB463C60241CFE53006F1A12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C5A241CFE53006F1A12 /* LoginViewController.swift */; };
@@ -100,6 +109,15 @@
 		FB1DFEC02416BEA5000CAD7B /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		FB1DFEC62416DB83000CAD7B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FB1DFECC2416DBD3000CAD7B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB31D5B4241E7DF800B16558 /* RegisterView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterView.storyboard; sourceTree = "<group>"; };
+		FB31D5B5241E7DF800B16558 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		FB31D5B6241E7DF800B16558 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FB31D5B7241E7DF800B16558 /* RegisterApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApiClient.swift; sourceTree = "<group>"; };
+		FB31D5B8241E7DF800B16558 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		FB31D5B9241E7DF800B16558 /* RegisterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataManager.swift; sourceTree = "<group>"; };
+		FB31D5C4241EB05200B16558 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		FB31D5C8241EB08800B16558 /* RegisterDataModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataModelRequest.swift; sourceTree = "<group>"; };
+		FB31D5CA241EB17300B16558 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 		FB463C58241CFE53006F1A12 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
 		FB463C59241CFE53006F1A12 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		FB463C5A241CFE53006F1A12 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -236,8 +254,10 @@
 			isa = PBXGroup;
 			children = (
 				FB1DFEBE2416BE62000CAD7B /* APIRequest.swift */,
-				FB1DFEC02416BEA5000CAD7B /* ErrorResponse.swift */,
+				FB31D5CC241EB17A00B16558 /* Empty */,
+				FB31D5CD241EB18300B16558 /* Error */,
 				FB463C9F241D51E4006F1A12 /* Login */,
+				FB31D5C2241EB02D00B16558 /* Register */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -249,6 +269,68 @@
 				FB1DFECD2416DBD3000CAD7B /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		FB31D5B3241E794100B16558 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FB31D5C1241E7E3B00B16558 /* APIClient */,
+				FB31D5B9241E7DF800B16558 /* RegisterDataManager.swift */,
+				FB31D5B5241E7DF800B16558 /* RegisterRouter.swift */,
+				FB31D5B6241E7DF800B16558 /* RegisterViewController.swift */,
+				FB31D5B8241E7DF800B16558 /* RegisterViewModel.swift */,
+				FB31D5C0241E7DFD00B16558 /* View */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		FB31D5C0241E7DFD00B16558 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB31D5B4241E7DF800B16558 /* RegisterView.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB31D5C1241E7E3B00B16558 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				FB31D5B7241E7DF800B16558 /* RegisterApiClient.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		FB31D5C2241EB02D00B16558 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FB31D5C4241EB05200B16558 /* RegisterRequest.swift */,
+				FB31D5C3241EB03B00B16558 /* Model */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		FB31D5C3241EB03B00B16558 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB31D5C8241EB08800B16558 /* RegisterDataModelRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB31D5CC241EB17A00B16558 /* Empty */ = {
+			isa = PBXGroup;
+			children = (
+				FB31D5CA241EB17300B16558 /* EmptyResponse.swift */,
+			);
+			path = Empty;
+			sourceTree = "<group>";
+		};
+		FB31D5CD241EB18300B16558 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				FB1DFEC02416BEA5000CAD7B /* ErrorResponse.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		FB463C57241CFE1D006F1A12 /* Login */ = {
@@ -517,6 +599,7 @@
 		FBA5482824157DAA00C23DB3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FB31D5B3241E794100B16558 /* Register */,
 				FB463C6C241D0908006F1A12 /* Games */,
 				FB463C57241CFE1D006F1A12 /* Login */,
 				FB463C66241D0666006F1A12 /* MainTabBar */,
@@ -735,6 +818,7 @@
 				FB463C73241D0A48006F1A12 /* GamesView.storyboard in Resources */,
 				FBA5480124157AEA00C23DB3 /* LaunchScreen.storyboard in Resources */,
 				FB1DFEC52416DB83000CAD7B /* Localizable.strings in Resources */,
+				FB31D5BA241E7DF800B16558 /* RegisterView.storyboard in Resources */,
 				FB1DFEB82416BAF2000CAD7B /* LoadingScreen.xib in Resources */,
 				FB463C90241D0C29006F1A12 /* RankingView.storyboard in Resources */,
 				FB463C9A241D0C83006F1A12 /* UserProfileView.storyboard in Resources */,
@@ -809,9 +893,12 @@
 			files = (
 				FB463C94241D0C29006F1A12 /* RankingDataManager.swift in Sources */,
 				FB463CA9241D6AA5006F1A12 /* Encodable+Extension.swift in Sources */,
+				FB31D5BC241E7DF800B16558 /* RegisterViewController.swift in Sources */,
 				FB463C9C241D0C83006F1A12 /* UserProfileViewController.swift in Sources */,
 				FBB1A375241C4AC500E91579 /* UserManager.swift in Sources */,
 				FB463C76241D0A48006F1A12 /* GamesApiClient.swift in Sources */,
+				FB31D5BB241E7DF800B16558 /* RegisterRouter.swift in Sources */,
+				FB31D5C5241EB05200B16558 /* RegisterRequest.swift in Sources */,
 				FBA5483D2415834000C23DB3 /* UIViewController+Extension.swift in Sources */,
 				FB463C8A241D0BBF006F1A12 /* SagasDataManager.swift in Sources */,
 				FB463C68241D0678006F1A12 /* MainTabBarController.swift in Sources */,
@@ -819,6 +906,7 @@
 				FB463C9E241D0C83006F1A12 /* UserProfileDataManager.swift in Sources */,
 				FB463C9D241D0C83006F1A12 /* UserProfileViewModel.swift in Sources */,
 				FB463CA6241D69DF006F1A12 /* LoginDataModelRequest.swift in Sources */,
+				FB31D5BD241E7DF800B16558 /* RegisterApiClient.swift in Sources */,
 				FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */,
 				FB463C86241D0BBF006F1A12 /* SagasRouter.swift in Sources */,
 				FBA54836241580B600C23DB3 /* BaseRouter.swift in Sources */,
@@ -839,14 +927,18 @@
 				FBA5483A241580D400C23DB3 /* BaseViewModel.swift in Sources */,
 				FB1DFEBF2416BE62000CAD7B /* APIRequest.swift in Sources */,
 				FBA54838241580C300C23DB3 /* BaseViewController.swift in Sources */,
+				FB31D5C9241EB08800B16558 /* RegisterDataModelRequest.swift in Sources */,
 				FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */,
+				FB31D5CB241EB17300B16558 /* EmptyResponse.swift in Sources */,
 				FB463C88241D0BBF006F1A12 /* SagasApiClient.swift in Sources */,
 				FB463C5F241CFE53006F1A12 /* LoginRouter.swift in Sources */,
 				FBB1A372241C273E00E91579 /* UserData.swift in Sources */,
 				FB463C75241D0A48006F1A12 /* GamesViewController.swift in Sources */,
 				FB463C89241D0BBF006F1A12 /* SagasViewModel.swift in Sources */,
 				FB463C77241D0A48006F1A12 /* GamesViewModel.swift in Sources */,
+				FB31D5BF241E7DF800B16558 /* RegisterDataManager.swift in Sources */,
 				FB463C93241D0C29006F1A12 /* RankingViewModel.swift in Sources */,
+				FB31D5BE241E7DF800B16558 /* RegisterViewModel.swift in Sources */,
 				FB463C78241D0A48006F1A12 /* GamesDataManager.swift in Sources */,
 				FBB1A36A241C10E800E91579 /* Constants.swift in Sources */,
 				FBA5482B24157E4800C23DB3 /* CoreDataStack.swift in Sources */,
