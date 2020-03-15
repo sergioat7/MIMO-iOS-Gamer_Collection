@@ -10,8 +10,16 @@ import UIKit
 
 protocol RegisterApiClientProtocol {
     
+    func register(username: String, password: String, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class RegisterApiClient: RegisterApiClientProtocol {
     
+    func register(username: String, password: String, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        let registerParameters = RegisterDataModelRequest(username: username,
+                                                          password: password)
+        let request = RegisterRequest(registerDataModelRequest: registerParameters)
+        APIClient.shared.sendServer(request, success: success, failure: failure)
+    }
 }
