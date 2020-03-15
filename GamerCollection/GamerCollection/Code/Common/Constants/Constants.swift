@@ -23,5 +23,6 @@ struct Constants {
     struct UserManagerKey {
         static let userData: String = "userData"
         static let authData: String = "authData"
+        static let newInstallation: String = "newInstallation"
     }
 }

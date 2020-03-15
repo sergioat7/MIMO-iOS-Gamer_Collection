@@ -3,7 +3,7 @@
 //  GamerCollection
 //
 //  Created by Sergio Aragonés on 14/03/2020.
-//  Copyright (c) 2020. All rights reserved.
+//  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
 import UIKit
@@ -26,11 +26,16 @@ class LoginRouter: BaseRouter {
     }
     
     private var dataManager: LoginDataManagerProtocol {
-        return LoginDataManager(apiClient: apiClient)
+        return LoginDataManager(apiClient: apiClient,
+                                userManager: userManager)
     }
     
     private var apiClient: LoginApiClientProtocol {
         return LoginApiClient()
+    }
+    
+    private var userManager: UserManager {
+        return UserManager()
     }
     
     // MARK: - Initialization

@@ -17,15 +17,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
+        checkIsNewInstallation()
+        showMainView()
+        
+        window?.makeKeyAndVisible()
+        return true
+    }
+    
+    func checkIsNewInstallation() {
+        
+        let userManager = UserManager()
+        if userManager.isNewInstallation() {
+            userManager.removeUserData()
+            userManager.removeCredentials()
+            userManager.setIsNewInstallation()
+        }
+    }
+
+    func showMainView() {
+        
         if UserManager().isLoggedIn() {
             MainTabBarController.show()
         } else {
             LoginRouter().show()
         }
-        
-        window?.makeKeyAndVisible()
-        return true
     }
-
+    
 }
 

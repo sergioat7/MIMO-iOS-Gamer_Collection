@@ -15,7 +15,7 @@ public class APIClient {
     
     let session = Session(configuration: URLSessionConfiguration.default)
     public var baseEndpoint: String {
-        return "http://videogames-collection-services.herokuapp.com"
+        return "https://videogames-collection-services.herokuapp.com"
     }
     
     func sendServer<T: APIRequest>(_ request: T,

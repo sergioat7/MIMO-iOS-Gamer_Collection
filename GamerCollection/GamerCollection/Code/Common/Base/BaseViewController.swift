@@ -13,6 +13,7 @@ protocol BaseViewProtocol: class {
     
     func showLoading()
     func hideLoading()
+    func showError(message: String, handler: (() -> Void)?)
 }
 
 class BaseViewController: UIViewController {
@@ -22,6 +23,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = Color.color1
     }
     
     override func viewDidAppear(_ animated: Bool) {
