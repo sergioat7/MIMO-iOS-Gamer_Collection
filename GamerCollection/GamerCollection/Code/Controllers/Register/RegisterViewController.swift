@@ -57,6 +57,12 @@ class RegisterViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func register() {
+        
+        let username = tfUsername.text ?? ""
+        let password = tfPassword.text ?? ""
+        let repeatPassword = tfRepeatPassword.text ?? ""
+        hideKeyboard()
+        viewModel?.register(username: username, password: password, repeatPassword: repeatPassword)
     }
     
     // MARK: - Overrides

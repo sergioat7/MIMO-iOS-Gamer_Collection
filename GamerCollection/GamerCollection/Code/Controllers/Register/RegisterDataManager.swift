@@ -12,6 +12,7 @@ protocol RegisterDataManagerProtocol: class {
     /**
      * Add here your methods for communication VIEW_MODEL -> DATA_MANAGER
      */
+    func register(username: String, password: String, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class RegisterDataManager: BaseDataManager {
@@ -20,12 +21,18 @@ class RegisterDataManager: BaseDataManager {
     
     // MARK: - Private variables
     
+    private let apiClient: RegisterApiClientProtocol
     // MARK: - Initialization
     
-    override init() {}
+    init(apiClient: RegisterApiClientProtocol) {
+        self.apiClient = apiClient
+    }
 }
 
 extension RegisterDataManager: RegisterDataManagerProtocol {
     
+    func register(username: String, password: String, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        apiClient.register(username: username, password: password, success: {_ in success()}, failure: failure)
+    }
 }
 

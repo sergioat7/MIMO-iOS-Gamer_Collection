@@ -26,7 +26,11 @@ class RegisterRouter: BaseRouter {
     }
     
     private var dataManager: RegisterDataManagerProtocol {
-        return RegisterDataManager()
+        return RegisterDataManager(apiClient: apiClient)
+    }
+    
+    private var apiClient: RegisterApiClientProtocol {
+        return RegisterApiClient()
     }
     
     // MARK: - Initialization
