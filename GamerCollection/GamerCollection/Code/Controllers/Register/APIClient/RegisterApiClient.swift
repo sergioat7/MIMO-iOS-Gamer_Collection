@@ -11,6 +11,7 @@ import UIKit
 protocol RegisterApiClientProtocol {
     
     func register(username: String, password: String, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func login(username: String, password: String, success: @escaping (LoginResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class RegisterApiClient: RegisterApiClientProtocol {
@@ -20,6 +21,14 @@ class RegisterApiClient: RegisterApiClientProtocol {
         let registerParameters = RegisterDataModelRequest(username: username,
                                                           password: password)
         let request = RegisterRequest(registerDataModelRequest: registerParameters)
+        APIClient.shared.sendServer(request, success: success, failure: failure)
+    }
+    
+    func login(username: String, password: String, success: @escaping (LoginResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        let loginParameters = LoginDataModelRequest(username: username,
+                                                    password: password)
+        let request = LoginRequest(loginDataModelRequest: loginParameters)
         APIClient.shared.sendServer(request, success: success, failure: failure)
     }
 }

@@ -40,6 +40,13 @@ class RegisterViewModel: BaseViewModel {
         view?.hideLoading()
         view?.showError(message: error.error, handler: nil)
     }
+    
+    private func syncApp() {
+        
+        //TODO get data from server
+        MainTabBarController.show()
+        view?.hideLoading()
+    }
 }
 
 extension RegisterViewModel: RegisterViewModelProtocol {
@@ -54,6 +61,16 @@ extension RegisterViewModel: RegisterViewModelProtocol {
         
         view?.showLoading()
         dataManager.register(username: username, password: password, success: {
+            self.dataManager.login(username: username, password: password, success: { loginResponse in
+
+                let userData = UserData(userName: username, password: password, isLoggedIn: true)
+                let authData = AuthData(token: loginResponse.token)
+                self.dataManager.storeUserData(userData: userData)
+                self.dataManager.storeCredentials(authData: authData)
+                self.syncApp()
+            }, failure: { error in
+                self.manageError(error: error)
+            })
         }, failure: { error in
             self.manageError(error: error)
         })
