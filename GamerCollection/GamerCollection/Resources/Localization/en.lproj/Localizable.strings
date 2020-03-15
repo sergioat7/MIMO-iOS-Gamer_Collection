@@ -45,4 +45,5 @@
 
 "ERROR_BUTTON_ACCEPT" = "Accept";
 "ERROR_SERVER" = "There was an error on getting data. Please, try again.";
+"ERROR_REGISTRATION_EMPTY_DATA" = "Username and password can't be empty";
 "ERROR_REGISTRATION_DIFFERENT_PASSWORDS" = "Password and repeat don't match";

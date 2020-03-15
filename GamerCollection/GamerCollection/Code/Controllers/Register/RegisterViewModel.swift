@@ -59,6 +59,12 @@ extension RegisterViewModel: RegisterViewModelProtocol {
             return
         }
         
+        guard !username.isEmpty, !password.isEmpty, !repeatPassword.isEmpty else {
+            let error = ErrorResponse(error: "ERROR_REGISTRATION_EMPTY_DATA".localized())
+            manageError(error: error)
+            return
+        }
+        
         view?.showLoading()
         dataManager.register(username: username, password: password, success: {
             self.dataManager.login(username: username, password: password, success: { loginResponse in
