@@ -46,11 +46,14 @@ class LoginViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIViewController.hideNavigationBar(true, animated: animated)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         UIViewController.hideNavigationBar(false, animated: animated)
+        view.removeGestureRecognizers()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -92,6 +95,12 @@ class LoginViewController: BaseViewController {
                                                          attributes: [.foregroundColor : Color.color2])
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: Color.color5, range: NSRange(location: text1.count, length: text2.count))
         btRegister.setAttributedTitle(attributedString, for: UIControl.State())
+    }
+    
+    @objc private func hideKeyboard() {
+        
+        tfUsername.resignFirstResponder()
+        tfPassword.resignFirstResponder()
     }
     
 }
