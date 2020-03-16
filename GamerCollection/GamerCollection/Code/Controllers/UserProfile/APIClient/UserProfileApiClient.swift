@@ -15,10 +15,30 @@ protocol UserProfileApiClientProtocol {
 
 class UserProfileApiClient: UserProfileApiClientProtocol {
     
+    private let userManager: UserManager
+    
+    init(userManager: UserManager) {
+        self.userManager = userManager
+    }
+    
+    func getCredentials(success: @escaping (AuthData) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        userManager.getCredentials(success: { authData in
+            success(authData)
+        }, failure: failure)
+    }
+    
+    // MARK: - UserProfileApiClientProtocol
+    
     func updatePassword(password: String, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
-        let updatePasswordParameters = UpdatePasswordDataModelRequest(password: password)
-        let request = UpdatePasswordRequest(updatePasswordDataModelRequest: updatePasswordParameters)
+        getCredentials(success: { authData in
+            
+            let updatePasswordParameters = UpdatePasswordDataModelRequest(password: password)
+            let request = UpdatePasswordRequest(token: authData.token, updatePasswordDataModelRequest: updatePasswordParameters)
+            APIClient.shared.sendServer(request, success: success, failure: failure)
+        }, failure: failure)
+    }
         APIClient.shared.sendServer(request, success: success, failure: failure)
     }
 }

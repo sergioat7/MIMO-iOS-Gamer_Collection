@@ -31,11 +31,14 @@ class UpdatePasswordRequest: APIRequest {
         return updatePasswordDataModelRequest.dictionary
     }
     
-    public var adapter: RequestAdapter?
+    public var interceptor: RequestInterceptor?
     
     private var updatePasswordDataModelRequest: UpdatePasswordDataModelRequest
             
-    public init(updatePasswordDataModelRequest: UpdatePasswordDataModelRequest) {
+    public init(token: String,
+                updatePasswordDataModelRequest: UpdatePasswordDataModelRequest) {
+        let authorizationHandler = AuthorizationHandler(token: token)
+        self.interceptor = authorizationHandler
         self.updatePasswordDataModelRequest = updatePasswordDataModelRequest
     }
 }

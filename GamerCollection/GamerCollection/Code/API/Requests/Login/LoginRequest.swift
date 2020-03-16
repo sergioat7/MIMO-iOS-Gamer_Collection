@@ -30,7 +30,7 @@ class LoginRequest: APIRequest {
         return loginDataModelRequest.dictionary
     }
     
-    public var adapter: RequestAdapter?
+    public var interceptor: RequestInterceptor?
     
     private var loginDataModelRequest: LoginDataModelRequest
     

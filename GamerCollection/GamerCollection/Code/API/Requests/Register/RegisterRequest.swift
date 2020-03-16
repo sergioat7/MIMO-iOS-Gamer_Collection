@@ -31,7 +31,7 @@ class RegisterRequest: APIRequest {
            return registerDataModelRequest.dictionary
        }
     
-    public var adapter: RequestAdapter?
+    public var interceptor: RequestInterceptor?
     
     private var registerDataModelRequest: RegisterDataModelRequest
     
