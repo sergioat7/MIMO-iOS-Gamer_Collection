@@ -12,6 +12,7 @@ protocol UserProfileApiClientProtocol {
     
     func updatePassword(password: String, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func login(username: String, password: String, success: @escaping (LoginResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func deleteUser(success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class UserProfileApiClient: UserProfileApiClientProtocol {
@@ -47,5 +48,14 @@ class UserProfileApiClient: UserProfileApiClientProtocol {
                                                     password: password)
         let request = LoginRequest(loginDataModelRequest: loginParameters)
         APIClient.shared.sendServer(request, success: success, failure: failure)
+    }
+    
+    func deleteUser(success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        getCredentials(success: { authData in
+            
+            let request = DeleteUserRequest(token: authData.token)
+            APIClient.shared.sendServer(request, success: success, failure: failure)
+        }, failure: failure)
     }
 }

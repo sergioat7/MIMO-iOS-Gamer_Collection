@@ -34,6 +34,7 @@
 		FB448DE2241FE87F008ACE69 /* UserProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DDC241FE87F008ACE69 /* UserProfileDataManager.swift */; };
 		FB448DE6242003EF008ACE69 /* UpdatePasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DE5242003EF008ACE69 /* UpdatePasswordRequest.swift */; };
 		FB448DEB24200410008ACE69 /* UpdatePasswordDataModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DEA24200410008ACE69 /* UpdatePasswordDataModelRequest.swift */; };
+		FB448DEE242029CF008ACE69 /* DeleteUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DED242029CF008ACE69 /* DeleteUserRequest.swift */; };
 		FB463C5E241CFE53006F1A12 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB463C58241CFE53006F1A12 /* LoginView.storyboard */; };
 		FB463C5F241CFE53006F1A12 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C59241CFE53006F1A12 /* LoginRouter.swift */; };
 		FB463C60241CFE53006F1A12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C5A241CFE53006F1A12 /* LoginViewController.swift */; };
@@ -129,6 +130,7 @@
 		FB448DDC241FE87F008ACE69 /* UserProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataManager.swift; sourceTree = "<group>"; };
 		FB448DE5242003EF008ACE69 /* UpdatePasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordRequest.swift; sourceTree = "<group>"; };
 		FB448DEA24200410008ACE69 /* UpdatePasswordDataModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordDataModelRequest.swift; sourceTree = "<group>"; };
+		FB448DED242029CF008ACE69 /* DeleteUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserRequest.swift; sourceTree = "<group>"; };
 		FB463C58241CFE53006F1A12 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
 		FB463C59241CFE53006F1A12 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		FB463C5A241CFE53006F1A12 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				FB1DFEBE2416BE62000CAD7B /* APIRequest.swift */,
+				FB448DEC242029BF008ACE69 /* DeleteUser */,
 				FB31D5CC241EB17A00B16558 /* Empty */,
 				FB31D5CD241EB18300B16558 /* Error */,
 				FB463C9F241D51E4006F1A12 /* Login */,
@@ -363,6 +366,14 @@
 				FB448DEA24200410008ACE69 /* UpdatePasswordDataModelRequest.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FB448DEC242029BF008ACE69 /* DeleteUser */ = {
+			isa = PBXGroup;
+			children = (
+				FB448DED242029CF008ACE69 /* DeleteUserRequest.swift */,
+			);
+			path = DeleteUser;
 			sourceTree = "<group>";
 		};
 		FB463C57241CFE1D006F1A12 /* Login */ = {
@@ -976,6 +987,7 @@
 				FB31D5BF241E7DF800B16558 /* RegisterDataManager.swift in Sources */,
 				FB463C93241D0C29006F1A12 /* RankingViewModel.swift in Sources */,
 				FB31D5BE241E7DF800B16558 /* RegisterViewModel.swift in Sources */,
+				FB448DEE242029CF008ACE69 /* DeleteUserRequest.swift in Sources */,
 				FB463C78241D0A48006F1A12 /* GamesDataManager.swift in Sources */,
 				FBB1A36A241C10E800E91579 /* Constants.swift in Sources */,
 				FBA5482B24157E4800C23DB3 /* CoreDataStack.swift in Sources */,
