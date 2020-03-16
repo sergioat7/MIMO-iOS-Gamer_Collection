@@ -33,6 +33,14 @@ class UserProfileViewModel: BaseViewModel {
         self.dataManager = dataManager
         super.init(view: view)
     }
+    
+    // MARK: - Private functions
+    
+    private func manageError(error: ErrorResponse) {
+
+        view?.hideLoading()
+        view?.showError(message: error.error, handler: nil)
+    }
 }
 
 extension UserProfileViewModel: UserProfileViewModelProtocol {
@@ -40,6 +48,14 @@ extension UserProfileViewModel: UserProfileViewModelProtocol {
     func viewDidLoad() {
         
         showNavBarButtons()
+        view?.showLoading()
+        dataManager.getUserData(success: { userData in
+            
+            self.view?.seTextFields(username: userData.userName ?? "", password: userData.password ?? "")
+            self.view?.hideLoading()
+        }, failure: { error in
+            self.manageError(error: error)
+        })
     }
 }
 

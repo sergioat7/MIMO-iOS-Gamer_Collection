@@ -12,7 +12,7 @@ protocol UserProfileViewProtocol: BaseViewProtocol {
     /**
      * Add here your methods for communication VIEW_MODEL -> VIEW
      */
-    
+    func seTextFields(username: String, password: String)
 }
 
 protocol UserProfileConfigurableViewProtocol: class {
@@ -93,6 +93,11 @@ class UserProfileViewController: BaseViewController {
 
 extension UserProfileViewController:  UserProfileViewProtocol {
     
+    func seTextFields(username: String, password: String) {
+        
+        tfUsername.text = username
+        tfPassword.text = password
+    }
 }
 
 // MARK: - UserProfileViewProtocol

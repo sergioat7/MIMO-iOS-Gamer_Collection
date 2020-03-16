@@ -26,11 +26,16 @@ class UserProfileRouter: BaseRouter {
     }
     
     private var dataManager: UserProfileDataManagerProtocol {
-        return UserProfileDataManager(apiClient: apiClient)
+        return UserProfileDataManager(apiClient: apiClient,
+                                      userManager: userManager)
     }
     
     private var apiClient: UserProfileApiClientProtocol {
         return UserProfileApiClient()
+    }
+    
+    private var userManager: UserManager {
+        return UserManager()
     }
     
     // MARK: - Initialization
