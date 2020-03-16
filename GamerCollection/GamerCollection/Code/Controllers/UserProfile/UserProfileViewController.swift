@@ -65,7 +65,7 @@ class UserProfileViewController: BaseViewController {
     }
     
     @IBAction func delete() {
-        
+        viewModel?.deleteUser()
     }
     
     // MARK: - Overrides

@@ -14,6 +14,7 @@ protocol UserProfileViewModelProtocol: class {
      */
     func viewDidLoad()
     func updatePassword(password: String)
+    func deleteUser()
 }
 
 class UserProfileViewModel: BaseViewModel {
@@ -41,6 +42,13 @@ class UserProfileViewModel: BaseViewModel {
 
         view?.hideLoading()
         view?.showError(message: error.error, handler: nil)
+    }
+    
+    private func logout() {
+        
+        dataManager.removeUserData()
+        dataManager.removeCredentials()
+        LoginRouter().show()
     }
 }
 
@@ -76,6 +84,18 @@ extension UserProfileViewModel: UserProfileViewModelProtocol {
             }, failure: { error in
                 self.manageError(error: error)
             })
+        }, failure: { error in
+            self.manageError(error: error)
+        })
+    }
+    
+    func deleteUser() {
+        
+        view?.showLoading()
+        dataManager.deleteUser(success: { _ in
+            
+            self.logout()
+            self.view?.hideLoading()
         }, failure: { error in
             self.manageError(error: error)
         })

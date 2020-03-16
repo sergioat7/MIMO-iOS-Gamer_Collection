@@ -17,6 +17,9 @@ protocol UserProfileDataManagerProtocol: class {
     func storePassword(password: String)
     func login(username: String, password: String, success: @escaping (LoginResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func storeCredentials(authData: AuthData)
+    func deleteUser(success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func removeUserData()
+    func removeCredentials()
 }
 
 class UserProfileDataManager: BaseDataManager {
@@ -60,6 +63,18 @@ extension UserProfileDataManager: UserProfileDataManagerProtocol {
     
     func storeCredentials(authData: AuthData) {
         userManager.storeCredentials(authData: authData)
+    }
+        
+    func deleteUser(success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        apiClient.deleteUser(success: success, failure: failure)
+    }
+    
+    func removeUserData() {
+        userManager.removeUserData()
+    }
+    
+    func removeCredentials() {
+        userManager.removeCredentials()
     }
 }
 
