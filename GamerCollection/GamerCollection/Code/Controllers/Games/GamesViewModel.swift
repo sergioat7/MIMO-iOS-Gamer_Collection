@@ -30,6 +30,7 @@ class GamesViewModel: BaseViewModel {
          dataManager: GamesDataManagerProtocol) {
         self.view = view
         self.dataManager = dataManager
+        super.init(view: view)
     }
 }
 

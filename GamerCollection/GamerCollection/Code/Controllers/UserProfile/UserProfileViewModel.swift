@@ -12,6 +12,7 @@ protocol UserProfileViewModelProtocol: class {
     /**
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
+    func viewDidLoad()
 }
 
 class UserProfileViewModel: BaseViewModel {
@@ -30,10 +31,15 @@ class UserProfileViewModel: BaseViewModel {
          dataManager: UserProfileDataManagerProtocol) {
         self.view = view
         self.dataManager = dataManager
+        super.init(view: view)
     }
 }
 
 extension UserProfileViewModel: UserProfileViewModelProtocol {
     
+    func viewDidLoad() {
+        
+        showNavBarButtons()
+    }
 }
 

@@ -41,6 +41,7 @@ class UserProfileViewController: BaseViewController {
         
         self.title = "PROFILE".localized()
         configViews()
+        viewModel?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {

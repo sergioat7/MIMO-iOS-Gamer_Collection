@@ -14,6 +14,7 @@ protocol BaseViewProtocol: class {
     func showLoading()
     func hideLoading()
     func showError(message: String, handler: (() -> Void)?)
+    func showRighBarButtonItems(rightBarButtonItem: [UIBarButtonItem])
 }
 
 class BaseViewController: UIViewController {
@@ -56,7 +57,10 @@ class BaseViewController: UIViewController {
      
         popup.addButtons([button])
         present(popup, animated: true, completion: nil)
-        
+    }
+    
+    func showRighBarButtonItems(rightBarButtonItem: [UIBarButtonItem]) {
+        navigationItem.rightBarButtonItems = rightBarButtonItem
     }
     
     // MARK: - Private functions

@@ -30,6 +30,7 @@ class SagasViewModel: BaseViewModel {
          dataManager: SagasDataManagerProtocol) {
         self.view = view
         self.dataManager = dataManager
+        super.init(view: view)
     }
 }
 

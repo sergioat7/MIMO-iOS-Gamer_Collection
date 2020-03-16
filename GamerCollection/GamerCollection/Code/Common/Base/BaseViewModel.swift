@@ -10,4 +10,39 @@ import UIKit
 
 class BaseViewModel {
     
+    private weak var view:BaseViewProtocol?
+    
+    init(view: BaseViewProtocol) {
+        self.view = view
+    }
+    
+    func getRightButtons() -> [UIBarButtonItem] {
+        
+        // MARK: Logout button
+        let logoutButton = UIButton(type: .system)
+        logoutButton.tintColor = Color.color1
+        logoutButton.setImage(UIImage(named: "logout"), for: UIControl.State())
+        let logoutButtonItem = UIBarButtonItem(customView: logoutButton)
+
+        let rightBarButtonItems = [logoutButtonItem]
+        logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+        
+        return rightBarButtonItems
+    }
+    
+    func showNavBarButtons() {
+        
+        let rightBarButtonItems = getRightButtons()
+        view?.showRighBarButtonItems(rightBarButtonItem: rightBarButtonItems)
+    }
+    
+    // MARK: - Private functions
+    
+    @objc private func logout() {
+        
+        let userManager = UserManager()
+        userManager.removePassword()
+        userManager.removeCredentials()
+        LoginRouter().show()
+    }
 }
