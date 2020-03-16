@@ -16,20 +16,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserProfileView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84T-Ty-AUY">
-                                <rect key="frame" x="127" y="323" width="121" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5QO-CY-SCS">
+                                <rect key="frame" x="56.5" y="183" width="262.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mbu-En-p0N">
+                                <rect key="frame" x="56.5" y="232" width="262.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9i-br-FgP" customClass="ActionButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="383" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="8uM-z8-6bA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="PROFILE_SAVE"/>
+                                <connections>
+                                    <action selector="update" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bi4-MN-qyV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0i-Bx-8cB" customClass="ActionButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="613" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ohM-f2-eqi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="PROFILE_DELETE"/>
+                                <connections>
+                                    <action selector="delete" destination="BYZ-38-t0r" eventType="touchUpInside" id="3CM-v0-mLr"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="84T-Ty-AUY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kvP-HE-Ti1"/>
-                            <constraint firstItem="84T-Ty-AUY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="uZZ-1C-OTa"/>
+                            <constraint firstItem="H0i-Bx-8cB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="M9i-br-FgP" secondAttribute="bottom" constant="10" id="49e-5U-W89"/>
+                            <constraint firstItem="M9i-br-FgP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4S0-cm-Qxc"/>
+                            <constraint firstItem="5QO-CY-SCS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.6" id="BAP-6N-52I"/>
+                            <constraint firstItem="M9i-br-FgP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Mbu-En-p0N" secondAttribute="bottom" constant="10" id="LHF-cx-KEt"/>
+                            <constraint firstItem="Mbu-En-p0N" firstAttribute="trailing" secondItem="5QO-CY-SCS" secondAttribute="trailing" id="ME0-4t-epd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="H0i-Bx-8cB" secondAttribute="bottom" constant="20" id="MI6-UM-uY6"/>
+                            <constraint firstItem="M9i-br-FgP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.2" id="NDN-q7-IFp"/>
+                            <constraint firstItem="Mbu-En-p0N" firstAttribute="leading" secondItem="5QO-CY-SCS" secondAttribute="leading" id="PPk-6N-OGl"/>
+                            <constraint firstItem="5QO-CY-SCS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cM7-mT-0h9"/>
+                            <constraint firstItem="Mbu-En-p0N" firstAttribute="top" secondItem="5QO-CY-SCS" secondAttribute="bottom" constant="15" id="oS9-O2-F7n"/>
+                            <constraint firstItem="5QO-CY-SCS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="pBC-zB-1hX"/>
+                            <constraint firstItem="H0i-Bx-8cB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qjk-lU-O94"/>
+                            <constraint firstItem="5QO-CY-SCS" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.7" id="vxn-M7-PSD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="btDelete" destination="H0i-Bx-8cB" id="gLE-wl-cIS"/>
+                        <outlet property="btSave" destination="M9i-br-FgP" id="aal-To-c70"/>
+                        <outlet property="tfPassword" destination="Mbu-En-p0N" id="cCf-jh-qE1"/>
+                        <outlet property="tfUsername" destination="5QO-CY-SCS" id="WAP-xA-RZo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

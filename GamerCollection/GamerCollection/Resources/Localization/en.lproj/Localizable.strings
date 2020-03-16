@@ -40,6 +40,8 @@
 // Profile
 
 "PROFILE" = "My Profile";
+"PROFILE_SAVE" = "Save";
+"PROFILE_DELETE" = "Delete";
 
 // Errors
 

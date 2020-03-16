@@ -2,7 +2,7 @@
 //  UserProfileDataManager.swift
 //  GamerCollection
 //
-//  Created by Sergio Aragonés on 14/03/2020.
+//  Created by Sergio Aragonés on 16/03/2020.
 //  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
@@ -18,11 +18,15 @@ class UserProfileDataManager: BaseDataManager {
     
     // MARK: - Public variables
     
+    private let apiClient: UserProfileApiClientProtocol
+    
     // MARK: - Private variables
     
     // MARK: - Initialization
     
-    override init() {}
+    init(apiClient: UserProfileApiClientProtocol) {
+        self.apiClient = apiClient
+    }
 }
 
 extension UserProfileDataManager: UserProfileDataManagerProtocol {

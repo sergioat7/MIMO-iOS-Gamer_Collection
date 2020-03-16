@@ -26,6 +26,12 @@
 		FB31D5C5241EB05200B16558 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5C4241EB05200B16558 /* RegisterRequest.swift */; };
 		FB31D5C9241EB08800B16558 /* RegisterDataModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5C8241EB08800B16558 /* RegisterDataModelRequest.swift */; };
 		FB31D5CB241EB17300B16558 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5CA241EB17300B16558 /* EmptyResponse.swift */; };
+		FB448DDD241FE87F008ACE69 /* UserProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB448DD7241FE87F008ACE69 /* UserProfileView.storyboard */; };
+		FB448DDE241FE87F008ACE69 /* UserProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DD8241FE87F008ACE69 /* UserProfileRouter.swift */; };
+		FB448DDF241FE87F008ACE69 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DD9241FE87F008ACE69 /* UserProfileViewController.swift */; };
+		FB448DE0241FE87F008ACE69 /* UserProfileApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DDA241FE87F008ACE69 /* UserProfileApiClient.swift */; };
+		FB448DE1241FE87F008ACE69 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DDB241FE87F008ACE69 /* UserProfileViewModel.swift */; };
+		FB448DE2241FE87F008ACE69 /* UserProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DDC241FE87F008ACE69 /* UserProfileDataManager.swift */; };
 		FB463C5E241CFE53006F1A12 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB463C58241CFE53006F1A12 /* LoginView.storyboard */; };
 		FB463C5F241CFE53006F1A12 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C59241CFE53006F1A12 /* LoginRouter.swift */; };
 		FB463C60241CFE53006F1A12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C5A241CFE53006F1A12 /* LoginViewController.swift */; };
@@ -50,11 +56,6 @@
 		FB463C92241D0C29006F1A12 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C8D241D0C29006F1A12 /* RankingViewController.swift */; };
 		FB463C93241D0C29006F1A12 /* RankingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C8E241D0C29006F1A12 /* RankingViewModel.swift */; };
 		FB463C94241D0C29006F1A12 /* RankingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C8F241D0C29006F1A12 /* RankingDataManager.swift */; };
-		FB463C9A241D0C83006F1A12 /* UserProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB463C95241D0C83006F1A12 /* UserProfileView.storyboard */; };
-		FB463C9B241D0C83006F1A12 /* UserProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C96241D0C83006F1A12 /* UserProfileRouter.swift */; };
-		FB463C9C241D0C83006F1A12 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C97241D0C83006F1A12 /* UserProfileViewController.swift */; };
-		FB463C9D241D0C83006F1A12 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C98241D0C83006F1A12 /* UserProfileViewModel.swift */; };
-		FB463C9E241D0C83006F1A12 /* UserProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C99241D0C83006F1A12 /* UserProfileDataManager.swift */; };
 		FB463CA2241D65B3006F1A12 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463CA1241D65B3006F1A12 /* LoginRequest.swift */; };
 		FB463CA4241D65DB006F1A12 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463CA3241D65DB006F1A12 /* LoginResponse.swift */; };
 		FB463CA6241D69DF006F1A12 /* LoginDataModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463CA5241D69DF006F1A12 /* LoginDataModelRequest.swift */; };
@@ -118,6 +119,12 @@
 		FB31D5C4241EB05200B16558 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		FB31D5C8241EB08800B16558 /* RegisterDataModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataModelRequest.swift; sourceTree = "<group>"; };
 		FB31D5CA241EB17300B16558 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		FB448DD7241FE87F008ACE69 /* UserProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfileView.storyboard; sourceTree = "<group>"; };
+		FB448DD8241FE87F008ACE69 /* UserProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRouter.swift; sourceTree = "<group>"; };
+		FB448DD9241FE87F008ACE69 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		FB448DDA241FE87F008ACE69 /* UserProfileApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileApiClient.swift; sourceTree = "<group>"; };
+		FB448DDB241FE87F008ACE69 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		FB448DDC241FE87F008ACE69 /* UserProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataManager.swift; sourceTree = "<group>"; };
 		FB463C58241CFE53006F1A12 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
 		FB463C59241CFE53006F1A12 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		FB463C5A241CFE53006F1A12 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -142,11 +149,6 @@
 		FB463C8D241D0C29006F1A12 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		FB463C8E241D0C29006F1A12 /* RankingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewModel.swift; sourceTree = "<group>"; };
 		FB463C8F241D0C29006F1A12 /* RankingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDataManager.swift; sourceTree = "<group>"; };
-		FB463C95241D0C83006F1A12 /* UserProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfileView.storyboard; sourceTree = "<group>"; };
-		FB463C96241D0C83006F1A12 /* UserProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRouter.swift; sourceTree = "<group>"; };
-		FB463C97241D0C83006F1A12 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		FB463C98241D0C83006F1A12 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
-		FB463C99241D0C83006F1A12 /* UserProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataManager.swift; sourceTree = "<group>"; };
 		FB463CA1241D65B3006F1A12 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		FB463CA3241D65DB006F1A12 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		FB463CA5241D69DF006F1A12 /* LoginDataModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModelRequest.swift; sourceTree = "<group>"; };
@@ -333,6 +335,14 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		FB448DCA241FE136008ACE69 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				FB448DDA241FE87F008ACE69 /* UserProfileApiClient.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
 		FB463C57241CFE1D006F1A12 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,10 +383,11 @@
 		FB463C69241D0902006F1A12 /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
-				FB463C99241D0C83006F1A12 /* UserProfileDataManager.swift */,
-				FB463C96241D0C83006F1A12 /* UserProfileRouter.swift */,
-				FB463C97241D0C83006F1A12 /* UserProfileViewController.swift */,
-				FB463C98241D0C83006F1A12 /* UserProfileViewModel.swift */,
+				FB448DCA241FE136008ACE69 /* APIClient */,
+				FB448DDC241FE87F008ACE69 /* UserProfileDataManager.swift */,
+				FB448DD8241FE87F008ACE69 /* UserProfileRouter.swift */,
+				FB448DD9241FE87F008ACE69 /* UserProfileViewController.swift */,
+				FB448DDB241FE87F008ACE69 /* UserProfileViewModel.swift */,
 				FB463C7D241D0A66006F1A12 /* View */,
 			);
 			path = UserProfile;
@@ -455,7 +466,7 @@
 		FB463C7D241D0A66006F1A12 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FB463C95241D0C83006F1A12 /* UserProfileView.storyboard */,
+				FB448DD7241FE87F008ACE69 /* UserProfileView.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -599,11 +610,11 @@
 		FBA5482824157DAA00C23DB3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FB31D5B3241E794100B16558 /* Register */,
 				FB463C6C241D0908006F1A12 /* Games */,
 				FB463C57241CFE1D006F1A12 /* Login */,
 				FB463C66241D0666006F1A12 /* MainTabBar */,
 				FB463C6A241D0904006F1A12 /* Ranking */,
+				FB31D5B3241E794100B16558 /* Register */,
 				FB463C6B241D0906006F1A12 /* Sagas */,
 				FB463C69241D0902006F1A12 /* UserProfile */,
 			);
@@ -821,7 +832,7 @@
 				FB31D5BA241E7DF800B16558 /* RegisterView.storyboard in Resources */,
 				FB1DFEB82416BAF2000CAD7B /* LoadingScreen.xib in Resources */,
 				FB463C90241D0C29006F1A12 /* RankingView.storyboard in Resources */,
-				FB463C9A241D0C83006F1A12 /* UserProfileView.storyboard in Resources */,
+				FB448DDD241FE87F008ACE69 /* UserProfileView.storyboard in Resources */,
 				FB463C85241D0BBF006F1A12 /* SagasView.storyboard in Resources */,
 				FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */,
 				FB463C5E241CFE53006F1A12 /* LoginView.storyboard in Resources */,
@@ -894,23 +905,22 @@
 				FB463C94241D0C29006F1A12 /* RankingDataManager.swift in Sources */,
 				FB463CA9241D6AA5006F1A12 /* Encodable+Extension.swift in Sources */,
 				FB31D5BC241E7DF800B16558 /* RegisterViewController.swift in Sources */,
-				FB463C9C241D0C83006F1A12 /* UserProfileViewController.swift in Sources */,
 				FBB1A375241C4AC500E91579 /* UserManager.swift in Sources */,
 				FB463C76241D0A48006F1A12 /* GamesApiClient.swift in Sources */,
+				FB448DE2241FE87F008ACE69 /* UserProfileDataManager.swift in Sources */,
 				FB31D5BB241E7DF800B16558 /* RegisterRouter.swift in Sources */,
 				FB31D5C5241EB05200B16558 /* RegisterRequest.swift in Sources */,
 				FBA5483D2415834000C23DB3 /* UIViewController+Extension.swift in Sources */,
 				FB463C8A241D0BBF006F1A12 /* SagasDataManager.swift in Sources */,
 				FB463C68241D0678006F1A12 /* MainTabBarController.swift in Sources */,
 				FB463C62241CFE53006F1A12 /* LoginViewModel.swift in Sources */,
-				FB463C9E241D0C83006F1A12 /* UserProfileDataManager.swift in Sources */,
-				FB463C9D241D0C83006F1A12 /* UserProfileViewModel.swift in Sources */,
 				FB463CA6241D69DF006F1A12 /* LoginDataModelRequest.swift in Sources */,
 				FB31D5BD241E7DF800B16558 /* RegisterApiClient.swift in Sources */,
 				FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */,
 				FB463C86241D0BBF006F1A12 /* SagasRouter.swift in Sources */,
 				FBA54836241580B600C23DB3 /* BaseRouter.swift in Sources */,
 				FB463CA2241D65B3006F1A12 /* LoginRequest.swift in Sources */,
+				FB448DE1241FE87F008ACE69 /* UserProfileViewModel.swift in Sources */,
 				FB1DFEC12416BEA5000CAD7B /* ErrorResponse.swift in Sources */,
 				FB1DFEBD2416BE2C000CAD7B /* APIClient.swift in Sources */,
 				FB463C87241D0BBF006F1A12 /* SagasViewController.swift in Sources */,
@@ -931,9 +941,12 @@
 				FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */,
 				FB31D5CB241EB17300B16558 /* EmptyResponse.swift in Sources */,
 				FB463C88241D0BBF006F1A12 /* SagasApiClient.swift in Sources */,
+				FB448DDF241FE87F008ACE69 /* UserProfileViewController.swift in Sources */,
 				FB463C5F241CFE53006F1A12 /* LoginRouter.swift in Sources */,
 				FBB1A372241C273E00E91579 /* UserData.swift in Sources */,
+				FB448DE0241FE87F008ACE69 /* UserProfileApiClient.swift in Sources */,
 				FB463C75241D0A48006F1A12 /* GamesViewController.swift in Sources */,
+				FB448DDE241FE87F008ACE69 /* UserProfileRouter.swift in Sources */,
 				FB463C89241D0BBF006F1A12 /* SagasViewModel.swift in Sources */,
 				FB463C77241D0A48006F1A12 /* GamesViewModel.swift in Sources */,
 				FB31D5BF241E7DF800B16558 /* RegisterDataManager.swift in Sources */,
@@ -943,7 +956,6 @@
 				FBB1A36A241C10E800E91579 /* Constants.swift in Sources */,
 				FBA5482B24157E4800C23DB3 /* CoreDataStack.swift in Sources */,
 				FB1DFEB62416BAE8000CAD7B /* LoadingScreen.swift in Sources */,
-				FB463C9B241D0C83006F1A12 /* UserProfileRouter.swift in Sources */,
 				FB463CA4241D65DB006F1A12 /* LoginResponse.swift in Sources */,
 				FB463C92241D0C29006F1A12 /* RankingViewController.swift in Sources */,
 			);

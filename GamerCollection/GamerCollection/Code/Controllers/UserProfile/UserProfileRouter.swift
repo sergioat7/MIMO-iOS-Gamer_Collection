@@ -2,7 +2,7 @@
 //  UserProfileRouter.swift
 //  GamerCollection
 //
-//  Created by Sergio Aragonés on 14/03/2020.
+//  Created by Sergio Aragonés on 16/03/2020.
 //  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
@@ -26,7 +26,11 @@ class UserProfileRouter: BaseRouter {
     }
     
     private var dataManager: UserProfileDataManagerProtocol {
-        return UserProfileDataManager()
+        return UserProfileDataManager(apiClient: apiClient)
+    }
+    
+    private var apiClient: UserProfileApiClientProtocol {
+        return UserProfileApiClient()
     }
     
     // MARK: - Initialization
