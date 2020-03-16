@@ -32,6 +32,8 @@
 		FB448DE0241FE87F008ACE69 /* UserProfileApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DDA241FE87F008ACE69 /* UserProfileApiClient.swift */; };
 		FB448DE1241FE87F008ACE69 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DDB241FE87F008ACE69 /* UserProfileViewModel.swift */; };
 		FB448DE2241FE87F008ACE69 /* UserProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DDC241FE87F008ACE69 /* UserProfileDataManager.swift */; };
+		FB448DE6242003EF008ACE69 /* UpdatePasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DE5242003EF008ACE69 /* UpdatePasswordRequest.swift */; };
+		FB448DEB24200410008ACE69 /* UpdatePasswordDataModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DEA24200410008ACE69 /* UpdatePasswordDataModelRequest.swift */; };
 		FB463C5E241CFE53006F1A12 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB463C58241CFE53006F1A12 /* LoginView.storyboard */; };
 		FB463C5F241CFE53006F1A12 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C59241CFE53006F1A12 /* LoginRouter.swift */; };
 		FB463C60241CFE53006F1A12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C5A241CFE53006F1A12 /* LoginViewController.swift */; };
@@ -125,6 +127,8 @@
 		FB448DDA241FE87F008ACE69 /* UserProfileApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileApiClient.swift; sourceTree = "<group>"; };
 		FB448DDB241FE87F008ACE69 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 		FB448DDC241FE87F008ACE69 /* UserProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataManager.swift; sourceTree = "<group>"; };
+		FB448DE5242003EF008ACE69 /* UpdatePasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordRequest.swift; sourceTree = "<group>"; };
+		FB448DEA24200410008ACE69 /* UpdatePasswordDataModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordDataModelRequest.swift; sourceTree = "<group>"; };
 		FB463C58241CFE53006F1A12 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
 		FB463C59241CFE53006F1A12 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		FB463C5A241CFE53006F1A12 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 				FB31D5CD241EB18300B16558 /* Error */,
 				FB463C9F241D51E4006F1A12 /* Login */,
 				FB31D5C2241EB02D00B16558 /* Register */,
+				FB448DE4242003CE008ACE69 /* UpdatePassword */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -341,6 +346,23 @@
 				FB448DDA241FE87F008ACE69 /* UserProfileApiClient.swift */,
 			);
 			path = APIClient;
+			sourceTree = "<group>";
+		};
+		FB448DE4242003CE008ACE69 /* UpdatePassword */ = {
+			isa = PBXGroup;
+			children = (
+				FB448DE7242003F2008ACE69 /* Model */,
+				FB448DE5242003EF008ACE69 /* UpdatePasswordRequest.swift */,
+			);
+			path = UpdatePassword;
+			sourceTree = "<group>";
+		};
+		FB448DE7242003F2008ACE69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB448DEA24200410008ACE69 /* UpdatePasswordDataModelRequest.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FB463C57241CFE1D006F1A12 /* Login */ = {
@@ -934,6 +956,7 @@
 				FBA548342415809000C23DB3 /* BaseDataManager.swift in Sources */,
 				FB463C63241CFE53006F1A12 /* LoginDataManager.swift in Sources */,
 				FB463C91241D0C29006F1A12 /* RankingRouter.swift in Sources */,
+				FB448DEB24200410008ACE69 /* UpdatePasswordDataModelRequest.swift in Sources */,
 				FBA5483A241580D400C23DB3 /* BaseViewModel.swift in Sources */,
 				FB1DFEBF2416BE62000CAD7B /* APIRequest.swift in Sources */,
 				FBA54838241580C300C23DB3 /* BaseViewController.swift in Sources */,
@@ -949,6 +972,7 @@
 				FB448DDE241FE87F008ACE69 /* UserProfileRouter.swift in Sources */,
 				FB463C89241D0BBF006F1A12 /* SagasViewModel.swift in Sources */,
 				FB463C77241D0A48006F1A12 /* GamesViewModel.swift in Sources */,
+				FB448DE6242003EF008ACE69 /* UpdatePasswordRequest.swift in Sources */,
 				FB31D5BF241E7DF800B16558 /* RegisterDataManager.swift in Sources */,
 				FB463C93241D0C29006F1A12 /* RankingViewModel.swift in Sources */,
 				FB31D5BE241E7DF800B16558 /* RegisterViewModel.swift in Sources */,

@@ -10,8 +10,15 @@ import UIKit
 
 protocol UserProfileApiClientProtocol {
     
+    func updatePassword(password: String, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class UserProfileApiClient: UserProfileApiClientProtocol {
     
+    func updatePassword(password: String, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        let updatePasswordParameters = UpdatePasswordDataModelRequest(password: password)
+        let request = UpdatePasswordRequest(updatePasswordDataModelRequest: updatePasswordParameters)
+        APIClient.shared.sendServer(request, success: success, failure: failure)
+    }
 }
