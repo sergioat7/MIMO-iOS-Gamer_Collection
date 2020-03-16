@@ -61,6 +61,7 @@ class UserProfileViewController: BaseViewController {
         
         let password = tfPassword.text ?? ""
         hideKeyboard()
+        viewModel?.updatePassword(password: password)
     }
     
     @IBAction func delete() {

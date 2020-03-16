@@ -31,7 +31,7 @@ class UserProfileRouter: BaseRouter {
     }
     
     private var apiClient: UserProfileApiClientProtocol {
-        return UserProfileApiClient()
+        return UserProfileApiClient(userManager: userManager)
     }
     
     private var userManager: UserManager {

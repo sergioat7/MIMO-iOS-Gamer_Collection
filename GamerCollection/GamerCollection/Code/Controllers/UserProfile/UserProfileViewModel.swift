@@ -13,6 +13,7 @@ protocol UserProfileViewModelProtocol: class {
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
     func viewDidLoad()
+    func updatePassword(password: String)
 }
 
 class UserProfileViewModel: BaseViewModel {
@@ -53,6 +54,28 @@ extension UserProfileViewModel: UserProfileViewModelProtocol {
             
             self.view?.seTextFields(username: userData.userName ?? "", password: userData.password ?? "")
             self.view?.hideLoading()
+        }, failure: { error in
+            self.manageError(error: error)
+        })
+    }
+    
+    func updatePassword(password: String) {
+        
+        view?.showLoading()
+        dataManager.updatePassword(password: password, success: { _ in
+            self.dataManager.storePassword(password: password)
+            self.dataManager.getUserData(success: { userData in
+                self.dataManager.login(username: userData.userName ?? "", password: userData.password ?? "", success: { loginResponse in
+                    
+                    let authData = AuthData(token: loginResponse.token)
+                    self.dataManager.storeCredentials(authData: authData)
+                    self.view?.hideLoading()
+                }, failure: { error in
+                    self.manageError(error: error)
+                })
+            }, failure: { error in
+                self.manageError(error: error)
+            })
         }, failure: { error in
             self.manageError(error: error)
         })
