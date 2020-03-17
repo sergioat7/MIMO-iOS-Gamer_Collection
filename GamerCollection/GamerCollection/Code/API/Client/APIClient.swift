@@ -25,16 +25,18 @@ public class APIClient {
         let endpoint = self.endpoint(for: request)
         let parameters = request.body
         let method = request.method
-        let adapter = request.adapter
+        let interceptor = request.interceptor
         
-//        session.adapter = adapter
-        
-        let request = session.request(endpoint, method: method, parameters: parameters, encoding: JSONEncoding.default).validate()
+        let request = session.request(endpoint,
+                                      method: method,
+                                      parameters: parameters,
+                                      encoding: JSONEncoding.default,
+                                      interceptor: interceptor).validate()
         request.response { response in
             
             let statusCode = response.response?.statusCode ?? -1
             
-            if statusCode == 201 || statusCode == 204, let data = "{}".data(using: .utf8) {
+            if statusCode < 400, T.Response.self == EmptyResponse.self, let data = "{}".data(using: .utf8) {
                 do {
                     let response = try JSONDecoder().decode(T.Response.self, from: data)
                     success(response)

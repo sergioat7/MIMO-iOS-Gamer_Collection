@@ -37,6 +37,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="nqa-vM-Bl8"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="LOGIN_ACCESS"/>
                                 <connections>
                                     <action selector="login" destination="BYZ-38-t0r" eventType="touchUpInside" id="jMN-9T-sVR"/>

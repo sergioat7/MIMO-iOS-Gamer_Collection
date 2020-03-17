@@ -26,5 +26,5 @@ public protocol APIRequest {
     var body: Parameters? { get }
     
     //Adapter
-    var adapter: RequestAdapter? { get }
+    var interceptor: RequestInterceptor? { get }
 }

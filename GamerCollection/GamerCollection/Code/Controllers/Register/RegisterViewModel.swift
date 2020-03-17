@@ -31,6 +31,7 @@ class RegisterViewModel: BaseViewModel {
          dataManager: RegisterDataManagerProtocol) {
         self.view = view
         self.dataManager = dataManager
+        super.init(view: view)
     }
     
     // MARK: - Private functions

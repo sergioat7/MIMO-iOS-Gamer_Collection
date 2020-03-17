@@ -37,6 +37,15 @@ class UserManager {
         setProperty(userData, forKey: Constants.UserManagerKey.userData)
     }
     
+    func storePassword(pasword: String) {
+        
+        guard var userData: UserData = getProperty(key: Constants.UserManagerKey.userData) else {
+            return
+        }
+        userData.password = pasword
+        storeUserData(userData: userData)
+    }
+    
     func storeCredentials(authData: AuthData) {
         setProperty(authData, forKey: Constants.UserManagerKey.authData)
     }
@@ -67,6 +76,15 @@ class UserManager {
     
     func removeUserData() {
         removeProperty(key: Constants.UserManagerKey.userData)
+    }
+    
+    func removePassword() {
+        
+        guard var userData: UserData = getProperty(key: Constants.UserManagerKey.userData) else {
+            return
+        }
+        userData.password = nil
+        storeUserData(userData: userData)
     }
     
     func removeCredentials() {

@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class AuthorizationHandler: RequestAdapter, RequestRetrier {
+class AuthorizationHandler: RequestInterceptor {
     
     private let lock = NSLock()
     private var token: String
