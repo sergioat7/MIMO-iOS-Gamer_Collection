@@ -33,7 +33,7 @@ class GamesViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "GAMES".localized()
+        navigationItem.title = "GAMES".localized()
     }
     
     override func viewWillAppear(_ animated: Bool) {
