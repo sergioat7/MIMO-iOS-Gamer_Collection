@@ -40,9 +40,11 @@ class BaseViewModel {
     
     @objc private func logout() {
         
-        let userManager = UserManager()
-        userManager.removePassword()
-        userManager.removeCredentials()
-        LoginRouter().show()
+        view?.showConfirmationDialog(message: "PROFILE_LOGOUT_CONFIRMATION".localized(), handler: {
+            let userManager = UserManager()
+            userManager.removePassword()
+            userManager.removeCredentials()
+            LoginRouter().show()
+        }, handlerCancel: nil)
     }
 }

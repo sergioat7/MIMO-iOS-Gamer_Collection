@@ -65,7 +65,10 @@ class UserProfileViewController: BaseViewController {
     }
     
     @IBAction func delete() {
-        viewModel?.deleteUser()
+        
+        showConfirmationDialog(message: "PROFILE_DELETE_CONFIRMATION".localized(), handler: {
+            self.viewModel?.deleteUser()
+        }, handlerCancel: nil)
     }
     
     // MARK: - Overrides

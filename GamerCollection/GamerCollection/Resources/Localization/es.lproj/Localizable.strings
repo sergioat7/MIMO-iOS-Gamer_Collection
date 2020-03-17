@@ -7,7 +7,11 @@
   
 */
 
+// General
+
 "app_name" = "Gamer Collection";
+"ACCEPT" = "Aceptar";
+"CANCEL" = "Cancelar";
 
 // Login
 
@@ -40,8 +44,10 @@
 // Profile
 
 "PROFILE" = "Mi Perfil";
+"PROFILE_LOGOUT_CONFIRMATION" = "¿Estás seguro de que quieres salir?";
 "PROFILE_SAVE" = "Guardar";
 "PROFILE_DELETE" = "Borrar";
+"PROFILE_DELETE_CONFIRMATION" = "¿Estás seguro de que quieres borrar tu usuario? Perderás toda la información almacenada sobre los juegos.";
 
 // Errors
 
