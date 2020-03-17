@@ -39,7 +39,7 @@ class UserProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "PROFILE".localized()
+        navigationItem.title = "PROFILE".localized()
         configViews()
         viewModel?.viewDidLoad()
     }

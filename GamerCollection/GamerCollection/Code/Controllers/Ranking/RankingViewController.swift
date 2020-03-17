@@ -33,7 +33,7 @@ class RankingViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "RANKING".localized()
+        navigationItem.title = "RANKING".localized()
     }
     
     override func viewWillAppear(_ animated: Bool) {

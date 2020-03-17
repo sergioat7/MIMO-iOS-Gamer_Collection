@@ -50,6 +50,7 @@ class GamesRouter: BaseRouter {
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "games"), tag: 0)
         navigationController.tabBarItem.selectedImage = UIImage(named: "games on")
+        navigationController.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         
         var viewControllers = tabBarController?.viewControllers ?? [UIViewController]()
         viewControllers.append(navigationController)

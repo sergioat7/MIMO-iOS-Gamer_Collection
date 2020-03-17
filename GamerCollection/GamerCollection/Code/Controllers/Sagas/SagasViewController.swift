@@ -33,7 +33,7 @@ class SagasViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "SAGAS".localized()
+        navigationItem.title = "SAGAS".localized()
     }
     
     override func viewWillAppear(_ animated: Bool) {
