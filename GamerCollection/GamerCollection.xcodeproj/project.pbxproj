@@ -64,6 +64,9 @@
 		FB463CA6241D69DF006F1A12 /* LoginDataModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463CA5241D69DF006F1A12 /* LoginDataModelRequest.swift */; };
 		FB463CA9241D6AA5006F1A12 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463CA8241D6AA5006F1A12 /* Encodable+Extension.swift */; };
 		FB62877E241E3D2800F5FF6E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB62877D241E3D2800F5FF6E /* ActionButton.swift */; };
+		FB7DB585242441D50040FC84 /* CoreDataRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DB584242441D50040FC84 /* CoreDataRepositoryProtocol.swift */; };
+		FB7DB5872424430B0040FC84 /* ModelHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DB5862424430B0040FC84 /* ModelHandlerProtocol.swift */; };
+		FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB935A262424D8A300352DA3 /* NSManagedObject+Extension.swift */; };
 		FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA547F124157AE900C23DB3 /* AppDelegate.swift */; };
 		FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBA547FA24157AE900C23DB3 /* GamerCollection.xcdatamodeld */; };
 		FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA547FD24157AEA00C23DB3 /* Assets.xcassets */; };
@@ -160,6 +163,9 @@
 		FB463CA5241D69DF006F1A12 /* LoginDataModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModelRequest.swift; sourceTree = "<group>"; };
 		FB463CA8241D6AA5006F1A12 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		FB62877D241E3D2800F5FF6E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		FB7DB584242441D50040FC84 /* CoreDataRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepositoryProtocol.swift; sourceTree = "<group>"; };
+		FB7DB5862424430B0040FC84 /* ModelHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHandlerProtocol.swift; sourceTree = "<group>"; };
+		FB935A262424D8A300352DA3 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
 		FBA547EE24157AE900C23DB3 /* Gamer Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gamer Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA547F124157AE900C23DB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBA547FB24157AE900C23DB3 /* GamerCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GamerCollection.xcdatamodel; sourceTree = "<group>"; };
@@ -546,6 +552,30 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		FB7DB582242441AE0040FC84 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FB7DB583242441B20040FC84 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FB7DB584242441D50040FC84 /* CoreDataRepositoryProtocol.swift */,
+				FB7DB5862424430B0040FC84 /* ModelHandlerProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FB935A252424D88A00352DA3 /* NSManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				FB935A262424D8A300352DA3 /* NSManagedObject+Extension.swift */,
+			);
+			path = NSManagedObject;
+			sourceTree = "<group>";
+		};
 		FBA547E524157AE900C23DB3 = {
 			isa = PBXGroup;
 			children = (
@@ -657,6 +687,8 @@
 		FBA5482924157DC600C23DB3 /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
+				FB7DB583242441B20040FC84 /* Protocols */,
+				FB7DB582242441AE0040FC84 /* Entities */,
 				FBA5482A24157E4800C23DB3 /* CoreDataStack.swift */,
 				FBA547FA24157AE900C23DB3 /* GamerCollection.xcdatamodeld */,
 			);
@@ -678,6 +710,7 @@
 			isa = PBXGroup;
 			children = (
 				FB463CA7241D6A91006F1A12 /* Encodable */,
+				FB935A252424D88A00352DA3 /* NSManagedObject */,
 				FBB1A365241C101B00E91579 /* UIColor */,
 				FBB1A364241C101700E91579 /* UIViewController */,
 			);
@@ -979,6 +1012,7 @@
 				FB463C5F241CFE53006F1A12 /* LoginRouter.swift in Sources */,
 				FBB1A372241C273E00E91579 /* UserData.swift in Sources */,
 				FB448DE0241FE87F008ACE69 /* UserProfileApiClient.swift in Sources */,
+				FB7DB585242441D50040FC84 /* CoreDataRepositoryProtocol.swift in Sources */,
 				FB463C75241D0A48006F1A12 /* GamesViewController.swift in Sources */,
 				FB448DDE241FE87F008ACE69 /* UserProfileRouter.swift in Sources */,
 				FB463C89241D0BBF006F1A12 /* SagasViewModel.swift in Sources */,
@@ -989,11 +1023,13 @@
 				FB31D5BE241E7DF800B16558 /* RegisterViewModel.swift in Sources */,
 				FB448DEE242029CF008ACE69 /* DeleteUserRequest.swift in Sources */,
 				FB463C78241D0A48006F1A12 /* GamesDataManager.swift in Sources */,
+				FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */,
 				FBB1A36A241C10E800E91579 /* Constants.swift in Sources */,
 				FBA5482B24157E4800C23DB3 /* CoreDataStack.swift in Sources */,
 				FB1DFEB62416BAE8000CAD7B /* LoadingScreen.swift in Sources */,
 				FB463CA4241D65DB006F1A12 /* LoginResponse.swift in Sources */,
 				FB463C92241D0C29006F1A12 /* RankingViewController.swift in Sources */,
+				FB7DB5872424430B0040FC84 /* ModelHandlerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
