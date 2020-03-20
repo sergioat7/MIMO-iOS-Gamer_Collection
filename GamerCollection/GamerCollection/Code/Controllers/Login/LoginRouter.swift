@@ -30,7 +30,8 @@ class LoginRouter: BaseRouter {
                                 userManager: userManager,
                                 formatRepository: formatRepository,
                                 genreRepository: genreRepository,
-                                platformRepository: platformRepository)
+                                platformRepository: platformRepository,
+                                stateRepository: stateRepository)
     }
     
     private var apiClient: LoginApiClientProtocol {
@@ -51,6 +52,10 @@ class LoginRouter: BaseRouter {
     
     private var platformRepository: PlatformRepository {
         return PlatformRepository()
+    }
+    
+    private var stateRepository: StateRepository {
+        return StateRepository()
     }
     
     // MARK: - Initialization
