@@ -17,6 +17,7 @@ protocol LoginDataManagerProtocol: class {
     func storeUserData(userData: UserData)
     func storeCredentials(authData: AuthData)
     func getFormats(success: @escaping (FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class LoginDataManager: BaseDataManager {
@@ -28,15 +29,18 @@ class LoginDataManager: BaseDataManager {
     private let apiClient: LoginApiClientProtocol
     private let userManager: UserManager
     private let formatRepository: FormatRepository
+    private let genreRepository: GenreRepository
     
     // MARK: - Initialization
     
     init(apiClient: LoginApiClientProtocol,
          userManager: UserManager,
-         formatRepository: FormatRepository) {
+         formatRepository: FormatRepository,
+         genreRepository: GenreRepository) {
         self.apiClient = apiClient
         self.userManager = userManager
         self.formatRepository = formatRepository
+        self.genreRepository = genreRepository
     }
 }
 
@@ -70,6 +74,20 @@ extension LoginDataManager: LoginDataManagerProtocol {
                     
                     if index == formats.count - 1 {
                         success(formats)
+                    }
+                }, failure: failure)
+            }
+        }, failure: failure)
+    }
+    
+    func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        apiClient.getGenres(success: { genres in
+            
+            for (index, genre) in genres.enumerated() {
+                self.genreRepository.update(item: genre, success: { _ in
+                    if index == genres.count - 1 {
+                        success(genres)
                     }
                 }, failure: failure)
             }
