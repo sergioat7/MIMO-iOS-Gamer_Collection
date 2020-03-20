@@ -17,6 +17,7 @@ protocol CoreDataRepositoryProtocol {
     var entityName: String { get }
     
     func get(id: K, success: @escaping (M?) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getRecords(success: @escaping ([R]) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getAll(success: @escaping ([M]) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func insert(item: M, success: @escaping (R) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func update(item: M, success: @escaping (R) -> Void, failure: @escaping (ErrorResponse) -> Void)
@@ -38,9 +39,13 @@ extension CoreDataRepositoryProtocol {
             request.predicate = self.getPredicate(id: id)
             
             do {
-                guard let results = try managedContext.fetch(request) as? [NSManagedObject],
-                    let result = results.first else {
+                guard let results = try managedContext.fetch(request) as? [R] else {
                     self.handleError(failure: failure)
+                    return
+                }
+                
+                guard let result = results.first else {
+                    success(nil)
                     return
                 }
                 
@@ -53,8 +58,8 @@ extension CoreDataRepositoryProtocol {
         }
     }
     
-    func getAll(success: @escaping ([M]) -> Void,
-                failure: @escaping (ErrorResponse) -> Void) {
+    func getRecords<R: NSManagedObject>(success: @escaping ([R]) -> Void,
+                                        failure: @escaping (ErrorResponse) -> Void) {
         
         let managedContext = CoreDataStack.shared.managedObjectContext
         managedContext.performAndWait {
@@ -62,18 +67,26 @@ extension CoreDataRepositoryProtocol {
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
             
             do {
-                guard let results = try managedContext.fetch(request) as? [NSManagedObject] else {
+                guard let results = try managedContext.fetch(request) as? [R] else {
                     self.handleError(failure: failure)
                     return
                 }
                 
-                self.transformToModel(results: results, success: { models in
-                    success(models)
-                }, failure: failure)
+                success(results)
             } catch {
                 self.handleError(failure: failure)
             }
         }
+    }
+    
+    func getAll(success: @escaping ([M]) -> Void,
+                failure: @escaping (ErrorResponse) -> Void) {
+        
+        getRecords(success: { results in
+            self.transformToModel(results: results, success: { models in
+                success(models)
+            }, failure: failure)
+        }, failure: failure)
     }
     
     func delete(id: K,
@@ -142,20 +155,24 @@ extension CoreDataRepositoryProtocol {
             request.sortDescriptors = sortDescriptors
             
             do {
-                guard let results = try managedContext.fetch(request) as? [NSManagedObject] else {
+                guard let results = try managedContext.fetch(request) as? [R] else {
                     self.handleError(failure: failure)
                     return
                 }
                 
                 self.transformToModel(results: results, success: { models in
-                    
-                    let records = results.compactMap({ $0 as? R })
-                    success(models, records)
+                    success(models, results)
                 }, failure: failure)
             } catch {
                 self.handleError(failure: failure)
             }
         }
+    }
+    
+    func handleError(failure: @escaping (ErrorResponse) -> Void) {
+        
+        let error = ErrorResponse(error: "ERROR_CORE_DATA")
+        failure(error)
     }
     
     
@@ -168,14 +185,14 @@ extension CoreDataRepositoryProtocol {
         case is Int64:
             predicate = NSPredicate(format: "id = %ld", id as! Int64)
         case is String:
-            predicate = NSPredicate(format: "id = %ld", id as! String)
+            predicate = NSPredicate(format: "id = %@", id as! String)
         default:
             predicate = NSPredicate(value: true)
         }
         return predicate
     }
     
-    private func transformToModel(results: [NSManagedObject],
+    private func transformToModel(results: [R],
                                   success: @escaping ([M]) -> Void,
                                   failure: @escaping (ErrorResponse) -> Void) {
         
@@ -188,11 +205,5 @@ extension CoreDataRepositoryProtocol {
         }
         
         success(resultsModel)
-    }
-    
-    private func handleError(failure: @escaping (ErrorResponse) -> Void) {
-        
-        let error = ErrorResponse(error: "ERROR_CORE_DATA")
-        failure(error)
     }
 }

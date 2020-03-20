@@ -41,9 +41,8 @@ public class CoreDataStack {
 
     // MARK: - Core Data Saving support
 
-    func saveContext() throws {
+    func saveContext(_ context: NSManagedObjectContext) throws {
         
-        let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
