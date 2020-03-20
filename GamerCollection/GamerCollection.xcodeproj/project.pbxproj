@@ -106,6 +106,10 @@
 		FBF19EDA242553F000E836FD /* Platform+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19ED8242553F000E836FD /* Platform+CoreDataProperties.swift */; };
 		FBF19EDC2425540300E836FD /* Platform+PlatformResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EDB2425540300E836FD /* Platform+PlatformResponse.swift */; };
 		FBF19EDE2425540E00E836FD /* PlatformRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EDD2425540E00E836FD /* PlatformRepository.swift */; };
+		FBF19EE12425554300E836FD /* StateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EE02425554300E836FD /* StateRepository.swift */; };
+		FBF19EE32425554E00E836FD /* State+StateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EE22425554E00E836FD /* State+StateResponse.swift */; };
+		FBF19EE6242557A500E836FD /* State+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EE4242557A500E836FD /* State+CoreDataClass.swift */; };
+		FBF19EE7242557A500E836FD /* State+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EE5242557A500E836FD /* State+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +234,10 @@
 		FBF19ED8242553F000E836FD /* Platform+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Platform+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FBF19EDB2425540300E836FD /* Platform+PlatformResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Platform+PlatformResponse.swift"; sourceTree = "<group>"; };
 		FBF19EDD2425540E00E836FD /* PlatformRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformRepository.swift; sourceTree = "<group>"; };
+		FBF19EE02425554300E836FD /* StateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateRepository.swift; sourceTree = "<group>"; };
+		FBF19EE22425554E00E836FD /* State+StateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+StateResponse.swift"; sourceTree = "<group>"; };
+		FBF19EE4242557A500E836FD /* State+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		FBF19EE5242557A500E836FD /* State+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -602,6 +610,7 @@
 				FBF19EC32425499400E836FD /* Format */,
 				FBF19ECD242551C000E836FD /* Genre */,
 				FBF19ED6242553DA00E836FD /* Platform */,
+				FBF19EDF2425553400E836FD /* State */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -923,6 +932,17 @@
 			path = Platform;
 			sourceTree = "<group>";
 		};
+		FBF19EDF2425553400E836FD /* State */ = {
+			isa = PBXGroup;
+			children = (
+				FBF19EE4242557A500E836FD /* State+CoreDataClass.swift */,
+				FBF19EE5242557A500E836FD /* State+CoreDataProperties.swift */,
+				FBF19EE22425554E00E836FD /* State+StateResponse.swift */,
+				FBF19EE02425554300E836FD /* StateRepository.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1138,8 +1158,10 @@
 				FBF19ED42425522200E836FD /* Genre+CoreDataClass.swift in Sources */,
 				FB31D5BD241E7DF800B16558 /* RegisterApiClient.swift in Sources */,
 				FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */,
+				FBF19EE12425554300E836FD /* StateRepository.swift in Sources */,
 				FBF19EDE2425540E00E836FD /* PlatformRepository.swift in Sources */,
 				FB463C86241D0BBF006F1A12 /* SagasRouter.swift in Sources */,
+				FBF19EE6242557A500E836FD /* State+CoreDataClass.swift in Sources */,
 				FBA54836241580B600C23DB3 /* BaseRouter.swift in Sources */,
 				FB463CA2241D65B3006F1A12 /* LoginRequest.swift in Sources */,
 				FB448DE1241FE87F008ACE69 /* UserProfileViewModel.swift in Sources */,
@@ -1167,6 +1189,7 @@
 				FB31D5C9241EB08800B16558 /* RegisterDataModelRequest.swift in Sources */,
 				FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */,
 				FBF19ED52425522200E836FD /* Genre+CoreDataProperties.swift in Sources */,
+				FBF19EE32425554E00E836FD /* State+StateResponse.swift in Sources */,
 				FB31D5CB241EB17300B16558 /* EmptyResponse.swift in Sources */,
 				FBF19EAF242536CA00E836FD /* FormatResponse.swift in Sources */,
 				FB463C88241D0BBF006F1A12 /* SagasApiClient.swift in Sources */,
@@ -1192,6 +1215,7 @@
 				FBF19EC224253A7400E836FD /* GetStatesRequest.swift in Sources */,
 				FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */,
 				FBB1A36A241C10E800E91579 /* Constants.swift in Sources */,
+				FBF19EE7242557A500E836FD /* State+CoreDataProperties.swift in Sources */,
 				FBA5482B24157E4800C23DB3 /* CoreDataStack.swift in Sources */,
 				FB1DFEB62416BAE8000CAD7B /* LoadingScreen.swift in Sources */,
 				FBF19ECB24254C2300E836FD /* FormatRepository.swift in Sources */,
