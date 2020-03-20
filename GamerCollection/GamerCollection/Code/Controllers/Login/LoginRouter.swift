@@ -29,7 +29,8 @@ class LoginRouter: BaseRouter {
         return LoginDataManager(apiClient: apiClient,
                                 userManager: userManager,
                                 formatRepository: formatRepository,
-                                genreRepository: genreRepository)
+                                genreRepository: genreRepository,
+                                platformRepository: platformRepository)
     }
     
     private var apiClient: LoginApiClientProtocol {
@@ -46,6 +47,10 @@ class LoginRouter: BaseRouter {
     
     private var genreRepository: GenreRepository {
         return GenreRepository()
+    }
+    
+    private var platformRepository: PlatformRepository {
+        return PlatformRepository()
     }
     
     // MARK: - Initialization

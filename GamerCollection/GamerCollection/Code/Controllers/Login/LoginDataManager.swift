@@ -18,6 +18,7 @@ protocol LoginDataManagerProtocol: class {
     func storeCredentials(authData: AuthData)
     func getFormats(success: @escaping (FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class LoginDataManager: BaseDataManager {
@@ -30,17 +31,20 @@ class LoginDataManager: BaseDataManager {
     private let userManager: UserManager
     private let formatRepository: FormatRepository
     private let genreRepository: GenreRepository
+    private let platformRepository: PlatformRepository
     
     // MARK: - Initialization
     
     init(apiClient: LoginApiClientProtocol,
          userManager: UserManager,
          formatRepository: FormatRepository,
-         genreRepository: GenreRepository) {
+         genreRepository: GenreRepository,
+         platformRepository: PlatformRepository) {
         self.apiClient = apiClient
         self.userManager = userManager
         self.formatRepository = formatRepository
         self.genreRepository = genreRepository
+        self.platformRepository = platformRepository
     }
 }
 
@@ -88,6 +92,20 @@ extension LoginDataManager: LoginDataManagerProtocol {
                 self.genreRepository.update(item: genre, success: { _ in
                     if index == genres.count - 1 {
                         success(genres)
+                    }
+                }, failure: failure)
+            }
+        }, failure: failure)
+    }
+    
+    func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        apiClient.getPlatforms(success: { platforms in
+            
+            for (index, platform) in platforms.enumerated() {
+                self.platformRepository.update(item: platform, success: { _ in
+                    if index == platforms.count - 1 {
+                        success(platforms)
                     }
                 }, failure: failure)
             }

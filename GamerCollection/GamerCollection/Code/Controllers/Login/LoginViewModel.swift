@@ -48,11 +48,15 @@ class LoginViewModel: BaseViewModel {
         
         dataManager.getFormats(success: { _ in
             self.dataManager.getGenres(success: { _ in
-                
-                self.dataManager.storeUserData(userData: userData)
-                self.dataManager.storeCredentials(authData: authData)
-                MainTabBarController.show()
-                self.view?.hideLoading()
+                self.dataManager.getPlatforms(success: { _ in
+                    
+                    self.dataManager.storeUserData(userData: userData)
+                    self.dataManager.storeCredentials(authData: authData)
+                    MainTabBarController.show()
+                    self.view?.hideLoading()
+                }, failure: { error in
+                    self.manageError(error: error)
+                })
             }, failure: { error in
                 self.manageError(error: error)
             })
