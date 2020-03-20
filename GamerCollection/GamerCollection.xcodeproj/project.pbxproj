@@ -98,6 +98,10 @@
 		FBF19EC724254A0A00E836FD /* Format+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EC524254A0A00E836FD /* Format+CoreDataProperties.swift */; };
 		FBF19EC924254BDE00E836FD /* Format+FormatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EC824254BDE00E836FD /* Format+FormatResponse.swift */; };
 		FBF19ECB24254C2300E836FD /* FormatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19ECA24254C2300E836FD /* FormatRepository.swift */; };
+		FBF19ECF242551D500E836FD /* GenreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19ECE242551D500E836FD /* GenreRepository.swift */; };
+		FBF19ED1242551E000E836FD /* Genre+GenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19ED0242551E000E836FD /* Genre+GenreResponse.swift */; };
+		FBF19ED42425522200E836FD /* Genre+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19ED22425522200E836FD /* Genre+CoreDataClass.swift */; };
+		FBF19ED52425522200E836FD /* Genre+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19ED32425522200E836FD /* Genre+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +218,10 @@
 		FBF19EC524254A0A00E836FD /* Format+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Format+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FBF19EC824254BDE00E836FD /* Format+FormatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Format+FormatResponse.swift"; sourceTree = "<group>"; };
 		FBF19ECA24254C2300E836FD /* FormatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatRepository.swift; sourceTree = "<group>"; };
+		FBF19ECE242551D500E836FD /* GenreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreRepository.swift; sourceTree = "<group>"; };
+		FBF19ED0242551E000E836FD /* Genre+GenreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Genre+GenreResponse.swift"; sourceTree = "<group>"; };
+		FBF19ED22425522200E836FD /* Genre+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Genre+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FBF19ED32425522200E836FD /* Genre+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Genre+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -584,6 +592,7 @@
 			isa = PBXGroup;
 			children = (
 				FBF19EC32425499400E836FD /* Format */,
+				FBF19ECD242551C000E836FD /* Genre */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -883,6 +892,17 @@
 			path = Format;
 			sourceTree = "<group>";
 		};
+		FBF19ECD242551C000E836FD /* Genre */ = {
+			isa = PBXGroup;
+			children = (
+				FBF19ED22425522200E836FD /* Genre+CoreDataClass.swift */,
+				FBF19ED32425522200E836FD /* Genre+CoreDataProperties.swift */,
+				FBF19ED0242551E000E836FD /* Genre+GenreResponse.swift */,
+				FBF19ECE242551D500E836FD /* GenreRepository.swift */,
+			);
+			path = Genre;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1077,6 +1097,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB463C94241D0C29006F1A12 /* RankingDataManager.swift in Sources */,
+				FBF19ECF242551D500E836FD /* GenreRepository.swift in Sources */,
 				FB463CA9241D6AA5006F1A12 /* Encodable+Extension.swift in Sources */,
 				FB31D5BC241E7DF800B16558 /* RegisterViewController.swift in Sources */,
 				FBF19EC624254A0A00E836FD /* Format+CoreDataClass.swift in Sources */,
@@ -1093,6 +1114,7 @@
 				FB463C62241CFE53006F1A12 /* LoginViewModel.swift in Sources */,
 				FBF19EB32425388F00E836FD /* GenreResponse.swift in Sources */,
 				FB463CA6241D69DF006F1A12 /* LoginDataModelRequest.swift in Sources */,
+				FBF19ED42425522200E836FD /* Genre+CoreDataClass.swift in Sources */,
 				FB31D5BD241E7DF800B16558 /* RegisterApiClient.swift in Sources */,
 				FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */,
 				FB463C86241D0BBF006F1A12 /* SagasRouter.swift in Sources */,
@@ -1121,12 +1143,14 @@
 				FBA54838241580C300C23DB3 /* BaseViewController.swift in Sources */,
 				FB31D5C9241EB08800B16558 /* RegisterDataModelRequest.swift in Sources */,
 				FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */,
+				FBF19ED52425522200E836FD /* Genre+CoreDataProperties.swift in Sources */,
 				FB31D5CB241EB17300B16558 /* EmptyResponse.swift in Sources */,
 				FBF19EAF242536CA00E836FD /* FormatResponse.swift in Sources */,
 				FB463C88241D0BBF006F1A12 /* SagasApiClient.swift in Sources */,
 				FBF19EAC242536A600E836FD /* GetFormatsRequest.swift in Sources */,
 				FB448DDF241FE87F008ACE69 /* UserProfileViewController.swift in Sources */,
 				FB463C5F241CFE53006F1A12 /* LoginRouter.swift in Sources */,
+				FBF19ED1242551E000E836FD /* Genre+GenreResponse.swift in Sources */,
 				FBB1A372241C273E00E91579 /* UserData.swift in Sources */,
 				FB448DE0241FE87F008ACE69 /* UserProfileApiClient.swift in Sources */,
 				FB7DB585242441D50040FC84 /* CoreDataRepositoryProtocol.swift in Sources */,
