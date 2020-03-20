@@ -86,6 +86,8 @@
 		FBB1A372241C273E00E91579 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A371241C273E00E91579 /* UserData.swift */; };
 		FBB1A375241C4AC500E91579 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A374241C4AC500E91579 /* UserManager.swift */; };
 		FBB1A378241C4D9400E91579 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FBB1A377241C4D9400E91579 /* KeychainAccess */; };
+		FBF19EAC242536A600E836FD /* GetFormatsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */; };
+		FBF19EAF242536CA00E836FD /* FormatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAE242536CA00E836FD /* FormatResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +192,8 @@
 		FBB1A36F241C273200E91579 /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
 		FBB1A371241C273E00E91579 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		FBB1A374241C4AC500E91579 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFormatsRequest.swift; sourceTree = "<group>"; };
+		FBF19EAE242536CA00E836FD /* FormatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +275,7 @@
 				FB448DEC242029BF008ACE69 /* DeleteUser */,
 				FB31D5CC241EB17A00B16558 /* Empty */,
 				FB31D5CD241EB18300B16558 /* Error */,
+				FBF19EA82425363E00E836FD /* Formats */,
 				FB463C9F241D51E4006F1A12 /* Login */,
 				FB31D5C2241EB02D00B16558 /* Register */,
 				FB448DE4242003CE008ACE69 /* UpdatePassword */,
@@ -775,6 +780,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FBF19EA82425363E00E836FD /* Formats */ = {
+			isa = PBXGroup;
+			children = (
+				FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */,
+				FBF19EAD242536A900E836FD /* Model */,
+			);
+			path = Formats;
+			sourceTree = "<group>";
+		};
+		FBF19EAD242536A900E836FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBF19EAE242536CA00E836FD /* FormatResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1007,7 +1029,9 @@
 				FB31D5C9241EB08800B16558 /* RegisterDataModelRequest.swift in Sources */,
 				FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */,
 				FB31D5CB241EB17300B16558 /* EmptyResponse.swift in Sources */,
+				FBF19EAF242536CA00E836FD /* FormatResponse.swift in Sources */,
 				FB463C88241D0BBF006F1A12 /* SagasApiClient.swift in Sources */,
+				FBF19EAC242536A600E836FD /* GetFormatsRequest.swift in Sources */,
 				FB448DDF241FE87F008ACE69 /* UserProfileViewController.swift in Sources */,
 				FB463C5F241CFE53006F1A12 /* LoginRouter.swift in Sources */,
 				FBB1A372241C273E00E91579 /* UserData.swift in Sources */,
