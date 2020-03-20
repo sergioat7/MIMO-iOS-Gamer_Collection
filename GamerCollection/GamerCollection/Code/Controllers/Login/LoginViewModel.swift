@@ -44,11 +44,29 @@ class LoginViewModel: BaseViewModel {
         view?.showError(message: error.error, handler: nil)
     }
     
-    private func syncApp() {
+    private func syncApp(userData: UserData, authData: AuthData) {
         
-        //TODO get data from server
-        MainTabBarController.show()
-        view?.hideLoading()
+        dataManager.getFormats(success: { _ in
+            self.dataManager.getGenres(success: { _ in
+                self.dataManager.getPlatforms(success: { _ in
+                    self.dataManager.getStates(success: { _ in
+                        
+                        self.dataManager.storeUserData(userData: userData)
+                        self.dataManager.storeCredentials(authData: authData)
+                        MainTabBarController.show()
+                        self.view?.hideLoading()
+                    }, failure: { error in
+                        self.manageError(error: error)
+                    })
+                }, failure: { error in
+                    self.manageError(error: error)
+                })
+            }, failure: { error in
+                self.manageError(error: error)
+            })
+        }, failure: { error in
+            self.manageError(error: error)
+        })
     }
 }
 
@@ -71,12 +89,14 @@ extension LoginViewModel: LoginViewModelProtocol {
         
         view?.showLoading()
         dataManager.login(username: username, password: password, success: { loginResponse in
-            
-            let userData = UserData(userName: username, password: password, isLoggedIn: true)
-            let authData = AuthData(token: loginResponse.token)
-            self.dataManager.storeUserData(userData: userData)
-            self.dataManager.storeCredentials(authData: authData)
-            self.syncApp()
+            self.dataManager.getFormats(success: { _ in
+
+                let userData = UserData(userName: username, password: password, isLoggedIn: true)
+                let authData = AuthData(token: loginResponse.token)
+                self.syncApp(userData: userData, authData: authData)
+            }, failure: { error in
+                self.manageError(error: error)
+            })
         }, failure: { error in
             self.manageError(error: error)
         })

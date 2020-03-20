@@ -16,6 +16,10 @@ protocol LoginDataManagerProtocol: class {
     func login(username: String, password: String, success: @escaping (LoginResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func storeUserData(userData: UserData)
     func storeCredentials(authData: AuthData)
+    func getFormats(success: @escaping (FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class LoginDataManager: BaseDataManager {
@@ -26,13 +30,25 @@ class LoginDataManager: BaseDataManager {
     
     private let apiClient: LoginApiClientProtocol
     private let userManager: UserManager
+    private let formatRepository: FormatRepository
+    private let genreRepository: GenreRepository
+    private let platformRepository: PlatformRepository
+    private let stateRepository: StateRepository
     
     // MARK: - Initialization
     
     init(apiClient: LoginApiClientProtocol,
-         userManager: UserManager) {
+         userManager: UserManager,
+         formatRepository: FormatRepository,
+         genreRepository: GenreRepository,
+         platformRepository: PlatformRepository,
+         stateRepository: StateRepository) {
         self.apiClient = apiClient
         self.userManager = userManager
+        self.formatRepository = formatRepository
+        self.genreRepository = genreRepository
+        self.platformRepository = platformRepository
+        self.stateRepository = stateRepository
     }
 }
 
@@ -55,6 +71,66 @@ extension LoginDataManager: LoginDataManagerProtocol {
     
     func storeCredentials(authData: AuthData) {
         userManager.storeCredentials(authData: authData)
+    }
+    
+    func getFormats(success: @escaping (FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        apiClient.getFormats(success: { formats in
+            
+            for (index, format) in formats.enumerated() {
+                self.formatRepository.update(item: format, success: { _ in
+                    
+                    if index == formats.count - 1 {
+                        success(formats)
+                    }
+                }, failure: failure)
+            }
+        }, failure: failure)
+    }
+    
+    func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        apiClient.getGenres(success: { genres in
+            
+            for (index, genre) in genres.enumerated() {
+                self.genreRepository.update(item: genre, success: { _ in
+                    
+                    if index == genres.count - 1 {
+                        success(genres)
+                    }
+                }, failure: failure)
+            }
+        }, failure: failure)
+    }
+    
+    func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        apiClient.getPlatforms(success: { platforms in
+            
+            for (index, platform) in platforms.enumerated() {
+                self.platformRepository.update(item: platform, success: { _ in
+                    
+                    if index == platforms.count - 1 {
+                        success(platforms)
+                    }
+                }, failure: failure)
+            }
+        }, failure: failure)
+    }
+    
+    func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        apiClient.getStates(success: { states in
+            
+            for (index, state) in states.enumerated() {
+                self.stateRepository.update(item: state, success: { _ in
+                    
+                    if index == states.count - 1 {
+                        success(states)
+                    }
+                }, failure: failure)
+            }
+        }, failure: failure)
     }
 }
 
