@@ -46,9 +46,13 @@ class LoginViewModel: BaseViewModel {
     
     private func syncApp() {
         
-        //TODO get data from server
-        MainTabBarController.show()
-        view?.hideLoading()
+        dataManager.getFormats(success: { _ in
+            
+            MainTabBarController.show()
+            self.view?.hideLoading()
+        }, failure: { error in
+            self.manageError(error: error)
+        })
     }
 }
 
