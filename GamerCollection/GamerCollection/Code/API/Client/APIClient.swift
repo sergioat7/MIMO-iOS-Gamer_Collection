@@ -27,10 +27,15 @@ public class APIClient {
         let method = request.method
         let interceptor = request.interceptor
         
+        var headers = HTTPHeaders()
+        headers.add(name: "Accept", value: "application/json")
+        headers.add(name: "Accept-Language", value: Locale.current.languageCode ?? "en")
+        
         let request = session.request(endpoint,
                                       method: method,
                                       parameters: parameters,
                                       encoding: JSONEncoding.default,
+                                      headers: headers,
                                       interceptor: interceptor).validate()
         request.response { response in
             
