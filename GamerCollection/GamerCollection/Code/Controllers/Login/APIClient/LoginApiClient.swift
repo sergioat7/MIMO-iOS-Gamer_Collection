@@ -14,6 +14,7 @@ protocol LoginApiClientProtocol {
     func getFormats(success: @escaping (FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class LoginApiClient: LoginApiClientProtocol {
@@ -41,6 +42,12 @@ class LoginApiClient: LoginApiClientProtocol {
     func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
         let request = GetPlatformsRequest()
+        APIClient.shared.sendServer(request, success: success, failure: failure)
+    }
+    
+    func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        let request = GetStatesRequest()
         APIClient.shared.sendServer(request, success: success, failure: failure)
     }
 }

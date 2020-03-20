@@ -92,6 +92,8 @@
 		FBF19EB5242538A600E836FD /* GetGenresRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EB4242538A600E836FD /* GetGenresRequest.swift */; };
 		FBF19EBA2425397000E836FD /* GetPlatformsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EB92425397000E836FD /* GetPlatformsRequest.swift */; };
 		FBF19EBC2425397B00E836FD /* PlatformResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EBB2425397B00E836FD /* PlatformResponse.swift */; };
+		FBF19EBF24253A6200E836FD /* StateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EBE24253A6200E836FD /* StateResponse.swift */; };
+		FBF19EC224253A7400E836FD /* GetStatesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EC124253A7400E836FD /* GetStatesRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,6 +204,8 @@
 		FBF19EB4242538A600E836FD /* GetGenresRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGenresRequest.swift; sourceTree = "<group>"; };
 		FBF19EB92425397000E836FD /* GetPlatformsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlatformsRequest.swift; sourceTree = "<group>"; };
 		FBF19EBB2425397B00E836FD /* PlatformResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformResponse.swift; sourceTree = "<group>"; };
+		FBF19EBE24253A6200E836FD /* StateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateResponse.swift; sourceTree = "<group>"; };
+		FBF19EC124253A7400E836FD /* GetStatesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStatesRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +292,7 @@
 				FB463C9F241D51E4006F1A12 /* Login */,
 				FBF19EB72425395300E836FD /* Platforms */,
 				FB31D5C2241EB02D00B16558 /* Register */,
+				FBF19EBD24253A4D00E836FD /* States */,
 				FB448DE4242003CE008ACE69 /* UpdatePassword */,
 			);
 			path = Requests;
@@ -841,6 +846,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FBF19EBD24253A4D00E836FD /* States */ = {
+			isa = PBXGroup;
+			children = (
+				FBF19EC124253A7400E836FD /* GetStatesRequest.swift */,
+				FBF19EC024253A6500E836FD /* Model */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		FBF19EC024253A6500E836FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBF19EBE24253A6200E836FD /* StateResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1058,6 +1080,7 @@
 				FB1DFEC12416BEA5000CAD7B /* ErrorResponse.swift in Sources */,
 				FB1DFEBD2416BE2C000CAD7B /* APIClient.swift in Sources */,
 				FB463C87241D0BBF006F1A12 /* SagasViewController.swift in Sources */,
+				FBF19EBF24253A6200E836FD /* StateResponse.swift in Sources */,
 				FBB1A370241C273200E91579 /* AuthData.swift in Sources */,
 				FB463C61241CFE53006F1A12 /* LoginApiClient.swift in Sources */,
 				FB463C74241D0A48006F1A12 /* GamesRouter.swift in Sources */,
@@ -1095,6 +1118,7 @@
 				FB31D5BE241E7DF800B16558 /* RegisterViewModel.swift in Sources */,
 				FB448DEE242029CF008ACE69 /* DeleteUserRequest.swift in Sources */,
 				FB463C78241D0A48006F1A12 /* GamesDataManager.swift in Sources */,
+				FBF19EC224253A7400E836FD /* GetStatesRequest.swift in Sources */,
 				FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */,
 				FBB1A36A241C10E800E91579 /* Constants.swift in Sources */,
 				FBA5482B24157E4800C23DB3 /* CoreDataStack.swift in Sources */,
