@@ -14,7 +14,7 @@ import CoreData
 extension Format {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Format> {
-        return NSFetchRequest<Format>(entityName: "Format")
+        return NSFetchRequest<Format>(entityName: Format.entityName)
     }
 
     @NSManaged public var id: String?

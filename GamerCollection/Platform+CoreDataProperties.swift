@@ -13,7 +13,7 @@ import CoreData
 extension Platform {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Platform> {
-        return NSFetchRequest<Platform>(entityName: "Platform")
+        return NSFetchRequest<Platform>(entityName: Platform.entityName)
     }
 
     @NSManaged public var id: String?

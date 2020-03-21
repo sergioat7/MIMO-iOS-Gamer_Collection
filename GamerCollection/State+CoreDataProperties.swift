@@ -13,7 +13,7 @@ import CoreData
 extension State {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<State> {
-        return NSFetchRequest<State>(entityName: "State")
+        return NSFetchRequest<State>(entityName: State.entityName)
     }
 
     @NSManaged public var id: String?

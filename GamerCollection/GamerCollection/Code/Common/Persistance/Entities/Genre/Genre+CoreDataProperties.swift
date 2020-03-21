@@ -13,7 +13,7 @@ import CoreData
 extension Genre {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Genre> {
-        return NSFetchRequest<Genre>(entityName: "Genre")
+        return NSFetchRequest<Genre>(entityName: Genre.entityName)
     }
 
     @NSManaged public var id: String?
