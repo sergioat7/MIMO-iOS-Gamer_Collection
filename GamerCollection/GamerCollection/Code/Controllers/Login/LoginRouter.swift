@@ -35,7 +35,7 @@ class LoginRouter: BaseRouter {
     }
     
     private var apiClient: LoginApiClientProtocol {
-        return LoginApiClient()
+        return LoginApiClient(userManager: userManager)
     }
     
     private var userManager: UserManager {

@@ -110,6 +110,8 @@
 		FBF19EE32425554E00E836FD /* State+StateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EE22425554E00E836FD /* State+StateResponse.swift */; };
 		FBF19EE6242557A500E836FD /* State+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EE4242557A500E836FD /* State+CoreDataClass.swift */; };
 		FBF19EE7242557A500E836FD /* State+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EE5242557A500E836FD /* State+CoreDataProperties.swift */; };
+		FBF19EEA2425927600E836FD /* GetGamesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EE92425927600E836FD /* GetGamesRequest.swift */; };
+		FBF19EED2425928400E836FD /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EEC2425928400E836FD /* GameResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +240,8 @@
 		FBF19EE22425554E00E836FD /* State+StateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+StateResponse.swift"; sourceTree = "<group>"; };
 		FBF19EE4242557A500E836FD /* State+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FBF19EE5242557A500E836FD /* State+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		FBF19EE92425927600E836FD /* GetGamesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGamesRequest.swift; sourceTree = "<group>"; };
+		FBF19EEC2425928400E836FD /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +324,7 @@
 				FB31D5CC241EB17A00B16558 /* Empty */,
 				FB31D5CD241EB18300B16558 /* Error */,
 				FBF19EA82425363E00E836FD /* Formats */,
+				FBF19EE82425924500E836FD /* Games */,
 				FBF19EB02425387500E836FD /* Genres */,
 				FB463C9F241D51E4006F1A12 /* Login */,
 				FBF19EB72425395300E836FD /* Platforms */,
@@ -943,6 +948,23 @@
 			path = State;
 			sourceTree = "<group>";
 		};
+		FBF19EE82425924500E836FD /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				FBF19EE92425927600E836FD /* GetGamesRequest.swift */,
+				FBF19EEB2425927900E836FD /* Model */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		FBF19EEB2425927900E836FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBF19EEC2425928400E836FD /* GameResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1166,6 +1188,7 @@
 				FB463CA2241D65B3006F1A12 /* LoginRequest.swift in Sources */,
 				FB448DE1241FE87F008ACE69 /* UserProfileViewModel.swift in Sources */,
 				FB1DFEC12416BEA5000CAD7B /* ErrorResponse.swift in Sources */,
+				FBF19EED2425928400E836FD /* GameResponse.swift in Sources */,
 				FB1DFEBD2416BE2C000CAD7B /* APIClient.swift in Sources */,
 				FB463C87241D0BBF006F1A12 /* SagasViewController.swift in Sources */,
 				FBF19EBF24253A6200E836FD /* StateResponse.swift in Sources */,
@@ -1182,6 +1205,7 @@
 				FB463C63241CFE53006F1A12 /* LoginDataManager.swift in Sources */,
 				FB463C91241D0C29006F1A12 /* RankingRouter.swift in Sources */,
 				FB448DEB24200410008ACE69 /* UpdatePasswordDataModelRequest.swift in Sources */,
+				FBF19EEA2425927600E836FD /* GetGamesRequest.swift in Sources */,
 				FBF19EBA2425397000E836FD /* GetPlatformsRequest.swift in Sources */,
 				FBA5483A241580D400C23DB3 /* BaseViewModel.swift in Sources */,
 				FB1DFEBF2416BE62000CAD7B /* APIRequest.swift in Sources */,
