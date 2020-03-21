@@ -99,7 +99,9 @@ extension UserProfileViewModel: UserProfileViewModelProtocol {
         view?.showLoading()
         dataManager.deleteUser(success: { _ in
             
-            self.logout()
+            self.dataManager.removeUserData()
+            self.dataManager.removeCredentials()
+            LoginRouter().show()
             self.view?.hideLoading()
         }, failure: { error in
             self.manageError(error: error)
