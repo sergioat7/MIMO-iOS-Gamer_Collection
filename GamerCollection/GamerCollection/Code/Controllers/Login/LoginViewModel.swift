@@ -44,17 +44,19 @@ class LoginViewModel: BaseViewModel {
         view?.showError(message: error.error, handler: nil)
     }
     
-    private func syncApp(userData: UserData, authData: AuthData) {
+    private func syncApp() {
         
         dataManager.getFormats(success: { _ in
             self.dataManager.getGenres(success: { _ in
                 self.dataManager.getPlatforms(success: { _ in
                     self.dataManager.getStates(success: { _ in
-                        
-                        self.dataManager.storeUserData(userData: userData)
-                        self.dataManager.storeCredentials(authData: authData)
-                        MainTabBarController.show()
-                        self.view?.hideLoading()
+                        self.dataManager.getGames(success: { _ in
+                            
+                            MainTabBarController.show()
+                            self.view?.hideLoading()
+                        }, failure: { error in
+                            self.manageError(error: error)
+                        })
                     }, failure: { error in
                         self.manageError(error: error)
                     })
@@ -93,7 +95,9 @@ extension LoginViewModel: LoginViewModelProtocol {
 
                 let userData = UserData(userName: username, password: password, isLoggedIn: true)
                 let authData = AuthData(token: loginResponse.token)
-                self.syncApp(userData: userData, authData: authData)
+                self.dataManager.storeUserData(userData: userData)
+                self.dataManager.storeCredentials(authData: authData)
+                self.syncApp()
             }, failure: { error in
                 self.manageError(error: error)
             })

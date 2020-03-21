@@ -20,6 +20,7 @@ protocol LoginDataManagerProtocol: class {
     func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class LoginDataManager: BaseDataManager {
@@ -34,6 +35,7 @@ class LoginDataManager: BaseDataManager {
     private let genreRepository: GenreRepository
     private let platformRepository: PlatformRepository
     private let stateRepository: StateRepository
+    private let gameRepository: GameRepository
     
     // MARK: - Initialization
     
@@ -42,13 +44,15 @@ class LoginDataManager: BaseDataManager {
          formatRepository: FormatRepository,
          genreRepository: GenreRepository,
          platformRepository: PlatformRepository,
-         stateRepository: StateRepository) {
+         stateRepository: StateRepository,
+         gameRepository: GameRepository) {
         self.apiClient = apiClient
         self.userManager = userManager
         self.formatRepository = formatRepository
         self.genreRepository = genreRepository
         self.platformRepository = platformRepository
         self.stateRepository = stateRepository
+        self.gameRepository = gameRepository
     }
 }
 
@@ -127,6 +131,21 @@ extension LoginDataManager: LoginDataManagerProtocol {
                     
                     if index == states.count - 1 {
                         success(states)
+                    }
+                }, failure: failure)
+            }
+        }, failure: failure)
+    }
+    
+    func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        apiClient.getGames(success: { games in
+            
+            for (index, game) in games.enumerated() {
+                self.gameRepository.update(item: game, success: { _ in
+                    
+                    if index == games.count - 1 {
+                        success(games)
                     }
                 }, failure: failure)
             }
