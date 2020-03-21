@@ -48,12 +48,28 @@ class UserProfileViewModel: BaseViewModel {
         
         dataManager.deleteGames(success: {
             
-            self.dataManager.removeUserData()
+            //TODO delete sagas
+            //TODO delete songs
             self.dataManager.removeCredentials()
             LoginRouter().show()
         }, failure: { error in
             self.manageError(error: error)
         })
+    }
+    
+    @objc private func logout() {
+        
+        view?.showConfirmationDialog(message: "PROFILE_LOGOUT_CONFIRMATION".localized(), handler: {
+            
+            self.view?.showLoading()
+            self.dataManager.logout(success: { _ in
+                
+                self.dataManager.removePassword()
+                self.removeData()
+            }, failure: { error in
+                self.manageError(error: error)
+            })
+        }, handlerCancel: nil)
     }
 }
 
@@ -61,6 +77,7 @@ extension UserProfileViewModel: UserProfileViewModelProtocol {
     
     func viewDidLoad() {
         
+        logoutHandler = #selector(logout)
         showNavBarButtons()
         view?.showLoading()
         dataManager.getUserData(success: { userData in
@@ -98,6 +115,8 @@ extension UserProfileViewModel: UserProfileViewModelProtocol {
         
         view?.showLoading()
         dataManager.deleteUser(success: { _ in
+            
+            self.dataManager.removeUserData()
             self.removeData()
         }, failure: { error in
             self.manageError(error: error)

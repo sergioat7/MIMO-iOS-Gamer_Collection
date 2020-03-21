@@ -81,6 +81,10 @@ extension LoginDataManager: LoginDataManagerProtocol {
         
         apiClient.getFormats(success: { formats in
             
+            guard !formats.isEmpty else {
+                success(formats)
+                return
+            }
             for (index, format) in formats.enumerated() {
                 self.formatRepository.update(item: format, success: { _ in
                     
@@ -96,6 +100,10 @@ extension LoginDataManager: LoginDataManagerProtocol {
         
         apiClient.getGenres(success: { genres in
             
+            guard !genres.isEmpty else {
+                success(genres)
+                return
+            }
             for (index, genre) in genres.enumerated() {
                 self.genreRepository.update(item: genre, success: { _ in
                     
@@ -111,6 +119,10 @@ extension LoginDataManager: LoginDataManagerProtocol {
         
         apiClient.getPlatforms(success: { platforms in
             
+            guard !platforms.isEmpty else {
+                success(platforms)
+                return
+            }
             for (index, platform) in platforms.enumerated() {
                 self.platformRepository.update(item: platform, success: { _ in
                     
@@ -126,6 +138,10 @@ extension LoginDataManager: LoginDataManagerProtocol {
         
         apiClient.getStates(success: { states in
             
+            guard !states.isEmpty else {
+                success(states)
+                return
+            }
             for (index, state) in states.enumerated() {
                 self.stateRepository.update(item: state, success: { _ in
                     
@@ -140,6 +156,11 @@ extension LoginDataManager: LoginDataManagerProtocol {
     func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
         apiClient.getGames(success: { games in
+            
+            guard !games.isEmpty else {
+                success(games)
+                return
+            }
             
             for (index, game) in games.enumerated() {
                 self.gameRepository.update(item: game, success: { _ in

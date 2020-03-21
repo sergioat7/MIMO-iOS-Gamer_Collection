@@ -12,22 +12,10 @@ class BaseViewModel {
     
     private weak var view:BaseViewProtocol?
     
+    var logoutHandler: Selector?
+    
     init(view: BaseViewProtocol) {
         self.view = view
-    }
-    
-    func getRightButtons() -> [UIBarButtonItem] {
-        
-        // MARK: Logout button
-        let logoutButton = UIButton(type: .system)
-        logoutButton.tintColor = Color.color1
-        logoutButton.setImage(UIImage(named: "logout"), for: UIControl.State())
-        let logoutButtonItem = UIBarButtonItem(customView: logoutButton)
-
-        let rightBarButtonItems = [logoutButtonItem]
-        logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
-        
-        return rightBarButtonItems
     }
     
     func showNavBarButtons() {
@@ -38,29 +26,19 @@ class BaseViewModel {
     
     // MARK: - Private functions
     
-    @objc private func logout() {
+    private func getRightButtons() -> [UIBarButtonItem] {
         
-        view?.showConfirmationDialog(message: "PROFILE_LOGOUT_CONFIRMATION".localized(), handler: {
-            
-            self.view?.showLoading()
-            let userManager = UserManager()
-            let userProfileApiClient = UserProfileApiClient(userManager: userManager)
-            let gameRepository = GameRepository()
-            
-            userProfileApiClient.logout(success: { _ in
-                gameRepository.deleteAll(success: {
-                    
-                    userManager.removePassword()
-                    userManager.removeCredentials()
-                    LoginRouter().show()
-                }, failure: { error in
-                    self.view?.hideLoading()
-                    self.view?.showError(message: error.error, handler: nil)
-                })
-            }, failure: { error in
-                self.view?.hideLoading()
-                self.view?.showError(message: error.error, handler: nil)
-            })
-        }, handlerCancel: nil)
+        // MARK: Logout button
+        let logoutButton = UIButton(type: .system)
+        logoutButton.tintColor = Color.color1
+        logoutButton.setImage(UIImage(named: "logout"), for: UIControl.State())
+        let logoutButtonItem = UIBarButtonItem(customView: logoutButton)
+
+        let rightBarButtonItems = [logoutButtonItem]
+        if let logout = logoutHandler {
+            logoutButton.addTarget(self, action: logout, for: .touchUpInside)
+        }
+        
+        return rightBarButtonItems
     }
 }
