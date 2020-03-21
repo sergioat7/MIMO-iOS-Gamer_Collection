@@ -10,6 +10,7 @@ import UIKit
 
 protocol UserProfileApiClientProtocol {
     
+    func logout(success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func updatePassword(password: String, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func login(username: String, password: String, success: @escaping (LoginResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func deleteUser(success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
@@ -31,6 +32,15 @@ class UserProfileApiClient: UserProfileApiClientProtocol {
     }
     
     // MARK: - UserProfileApiClientProtocol
+    
+    func logout(success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        getCredentials(success: { authData in
+            
+            let request = LogoutRequest(token: authData.token)
+            APIClient.shared.sendServer(request, success: success, failure: failure)
+        }, failure: failure)
+    }
     
     func updatePassword(password: String, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         

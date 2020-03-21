@@ -46,9 +46,14 @@ class UserProfileViewModel: BaseViewModel {
     
     private func logout() {
         
-        dataManager.removeUserData()
-        dataManager.removeCredentials()
-        LoginRouter().show()
+        dataManager.logout(success: { _ in
+            
+            self.dataManager.removeUserData()
+            self.dataManager.removeCredentials()
+            LoginRouter().show()
+        }, failure: { error in
+            self.manageError(error: error)
+        })
     }
 }
 

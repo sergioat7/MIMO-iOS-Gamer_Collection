@@ -13,6 +13,7 @@ protocol UserProfileDataManagerProtocol: class {
      * Add here your methods for communication VIEW_MODEL -> DATA_MANAGER
      */
     func getUserData(success: @escaping (UserData) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func logout(success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func updatePassword(password: String, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func storePassword(password: String)
     func login(username: String, password: String, success: @escaping (LoginResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
@@ -47,6 +48,10 @@ extension UserProfileDataManager: UserProfileDataManagerProtocol {
         userManager.getUserData(success: { userData in
             success(userData)
         }, failure: failure)
+    }
+    
+    func logout(success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        apiClient.logout(success: success, failure: failure)
     }
     
     func updatePassword(password: String, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {

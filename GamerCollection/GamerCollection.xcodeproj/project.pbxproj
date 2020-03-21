@@ -110,8 +110,9 @@
 		FBF19EE32425554E00E836FD /* State+StateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EE22425554E00E836FD /* State+StateResponse.swift */; };
 		FBF19EE6242557A500E836FD /* State+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EE4242557A500E836FD /* State+CoreDataClass.swift */; };
 		FBF19EE7242557A500E836FD /* State+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EE5242557A500E836FD /* State+CoreDataProperties.swift */; };
-		FBF19EEA2425927600E836FD /* GetGamesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EE92425927600E836FD /* GetGamesRequest.swift */; };
-		FBF19EED2425928400E836FD /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EEC2425928400E836FD /* GameResponse.swift */; };
+		FBF19EF1242596A500E836FD /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EF0242596A500E836FD /* LogoutRequest.swift */; };
+        FBF19EEA2425927600E836FD /* GetGamesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EE92425927600E836FD /* GetGamesRequest.swift */; };
+        FBF19EED2425928400E836FD /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EEC2425928400E836FD /* GameResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +241,7 @@
 		FBF19EE22425554E00E836FD /* State+StateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+StateResponse.swift"; sourceTree = "<group>"; };
 		FBF19EE4242557A500E836FD /* State+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FBF19EE5242557A500E836FD /* State+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+        FBF19EF0242596A500E836FD /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		FBF19EE92425927600E836FD /* GetGamesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGamesRequest.swift; sourceTree = "<group>"; };
 		FBF19EEC2425928400E836FD /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -327,6 +329,7 @@
 				FBF19EE82425924500E836FD /* Games */,
 				FBF19EB02425387500E836FD /* Genres */,
 				FB463C9F241D51E4006F1A12 /* Login */,
+				FBF19EEE2425968800E836FD /* Logout */,
 				FBF19EB72425395300E836FD /* Platforms */,
 				FB31D5C2241EB02D00B16558 /* Register */,
 				FBF19EBD24253A4D00E836FD /* States */,
@@ -948,6 +951,14 @@
 			path = State;
 			sourceTree = "<group>";
 		};
+        FBF19EEE2425968800E836FD /* Logout */ = {
+            isa = PBXGroup;
+            children = (
+                FBF19EF0242596A500E836FD /* LogoutRequest.swift */,
+            );
+            path = Logout;
+            sourceTree = "<group>";
+        };
 		FBF19EE82425924500E836FD /* Games */ = {
 			isa = PBXGroup;
 			children = (
@@ -1186,6 +1197,7 @@
 				FBF19EE6242557A500E836FD /* State+CoreDataClass.swift in Sources */,
 				FBA54836241580B600C23DB3 /* BaseRouter.swift in Sources */,
 				FB463CA2241D65B3006F1A12 /* LoginRequest.swift in Sources */,
+				FBF19EF1242596A500E836FD /* LogoutRequest.swift in Sources */,
 				FB448DE1241FE87F008ACE69 /* UserProfileViewModel.swift in Sources */,
 				FB1DFEC12416BEA5000CAD7B /* ErrorResponse.swift in Sources */,
 				FBF19EED2425928400E836FD /* GameResponse.swift in Sources */,
