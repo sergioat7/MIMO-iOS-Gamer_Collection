@@ -45,11 +45,18 @@ class BaseViewModel {
             self.view?.showLoading()
             let userManager = UserManager()
             let userProfileApiClient = UserProfileApiClient(userManager: userManager)
+            let gameRepository = GameRepository()
+            
             userProfileApiClient.logout(success: { _ in
-                
-                userManager.removePassword()
-                userManager.removeCredentials()
-                LoginRouter().show()
+                gameRepository.deleteAll(success: {
+                    
+                    userManager.removePassword()
+                    userManager.removeCredentials()
+                    LoginRouter().show()
+                }, failure: { error in
+                    self.view?.hideLoading()
+                    self.view?.showError(message: error.error, handler: nil)
+                })
             }, failure: { error in
                 self.view?.hideLoading()
                 self.view?.showError(message: error.error, handler: nil)

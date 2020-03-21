@@ -27,7 +27,8 @@ class UserProfileRouter: BaseRouter {
     
     private var dataManager: UserProfileDataManagerProtocol {
         return UserProfileDataManager(apiClient: apiClient,
-                                      userManager: userManager)
+                                      userManager: userManager,
+                                      gameRepository: gameRepository)
     }
     
     private var apiClient: UserProfileApiClientProtocol {
@@ -36,6 +37,10 @@ class UserProfileRouter: BaseRouter {
     
     private var userManager: UserManager {
         return UserManager()
+    }
+    
+    private var gameRepository: GameRepository {
+        return GameRepository()
     }
     
     // MARK: - Initialization

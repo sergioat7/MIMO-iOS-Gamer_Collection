@@ -20,6 +20,7 @@ protocol UserProfileDataManagerProtocol: class {
     func deleteUser(success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func removeUserData()
     func removeCredentials()
+    func deleteGames(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class UserProfileDataManager: BaseDataManager {
@@ -28,15 +29,18 @@ class UserProfileDataManager: BaseDataManager {
     
     private let apiClient: UserProfileApiClientProtocol
     private let userManager: UserManager
+    private let gameRepository: GameRepository
     
     // MARK: - Private variables
     
     // MARK: - Initialization
     
     init(apiClient: UserProfileApiClientProtocol,
-    userManager: UserManager) {
+         userManager: UserManager,
+         gameRepository: GameRepository) {
         self.apiClient = apiClient
         self.userManager = userManager
+        self.gameRepository = gameRepository
     }
 }
 
@@ -75,6 +79,10 @@ extension UserProfileDataManager: UserProfileDataManagerProtocol {
     
     func removeCredentials() {
         userManager.removeCredentials()
+    }
+    
+    func deleteGames(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        gameRepository.deleteAll(success: success, failure: failure)
     }
 }
 
