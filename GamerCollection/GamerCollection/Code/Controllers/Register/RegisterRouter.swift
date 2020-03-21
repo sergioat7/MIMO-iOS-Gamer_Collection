@@ -27,15 +27,40 @@ class RegisterRouter: BaseRouter {
     
     private var dataManager: RegisterDataManagerProtocol {
         return RegisterDataManager(apiClient: apiClient,
-                                   userManager: userManager)
+                                   loginApiClient: loginApiClient,
+                                   userManager: userManager,
+                                   formatRepository: formatRepository,
+                                   genreRepository: genreRepository,
+                                   platformRepository: platformRepository,
+                                   stateRepository: stateRepository)
     }
     
     private var apiClient: RegisterApiClientProtocol {
         return RegisterApiClient()
     }
     
+    private var loginApiClient: LoginApiClientProtocol {
+        return LoginApiClient()
+    }
+    
     private var userManager: UserManager {
         return UserManager()
+    }
+    
+    private var formatRepository: FormatRepository {
+        return FormatRepository()
+    }
+    
+    private var genreRepository: GenreRepository {
+        return GenreRepository()
+    }
+    
+    private var platformRepository: PlatformRepository {
+        return PlatformRepository()
+    }
+    
+    private var stateRepository: StateRepository {
+        return StateRepository()
     }
     
     // MARK: - Initialization
