@@ -41,10 +41,19 @@ class BaseViewModel {
     @objc private func logout() {
         
         view?.showConfirmationDialog(message: "PROFILE_LOGOUT_CONFIRMATION".localized(), handler: {
+            
+            self.view?.showLoading()
             let userManager = UserManager()
-            userManager.removePassword()
-            userManager.removeCredentials()
-            LoginRouter().show()
+            let userProfileApiClient = UserProfileApiClient(userManager: userManager)
+            userProfileApiClient.logout(success: { _ in
+                
+                userManager.removePassword()
+                userManager.removeCredentials()
+                LoginRouter().show()
+            }, failure: { error in
+                self.view?.hideLoading()
+                self.view?.showError(message: error.error, handler: nil)
+            })
         }, handlerCancel: nil)
     }
 }

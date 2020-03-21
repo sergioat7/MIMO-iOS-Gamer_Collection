@@ -44,16 +44,11 @@ class UserProfileViewModel: BaseViewModel {
         view?.showError(message: error.error, handler: nil)
     }
     
-    private func logout() {
+    private func removeData() {
         
-        dataManager.logout(success: { _ in
-            
-            self.dataManager.removeUserData()
-            self.dataManager.removeCredentials()
-            LoginRouter().show()
-        }, failure: { error in
-            self.manageError(error: error)
-        })
+        self.dataManager.removeUserData()
+        self.dataManager.removeCredentials()
+        LoginRouter().show()
     }
 }
 
@@ -98,11 +93,7 @@ extension UserProfileViewModel: UserProfileViewModelProtocol {
         
         view?.showLoading()
         dataManager.deleteUser(success: { _ in
-            
-            self.dataManager.removeUserData()
-            self.dataManager.removeCredentials()
-            LoginRouter().show()
-            self.view?.hideLoading()
+            self.removeData()
         }, failure: { error in
             self.manageError(error: error)
         })
