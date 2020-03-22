@@ -51,19 +51,25 @@ extension GamesViewModel: GamesViewModelProtocol {
         
         view?.showLoading()
         dataManager.getGames(success: { games in
-            self.dataManager.getPlatforms(success: { platforms in
-                self.dataManager.getStates(success: { states in
-                    
-                    self.gameCellViewModels = games.compactMap({ game -> GameCellViewModel in
+            self.dataManager.getFormats(success: { formats in
+                self.dataManager.getPlatforms(success: { platforms in
+                    self.dataManager.getStates(success: { states in
                         
-                        let platform = platforms.first(where: { $0.id == game.platform })
-                        let state = states.first(where: { $0.id == game.state })
-                        return GameCellViewModel(game: game,
-                                                 platform: platform,
-                                                 state: state)
+                        self.gameCellViewModels = games.compactMap({ game -> GameCellViewModel in
+                            
+                            let format = formats.first(where: { $0.id == game.format })
+                            let platform = platforms.first(where: { $0.id == game.platform })
+                            let state = states.first(where: { $0.id == game.state })
+                            return GameCellViewModel(game: game,
+                                                     format: format,
+                                                     platform: platform,
+                                                     state: state)
+                        })
+                        self.view?.showGames()
+                        self.view?.hideLoading()
+                    }, failure: { error in
+                        self.manageError(error: error)
                     })
-                    self.view?.showGames()
-                    self.view?.hideLoading()
                 }, failure: { error in
                     self.manageError(error: error)
                 })

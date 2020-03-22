@@ -9,13 +9,16 @@
 class GameCellViewModel {
 
     private let game: GameResponse
+    private let format: FormatResponse?
     private let platform: PlatformResponse?
     private let state: StateResponse?
     
     init(game: GameResponse,
+         format: FormatResponse?,
          platform: PlatformResponse?,
          state: StateResponse?) {
         self.game = game
+        self.format = format
         self.platform = platform
         self.state = state
     }
@@ -23,6 +26,12 @@ class GameCellViewModel {
     var id: Int64 {
         get {
             return game.id
+        }
+    }
+    
+    var imageUrl: String {
+        get {
+            return game.imageUrl ?? ""
         }
     }
     
@@ -38,6 +47,12 @@ class GameCellViewModel {
         }
     }
     
+    var releaseDate: String {
+        get {
+            return game.releaseDate ?? ""
+        }
+    }
+    
     var score: Double {
         get {
             return game.score
@@ -50,15 +65,15 @@ class GameCellViewModel {
         }
     }
     
-    var stateName: String {
+    var formatId: String {
         get {
-            return state?.name ?? ""
+            return format?.id ?? ""
         }
     }
     
-    var imageUrl: String {
+    var stateId: String {
         get {
-            return game.imageUrl ?? ""
+            return state?.id ?? ""
         }
     }
     
