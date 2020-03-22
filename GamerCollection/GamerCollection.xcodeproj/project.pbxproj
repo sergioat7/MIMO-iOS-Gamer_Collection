@@ -86,6 +86,8 @@
 		FBB1A372241C273E00E91579 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A371241C273E00E91579 /* UserData.swift */; };
 		FBB1A375241C4AC500E91579 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A374241C4AC500E91579 /* UserManager.swift */; };
 		FBB1A378241C4D9400E91579 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FBB1A377241C4D9400E91579 /* KeychainAccess */; };
+		FBC78EB82427FAD0008608F2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FBC78EB72427FAD0008608F2 /* Kingfisher */; };
+		FBC78EBB2427FAFB008608F2 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = FBC78EBA2427FAFB008608F2 /* Cosmos */; };
 		FBF19EAC242536A600E836FD /* GetFormatsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */; };
 		FBF19EAF242536CA00E836FD /* FormatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAE242536CA00E836FD /* FormatResponse.swift */; };
 		FBF19EB32425388F00E836FD /* GenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EB22425388F00E836FD /* GenreResponse.swift */; };
@@ -265,10 +267,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBC78EBB2427FAFB008608F2 /* Cosmos in Frameworks */,
 				FBB1A378241C4D9400E91579 /* KeychainAccess in Frameworks */,
 				FB1DFEAF2416B96A000CAD7B /* Alamofire in Frameworks */,
 				FB1DFEB22416B9A0000CAD7B /* SwifterSwift in Frameworks */,
 				F5F275C9CE2C5B2F4601ADBB /* Pods_GamerCollection.framework in Frameworks */,
+				FBC78EB82427FAD0008608F2 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1035,6 +1039,8 @@
 				FB1DFEAE2416B96A000CAD7B /* Alamofire */,
 				FB1DFEB12416B9A0000CAD7B /* SwifterSwift */,
 				FBB1A377241C4D9400E91579 /* KeychainAccess */,
+				FBC78EB72427FAD0008608F2 /* Kingfisher */,
+				FBC78EBA2427FAFB008608F2 /* Cosmos */,
 			);
 			productName = GamerCollection;
 			productReference = FBA547EE24157AE900C23DB3 /* Gamer Collection.app */;
@@ -1112,6 +1118,8 @@
 				FB1DFEAD2416B96A000CAD7B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				FB1DFEB02416B9A0000CAD7B /* XCRemoteSwiftPackageReference "SwifterSwift" */,
 				FBB1A376241C4D9400E91579 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				FBC78EB62427FAD0008608F2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				FBC78EB92427FAFB008608F2 /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = FBA547EF24157AE900C23DB3 /* Products */;
 			projectDirPath = "";
@@ -1670,6 +1678,22 @@
 				minimumVersion = 4.1.0;
 			};
 		};
+		FBC78EB62427FAD0008608F2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.0;
+			};
+		};
+		FBC78EB92427FAFB008608F2 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 21.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1687,6 +1711,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FBB1A376241C4D9400E91579 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		FBC78EB72427FAD0008608F2 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBC78EB62427FAD0008608F2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		FBC78EBA2427FAFB008608F2 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBC78EB92427FAFB008608F2 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
 		};
 /* End XCSwiftPackageProductDependency section */
 
