@@ -2,22 +2,21 @@
 //  GameTableViewCell.swift
 //  GamerCollection
 //
-//  Created by alumno on 21/03/2020.
+//  Created by Sergio Aragonés on 21/03/2020.
+//  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
 import UIKit
 
 class GameTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var gameCellViewModel: GameCellViewModel? {
+        didSet {
+            configure()
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configure() {
     }
     
 }

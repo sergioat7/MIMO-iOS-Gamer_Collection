@@ -38,6 +38,7 @@ class GamesViewController: BaseViewController {
         
         navigationItem.title = "GAMES".localized()
         setupTableView()
+        viewModel?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,6 +88,9 @@ extension GamesViewController:  UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let gameCellViewModels = viewModel?.getGameCellViewModels()
+        let gameId = gameCellViewModels?[indexPath.row].id ?? 0
+        //TODO go to detail
     }
 }
 
@@ -96,11 +100,17 @@ extension GamesViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        let gameCellViewModels = viewModel?.getGameCellViewModels()
+        return gameCellViewModels?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as! GameTableViewCell
+        
+        let gameCellViewModels = viewModel?.getGameCellViewModels()
+        let gameCellViewModel = gameCellViewModels?[indexPath.row]
+        cell.gameCellViewModel = gameCellViewModel
         
         return cell
     }
