@@ -47,7 +47,7 @@
 "PROFILE_LOGOUT_CONFIRMATION" = "¿Estás seguro de que quieres salir?";
 "PROFILE_SAVE" = "Guardar";
 "PROFILE_DELETE" = "Borrar";
-"PROFILE_DELETE_CONFIRMATION" = "¿Estás seguro de que quieres borrar tu usuario? Perderás toda la información almacenada sobre los juegos.";
+"PROFILE_DELETE_CONFIRMATION" = "¿Estás seguro de que quieres borrar tu usuario? Perderás toda la información almacenada sobre los juegos";
 
 // Errors
 
@@ -55,3 +55,4 @@
 "ERROR_SERVER" = "Hubo un error al recuperar los datos. Por favor, inténtalo otra vez";
 "ERROR_REGISTRATION_EMPTY_DATA" = "El usuario y la contraseña no pueden estar vacíos";
 "ERROR_REGISTRATION_DIFFERENT_PASSWORDS" = "Las contraseñas no coinciden";
+"ERROR_CORE_DATA" = "Error en la base de datos. Por favor, inténtalo otra vez";
