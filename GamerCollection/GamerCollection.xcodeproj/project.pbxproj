@@ -117,6 +117,9 @@
 		FBF19EF624259AF400E836FD /* GameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EF524259AF400E836FD /* GameRepository.swift */; };
 		FBF19EF924259CAA00E836FD /* Game+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EF724259CAA00E836FD /* Game+CoreDataClass.swift */; };
 		FBF19EFA24259CAA00E836FD /* Game+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EF824259CAA00E836FD /* Game+CoreDataProperties.swift */; };
+		FBF6C52424267CA300FC5469 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF6C52224267CA300FC5469 /* GameTableViewCell.swift */; };
+		FBF6C52524267CA300FC5469 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBF6C52324267CA300FC5469 /* GameTableViewCell.xib */; };
+		FBF6C52724267CB700FC5469 /* GameCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF6C52624267CB700FC5469 /* GameCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,6 +255,9 @@
 		FBF19EF524259AF400E836FD /* GameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepository.swift; sourceTree = "<group>"; };
 		FBF19EF724259CAA00E836FD /* Game+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FBF19EF824259CAA00E836FD /* Game+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		FBF6C52224267CA300FC5469 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
+		FBF6C52324267CA300FC5469 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
+		FBF6C52624267CB700FC5469 /* GameCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -541,6 +547,7 @@
 		FB463C79241D0A4C006F1A12 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FBF6C521242679FB00FC5469 /* Cell */,
 				FB463C6D241D0A48006F1A12 /* GamesView.storyboard */,
 			);
 			path = View;
@@ -996,6 +1003,16 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
+		FBF6C521242679FB00FC5469 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FBF6C52624267CB700FC5469 /* GameCellViewModel.swift */,
+				FBF6C52224267CA300FC5469 /* GameTableViewCell.swift */,
+				FBF6C52324267CA300FC5469 /* GameTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1123,6 +1140,7 @@
 				FB463C85241D0BBF006F1A12 /* SagasView.storyboard in Resources */,
 				FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */,
 				FB463C5E241CFE53006F1A12 /* LoginView.storyboard in Resources */,
+				FBF6C52524267CA300FC5469 /* GameTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1206,6 +1224,7 @@
 				FB463C8A241D0BBF006F1A12 /* SagasDataManager.swift in Sources */,
 				FB463C68241D0678006F1A12 /* MainTabBarController.swift in Sources */,
 				FB463C62241CFE53006F1A12 /* LoginViewModel.swift in Sources */,
+				FBF6C52724267CB700FC5469 /* GameCellViewModel.swift in Sources */,
 				FBF19EB32425388F00E836FD /* GenreResponse.swift in Sources */,
 				FB463CA6241D69DF006F1A12 /* LoginDataModelRequest.swift in Sources */,
 				FBF19ED42425522200E836FD /* Genre+CoreDataClass.swift in Sources */,
@@ -1246,6 +1265,7 @@
 				FB31D5C9241EB08800B16558 /* RegisterDataModelRequest.swift in Sources */,
 				FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */,
 				FBF19ED52425522200E836FD /* Genre+CoreDataProperties.swift in Sources */,
+				FBF6C52424267CA300FC5469 /* GameTableViewCell.swift in Sources */,
 				FBF19EE32425554E00E836FD /* State+StateResponse.swift in Sources */,
 				FB31D5CB241EB17300B16558 /* EmptyResponse.swift in Sources */,
 				FBF19EFA24259CAA00E836FD /* Game+CoreDataProperties.swift in Sources */,
