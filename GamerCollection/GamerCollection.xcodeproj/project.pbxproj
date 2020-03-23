@@ -226,6 +226,8 @@
 		FBB1A36F241C273200E91579 /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
 		FBB1A371241C273E00E91579 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		FBB1A374241C4AC500E91579 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		FBDEF50E2429213B0076F832 /* Palatino-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palatino-Bold.ttf"; sourceTree = "<group>"; };
+		FBDEF50F2429213B0076F832 /* Palatino-Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palatino-Roman.ttf"; sourceTree = "<group>"; };
 		FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFormatsRequest.swift; sourceTree = "<group>"; };
 		FBF19EAE242536CA00E836FD /* FormatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatResponse.swift; sourceTree = "<group>"; };
 		FBF19EB22425388F00E836FD /* GenreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResponse.swift; sourceTree = "<group>"; };
@@ -725,6 +727,7 @@
 		FBA5482524157D2600C23DB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FBDEF50D2429211B0076F832 /* Font */,
 				FB1DFEC22416DB58000CAD7B /* Localization */,
 				FBA5480224157AEA00C23DB3 /* Info.plist */,
 			);
@@ -857,6 +860,15 @@
 				FBB1A371241C273E00E91579 /* UserData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FBDEF50D2429211B0076F832 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				FBDEF50E2429213B0076F832 /* Palatino-Bold.ttf */,
+				FBDEF50F2429213B0076F832 /* Palatino-Roman.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		FBF19EA82425363E00E836FD /* Formats */ = {
