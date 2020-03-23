@@ -25,6 +25,10 @@ class GamesViewController: BaseViewController {
     
     // MARK: - Public properties
     
+    @IBOutlet weak var lbGamesNumber: UILabel!
+    @IBOutlet weak var btPending: UIButton!
+    @IBOutlet weak var btInProgress: UIButton!
+    @IBOutlet weak var btFinished: UIButton!
     @IBOutlet weak var tvGames: UITableView!
     
     // MARK: - Private properties
@@ -37,7 +41,7 @@ class GamesViewController: BaseViewController {
         super.viewDidLoad()
         
         navigationItem.title = "GAMES".localized()
-        setupTableView()
+        configViews()
         viewModel?.viewDidLoad()
     }
     
@@ -47,9 +51,26 @@ class GamesViewController: BaseViewController {
     
     // MARK: - Actions
     
+    @IBAction func sortGames(_ sender: Any) {
+        print("sort")
+    }
+    
     // MARK: - Overrides
     
     // MARK: - Private functions
+    
+    private func configViews() {
+        
+        btPending.backgroundColor = Color.color1SuperLight
+        btInProgress.backgroundColor = Color.color1SuperLight
+        btFinished.backgroundColor = Color.color1SuperLight
+        
+        btPending.layer.cornerRadius = 5
+        btInProgress.layer.cornerRadius = 5
+        btFinished.layer.cornerRadius = 5
+        
+        setupTableView()
+    }
     
     private func setupTableView() {
         
@@ -101,7 +122,9 @@ extension GamesViewController:  UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let gameCellViewModels = viewModel?.getGameCellViewModels()
-        return gameCellViewModels?.count ?? 0
+        let numberOfGames = gameCellViewModels?.count ?? 0
+        lbGamesNumber.attributedText = NSAttributedString(string: "#\(numberOfGames) \("GAMES_NUMBER_TITLE".localized())", attributes: [.font : UIFont.bold18, .foregroundColor: Color.color1])
+        return numberOfGames
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
