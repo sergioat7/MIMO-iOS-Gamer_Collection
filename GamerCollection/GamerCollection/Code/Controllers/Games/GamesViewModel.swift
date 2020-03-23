@@ -43,11 +43,29 @@ class GamesViewModel: BaseViewModel {
         view?.hideLoading()
         view?.showError(message: error.error, handler: nil)
     }
+    
+    @objc private func addGame() {
+        print("add")
+        //TODO go to game detail
+    }
+    
+    @objc private func filterGames() {
+        print("filter")
+    }
+    
+    @objc private func syncApp() {
+        print("sync")
+    }
 }
 
 extension GamesViewModel: GamesViewModelProtocol {
     
     func viewDidLoad() {
+        
+        addHandler = #selector(addGame)
+        filterHandler = #selector(filterGames)
+        syncHandler = #selector(syncApp)
+        showNavBarButtons()
         
         view?.showLoading()
         dataManager.getGames(success: { games in
