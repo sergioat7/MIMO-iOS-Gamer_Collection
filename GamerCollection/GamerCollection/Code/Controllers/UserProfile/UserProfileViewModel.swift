@@ -71,6 +71,10 @@ class UserProfileViewModel: BaseViewModel {
             })
         }, handlerCancel: nil)
     }
+    
+    @objc private func syncApp() {
+        print("sync")
+    }
 }
 
 extension UserProfileViewModel: UserProfileViewModelProtocol {
@@ -78,7 +82,9 @@ extension UserProfileViewModel: UserProfileViewModelProtocol {
     func viewDidLoad() {
         
         logoutHandler = #selector(logout)
+        syncHandler = #selector(syncApp)
         showNavBarButtons()
+        
         view?.showLoading()
         dataManager.getUserData(success: { userData in
             
