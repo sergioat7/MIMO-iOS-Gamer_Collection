@@ -43,9 +43,8 @@
                                     <action selector="login" destination="BYZ-38-t0r" eventType="touchUpInside" id="jMN-9T-sVR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3e-3K-VNf">
-                                <rect key="frame" x="160.5" y="482" width="54" height="34"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3e-3K-VNf">
+                                <rect key="frame" x="172.5" y="482" width="30" height="34"/>
                                 <connections>
                                     <action selector="register" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y1g-72-qbT"/>
                                 </connections>
@@ -56,7 +55,9 @@
                             <constraint firstItem="EMy-7t-EpN" firstAttribute="leading" secondItem="bWX-36-2d5" secondAttribute="leading" id="44g-PV-UKd"/>
                             <constraint firstItem="FaN-42-Qf8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.5" priority="999" id="5b1-13-oyh"/>
                             <constraint firstItem="FaN-42-Qf8" firstAttribute="width" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="9ec-XX-TYI"/>
+                            <constraint firstItem="l3e-3K-VNf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="EM9-ca-tLZ"/>
                             <constraint firstItem="l3e-3K-VNf" firstAttribute="top" secondItem="gQi-EY-ab5" secondAttribute="bottom" constant="15" id="FLh-jr-qvc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l3e-3K-VNf" secondAttribute="trailing" constant="10" id="JdB-uD-rpj"/>
                             <constraint firstItem="l3e-3K-VNf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K3J-xP-Zfe"/>
                             <constraint firstItem="EMy-7t-EpN" firstAttribute="top" secondItem="bWX-36-2d5" secondAttribute="bottom" constant="15" id="LXe-b9-ViN"/>
                             <constraint firstItem="FaN-42-Qf8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="M9O-iZ-gM4"/>

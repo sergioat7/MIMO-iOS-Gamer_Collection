@@ -112,6 +112,8 @@ extension GamesViewController:  UITableViewDataSource {
         let gameCellViewModel = gameCellViewModels?[indexPath.row]
         cell.gameCellViewModel = gameCellViewModel
         
+        cell.selectionStyle = .none
+        
         return cell
     }
 }

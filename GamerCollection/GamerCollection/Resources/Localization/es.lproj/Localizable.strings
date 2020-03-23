@@ -32,6 +32,8 @@
 // Games
 
 "GAMES" = "Mis Juegos";
+"GAMES_RELEASED" = "Lanzado";
+"GAMES_UNRELEASED" = "No lanzado";
 
 // Sagas
 
