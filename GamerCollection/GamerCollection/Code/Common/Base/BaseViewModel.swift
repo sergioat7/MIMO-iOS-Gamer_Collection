@@ -31,6 +31,9 @@ class BaseViewModel {
     
     private func getRightButtons() -> [UIBarButtonItem] {
         
+        let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.fixedSpace, target: nil, action: nil)
+        space.width = Constants.NavBar.space
+        
         // MARK: Logout button
         let logoutButton = UIButton(type: .system)
         logoutButton.tintColor = Color.color1
@@ -60,22 +63,28 @@ class BaseViewModel {
         if let logout = logoutHandler {
             logoutButton.addTarget(self, action: logout, for: .touchUpInside)
             rightBarButtonItems.append(logoutButtonItem)
+            rightBarButtonItems.append(space)
         }
         
         if let add = addHandler {
             addButton.addTarget(self, action: add, for: .touchUpInside)
             rightBarButtonItems.append(addButtonItem)
+            rightBarButtonItems.append(space)
         }
         
         if let filter = filterHandler {
             filterButton.addTarget(self, action: filter, for: .touchUpInside)
             rightBarButtonItems.append(filterButtonItem)
+            rightBarButtonItems.append(space)
         }
         
         if let sync = syncHandler {
             syncButton.addTarget(self, action: sync, for: .touchUpInside)
             rightBarButtonItems.append(syncButtonItem)
+            rightBarButtonItems.append(space)
         }
+        
+        rightBarButtonItems.removeLast()
         
         return rightBarButtonItems
     }

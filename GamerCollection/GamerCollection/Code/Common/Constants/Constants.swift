@@ -25,4 +25,10 @@ struct Constants {
         static let authData: String = "authData"
         static let newInstallation: String = "newInstallation"
     }
+    
+    // MARK: - NavBar constants
+    
+    struct NavBar {
+        static let space: CGFloat = 15
+    }
 }
