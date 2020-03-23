@@ -88,6 +88,7 @@
 		FBB1A378241C4D9400E91579 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FBB1A377241C4D9400E91579 /* KeychainAccess */; };
 		FBC78EB82427FAD0008608F2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FBC78EB72427FAD0008608F2 /* Kingfisher */; };
 		FBC78EBB2427FAFB008608F2 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = FBC78EBA2427FAFB008608F2 /* Cosmos */; };
+		FBDEF512242921CC0076F832 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDEF511242921CC0076F832 /* UIFont+Extension.swift */; };
 		FBF19EAC242536A600E836FD /* GetFormatsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */; };
 		FBF19EAF242536CA00E836FD /* FormatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAE242536CA00E836FD /* FormatResponse.swift */; };
 		FBF19EB32425388F00E836FD /* GenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EB22425388F00E836FD /* GenreResponse.swift */; };
@@ -228,6 +229,7 @@
 		FBB1A374241C4AC500E91579 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		FBDEF50E2429213B0076F832 /* Palatino-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palatino-Bold.ttf"; sourceTree = "<group>"; };
 		FBDEF50F2429213B0076F832 /* Palatino-Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palatino-Roman.ttf"; sourceTree = "<group>"; };
+		FBDEF511242921CC0076F832 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFormatsRequest.swift; sourceTree = "<group>"; };
 		FBF19EAE242536CA00E836FD /* FormatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatResponse.swift; sourceTree = "<group>"; };
 		FBF19EB22425388F00E836FD /* GenreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResponse.swift; sourceTree = "<group>"; };
@@ -799,6 +801,7 @@
 				FB463CA7241D6A91006F1A12 /* Encodable */,
 				FB935A252424D88A00352DA3 /* NSManagedObject */,
 				FBB1A365241C101B00E91579 /* UIColor */,
+				FBDEF510242921C20076F832 /* UIFont */,
 				FBB1A364241C101700E91579 /* UIViewController */,
 			);
 			path = Extensions;
@@ -869,6 +872,14 @@
 				FBDEF50F2429213B0076F832 /* Palatino-Roman.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		FBDEF510242921C20076F832 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				FBDEF511242921CC0076F832 /* UIFont+Extension.swift */,
+			);
+			path = UIFont;
 			sourceTree = "<group>";
 		};
 		FBF19EA82425363E00E836FD /* Formats */ = {
@@ -1305,6 +1316,7 @@
 				FB463C89241D0BBF006F1A12 /* SagasViewModel.swift in Sources */,
 				FB463C77241D0A48006F1A12 /* GamesViewModel.swift in Sources */,
 				FBF19EB5242538A600E836FD /* GetGenresRequest.swift in Sources */,
+				FBDEF512242921CC0076F832 /* UIFont+Extension.swift in Sources */,
 				FB448DE6242003EF008ACE69 /* UpdatePasswordRequest.swift in Sources */,
 				FB31D5BF241E7DF800B16558 /* RegisterDataManager.swift in Sources */,
 				FB463C93241D0C29006F1A12 /* RankingViewModel.swift in Sources */,
@@ -1508,7 +1520,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DM29DK5676;
 				INFOPLIST_FILE = GamerCollection/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1528,7 +1540,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DM29DK5676;
 				INFOPLIST_FILE = GamerCollection/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
