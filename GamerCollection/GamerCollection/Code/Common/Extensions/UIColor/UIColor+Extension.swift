@@ -10,7 +10,7 @@ import UIKit
 
 struct Color {
     
-    static let color1: UIColor = UIColor(hexString: "0F0F0F")!
+    static let color1: UIColor = UIColor(hexString: "363636")!
     static let color1Light: UIColor = Color.color1.withAlphaComponent(Constants.Style.lightColor)
     static let color1SuperLight: UIColor = Color.color1.withAlphaComponent(Constants.Style.superLightColor)
     

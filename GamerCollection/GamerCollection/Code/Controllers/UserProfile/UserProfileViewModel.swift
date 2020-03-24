@@ -44,16 +44,36 @@ class UserProfileViewModel: BaseViewModel {
         view?.showError(message: error.error, handler: nil)
     }
     
-    private func logout() {
+    private func removeData() {
         
-        dataManager.logout(success: { _ in
+        dataManager.deleteGames(success: {
             
-            self.dataManager.removeUserData()
+            //TODO delete sagas
+            //TODO delete songs
             self.dataManager.removeCredentials()
             LoginRouter().show()
         }, failure: { error in
             self.manageError(error: error)
         })
+    }
+    
+    @objc private func logout() {
+        
+        view?.showConfirmationDialog(message: "PROFILE_LOGOUT_CONFIRMATION".localized(), handler: {
+            
+            self.view?.showLoading()
+            self.dataManager.logout(success: { _ in
+                
+                self.dataManager.removePassword()
+                self.removeData()
+            }, failure: { error in
+                self.manageError(error: error)
+            })
+        }, handlerCancel: nil)
+    }
+    
+    @objc private func syncApp() {
+        print("sync")
     }
 }
 
@@ -61,7 +81,10 @@ extension UserProfileViewModel: UserProfileViewModelProtocol {
     
     func viewDidLoad() {
         
+        logoutHandler = #selector(logout)
+        syncHandler = #selector(syncApp)
         showNavBarButtons()
+        
         view?.showLoading()
         dataManager.getUserData(success: { userData in
             
@@ -100,9 +123,7 @@ extension UserProfileViewModel: UserProfileViewModelProtocol {
         dataManager.deleteUser(success: { _ in
             
             self.dataManager.removeUserData()
-            self.dataManager.removeCredentials()
-            LoginRouter().show()
-            self.view?.hideLoading()
+            self.removeData()
         }, failure: { error in
             self.manageError(error: error)
         })

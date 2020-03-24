@@ -41,9 +41,17 @@ public class APIClient {
             
             let statusCode = response.response?.statusCode ?? -1
             
-            if statusCode < 400, T.Response.self == EmptyResponse.self, let data = "{}".data(using: .utf8) {
+            if (statusCode == 204 || T.Response.self == EmptyResponse.self),
+                let objectData = "{}".data(using: .utf8),
+                let arrayData = "[]".data(using: .utf8) {
                 do {
-                    let response = try JSONDecoder().decode(T.Response.self, from: data)
+                    let response = try JSONDecoder().decode(T.Response.self, from: objectData)
+                    success(response)
+                    return
+                } catch {}
+                
+                do {
+                    let response = try JSONDecoder().decode(T.Response.self, from: arrayData)
                     success(response)
                     return
                 } catch {}

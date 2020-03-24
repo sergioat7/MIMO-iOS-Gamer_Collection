@@ -95,6 +95,8 @@ class LoginViewController: BaseViewController {
                                                          attributes: [.foregroundColor : Color.color2])
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: Color.color5, range: NSRange(location: text1.count, length: text2.count))
         btRegister.setAttributedTitle(attributedString, for: UIControl.State())
+        btRegister.titleLabel?.numberOfLines = 0
+        btRegister.titleLabel?.textAlignment = .center
     }
     
     @objc private func hideKeyboard() {

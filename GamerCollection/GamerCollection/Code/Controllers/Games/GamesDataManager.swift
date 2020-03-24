@@ -12,6 +12,10 @@ protocol GamesDataManagerProtocol: class {
     /**
      * Add here your methods for communication VIEW_MODEL -> DATA_MANAGER
      */
+    func getGames(state: String?, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getFormats(success: @escaping(FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getPlatforms(success: @escaping(PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getStates(success: @escaping(StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class GamesDataManager: BaseDataManager {
@@ -21,15 +25,60 @@ class GamesDataManager: BaseDataManager {
     // MARK: - Private variables
     
     private let apiClient: GamesApiClientProtocol
+    private let gameRepository: GameRepository
+    private let formatRepository: FormatRepository
+    private let platformRepository: PlatformRepository
+    private let stateRepository: StateRepository
     
     // MARK: - Initialization
     
-    init(apiClient: GamesApiClientProtocol) {
+    init(apiClient: GamesApiClientProtocol,
+         gameRepository: GameRepository,
+         formatRepository: FormatRepository,
+         platformRepository: PlatformRepository,
+         stateRepository: StateRepository) {
         self.apiClient = apiClient
+        self.gameRepository = gameRepository
+        self.formatRepository = formatRepository
+        self.platformRepository = platformRepository
+        self.stateRepository = stateRepository
     }
 }
 
 extension GamesDataManager: GamesDataManagerProtocol {
     
+    func getGames(state: String?, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        var predicate: NSPredicate
+        switch state {
+        case Constants.State.pending:
+            predicate = NSPredicate(format: "state = %@", Constants.State.pending)
+        case Constants.State.inProgress:
+            predicate = NSPredicate(format: "state = %@", Constants.State.inProgress)
+        case Constants.State.finished:
+            predicate = NSPredicate(format: "state = %@", Constants.State.finished)
+        default:
+            predicate = NSPredicate(value: true)
+        }
+        
+        let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
+        gameRepository.execute(predicate: predicate,
+                               sortDescriptors: [sortDescriptor],
+                               success: { (gameModels, _) in
+                                success(gameModels)
+        }, failure: failure)
+    }
+    
+    func getFormats(success: @escaping(FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        formatRepository.getAll(success: success, failure: failure)
+    }
+    
+    func getPlatforms(success: @escaping(PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        platformRepository.getAll(success: success, failure: failure)
+    }
+    
+    func getStates(success: @escaping(StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        stateRepository.getAll(success: success, failure: failure)
+    }
 }
 

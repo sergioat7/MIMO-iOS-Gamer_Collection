@@ -32,6 +32,12 @@
 // Games
 
 "GAMES" = "My Games";
+"GAMES_FILTER_BUTTON_TITLE_PENDING" = "Pending";
+"GAMES_FILTER_BUTTON_TITLE_IN_PROGRESS" = "In Progress";
+"GAMES_FILTER_BUTTON_TITLE_FINISHED" = "Finished";
+"GAMES_RELEASED" = "Released";
+"GAMES_UNRELEASED" = "Unreleased";
+"GAMES_NUMBER_TITLE" = "games";
 
 // Sagas
 
@@ -47,11 +53,12 @@
 "PROFILE_LOGOUT_CONFIRMATION" = "Are you sure you want to exit?";
 "PROFILE_SAVE" = "Save";
 "PROFILE_DELETE" = "Delete";
-"PROFILE_DELETE_CONFIRMATION" = "Are you sure you want to delete your user? You will lose all your stored information about the videogames.";
+"PROFILE_DELETE_CONFIRMATION" = "Are you sure you want to delete your user? You will lose all your stored information about the videogames";
 
 // Errors
 
 "ERROR_BUTTON_ACCEPT" = "Accept";
-"ERROR_SERVER" = "There was an error on getting data. Please, try again.";
+"ERROR_SERVER" = "There was an error on getting data. Please, try again";
 "ERROR_REGISTRATION_EMPTY_DATA" = "Username and password can't be empty";
 "ERROR_REGISTRATION_DIFFERENT_PASSWORDS" = "Password and repeat don't match";
+"ERROR_CORE_DATA" = "Database error. Please try again";

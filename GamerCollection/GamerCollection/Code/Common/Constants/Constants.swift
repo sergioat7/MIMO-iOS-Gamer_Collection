@@ -10,6 +10,14 @@ import UIKit
 
 struct Constants {
     
+    // MARK: - State constants
+    
+    struct State {
+        static let pending: String = "PENDING"
+        static let inProgress: String = "IN_PROGRESS"
+        static let finished: String = "FINISHED"
+    }
+    
     // MARK: - Style constants
     
     struct Style {
@@ -24,5 +32,11 @@ struct Constants {
         static let userData: String = "userData"
         static let authData: String = "authData"
         static let newInstallation: String = "newInstallation"
+    }
+    
+    // MARK: - NavBar constants
+    
+    struct NavBar {
+        static let space: CGFloat = 15
     }
 }

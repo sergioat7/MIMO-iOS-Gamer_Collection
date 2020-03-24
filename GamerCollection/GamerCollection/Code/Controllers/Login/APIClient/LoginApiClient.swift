@@ -15,9 +15,25 @@ protocol LoginApiClientProtocol {
     func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class LoginApiClient: LoginApiClientProtocol {
+    
+    private let userManager: UserManager
+    
+    init(userManager: UserManager) {
+        self.userManager = userManager
+    }
+    
+    func getCredentials(success: @escaping (AuthData) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        userManager.getCredentials(success: { authData in
+            success(authData)
+        }, failure: failure)
+    }
+    
+    // MARK: - UserProfileApiClientProtocol
     
     func login(username: String, password: String, success: @escaping (LoginResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
@@ -49,5 +65,14 @@ class LoginApiClient: LoginApiClientProtocol {
         
         let request = GetStatesRequest()
         APIClient.shared.sendServer(request, success: success, failure: failure)
+    }
+    
+    func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        getCredentials(success: { authData in
+            
+            let request = GetGamesRequest(token: authData.token)
+            APIClient.shared.sendServer(request, success: success, failure: failure)
+        }, failure: failure)
     }
 }

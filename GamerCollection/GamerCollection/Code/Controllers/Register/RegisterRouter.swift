@@ -40,7 +40,7 @@ class RegisterRouter: BaseRouter {
     }
     
     private var loginApiClient: LoginApiClientProtocol {
-        return LoginApiClient()
+        return LoginApiClient(userManager: userManager)
     }
     
     private var userManager: UserManager {
