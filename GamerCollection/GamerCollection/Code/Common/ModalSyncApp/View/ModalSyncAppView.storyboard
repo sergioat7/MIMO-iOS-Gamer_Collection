@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Modal Sync App View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ModalSyncApp" id="BYZ-38-t0r" customClass="ModalSyncAppViewController" customModule="Gamer_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m9N-aY-51V">
+                                <rect key="frame" x="56.5" y="268" width="262.5" height="131"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKd-NF-Dw9">
+                                        <rect key="frame" x="110" y="37.5" width="42" height="1"/>
+                                        <color key="backgroundColor" name="color1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="VvL-Ws-VIk"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II2-SY-zAg">
+                                        <rect key="frame" x="110" y="48.5" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqr-YD-yAd">
+                                        <rect key="frame" x="110" y="79.5" width="42" height="1"/>
+                                        <color key="backgroundColor" name="color1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Gey-9G-9Ec"/>
+                                        </constraints>
+                                    </view>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="kJ2-ao-LtD">
+                                        <rect key="frame" x="121" y="100.5" width="20" height="20"/>
+                                        <color key="color" name="color1"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" name="color2"/>
+                                <constraints>
+                                    <constraint firstItem="bKd-NF-Dw9" firstAttribute="leading" secondItem="II2-SY-zAg" secondAttribute="leading" id="19M-q6-ETE"/>
+                                    <constraint firstItem="Wqr-YD-yAd" firstAttribute="top" secondItem="II2-SY-zAg" secondAttribute="bottom" constant="10" id="3SH-es-EB6"/>
+                                    <constraint firstItem="Wqr-YD-yAd" firstAttribute="trailing" secondItem="II2-SY-zAg" secondAttribute="trailing" id="CLq-aG-pas"/>
+                                    <constraint firstItem="Wqr-YD-yAd" firstAttribute="leading" secondItem="II2-SY-zAg" secondAttribute="leading" id="J9S-Cj-DC0"/>
+                                    <constraint firstItem="II2-SY-zAg" firstAttribute="top" secondItem="bKd-NF-Dw9" secondAttribute="bottom" constant="10" id="Kwt-Zu-uSz"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="II2-SY-zAg" secondAttribute="trailing" constant="5" id="TLi-GX-u8u"/>
+                                    <constraint firstAttribute="width" secondItem="m9N-aY-51V" secondAttribute="height" multiplier="2:1" id="TmO-gH-NIU"/>
+                                    <constraint firstItem="bKd-NF-Dw9" firstAttribute="trailing" secondItem="II2-SY-zAg" secondAttribute="trailing" id="YCv-q8-kDD"/>
+                                    <constraint firstItem="kJ2-ao-LtD" firstAttribute="top" secondItem="Wqr-YD-yAd" secondAttribute="bottom" constant="20" id="ZNR-j4-dQ8"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="fsG-5H-AEe"/>
+                                    <constraint firstItem="II2-SY-zAg" firstAttribute="centerY" secondItem="m9N-aY-51V" secondAttribute="centerY" multiplier="0.9" id="iJd-9U-vm6"/>
+                                    <constraint firstItem="II2-SY-zAg" firstAttribute="centerX" secondItem="m9N-aY-51V" secondAttribute="centerX" id="jrR-3K-iHx"/>
+                                    <constraint firstItem="II2-SY-zAg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m9N-aY-51V" secondAttribute="leading" constant="5" id="qO1-qL-itY"/>
+                                    <constraint firstItem="kJ2-ao-LtD" firstAttribute="centerX" secondItem="m9N-aY-51V" secondAttribute="centerX" id="uL4-8v-vRy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="m9N-aY-51V" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" priority="999" id="47r-gQ-hCf"/>
+                            <constraint firstItem="m9N-aY-51V" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="72f-9u-vjL"/>
+                            <constraint firstItem="m9N-aY-51V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Knu-he-8C7"/>
+                            <constraint firstItem="m9N-aY-51V" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="O3N-tr-v9f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="lbTitle" destination="II2-SY-zAg" id="SvH-Px-mTO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="color1">
+            <color red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="color2">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

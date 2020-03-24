@@ -55,6 +55,10 @@
 "PROFILE_DELETE" = "Borrar";
 "PROFILE_DELETE_CONFIRMATION" = "¿Estás seguro de que quieres borrar tu usuario? Perderás toda la información almacenada sobre los juegos";
 
+// Synchronization
+
+"SYNC_TITLE" = "Sincronizando...";
+
 // Errors
 
 "ERROR_BUTTON_ACCEPT" = "Aceptar";

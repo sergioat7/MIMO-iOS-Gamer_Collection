@@ -15,7 +15,6 @@ class BaseViewModel {
     var logoutHandler: Selector?
     var addHandler: Selector?
     var filterHandler: Selector?
-    var syncHandler: Selector?
     
     init(view: BaseViewProtocol) {
         self.view = view
@@ -78,14 +77,20 @@ class BaseViewModel {
             rightBarButtonItems.append(space)
         }
         
-        if let sync = syncHandler {
-            syncButton.addTarget(self, action: sync, for: .touchUpInside)
-            rightBarButtonItems.append(syncButtonItem)
-            rightBarButtonItems.append(space)
-        }
+        syncButton.addTarget(self, action: #selector(openSyncPopup), for: .touchUpInside)
+        rightBarButtonItems.append(syncButtonItem)
+        rightBarButtonItems.append(space)
         
         rightBarButtonItems.removeLast()
         
         return rightBarButtonItems
+    }
+    
+    // MARK: - Private functions
+    
+    @objc private func openSyncPopup() {
+        
+        let viewControllerToPresent = ModalSyncAppRouter().view
+        view?.showSyncPopup(viewControllerToPresent: viewControllerToPresent)
     }
 }
