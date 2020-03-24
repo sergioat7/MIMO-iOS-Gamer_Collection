@@ -12,7 +12,7 @@ protocol GamesDataManagerProtocol: class {
     /**
      * Add here your methods for communication VIEW_MODEL -> DATA_MANAGER
      */
-    func getGames(success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGames(state: String?, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getFormats(success: @escaping(FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getPlatforms(success: @escaping(PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getStates(success: @escaping(StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
@@ -47,8 +47,26 @@ class GamesDataManager: BaseDataManager {
 
 extension GamesDataManager: GamesDataManagerProtocol {
     
-    func getGames(success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
-        gameRepository.getAll(success: success, failure: failure)
+    func getGames(state: String?, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        var predicate: NSPredicate
+        switch state {
+        case Constants.State.pending:
+            predicate = NSPredicate(format: "state = %@", Constants.State.pending)
+        case Constants.State.inProgress:
+            predicate = NSPredicate(format: "state = %@", Constants.State.inProgress)
+        case Constants.State.finished:
+            predicate = NSPredicate(format: "state = %@", Constants.State.finished)
+        default:
+            predicate = NSPredicate(value: true)
+        }
+        
+        let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
+        gameRepository.execute(predicate: predicate,
+                               sortDescriptors: [sortDescriptor],
+                               success: { (gameModels, _) in
+                                success(gameModels)
+        }, failure: failure)
     }
     
     func getFormats(success: @escaping(FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {

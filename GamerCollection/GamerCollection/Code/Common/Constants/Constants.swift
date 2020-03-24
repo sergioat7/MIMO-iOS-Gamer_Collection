@@ -10,6 +10,14 @@ import UIKit
 
 struct Constants {
     
+    // MARK: - State constants
+    
+    struct State {
+        static let pending: String = "PENDING"
+        static let inProgress: String = "IN_PROGRESS"
+        static let finished: String = "FINISHED"
+    }
+    
     // MARK: - Style constants
     
     struct Style {

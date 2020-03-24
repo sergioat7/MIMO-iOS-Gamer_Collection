@@ -14,6 +14,7 @@ protocol GamesViewModelProtocol: class {
      */
     func viewDidLoad()
     func getGameCellViewModels() -> [GameCellViewModel]
+    func filterGamesByState(showPending: Bool, showInProgress: Bool, showFinished: Bool)
 }
 
 class GamesViewModel: BaseViewModel {
@@ -44,6 +45,31 @@ class GamesViewModel: BaseViewModel {
         view?.showError(message: error.error, handler: nil)
     }
     
+    private func getContent(state: String?, success: @escaping ([GameCellViewModel]) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        view?.showLoading()
+        dataManager.getGames(state: state, success: { games in
+            self.dataManager.getFormats(success: { formats in
+                self.dataManager.getPlatforms(success: { platforms in
+                    self.dataManager.getStates(success: { states in
+                        
+                        let gameCellViewModels = games.compactMap({ game -> GameCellViewModel in
+                            
+                            let format = formats.first(where: { $0.id == game.format })
+                            let platform = platforms.first(where: { $0.id == game.platform })
+                            let state = states.first(where: { $0.id == game.state })
+                            return GameCellViewModel(game: game,
+                                                     format: format,
+                                                     platform: platform,
+                                                     state: state)
+                        })
+                        success(gameCellViewModels)
+                    }, failure: failure)
+                }, failure: failure)
+            }, failure: failure)
+        }, failure: failure)
+    }
+    
     @objc private func addGame() {
         print("add")
         //TODO go to game detail
@@ -67,33 +93,12 @@ extension GamesViewModel: GamesViewModelProtocol {
         syncHandler = #selector(syncApp)
         showNavBarButtons()
         
-        view?.showLoading()
-        dataManager.getGames(success: { games in
-            self.dataManager.getFormats(success: { formats in
-                self.dataManager.getPlatforms(success: { platforms in
-                    self.dataManager.getStates(success: { states in
-                        
-                        self.gameCellViewModels = games.compactMap({ game -> GameCellViewModel in
-                            
-                            let format = formats.first(where: { $0.id == game.format })
-                            let platform = platforms.first(where: { $0.id == game.platform })
-                            let state = states.first(where: { $0.id == game.state })
-                            return GameCellViewModel(game: game,
-                                                     format: format,
-                                                     platform: platform,
-                                                     state: state)
-                        })
-                        self.view?.showGames()
-                        self.view?.hideLoading()
-                    }, failure: { error in
-                        self.manageError(error: error)
-                    })
-                }, failure: { error in
-                    self.manageError(error: error)
-                })
-            }, failure: { error in
-                self.manageError(error: error)
-            })
+        getContent(state: nil, success: { gameCellViewModels in
+            
+            self.gameCellViewModels = gameCellViewModels
+            self.view?.showGames()
+            self.view?.setGamesCount()
+            self.view?.hideLoading()
         }, failure: { error in
             self.manageError(error: error)
         })
@@ -101,6 +106,27 @@ extension GamesViewModel: GamesViewModelProtocol {
     
     func getGameCellViewModels() -> [GameCellViewModel] {
         return gameCellViewModels
+    }
+    
+    func filterGamesByState(showPending: Bool, showInProgress: Bool, showFinished: Bool) {
+        
+        var state: String?
+        if showPending {
+            state = Constants.State.pending
+        } else if showInProgress {
+            state = Constants.State.inProgress
+        } else if showFinished {
+            state = Constants.State.finished
+        }
+        
+        getContent(state: state, success: { gameCellViewModels in
+            
+            self.gameCellViewModels = gameCellViewModels
+            self.view?.showGames()
+            self.view?.hideLoading()
+        }, failure: { error in
+            self.manageError(error: error)
+        })
     }
 }
 

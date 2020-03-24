@@ -15,6 +15,10 @@ extension UIFont {
         return UIFont(name: "Palatino-Bold", size: 14.0)!
     }
     
+    class var bold16: UIFont {
+        return UIFont(name: "Palatino-Bold", size: 16.0)!
+    }
+    
     class var bold18: UIFont {
         return UIFont(name: "Palatino-Bold", size: 18.0)!
     }
@@ -25,4 +29,7 @@ extension UIFont {
         return UIFont(name: "Palatino-Roman", size: 14.0)!
     }
     
+    class var roman16: UIFont {
+        return UIFont(name: "Palatino-Roman", size: 16.0)!
+    }
 }

@@ -13,6 +13,7 @@ protocol GamesViewProtocol: BaseViewProtocol {
      * Add here your methods for communication VIEW_MODEL -> VIEW
      */
     func showGames()
+    func setGamesCount()
 }
 
 protocol GamesConfigurableViewProtocol: class {
@@ -26,9 +27,9 @@ class GamesViewController: BaseViewController {
     // MARK: - Public properties
     
     @IBOutlet weak var lbGamesNumber: UILabel!
-    @IBOutlet weak var btPending: UIButton!
-    @IBOutlet weak var btInProgress: UIButton!
-    @IBOutlet weak var btFinished: UIButton!
+    @IBOutlet weak var btPending: GameFilterButton!
+    @IBOutlet weak var btInProgress: GameFilterButton!
+    @IBOutlet weak var btFinished: GameFilterButton!
     @IBOutlet weak var tvGames: UITableView!
     
     // MARK: - Private properties
@@ -55,19 +56,50 @@ class GamesViewController: BaseViewController {
         print("sort")
     }
     
+    @IBAction func showPendingGames(_ sender: Any) {
+
+        btPending.isSelected = !btPending.isSelected
+        btInProgress.isSelected = false
+        btFinished.isSelected = false
+        viewModel?.filterGamesByState(showPending: btPending.isSelected,
+                                      showInProgress: btInProgress.isSelected,
+                                      showFinished: btFinished.isSelected)
+    }
+    
+    @IBAction func showInProgressGames(_ sender: Any) {
+
+        btPending.isSelected = false
+        btInProgress.isSelected = !btInProgress.isSelected
+        btFinished.isSelected = false
+        viewModel?.filterGamesByState(showPending: btPending.isSelected,
+                                      showInProgress: btInProgress.isSelected,
+                                      showFinished: btFinished.isSelected)
+    }
+    
+    @IBAction func showFinishedGames(_ sender: Any) {
+
+        btPending.isSelected = false
+        btInProgress.isSelected = false
+        btFinished.isSelected = !btFinished.isSelected
+        viewModel?.filterGamesByState(showPending: btPending.isSelected,
+                                      showInProgress: btInProgress.isSelected,
+                                      showFinished: btFinished.isSelected)
+    }
+    
+    
     // MARK: - Overrides
     
     // MARK: - Private functions
     
     private func configViews() {
         
-        btPending.backgroundColor = Color.color1SuperLight
-        btInProgress.backgroundColor = Color.color1SuperLight
-        btFinished.backgroundColor = Color.color1SuperLight
+        btPending.title = "GAMES_FILTER_BUTTON_TITLE_PENDING".localized()
+        btInProgress.title = "GAMES_FILTER_BUTTON_TITLE_IN_PROGRESS".localized()
+        btFinished.title = "GAMES_FILTER_BUTTON_TITLE_FINISHED".localized()
         
-        btPending.layer.cornerRadius = 5
-        btInProgress.layer.cornerRadius = 5
-        btFinished.layer.cornerRadius = 5
+        btPending.gameState = Constants.State.pending
+        btInProgress.gameState = Constants.State.inProgress
+        btFinished.gameState = Constants.State.finished
         
         setupTableView()
     }
@@ -91,6 +123,22 @@ extension GamesViewController:  GamesViewProtocol {
     
     func showGames() {
         tvGames.reloadData()
+    }
+    
+    func setGamesCount() {
+        
+        let gameCellViewModels = viewModel?.getGameCellViewModels()
+        let gamesCount = gameCellViewModels?.count ?? 0
+        
+        lbGamesNumber.attributedText = NSAttributedString(string: "#\(gamesCount) \("GAMES_NUMBER_TITLE".localized())", attributes: [.font : UIFont.bold18, .foregroundColor: Color.color1])
+        
+        let filteredGames = gameCellViewModels?.compactMap({$0.stateId})
+        let pendingGamesCount = filteredGames?.filter({$0 == Constants.State.pending}).count ?? 0
+        let inProgressGamesCount = filteredGames?.filter({$0 == Constants.State.inProgress}).count ?? 0
+        let finishedGamesCount = filteredGames?.filter({$0 == Constants.State.finished}).count ?? 0
+        btPending.gamesNumber = "\(pendingGamesCount)"
+        btInProgress.gamesNumber = "\(inProgressGamesCount)"
+        btFinished.gamesNumber = "\(finishedGamesCount)"
     }
 }
 
@@ -122,9 +170,7 @@ extension GamesViewController:  UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let gameCellViewModels = viewModel?.getGameCellViewModels()
-        let numberOfGames = gameCellViewModels?.count ?? 0
-        lbGamesNumber.attributedText = NSAttributedString(string: "#\(numberOfGames) \("GAMES_NUMBER_TITLE".localized())", attributes: [.font : UIFont.bold18, .foregroundColor: Color.color1])
-        return numberOfGames
+        return gameCellViewModels?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

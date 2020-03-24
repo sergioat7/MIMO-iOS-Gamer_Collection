@@ -32,6 +32,9 @@
 // Games
 
 "GAMES" = "My Games";
+"GAMES_FILTER_BUTTON_TITLE_PENDING" = "Pending";
+"GAMES_FILTER_BUTTON_TITLE_IN_PROGRESS" = "In Progress";
+"GAMES_FILTER_BUTTON_TITLE_FINISHED" = "Finished";
 "GAMES_RELEASED" = "Released";
 "GAMES_UNRELEASED" = "Unreleased";
 "GAMES_NUMBER_TITLE" = "games";

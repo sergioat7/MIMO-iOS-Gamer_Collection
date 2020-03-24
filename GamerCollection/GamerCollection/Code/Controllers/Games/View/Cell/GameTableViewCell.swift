@@ -30,11 +30,11 @@ class GameTableViewCell: UITableViewCell {
         
         if let state = gameCellViewModel?.stateId {
             switch state {
-            case "PENDING":
-                vwGameImage.backgroundColor = Color.color2
-            case "IN_PROGRESS":
+            case Constants.State.pending:
+                vwGameImage.backgroundColor = Color.color4
+            case Constants.State.inProgress:
                 vwGameImage.backgroundColor = Color.color5
-            case "FINISHED":
+            case Constants.State.finished:
                 vwGameImage.backgroundColor = Color.color3
             default:break
             }
@@ -53,7 +53,7 @@ class GameTableViewCell: UITableViewCell {
                                                        attributes: [.font : UIFont.roman14,
                                                                     .foregroundColor: Color.color1])
         
-        if let releaseDate = gameCellViewModel?.releaseDate, !releaseDate.isEmpty, gameCellViewModel?.stateId == "PENDING" {
+        if let releaseDate = gameCellViewModel?.releaseDate, !releaseDate.isEmpty, gameCellViewModel?.stateId == Constants.State.pending {
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .long
