@@ -12,6 +12,11 @@ protocol ModalSyncAppDataManagerProtocol: class {
     /**
      * Add here your methods for communication VIEW_MODEL -> DATA_MANAGER
      */
+    func getFormats(success: @escaping (FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class ModalSyncAppDataManager: BaseDataManager {
@@ -20,12 +25,126 @@ class ModalSyncAppDataManager: BaseDataManager {
     
     // MARK: - Private variables
     
+    private let loginApiClient: LoginApiClientProtocol
+    private let formatRepository: FormatRepository
+    private let genreRepository: GenreRepository
+    private let platformRepository: PlatformRepository
+    private let stateRepository: StateRepository
+    private let gameRepository: GameRepository
+    
     // MARK: - Initialization
     
-    override init() {}
+    init(loginApiClient: LoginApiClientProtocol,
+         formatRepository: FormatRepository,
+         genreRepository: GenreRepository,
+         platformRepository: PlatformRepository,
+         stateRepository: StateRepository,
+         gameRepository: GameRepository) {
+        self.loginApiClient = loginApiClient
+        self.formatRepository = formatRepository
+        self.genreRepository = genreRepository
+        self.platformRepository = platformRepository
+        self.stateRepository = stateRepository
+        self.gameRepository = gameRepository
+    }
 }
 
 extension ModalSyncAppDataManager: ModalSyncAppDataManagerProtocol {
     
+    func getFormats(success: @escaping (FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        loginApiClient.getFormats(success: { formats in
+            
+            guard !formats.isEmpty else {
+                success(formats)
+                return
+            }
+            for (index, format) in formats.enumerated() {
+                self.formatRepository.update(item: format, success: { _ in
+                    
+                    if index == formats.count - 1 {
+                        success(formats)
+                    }
+                }, failure: failure)
+            }
+        }, failure: failure)
+    }
+    
+    func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        loginApiClient.getGenres(success: { genres in
+            
+            guard !genres.isEmpty else {
+                success(genres)
+                return
+            }
+            for (index, genre) in genres.enumerated() {
+                self.genreRepository.update(item: genre, success: { _ in
+                    
+                    if index == genres.count - 1 {
+                        success(genres)
+                    }
+                }, failure: failure)
+            }
+        }, failure: failure)
+    }
+    
+    func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        loginApiClient.getPlatforms(success: { platforms in
+            
+            guard !platforms.isEmpty else {
+                success(platforms)
+                return
+            }
+            for (index, platform) in platforms.enumerated() {
+                self.platformRepository.update(item: platform, success: { _ in
+                    
+                    if index == platforms.count - 1 {
+                        success(platforms)
+                    }
+                }, failure: failure)
+            }
+        }, failure: failure)
+    }
+    
+    func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        loginApiClient.getStates(success: { states in
+            
+            guard !states.isEmpty else {
+                success(states)
+                return
+            }
+            for (index, state) in states.enumerated() {
+                self.stateRepository.update(item: state, success: { _ in
+                    
+                    if index == states.count - 1 {
+                        success(states)
+                    }
+                }, failure: failure)
+            }
+        }, failure: failure)
+    }
+    
+    func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        loginApiClient.getGames(success: { games in
+            
+            guard !games.isEmpty else {
+                success(games)
+                return
+            }
+            
+            for (index, game) in games.enumerated() {
+                self.gameRepository.update(item: game, success: { _ in
+                    
+                    if index == games.count - 1 {
+                        success(games)
+                    }
+                }, failure: failure)
+            }
+        }, failure: failure)
+    }
 }
 

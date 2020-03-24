@@ -39,13 +39,52 @@ class ModalSyncAppViewModel: BaseViewModel {
     private func manageError(error: ErrorResponse) {
 
         view?.hideLoading()
-        view?.showError(message: error.error, handler: nil)
+        view?.showError(message: error.error, handler: {
+            self.view?.closePopup()
+        })
     }
     
     private func syncApp() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            self.view?.closePopup()
+        
+        var errorResponse: ErrorResponse?
+        let group = DispatchGroup()
+        
+        group.enter()
+        dataManager.getFormats(success: { _ in
+            self.dataManager.getGenres(success: { _ in
+                self.dataManager.getPlatforms(success: { _ in
+                    self.dataManager.getStates(success: { _ in
+                        self.dataManager.getGames(success: { _ in
+                            group.leave()
+                        }, failure: { error in
+                            errorResponse = error
+                            group.leave()
+                        })
+                    }, failure: { error in
+                        errorResponse = error
+                        group.leave()
+                    })
+                }, failure: { error in
+                    errorResponse = error
+                    group.leave()
+                })
+            }, failure: { error in
+                errorResponse = error
+                group.leave()
+            })
+        }, failure: { error in
+            errorResponse = error
+            group.leave()
         })
+        
+        group.notify(queue: .main) {
+            if let error = errorResponse {
+                self.manageError(error: error)
+            } else {
+                self.view?.closePopup()
+            }
+            MainTabBarController.show()
+        }
     }
 }
 

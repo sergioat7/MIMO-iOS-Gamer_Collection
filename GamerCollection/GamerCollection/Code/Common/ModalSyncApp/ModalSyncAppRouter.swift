@@ -26,7 +26,40 @@ class ModalSyncAppRouter: BaseRouter {
     // MARK: - Private variables
     
     private var dataManager: ModalSyncAppDataManagerProtocol {
-        return ModalSyncAppDataManager()
+        return ModalSyncAppDataManager(loginApiClient: loginApiClient,
+                                       formatRepository: formatRepository,
+                                       genreRepository: genreRepository,
+                                       platformRepository: platformRepository,
+                                       stateRepository: stateRepository,
+                                       gameRepository: gameRepository)
+    }
+    
+    private var loginApiClient: LoginApiClientProtocol {
+        return LoginApiClient(userManager: userManager)
+    }
+    
+    private var userManager: UserManager {
+        return UserManager()
+    }
+    
+    private var formatRepository: FormatRepository {
+        return FormatRepository()
+    }
+    
+    private var genreRepository: GenreRepository {
+        return GenreRepository()
+    }
+    
+    private var platformRepository: PlatformRepository {
+        return PlatformRepository()
+    }
+    
+    private var stateRepository: StateRepository {
+        return StateRepository()
+    }
+    
+    private var gameRepository: GameRepository {
+        return GameRepository()
     }
     
     // MARK: - Initialization
