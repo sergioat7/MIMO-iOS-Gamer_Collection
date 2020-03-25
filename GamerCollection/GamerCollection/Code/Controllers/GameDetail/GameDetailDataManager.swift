@@ -12,6 +12,12 @@ protocol GameDetailDataManagerProtocol: class {
     /**
      * Add here your methods for communication VIEW_MODEL -> DATA_MANAGER
      */
+    func getGame(success: @escaping (GameResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getFormats(success: @escaping (FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGameId() -> Int64
 }
 
 class GameDetailDataManager: BaseDataManager {
@@ -21,6 +27,7 @@ class GameDetailDataManager: BaseDataManager {
     private let apiClient: GameDetailApiClientProtocol
     private let gameRepository: GameRepository
     private let formatRepository: FormatRepository
+    private let genreRepository: GenreRepository
     private let platformRepository: PlatformRepository
     private let stateRepository: StateRepository
     private let gameId: Int64
@@ -32,12 +39,14 @@ class GameDetailDataManager: BaseDataManager {
     init(apiClient: GameDetailApiClientProtocol,
          gameRepository: GameRepository,
          formatRepository: FormatRepository,
+         genreRepository: GenreRepository,
          platformRepository: PlatformRepository,
          stateRepository: StateRepository,
          gameId: Int64) {
         self.apiClient = apiClient
         self.gameRepository = gameRepository
         self.formatRepository = formatRepository
+        self.genreRepository = genreRepository
         self.platformRepository = platformRepository
         self.stateRepository = stateRepository
         self.gameId = gameId
@@ -46,5 +55,39 @@ class GameDetailDataManager: BaseDataManager {
 
 extension GameDetailDataManager: GameDetailDataManagerProtocol {
     
+    func getGame(success: @escaping (GameResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        let gameId = getGameId()
+        gameRepository.get(id: gameId, success: { gameResponse in
+            
+            guard let selectedGame = gameResponse else {
+                let error = ErrorResponse(error: "ERROR_CORE_DATA".localized())
+                failure(error)
+                return
+            }
+            
+            success(selectedGame)
+        }, failure: failure)
+    }
+    
+    func getFormats(success: @escaping (FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        formatRepository.getAll(success: success, failure: failure)
+    }
+    
+    func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        genreRepository.getAll(success: success, failure: failure)
+    }
+    
+    func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        platformRepository.getAll(success: success, failure: failure)
+    }
+    
+    func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        stateRepository.getAll(success: success, failure: failure)
+    }
+    
+    func getGameId() -> Int64 {
+        return gameId
+    }
 }
 

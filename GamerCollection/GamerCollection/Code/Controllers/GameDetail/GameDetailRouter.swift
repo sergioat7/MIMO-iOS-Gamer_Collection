@@ -29,6 +29,7 @@ class GameDetailRouter: BaseRouter {
         return GameDetailDataManager(apiClient: apiClient,
                                      gameRepository: gameRepository,
                                      formatRepository: formatRepository,
+                                     genreRepository: genreRepository,
                                      platformRepository: platformRepository,
                                      stateRepository: stateRepository,
                                      gameId: gameId)
@@ -44,6 +45,10 @@ class GameDetailRouter: BaseRouter {
     
     private var formatRepository: FormatRepository {
         return FormatRepository()
+    }
+    
+    private var genreRepository: GenreRepository {
+        return GenreRepository()
     }
     
     private var platformRepository: PlatformRepository {

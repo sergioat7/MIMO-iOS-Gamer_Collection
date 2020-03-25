@@ -15,6 +15,7 @@ class BaseViewModel {
     var logoutHandler: Selector?
     var addHandler: Selector?
     var filterHandler: Selector?
+    var editHandler: Selector?
     
     init(view: BaseViewProtocol) {
         self.view = view
@@ -56,6 +57,10 @@ class BaseViewModel {
         syncButton.tintColor = Color.color1
         syncButton.setImage(UIImage(named: "sync"), for: UIControl.State())
         let syncButtonItem = UIBarButtonItem(customView: syncButton)
+        
+        // MARK: Edit button
+        let editButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: editHandler)
+        editButtonItem.tintColor = Color.color1
 
         var rightBarButtonItems = [UIBarButtonItem]()
         
@@ -74,6 +79,11 @@ class BaseViewModel {
         if let filter = filterHandler {
             filterButton.addTarget(self, action: filter, for: .touchUpInside)
             rightBarButtonItems.append(filterButtonItem)
+            rightBarButtonItems.append(space)
+        }
+        
+        if let _ = editHandler {
+            rightBarButtonItems.append(editButtonItem)
             rightBarButtonItems.append(space)
         }
         
