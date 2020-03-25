@@ -59,6 +59,10 @@
 
 "SYNC_TITLE" = "Sincronizando...";
 
+// Game detail
+
+"GAME_DETAIL" = "Detalle";
+
 // Errors
 
 "ERROR_BUTTON_ACCEPT" = "Aceptar";

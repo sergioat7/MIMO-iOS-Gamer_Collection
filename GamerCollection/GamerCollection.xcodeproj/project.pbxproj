@@ -66,6 +66,12 @@
 		FB62877E241E3D2800F5FF6E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB62877D241E3D2800F5FF6E /* ActionButton.swift */; };
 		FB7DB585242441D50040FC84 /* CoreDataRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DB584242441D50040FC84 /* CoreDataRepositoryProtocol.swift */; };
 		FB7DB5872424430B0040FC84 /* ModelHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DB5862424430B0040FC84 /* ModelHandlerProtocol.swift */; };
+		FB7EC328242BCAD50022C447 /* GameDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB7EC322242BCAD50022C447 /* GameDetailView.storyboard */; };
+		FB7EC329242BCAD50022C447 /* GameDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EC323242BCAD50022C447 /* GameDetailRouter.swift */; };
+		FB7EC32A242BCAD50022C447 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EC324242BCAD50022C447 /* GameDetailViewController.swift */; };
+		FB7EC32B242BCAD50022C447 /* GameDetailApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EC325242BCAD50022C447 /* GameDetailApiClient.swift */; };
+		FB7EC32C242BCAD50022C447 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EC326242BCAD50022C447 /* GameDetailViewModel.swift */; };
+		FB7EC32D242BCAD50022C447 /* GameDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EC327242BCAD50022C447 /* GameDetailDataManager.swift */; };
 		FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB935A262424D8A300352DA3 /* NSManagedObject+Extension.swift */; };
 		FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA547F124157AE900C23DB3 /* AppDelegate.swift */; };
 		FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBA547FA24157AE900C23DB3 /* GamerCollection.xcdatamodeld */; };
@@ -209,6 +215,12 @@
 		FB62877D241E3D2800F5FF6E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		FB7DB584242441D50040FC84 /* CoreDataRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepositoryProtocol.swift; sourceTree = "<group>"; };
 		FB7DB5862424430B0040FC84 /* ModelHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHandlerProtocol.swift; sourceTree = "<group>"; };
+		FB7EC322242BCAD50022C447 /* GameDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameDetailView.storyboard; sourceTree = "<group>"; };
+		FB7EC323242BCAD50022C447 /* GameDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailRouter.swift; sourceTree = "<group>"; };
+		FB7EC324242BCAD50022C447 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
+		FB7EC325242BCAD50022C447 /* GameDetailApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailApiClient.swift; sourceTree = "<group>"; };
+		FB7EC326242BCAD50022C447 /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
+		FB7EC327242BCAD50022C447 /* GameDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailDataManager.swift; sourceTree = "<group>"; };
 		FB935A262424D8A300352DA3 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
 		FBA547EE24157AE900C23DB3 /* Gamer Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gamer Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA547F124157AE900C23DB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -672,6 +684,35 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		FB7EC321242BC8F30022C447 /* GameDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FB7EC32F242BCADF0022C447 /* APIClient */,
+				FB7EC327242BCAD50022C447 /* GameDetailDataManager.swift */,
+				FB7EC323242BCAD50022C447 /* GameDetailRouter.swift */,
+				FB7EC324242BCAD50022C447 /* GameDetailViewController.swift */,
+				FB7EC326242BCAD50022C447 /* GameDetailViewModel.swift */,
+				FB7EC32E242BCAD90022C447 /* View */,
+			);
+			path = GameDetail;
+			sourceTree = "<group>";
+		};
+		FB7EC32E242BCAD90022C447 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB7EC322242BCAD50022C447 /* GameDetailView.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB7EC32F242BCADF0022C447 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				FB7EC325242BCAD50022C447 /* GameDetailApiClient.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
 		FB935A252424D88A00352DA3 /* NSManagedObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -779,6 +820,7 @@
 		FBA5482824157DAA00C23DB3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FB7EC321242BC8F30022C447 /* GameDetail */,
 				FB463C6C241D0908006F1A12 /* Games */,
 				FB463C57241CFE1D006F1A12 /* Login */,
 				FB463C66241D0666006F1A12 /* MainTabBar */,
@@ -1209,6 +1251,7 @@
 				FB448DDD241FE87F008ACE69 /* UserProfileView.storyboard in Resources */,
 				FB463C85241D0BBF006F1A12 /* SagasView.storyboard in Resources */,
 				FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */,
+				FB7EC328242BCAD50022C447 /* GameDetailView.storyboard in Resources */,
 				FB463C5E241CFE53006F1A12 /* LoginView.storyboard in Resources */,
 				FBF6C52524267CA300FC5469 /* GameTableViewCell.xib in Resources */,
 			);
@@ -1283,6 +1326,7 @@
 				FB463CA9241D6AA5006F1A12 /* Encodable+Extension.swift in Sources */,
 				FB31D5BC241E7DF800B16558 /* RegisterViewController.swift in Sources */,
 				FBF19EC624254A0A00E836FD /* Format+CoreDataClass.swift in Sources */,
+				FB7EC32D242BCAD50022C447 /* GameDetailDataManager.swift in Sources */,
 				FBB1A375241C4AC500E91579 /* UserManager.swift in Sources */,
 				FB463C76241D0A48006F1A12 /* GamesApiClient.swift in Sources */,
 				FBF19EC724254A0A00E836FD /* Format+CoreDataProperties.swift in Sources */,
@@ -1319,6 +1363,7 @@
 				FBB1A370241C273200E91579 /* AuthData.swift in Sources */,
 				FB463C61241CFE53006F1A12 /* LoginApiClient.swift in Sources */,
 				FB463C74241D0A48006F1A12 /* GamesRouter.swift in Sources */,
+				FB7EC32B242BCAD50022C447 /* GameDetailApiClient.swift in Sources */,
 				FBC1F641242ABBCF003A87EA /* ModalSyncAppRouter.swift in Sources */,
 				FBB1A36D241C221F00E91579 /* AuthorizationHandler.swift in Sources */,
 				FB463C60241CFE53006F1A12 /* LoginViewController.swift in Sources */,
@@ -1336,6 +1381,7 @@
 				FBA5483A241580D400C23DB3 /* BaseViewModel.swift in Sources */,
 				FB1DFEBF2416BE62000CAD7B /* APIRequest.swift in Sources */,
 				FBA54838241580C300C23DB3 /* BaseViewController.swift in Sources */,
+				FB7EC329242BCAD50022C447 /* GameDetailRouter.swift in Sources */,
 				FB31D5C9241EB08800B16558 /* RegisterDataModelRequest.swift in Sources */,
 				FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */,
 				FBF19ED52425522200E836FD /* Genre+CoreDataProperties.swift in Sources */,
@@ -1360,6 +1406,7 @@
 				FB463C77241D0A48006F1A12 /* GamesViewModel.swift in Sources */,
 				FBF19EB5242538A600E836FD /* GetGenresRequest.swift in Sources */,
 				FBDEF512242921CC0076F832 /* UIFont+Extension.swift in Sources */,
+				FB7EC32C242BCAD50022C447 /* GameDetailViewModel.swift in Sources */,
 				FB448DE6242003EF008ACE69 /* UpdatePasswordRequest.swift in Sources */,
 				FB31D5BF241E7DF800B16558 /* RegisterDataManager.swift in Sources */,
 				FB463C93241D0C29006F1A12 /* RankingViewModel.swift in Sources */,
@@ -1368,6 +1415,7 @@
 				FB463C78241D0A48006F1A12 /* GamesDataManager.swift in Sources */,
 				FBF19EC224253A7400E836FD /* GetStatesRequest.swift in Sources */,
 				FBF19EF424259AEB00E836FD /* Game+GameResponse.swift in Sources */,
+				FB7EC32A242BCAD50022C447 /* GameDetailViewController.swift in Sources */,
 				FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */,
 				FBB1A36A241C10E800E91579 /* Constants.swift in Sources */,
 				FBF19EE7242557A500E836FD /* State+CoreDataProperties.swift in Sources */,
