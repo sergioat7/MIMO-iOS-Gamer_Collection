@@ -78,10 +78,6 @@ class GamesViewModel: BaseViewModel {
     @objc private func filterGames() {
         print("filter")
     }
-    
-    @objc private func syncApp() {
-        print("sync")
-    }
 }
 
 extension GamesViewModel: GamesViewModelProtocol {
@@ -90,7 +86,6 @@ extension GamesViewModel: GamesViewModelProtocol {
         
         addHandler = #selector(addGame)
         filterHandler = #selector(filterGames)
-        syncHandler = #selector(syncApp)
         showNavBarButtons()
         
         getContent(state: nil, success: { gameCellViewModels in

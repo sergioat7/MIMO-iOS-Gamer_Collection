@@ -55,6 +55,10 @@
 "PROFILE_DELETE" = "Delete";
 "PROFILE_DELETE_CONFIRMATION" = "Are you sure you want to delete your user? You will lose all your stored information about the videogames";
 
+// Synchronization
+
+"SYNC_TITLE" = "Synchronizing...";
+
 // Errors
 
 "ERROR_BUTTON_ACCEPT" = "Accept";

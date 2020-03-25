@@ -16,6 +16,8 @@ protocol BaseViewProtocol: class {
     func showError(message: String, handler: (() -> Void)?)
     func showConfirmationDialog(message: String, handler: (() -> Void)?, handlerCancel: (() -> Void)?)
     func showRighBarButtonItems(rightBarButtonItem: [UIBarButtonItem])
+    func showSyncPopup(viewControllerToPresent: UIViewController)
+    func hidePopup()
 }
 
 class BaseViewController: UIViewController {
@@ -82,6 +84,15 @@ class BaseViewController: UIViewController {
     
     func showRighBarButtonItems(rightBarButtonItem: [UIBarButtonItem]) {
         navigationItem.rightBarButtonItems = rightBarButtonItem
+    }
+    
+    func showSyncPopup(viewControllerToPresent: UIViewController) {
+        viewControllerToPresent.modalPresentationStyle = .overFullScreen
+        present(viewControllerToPresent, animated: true, completion: nil)
+    }
+    
+    func hidePopup() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Private functions
