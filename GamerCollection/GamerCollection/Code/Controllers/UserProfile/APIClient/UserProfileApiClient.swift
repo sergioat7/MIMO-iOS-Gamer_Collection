@@ -18,13 +18,19 @@ protocol UserProfileApiClientProtocol {
 
 class UserProfileApiClient: UserProfileApiClientProtocol {
     
+    // MARK: - Private variables
+    
     private let userManager: UserManager
+    
+    // MARK: - Initialization
     
     init(userManager: UserManager) {
         self.userManager = userManager
     }
     
-    func getCredentials(success: @escaping (AuthData) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+    // MARK: - Private functions
+    
+    private func getCredentials(success: @escaping (AuthData) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
         userManager.getCredentials(success: { authData in
             success(authData)

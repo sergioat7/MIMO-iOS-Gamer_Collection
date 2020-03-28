@@ -36,7 +36,11 @@ class GameDetailRouter: BaseRouter {
     }
     
     private var apiClient: GameDetailApiClientProtocol {
-        return GameDetailApiClient()
+        return GameDetailApiClient(userManager: userManager)
+    }
+    
+    private var userManager: UserManager {
+        return UserManager()
     }
     
     private var gameRepository: GameRepository {

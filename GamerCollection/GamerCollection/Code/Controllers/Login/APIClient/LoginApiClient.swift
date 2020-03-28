@@ -20,20 +20,26 @@ protocol LoginApiClientProtocol {
 
 class LoginApiClient: LoginApiClientProtocol {
     
+    // MARK: - Private variables
+    
     private let userManager: UserManager
+    
+    // MARK: - Initialization
     
     init(userManager: UserManager) {
         self.userManager = userManager
     }
     
-    func getCredentials(success: @escaping (AuthData) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+    // MARK: - Private functions
+    
+    private func getCredentials(success: @escaping (AuthData) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
         userManager.getCredentials(success: { authData in
             success(authData)
         }, failure: failure)
     }
     
-    // MARK: - UserProfileApiClientProtocol
+    // MARK: - LoginApiClientProtocol
     
     func login(username: String, password: String, success: @escaping (LoginResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
