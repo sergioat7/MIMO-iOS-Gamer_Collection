@@ -63,6 +63,7 @@
 		FB463CA4241D65DB006F1A12 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463CA3241D65DB006F1A12 /* LoginResponse.swift */; };
 		FB463CA6241D69DF006F1A12 /* LoginDataModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463CA5241D69DF006F1A12 /* LoginDataModelRequest.swift */; };
 		FB463CA9241D6AA5006F1A12 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463CA8241D6AA5006F1A12 /* Encodable+Extension.swift */; };
+		FB50FAFC242F90BB009E6173 /* SetGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50FAFB242F90BB009E6173 /* SetGameRequest.swift */; };
 		FB62877E241E3D2800F5FF6E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB62877D241E3D2800F5FF6E /* ActionButton.swift */; };
 		FB6E00E9242EACBB00448CD3 /* DropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E00E8242EACBB00448CD3 /* DropdownButton.swift */; };
 		FB6E00EB242EACC300448CD3 /* DropdownButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6E00EA242EACC300448CD3 /* DropdownButton.xib */; };
@@ -216,6 +217,7 @@
 		FB463CA3241D65DB006F1A12 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		FB463CA5241D69DF006F1A12 /* LoginDataModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModelRequest.swift; sourceTree = "<group>"; };
 		FB463CA8241D6AA5006F1A12 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		FB50FAFB242F90BB009E6173 /* SetGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameRequest.swift; sourceTree = "<group>"; };
 		FB62877D241E3D2800F5FF6E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		FB6E00E8242EACBB00448CD3 /* DropdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButton.swift; sourceTree = "<group>"; };
 		FB6E00EA242EACC300448CD3 /* DropdownButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButton.xib; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				FB31D5CC241EB17A00B16558 /* Empty */,
 				FB31D5CD241EB18300B16558 /* Error */,
 				FBF19EA82425363E00E836FD /* Formats */,
+				FB50FAFA242F8FE2009E6173 /* Game */,
 				FBF19EE82425924500E836FD /* Games */,
 				FBF19EB02425387500E836FD /* Genres */,
 				FB463C9F241D51E4006F1A12 /* Login */,
@@ -659,6 +662,14 @@
 				FB463CA8241D6AA5006F1A12 /* Encodable+Extension.swift */,
 			);
 			path = Encodable;
+			sourceTree = "<group>";
+		};
+		FB50FAFA242F8FE2009E6173 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				FB50FAFB242F90BB009E6173 /* SetGameRequest.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		FB62877C241E3C2600F5FF6E /* Button */ = {
@@ -1443,6 +1454,7 @@
 				FB448DE6242003EF008ACE69 /* UpdatePasswordRequest.swift in Sources */,
 				FB31D5BF241E7DF800B16558 /* RegisterDataManager.swift in Sources */,
 				FB463C93241D0C29006F1A12 /* RankingViewModel.swift in Sources */,
+				FB50FAFC242F90BB009E6173 /* SetGameRequest.swift in Sources */,
 				FB31D5BE241E7DF800B16558 /* RegisterViewModel.swift in Sources */,
 				FB448DEE242029CF008ACE69 /* DeleteUserRequest.swift in Sources */,
 				FB463C78241D0A48006F1A12 /* GamesDataManager.swift in Sources */,
