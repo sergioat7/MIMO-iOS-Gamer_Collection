@@ -34,7 +34,7 @@ class DropdownButton: UIButton {
     
     var value: String? {
         didSet {
-            setValue(value: value ?? "")
+            setValue(value: value)
         }
     }
     
@@ -84,12 +84,18 @@ class DropdownButton: UIButton {
                                                                  .foregroundColor: color])
     }
     
-    private func setValue(value: String) {
+    private func setValue(value: String?) {
         
-        let color = theme == .dark ? Color.color2 : Color.color1
-        lbValue.attributedText = NSAttributedString(string: value,
-                                                    attributes: [.font : UIFont.roman16,
-                                                                 .foregroundColor: color])
+        if let value = value {
+
+            let color = theme == .dark ? Color.color2 : Color.color1
+            lbValue.attributedText = NSAttributedString(string: value,
+                                                        attributes: [.font : UIFont.roman16,
+                                                                     .foregroundColor: color])
+        } else {
+            setPlaceholder(placeholder: placeholder ?? "")
+        }
+        
     }
     
     private func setPlaceholder(placeholder: String) {

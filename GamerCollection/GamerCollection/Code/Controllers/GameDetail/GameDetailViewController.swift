@@ -34,7 +34,7 @@ class GameDetailViewController: BaseViewController {
     // MARK: - Public properties
     
     @IBOutlet weak var svDetails: UIScrollView!
-    @IBOutlet weak var lbName: UILabel!
+    @IBOutlet weak var tvName: UITextView!
     @IBOutlet weak var ivGame: UIImageView!
     @IBOutlet weak var ivGoty: UIImageView!
     @IBOutlet weak var btPlatform: DropdownButton!
@@ -197,9 +197,9 @@ class GameDetailViewController: BaseViewController {
         
         vwScore.didFinishTouchingCosmos = setScoreLabel
         
-        btPending.title = "GAMES_FILTER_BUTTON_TITLE_PENDING".localized()
-        btInProgress.title = "GAMES_FILTER_BUTTON_TITLE_IN_PROGRESS".localized()
-        btFinished.title = "GAMES_FILTER_BUTTON_TITLE_FINISHED".localized()
+        btPending.title = "GAME_DETAIL_BUTTON_TITLE_PENDING".localized()
+        btInProgress.title = "GAME_DETAIL_BUTTON_TITLE_IN_PROGRESS".localized()
+        btFinished.title = "GAME_DETAIL_BUTTON_TITLE_FINISHED".localized()
         
         btPending.gameState = Constants.State.pending
         btInProgress.gameState = Constants.State.inProgress
@@ -234,7 +234,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
     
     func showData(game: GameResponse) {
         
-        lbName.attributedText = NSAttributedString(string: game.name ?? "",
+        tvName.attributedText = NSAttributedString(string: game.name ?? "",
                                                    attributes: [.font : UIFont.bold24,
                                                                 .foregroundColor: Color.color2])
         
@@ -246,21 +246,19 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         
         ivGoty.isHidden = !game.goty
         
-        if let platformId = game.platform, let platform = platforms.first(where: { $0.id == platformId }) {
-            btPlatform.value = platform.name
-        }
+        let platform = platforms.first(where: { $0.id == game.platform })
+        btPlatform.value = platform?.name
 
         if let genreId = game.genre, let genre = genres.first(where: { $0.id == genreId }) {
             btGenre.value = genre.name
         }
+        let genre = genres.first(where: { $0.id == game.genre })
+        btGenre.value = genre?.name
 
-        if let formatId = game.state, let format = formats.first(where: { $0.id == formatId }) {
-            btFormat.value = format.name
-        }
+        let format = formats.first(where: { $0.id == game.format })
+        btFormat.value = format?.name
 
-        if let releaseDate = game.releaseDate, !releaseDate.isEmpty {
-            btReleaseDate.value = releaseDate
-        }
+        btReleaseDate.value = game.releaseDate
         
         vwScore.rating = game.score
         lbScore.attributedText = NSAttributedString(string: "\(game.score)",
@@ -277,6 +275,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
     
     func enableEdition(enable: Bool) {
         
+        tvName.isUserInteractionEnabled = enable
         ivGame.isUserInteractionEnabled = enable
         btPlatform.isEnabled = enable
         btGenre.isEnabled = enable

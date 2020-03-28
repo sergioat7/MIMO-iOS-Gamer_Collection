@@ -72,6 +72,9 @@
 "GAME_DETAIL_SELECT_GENRE" = "Select a genre";
 "GAME_DETAIL_SELECT_FORMAT" = "Select a format";
 "GAME_DETAIL_SELECT_DATE" = "Select a date";
+"GAME_DETAIL_BUTTON_TITLE_PENDING" = "Pending";
+"GAME_DETAIL_BUTTON_TITLE_IN_PROGRESS" = "In Progress";
+"GAME_DETAIL_BUTTON_TITLE_FINISHED" = "Finished";
 
 // Errors
 
