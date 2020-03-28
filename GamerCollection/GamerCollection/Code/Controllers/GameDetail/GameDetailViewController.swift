@@ -21,6 +21,7 @@ protocol GameDetailViewProtocol: BaseViewProtocol {
     func showStates(states: StatesResponse)
     func showData(game: GameResponse)
     func enableEdition(enable: Bool)
+    func getGameData() -> GameResponse
 }
 
 protocol GameDetailConfigurableViewProtocol: class {
@@ -56,6 +57,7 @@ class GameDetailViewController: BaseViewController {
     private var genres = GenresResponse()
     private var formats = FormatsResponse()
     private var states = StatesResponse()
+    private var gameId:Int64 = 0
     
     // MARK: - View lifecycle
     
@@ -234,6 +236,8 @@ extension GameDetailViewController:  GameDetailViewProtocol {
     
     func showData(game: GameResponse) {
         
+        gameId = game.id
+        
         tvName.attributedText = NSAttributedString(string: game.name ?? "",
                                                    attributes: [.font : UIFont.bold24,
                                                                 .foregroundColor: Color.color2])
@@ -285,6 +289,53 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         btPending.isEnabled = enable
         btInProgress.isEnabled = enable
         btFinished.isEnabled = enable
+    }
+    
+    func getGameData() -> GameResponse {
+        
+        let id = gameId
+        let name = tvName.text ?? nil //TODO
+        let platform = platforms.first(where: { $0.name == btPlatform.value })?.id ?? nil
+        let score = vwScore.rating
+        let pegi = "" //TODO
+        let distributor = "" //TODO
+        let developer = "" //TODO
+        let players = "" //TODO
+        let releaseDate = btReleaseDate.value ?? nil
+        let goty = !ivGoty.isHidden
+        let format = formats.first(where: { $0.name == btFormat.value })?.id ?? nil
+        let genre = genres.first(where: { $0.name == btGenre.value })?.id ?? nil
+        let state = btPending.isSelected ? Constants.State.pending : ( btInProgress.isSelected ? Constants.State.inProgress : Constants.State.finished )
+        let purchaseDate = "" //TODO
+        let purchaseLocation = "" //TODO
+        let price = 0.0 //TODO
+        let imageUrl: String? = nil //TODO
+        let videoUrl = "" //TODO
+        let loanedTo = "" //TODO
+        let observations = "" //TODO
+        
+        let game = GameResponse(id: id,
+                                name: name,
+                                platform: platform,
+                                score: score,
+                                pegi: pegi,
+                                distributor: distributor,
+                                developer: developer,
+                                players: players,
+                                releaseDate: releaseDate,
+                                goty: goty,
+                                format: format,
+                                genre: genre,
+                                state: state,
+                                purchaseDate: purchaseDate,
+                                purchaseLocation: purchaseLocation,
+                                price: price,
+                                imageUrl: imageUrl,
+                                videoUrl: videoUrl,
+                                loanedTo: loanedTo,
+                                observations: observations)
+        
+        return game
     }
 }
 

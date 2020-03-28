@@ -85,9 +85,21 @@ class GameDetailViewModel: BaseViewModel {
     
     @objc private func saveGame() {
         
-        view?.enableEdition(enable: false)
-        showNavBarButtons()
-        view?.showBackbarButtonItem()
+        if let gameData = view?.getGameData() {
+            
+            view?.showLoading()
+            dataManager.setGame(game: gameData, success: { gameResponse in
+                
+                self.game = gameResponse
+                self.view?.enableEdition(enable: false)
+                self.showNavBarButtons()
+                self.view?.showBackbarButtonItem()
+                self.view?.showData(game: gameResponse)
+                self.view?.hideLoading()
+            }, failure: { error in
+                self.manageError(error: error)
+            })
+        }
     }
     
     @objc private func cancelEdition() {
