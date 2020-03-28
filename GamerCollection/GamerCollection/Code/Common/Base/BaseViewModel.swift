@@ -100,7 +100,9 @@ class BaseViewModel {
     
     @objc private func openSyncPopup() {
         
-        let viewControllerToPresent = ModalSyncAppRouter().view
-        view?.showSyncPopup(viewControllerToPresent: viewControllerToPresent)
+        view?.showConfirmationDialog(message: "SYNC_CONFIRMATION".localized(), handler: {
+            let viewControllerToPresent = ModalSyncAppRouter().view
+            self.view?.showSyncPopup(viewControllerToPresent: viewControllerToPresent)
+        }, handlerCancel: nil)
     }
 }

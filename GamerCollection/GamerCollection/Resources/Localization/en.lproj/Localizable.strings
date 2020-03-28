@@ -58,6 +58,7 @@
 // Synchronization
 
 "SYNC_TITLE" = "Synchronizing...";
+"SYNC_CONFIRMATION" = "Are you sure you want to sync the app? This process could take a while";
 
 // Game detail
 
