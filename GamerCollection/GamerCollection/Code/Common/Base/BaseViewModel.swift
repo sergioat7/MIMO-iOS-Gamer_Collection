@@ -16,6 +16,8 @@ class BaseViewModel {
     var addHandler: Selector?
     var filterHandler: Selector?
     var editHandler: Selector?
+    var saveHandler: Selector?
+    var cancelHandler: Selector?
     
     init(view: BaseViewProtocol) {
         self.view = view
@@ -24,7 +26,20 @@ class BaseViewModel {
     func showNavBarButtons() {
         
         let rightBarButtonItems = getRightButtons()
-        view?.showRighBarButtonItems(rightBarButtonItem: rightBarButtonItems)
+        view?.showRightBarButtonItems(rightBarButtonItems: rightBarButtonItems)
+    }
+    
+    func showSaveCancelButtons() {
+        
+        // MARK: Save button
+        let saveButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: saveHandler)
+        
+        // MARK: Cancel button
+        let cancelButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: cancelHandler)
+        
+        view?.showRightBarButtonItems(rightBarButtonItems: [saveButtonItem])
+        
+        view?.showLeftBarButtonItems(leftBarButtonItems: [cancelButtonItem])
     }
     
     // MARK: - Private functions
@@ -60,7 +75,6 @@ class BaseViewModel {
         
         // MARK: Edit button
         let editButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: editHandler)
-        editButtonItem.tintColor = Color.color1
 
         var rightBarButtonItems = [UIBarButtonItem]()
         

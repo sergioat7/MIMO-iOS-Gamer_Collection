@@ -15,7 +15,9 @@ protocol BaseViewProtocol: class {
     func hideLoading()
     func showError(message: String, handler: (() -> Void)?)
     func showConfirmationDialog(message: String, handler: (() -> Void)?, handlerCancel: (() -> Void)?)
-    func showRighBarButtonItems(rightBarButtonItem: [UIBarButtonItem])
+    func showRightBarButtonItems(rightBarButtonItems: [UIBarButtonItem])
+    func showLeftBarButtonItems(leftBarButtonItems: [UIBarButtonItem])
+    func showBackbarButtonItem()
     func showSyncPopup(viewControllerToPresent: UIViewController)
     func hidePopup()
     func registerKeyboardNotifications()
@@ -86,8 +88,16 @@ class BaseViewController: UIViewController {
         present(popup, animated: true)
     }
     
-    func showRighBarButtonItems(rightBarButtonItem: [UIBarButtonItem]) {
-        navigationItem.rightBarButtonItems = rightBarButtonItem
+    func showRightBarButtonItems(rightBarButtonItems: [UIBarButtonItem]) {
+        navigationItem.rightBarButtonItems = rightBarButtonItems
+    }
+    
+    func showLeftBarButtonItems(leftBarButtonItems: [UIBarButtonItem]) {
+        navigationItem.leftBarButtonItems = leftBarButtonItems
+    }
+    
+    func showBackbarButtonItem() {
+        navigationItem.leftBarButtonItems = []
     }
     
     func showSyncPopup(viewControllerToPresent: UIViewController) {

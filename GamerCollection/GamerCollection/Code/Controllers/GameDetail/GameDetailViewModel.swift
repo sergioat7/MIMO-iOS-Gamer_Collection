@@ -25,6 +25,8 @@ class GameDetailViewModel: BaseViewModel {
     
     private var dataManager: GameDetailDataManagerProtocol
     
+    private var game: GameResponse!
+    
     // MARK: - Initialization
     
     init(view:GameDetailViewProtocol,
@@ -51,6 +53,7 @@ class GameDetailViewModel: BaseViewModel {
                     self.dataManager.getPlatforms(success: { platformsResponse in
                         self.dataManager.getStates(success: { statesResponse in
                             
+                            self.game = gameResponse
                             self.view?.showPlatforms(platforms: platformsResponse)
                             self.view?.showGenres(genres: genresResponse)
                             self.view?.showFormats(formats: formatsResponse)
@@ -75,7 +78,24 @@ class GameDetailViewModel: BaseViewModel {
     }
     
     @objc private func editGame() {
+        
         view?.enableEdition(enable: true)
+        showSaveCancelButtons()
+    }
+    
+    @objc private func saveGame() {
+        
+        view?.enableEdition(enable: false)
+        showNavBarButtons()
+        view?.showBackbarButtonItem()
+    }
+    
+    @objc private func cancelEdition() {
+        
+        view?.enableEdition(enable: false)
+        showNavBarButtons()
+        view?.showBackbarButtonItem()
+        view?.showData(game: game)
     }
 }
 
@@ -84,6 +104,8 @@ extension GameDetailViewModel: GameDetailViewModelProtocol {
     func viewDidLoad() {
         
         editHandler = #selector(editGame)
+        saveHandler = #selector(saveGame)
+        cancelHandler = #selector(cancelEdition)
         showNavBarButtons()
         getContent()
     }
