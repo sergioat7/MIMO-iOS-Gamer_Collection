@@ -58,6 +58,7 @@
 // Synchronization
 
 "SYNC_TITLE" = "Sincronizando...";
+"SYNC_CONFIRMATION" = "¿Estás seguro de que quieres sincronizar la app? Este proceso puede llevar un tiempo";
 
 // Errors
 
