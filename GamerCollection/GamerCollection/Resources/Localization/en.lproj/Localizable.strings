@@ -62,6 +62,15 @@
 // Game detail
 
 "GAME_DETAIL" = "Detail";
+"GAME_DETAIL_TITLE" = "Details";
+"GAME_DETAIL_PLATFORM" = "Platform";
+"GAME_DETAIL_GENRE" = "Genre";
+"GAME_DETAIL_FORMAT" = "Format";
+"GAME_DETAIL_RELEASE_DATE" = "Release date";
+"GAME_DETAIL_SELECT_PLATFORM" = "Select a pltaform";
+"GAME_DETAIL_SELECT_GENRE" = "Select a genre";
+"GAME_DETAIL_SELECT_FORMAT" = "Select a format";
+"GAME_DETAIL_SELECT_DATE" = "Select a date";
 
 // Errors
 

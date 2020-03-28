@@ -86,11 +86,6 @@ class UserProfileViewController: BaseViewController {
         btDelete.background = Color.color4
         btDelete.text = Color.color2
     }
-    
-    @objc private func hideKeyboard() {
-        tfPassword.resignFirstResponder()
-    }
-    
 }
 
 // MARK: - UserProfileViewProtocol

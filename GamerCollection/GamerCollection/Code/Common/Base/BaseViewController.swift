@@ -18,12 +18,15 @@ protocol BaseViewProtocol: class {
     func showRighBarButtonItems(rightBarButtonItem: [UIBarButtonItem])
     func showSyncPopup(viewControllerToPresent: UIViewController)
     func hidePopup()
+    func registerKeyboardNotifications()
+    func removeKeyboardNotifications()
 }
 
 class BaseViewController: UIViewController {
     
     var loadingScreen = LoadingScreen()
     var isLoading: Bool = false
+    var scrollView: UIScrollView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +99,32 @@ class BaseViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func registerKeyboardNotifications() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow(notification:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide(notification:)),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    func removeKeyboardNotifications() {
+        
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillShowNotification,
+                                                  object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillHideNotification,
+                                                  object: nil)
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
     // MARK: - Private functions
     
     private func setupDialog() {
@@ -109,6 +138,20 @@ class BaseViewController: UIViewController {
         
         let buttonAppearance = DefaultButton.appearance()
         buttonAppearance.titleColor = .black
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardInfo = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue
+        let keyboardSize = keyboardInfo.cgRectValue.size
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        scrollView?.contentInset = contentInsets
+        scrollView?.scrollIndicatorInsets = contentInsets
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        scrollView?.contentInset = .zero
+        scrollView?.scrollIndicatorInsets = .zero
     }
     
 }

@@ -51,6 +51,11 @@ class GameDetailViewModel: BaseViewModel {
                     self.dataManager.getPlatforms(success: { platformsResponse in
                         self.dataManager.getStates(success: { statesResponse in
                             
+                            self.view?.showPlatforms(platforms: platformsResponse)
+                            self.view?.showGenres(genres: genresResponse)
+                            self.view?.showFormats(formats: formatsResponse)
+                            self.view?.showStates(states: statesResponse)
+                            self.view?.showData(game: gameResponse)
                             self.view?.hideLoading()
                         }, failure: { error in
                             self.manageError(error: error)
@@ -70,7 +75,7 @@ class GameDetailViewModel: BaseViewModel {
     }
     
     @objc private func editGame() {
-        print("edit")
+        view?.enableEdition(enable: true)
     }
 }
 
