@@ -13,6 +13,7 @@ protocol GamesViewModelProtocol: class {
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
     func viewDidLoad()
+    func viewWillAppear()
     func getGameCellViewModels() -> [GameCellViewModel]
     func filterGamesByState(showPending: Bool, showInProgress: Bool, showFinished: Bool)
 }
@@ -77,6 +78,7 @@ class GamesViewModel: BaseViewModel {
     
     @objc private func filterGames() {
         print("filter")
+         //TODO
     }
 }
 
@@ -87,6 +89,9 @@ extension GamesViewModel: GamesViewModelProtocol {
         addHandler = #selector(addGame)
         filterHandler = #selector(filterGames)
         showNavBarButtons()
+    }
+    
+    func viewWillAppear() {
         
         getContent(state: nil, success: { gameCellViewModels in
             

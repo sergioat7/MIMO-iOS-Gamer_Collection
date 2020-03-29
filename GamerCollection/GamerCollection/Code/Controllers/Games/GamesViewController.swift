@@ -48,12 +48,14 @@ class GamesViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel?.viewWillAppear()
     }
     
     // MARK: - Actions
     
     @IBAction func sortGames(_ sender: Any) {
         print("sort")
+         //TODO
     }
     
     @IBAction func showPendingGames(_ sender: Any) {
