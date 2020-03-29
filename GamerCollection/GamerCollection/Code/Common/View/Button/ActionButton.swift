@@ -10,12 +10,12 @@ import UIKit
 
 class ActionButton: UIButton {
     
-    var background: UIColor? {
+    @IBInspectable var background: UIColor? {
         didSet {
             setUp()
         }
     }
-    var text: UIColor? {
+    @IBInspectable var text: UIColor? {
         didSet {
             setUp()
         }

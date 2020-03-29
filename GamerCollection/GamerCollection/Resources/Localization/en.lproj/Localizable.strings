@@ -95,6 +95,8 @@
 "GAME_DETAIL_PLACEHOLDER_VIDEO_URL" = "Add a URL";
 "GAME_DETAIL_OBSERVATIONS" = "Observations";
 "GAME_DETAIL_PLACEHOLDER_OBSERVATIONS" = "Add some observations";
+"GAME_DETAIL_DELETE" = "Delete";
+"GAME_DETAIL_DELETE_CONFIRMATION" = "Are you sure you want to delete this game? This action can't be undone";
 
 // Errors
 

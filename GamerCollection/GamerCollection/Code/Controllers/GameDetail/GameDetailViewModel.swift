@@ -13,6 +13,7 @@ protocol GameDetailViewModelProtocol: class {
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
     func viewDidLoad()
+    func deleteGame()
 }
 
 class GameDetailViewModel: BaseViewModel {
@@ -120,6 +121,10 @@ extension GameDetailViewModel: GameDetailViewModelProtocol {
         cancelHandler = #selector(cancelEdition)
         showNavBarButtons()
         getContent()
+    }
+    
+    func deleteGame() {
+        print("delete")
     }
 }
 

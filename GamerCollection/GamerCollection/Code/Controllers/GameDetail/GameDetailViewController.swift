@@ -218,6 +218,13 @@ class GameDetailViewController: BaseViewController {
         btFinished.isSelected = sender == btFinished
     }
     
+    @IBAction func deleteGame(_ sender: UIButton) {
+        
+        showConfirmationDialog(message: "GAME_DETAIL_DELETE_CONFIRMATION".localized(), handler: {
+            self.viewModel?.deleteGame()
+        }, handlerCancel: nil)
+    }
+    
     // MARK: - Overrides
     
     // MARK: - Private functions

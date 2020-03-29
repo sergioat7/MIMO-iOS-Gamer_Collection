@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="53" width="375" height="614"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cya-zX-sYc" userLabel="Container View">
-                                        <rect key="frame" x="10" y="0.0" width="355" height="956.5"/>
+                                        <rect key="frame" x="10" y="0.0" width="355" height="1020.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0a-Pa-68c">
                                                 <rect key="frame" x="0.0" y="0.0" width="177.5" height="266.5"/>
@@ -412,10 +412,26 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUE-xH-Uhj" customClass="ActionButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                <rect key="frame" x="77.5" y="956.5" width="200" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="7XV-aN-Uc6"/>
+                                                </constraints>
+                                                <state key="normal" title="GAME_DETAIL_DELETE"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="background">
+                                                        <color key="value" name="color4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="deleteGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ym4-le-nAs"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="xl5-R4-zD1" firstAttribute="top" secondItem="CTI-OW-bxI" secondAttribute="bottom" constant="20" id="2DH-ly-xHl"/>
                                             <constraint firstItem="l0a-Pa-68c" firstAttribute="top" secondItem="cya-zX-sYc" secondAttribute="top" id="8ad-NF-gXX"/>
+                                            <constraint firstItem="zUE-xH-Uhj" firstAttribute="centerX" secondItem="cya-zX-sYc" secondAttribute="centerX" id="CNd-O9-YvP"/>
                                             <constraint firstItem="6yR-qv-RP6" firstAttribute="top" secondItem="xl5-R4-zD1" secondAttribute="bottom" constant="20" id="Dq6-WE-3Tp"/>
                                             <constraint firstAttribute="trailing" secondItem="Y88-ds-jd3" secondAttribute="trailing" id="KCt-fa-Eme"/>
                                             <constraint firstItem="eNY-qh-M7c" firstAttribute="top" secondItem="6yR-qv-RP6" secondAttribute="bottom" id="OjP-oN-1ml"/>
@@ -426,6 +442,7 @@
                                             <constraint firstItem="l0a-Pa-68c" firstAttribute="width" secondItem="cya-zX-sYc" secondAttribute="width" multiplier="0.5" id="Yyl-73-yNK"/>
                                             <constraint firstItem="Y88-ds-jd3" firstAttribute="leading" secondItem="cya-zX-sYc" secondAttribute="leading" id="a63-K8-F9a"/>
                                             <constraint firstItem="Y88-ds-jd3" firstAttribute="top" secondItem="eNY-qh-M7c" secondAttribute="bottom" constant="10" id="dZM-8h-qBb"/>
+                                            <constraint firstItem="zUE-xH-Uhj" firstAttribute="top" secondItem="Y88-ds-jd3" secondAttribute="bottom" constant="30" id="dxY-X6-eel"/>
                                             <constraint firstItem="ncZ-sF-PfQ" firstAttribute="height" relation="lessThanOrEqual" secondItem="q5R-4q-mGn" secondAttribute="height" id="fNe-k5-nux"/>
                                             <constraint firstItem="6yR-qv-RP6" firstAttribute="leading" secondItem="cya-zX-sYc" secondAttribute="leading" id="ifY-hS-A6v"/>
                                             <constraint firstItem="ncZ-sF-PfQ" firstAttribute="leading" secondItem="l0a-Pa-68c" secondAttribute="trailing" constant="10" id="iu5-aa-dIt"/>
@@ -435,9 +452,9 @@
                                             <constraint firstItem="l0a-Pa-68c" firstAttribute="leading" secondItem="cya-zX-sYc" secondAttribute="leading" id="qyt-uh-uMs"/>
                                             <constraint firstAttribute="trailing" secondItem="eNY-qh-M7c" secondAttribute="trailing" id="t7w-Jg-ebG"/>
                                             <constraint firstAttribute="trailing" secondItem="ncZ-sF-PfQ" secondAttribute="trailing" id="tTE-MP-foG"/>
-                                            <constraint firstAttribute="bottom" secondItem="Y88-ds-jd3" secondAttribute="bottom" constant="30" id="vvR-rm-QQw"/>
                                             <constraint firstItem="eNY-qh-M7c" firstAttribute="leading" secondItem="cya-zX-sYc" secondAttribute="leading" id="wb1-XX-gNj"/>
                                             <constraint firstItem="CTI-OW-bxI" firstAttribute="top" secondItem="0CL-X6-kjK" secondAttribute="bottom" constant="5" id="wf7-MG-f2o"/>
+                                            <constraint firstAttribute="bottom" secondItem="zUE-xH-Uhj" secondAttribute="bottom" constant="30" id="xrM-q4-qAU"/>
                                             <constraint firstAttribute="trailing" secondItem="CTI-OW-bxI" secondAttribute="trailing" constant="5" id="zom-y2-Gor"/>
                                         </constraints>
                                     </view>
