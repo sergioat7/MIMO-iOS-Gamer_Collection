@@ -70,6 +70,7 @@ class GameDetailViewController: BaseViewController {
     private var formats = FormatsResponse()
     private var states = StatesResponse()
     private var gameId:Int64 = 0
+    private var imageUrl: String?
     
     // MARK: - View lifecycle
     
@@ -205,12 +206,6 @@ class GameDetailViewController: BaseViewController {
                                    origin: sender)
     }
     
-    func setScoreLabel(rating: Double) {
-        lbScore.attributedText = NSAttributedString(string: "\(rating)",
-                                                    attributes: [.font : UIFont.roman16,
-                                                                 .foregroundColor: Color.color2])
-    }
-    
     @IBAction func selectState(_ sender: UIButton) {
         
         btPending.isSelected = sender == btPending
@@ -225,11 +220,25 @@ class GameDetailViewController: BaseViewController {
         }, handlerCancel: nil)
     }
     
+    @objc func setImage() {
+        
+        showAlertWithTextField(handlerAccept: { imageUrl in
+            
+            self.imageUrl = imageUrl
+            if let url = URL(string: imageUrl) {
+                self.ivGame.kf.setImage(with: url)
+            }
+        }, handlerCancel: nil)
+    }
+    
     // MARK: - Overrides
     
     // MARK: - Private functions
     
     private func configViews() {
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(setImage))
+        ivGame.addGestureRecognizer(tapGesture)
         
         btPlatform.title = "GAME_DETAIL_PLATFORM".localized()
         btGenre.title = "GAME_DETAIL_GENRE".localized()
@@ -267,6 +276,11 @@ class GameDetailViewController: BaseViewController {
         tvObservations.placeholder = "GAME_DETAIL_PLACEHOLDER_OBSERVATIONS".localized()
     }
     
+    private func setScoreLabel(rating: Double) {
+        lbScore.attributedText = NSAttributedString(string: "\(rating)",
+                                                    attributes: [.font : UIFont.roman16,
+                                                                 .foregroundColor: Color.color2])
+    }
 }
 
 // MARK: - GameDetailViewProtocol
@@ -297,7 +311,8 @@ extension GameDetailViewController:  GameDetailViewProtocol {
                                                    attributes: [.font : UIFont.bold24,
                                                                 .foregroundColor: Color.color2])
         
-        if let image = game.imageUrl, let imageUrl = URL(string: image) {
+        imageUrl = game.imageUrl
+        if let image = imageUrl, let imageUrl = URL(string: image) {
             
             ivGame.kf.indicatorType = .activity
             ivGame.kf.setImage(with: imageUrl)
@@ -388,7 +403,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         let purchaseDate = btPurchaseDate.value
         let purchaseLocation = tvPurchaseLocation.text
         let price = Double(tvPrice.text ?? "0") ?? 0
-        let imageUrl: String? = nil //TODO
+        let imageUrl = self.imageUrl
         let videoUrl = tvVideoUrl.text
         let loanedTo = tvLoanedTo.text
         let observations = tvObservations.text
@@ -425,5 +440,11 @@ extension GameDetailViewController:  GameDetailConfigurableViewProtocol {
     func set(viewModel: GameDetailViewModelProtocol) {
         self.viewModel = viewModel
     }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension GameDetailViewController:  UITextFieldDelegate {
+    
     
 }

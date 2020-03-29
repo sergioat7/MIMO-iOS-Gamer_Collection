@@ -23,6 +23,7 @@ protocol BaseViewProtocol: class {
     func registerKeyboardNotifications()
     func removeKeyboardNotifications()
     func popViewController()
+    func showAlertWithTextField(handlerAccept: ((String) -> Void)?, handlerCancel: (() -> Void)?)
 }
 
 class BaseViewController: UIViewController {
@@ -136,6 +137,37 @@ class BaseViewController: UIViewController {
     
     func popViewController() {
         UIViewController.getCurrentNavigationController()?.popViewController()
+    }
+    
+    func showAlertWithTextField(handlerAccept: ((String) -> Void)?, handlerCancel: (() -> Void)?) {
+        
+        if presentedViewController != nil {
+            dismiss(animated: true, completion: nil)
+        }
+        
+        let title = "GAME_DETAIL_IMAGE_MODAL_TITLE".localized()
+        let message = ""
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addTextField { textField in }
+        
+        let cancelAction = UIAlertAction(title: "CANCEL".localized(), style: .cancel) { (action) in
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(cancelAction)
+        
+        let okAction = UIAlertAction(title: "ACCEPT".localized(), style: .default) { (action) in
+            var text = ""
+            if let textField = alertController.textFields?.first {
+                text = textField.text ?? ""
+            }
+            handlerAccept?(text)
+            alertController.dismiss(animated: true, completion: nil)
+            
+        }
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     // MARK: - Other functions

@@ -63,6 +63,7 @@
 // Game detail
 
 "GAME_DETAIL" = "Detalle";
+"GAME_DETAIL_IMAGE_MODAL_TITLE" = "Introduce un enlace válido";
 "GAME_DETAIL_PLATFORM" = "Plataforma";
 "GAME_DETAIL_SELECT_PLATFORM" = "Selecciona una plataforma";
 "GAME_DETAIL_GENRE" = "Género";
