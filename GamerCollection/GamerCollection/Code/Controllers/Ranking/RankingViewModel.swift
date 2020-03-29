@@ -71,8 +71,9 @@ class RankingViewModel: BaseViewModel {
     }
     
     @objc private func filterGames() {
-        print("filter")
-         //TODO
+        
+        let viewControllerToPresent = ModalFilterRouter().view
+        view?.showFilterPopup(viewControllerToPresent: viewControllerToPresent)
     }
 }
 

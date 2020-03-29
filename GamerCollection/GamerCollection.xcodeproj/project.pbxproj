@@ -89,6 +89,11 @@
 		FB8E2237242D570800B043FB /* State+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2235242D570800B043FB /* State+CoreDataClass.swift */; };
 		FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB935A262424D8A300352DA3 /* NSManagedObject+Extension.swift */; };
 		FB9C419A2430E403004526A6 /* CreateGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C41992430E403004526A6 /* CreateGameRequest.swift */; };
+		FB9C41A1243111E7004526A6 /* ModalFilterView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB9C419C243111E7004526A6 /* ModalFilterView.storyboard */; };
+		FB9C41A2243111E7004526A6 /* ModalFilterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C419D243111E7004526A6 /* ModalFilterRouter.swift */; };
+		FB9C41A3243111E7004526A6 /* ModalFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C419E243111E7004526A6 /* ModalFilterViewController.swift */; };
+		FB9C41A4243111E7004526A6 /* ModalFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C419F243111E7004526A6 /* ModalFilterViewModel.swift */; };
+		FB9C41A5243111E7004526A6 /* ModalFilterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C41A0243111E7004526A6 /* ModalFilterDataManager.swift */; };
 		FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA547F124157AE900C23DB3 /* AppDelegate.swift */; };
 		FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBA547FA24157AE900C23DB3 /* GamerCollection.xcdatamodeld */; };
 		FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA547FD24157AEA00C23DB3 /* Assets.xcassets */; };
@@ -248,6 +253,11 @@
 		FB8E2235242D570800B043FB /* State+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FB935A262424D8A300352DA3 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
 		FB9C41992430E403004526A6 /* CreateGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameRequest.swift; sourceTree = "<group>"; };
+		FB9C419C243111E7004526A6 /* ModalFilterView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModalFilterView.storyboard; sourceTree = "<group>"; };
+		FB9C419D243111E7004526A6 /* ModalFilterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFilterRouter.swift; sourceTree = "<group>"; };
+		FB9C419E243111E7004526A6 /* ModalFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFilterViewController.swift; sourceTree = "<group>"; };
+		FB9C419F243111E7004526A6 /* ModalFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFilterViewModel.swift; sourceTree = "<group>"; };
+		FB9C41A0243111E7004526A6 /* ModalFilterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFilterDataManager.swift; sourceTree = "<group>"; };
 		FBA547EE24157AE900C23DB3 /* Gamer Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gamer Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA547F124157AE900C23DB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBA547FB24157AE900C23DB3 /* GamerCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GamerCollection.xcdatamodel; sourceTree = "<group>"; };
@@ -789,6 +799,26 @@
 			path = NSManagedObject;
 			sourceTree = "<group>";
 		};
+		FB9C419B24311178004526A6 /* ModalFilter */ = {
+			isa = PBXGroup;
+			children = (
+				FB9C41A0243111E7004526A6 /* ModalFilterDataManager.swift */,
+				FB9C419D243111E7004526A6 /* ModalFilterRouter.swift */,
+				FB9C419E243111E7004526A6 /* ModalFilterViewController.swift */,
+				FB9C419F243111E7004526A6 /* ModalFilterViewModel.swift */,
+				FB9C41A6243111EA004526A6 /* View */,
+			);
+			path = ModalFilter;
+			sourceTree = "<group>";
+		};
+		FB9C41A6243111EA004526A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB9C419C243111E7004526A6 /* ModalFilterView.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FBA547E524157AE900C23DB3 = {
 			isa = PBXGroup;
 			children = (
@@ -877,6 +907,7 @@
 				FBA548302415806200C23DB3 /* Base */,
 				FBB1A368241C10DB00E91579 /* Constants */,
 				FBA5483B2415832B00C23DB3 /* Extensions */,
+				FB9C419B24311178004526A6 /* ModalFilter */,
 				FBC1F63A242ABB8E003A87EA /* ModalSyncApp */,
 				FBA5482924157DC600C23DB3 /* Persistance */,
 				FBB1A373241C4AB000E91579 /* UserManager */,
@@ -1322,6 +1353,7 @@
 				FB463C85241D0BBF006F1A12 /* SagasView.storyboard in Resources */,
 				FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */,
 				FB6E00EB242EACC300448CD3 /* DropdownButton.xib in Resources */,
+				FB9C41A1243111E7004526A6 /* ModalFilterView.storyboard in Resources */,
 				FB7EC328242BCAD50022C447 /* GameDetailView.storyboard in Resources */,
 				FB463C5E241CFE53006F1A12 /* LoginView.storyboard in Resources */,
 				FB50FB0424300EF1009E6173 /* UnderlinedTextView.xib in Resources */,
@@ -1414,6 +1446,7 @@
 				FB463C68241D0678006F1A12 /* MainTabBarController.swift in Sources */,
 				FB463C62241CFE53006F1A12 /* LoginViewModel.swift in Sources */,
 				FBF6C52724267CB700FC5469 /* GameCellViewModel.swift in Sources */,
+				FB9C41A2243111E7004526A6 /* ModalFilterRouter.swift in Sources */,
 				FBF19EB32425388F00E836FD /* GenreResponse.swift in Sources */,
 				FB463CA6241D69DF006F1A12 /* LoginDataModelRequest.swift in Sources */,
 				FBF19ED42425522200E836FD /* Genre+CoreDataClass.swift in Sources */,
@@ -1439,9 +1472,11 @@
 				FB8E2236242D570800B043FB /* State+CoreDataProperties.swift in Sources */,
 				FBB1A370241C273200E91579 /* AuthData.swift in Sources */,
 				FB463C61241CFE53006F1A12 /* LoginApiClient.swift in Sources */,
+				FB9C41A3243111E7004526A6 /* ModalFilterViewController.swift in Sources */,
 				FB463C74241D0A48006F1A12 /* GamesRouter.swift in Sources */,
 				FB7EC32B242BCAD50022C447 /* GameDetailApiClient.swift in Sources */,
 				FBC1F641242ABBCF003A87EA /* ModalSyncAppRouter.swift in Sources */,
+				FB9C41A4243111E7004526A6 /* ModalFilterViewModel.swift in Sources */,
 				FBB1A36D241C221F00E91579 /* AuthorizationHandler.swift in Sources */,
 				FB8E2233242D56E100B043FB /* Platform+CoreDataProperties.swift in Sources */,
 				FB463C60241CFE53006F1A12 /* LoginViewController.swift in Sources */,
@@ -1456,6 +1491,7 @@
 				FBF19EEA2425927600E836FD /* GetGamesRequest.swift in Sources */,
 				FB50FB0224300EE6009E6173 /* UnderlinedTextView.swift in Sources */,
 				FBF19EBA2425397000E836FD /* GetPlatformsRequest.swift in Sources */,
+				FB9C41A5243111E7004526A6 /* ModalFilterDataManager.swift in Sources */,
 				FBA5483A241580D400C23DB3 /* BaseViewModel.swift in Sources */,
 				FB1DFEBF2416BE62000CAD7B /* APIRequest.swift in Sources */,
 				FBA54838241580C300C23DB3 /* BaseViewController.swift in Sources */,
