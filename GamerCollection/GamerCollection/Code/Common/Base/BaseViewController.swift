@@ -22,6 +22,7 @@ protocol BaseViewProtocol: class {
     func hidePopup()
     func registerKeyboardNotifications()
     func removeKeyboardNotifications()
+    func popViewController()
 }
 
 class BaseViewController: UIViewController {
@@ -43,6 +44,8 @@ class BaseViewController: UIViewController {
         let message = "Showing " + NSStringFromClass(self.classForCoder)
         print(message)
     }
+    
+    // MARK: - BaseViewProtocol
     
     func showLoading() {
         loadingScreen.show(view: view)
@@ -130,6 +133,12 @@ class BaseViewController: UIViewController {
                                                   name: UIResponder.keyboardWillHideNotification,
                                                   object: nil)
     }
+    
+    func popViewController() {
+        UIViewController.getCurrentNavigationController()?.popViewController()
+    }
+    
+    // MARK: - Other functions
     
     @objc func hideKeyboard() {
         view.endEditing(true)

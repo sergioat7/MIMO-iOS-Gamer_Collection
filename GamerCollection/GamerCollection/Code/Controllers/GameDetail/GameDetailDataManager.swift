@@ -18,6 +18,7 @@ protocol GameDetailDataManagerProtocol: class {
     func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func setGame(game: GameResponse, success: @escaping (GameResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func deleteGame(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getGameId() -> Int64
 }
 
@@ -94,6 +95,14 @@ extension GameDetailDataManager: GameDetailDataManagerProtocol {
             self.gameRepository.update(item: gameResponse, success: { _ in
                 success(gameResponse)
             }, failure: failure)
+        }, failure: failure)
+    }
+    
+    func deleteGame(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        let gameId = getGameId()
+        apiClient.deleteGame(gameId: gameId, success: { _ in
+            self.gameRepository.delete(id: gameId, success: success, failure: failure)
         }, failure: failure)
     }
     

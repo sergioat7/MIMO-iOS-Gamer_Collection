@@ -124,7 +124,15 @@ extension GameDetailViewModel: GameDetailViewModelProtocol {
     }
     
     func deleteGame() {
-        print("delete")
+        
+        view?.showLoading()
+        dataManager.deleteGame(success: {
+            
+            self.view?.hideLoading()
+            self.view?.popViewController()
+        }, failure: { error in
+            self.manageError(error: error)
+        })
     }
 }
 
