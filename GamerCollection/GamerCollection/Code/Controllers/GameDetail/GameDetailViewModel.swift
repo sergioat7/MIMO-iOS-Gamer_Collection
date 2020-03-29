@@ -107,9 +107,13 @@ class GameDetailViewModel: BaseViewModel {
             } else {
                 
                 dataManager.createGame(game: gameData, success: {
-                    
-                    self.view?.hideLoading()
-                    self.view?.popViewController()
+                    self.dataManager.updateGames(success: {
+                        
+                        self.view?.hideLoading()
+                        self.view?.popViewController()
+                    }, failure: { error in
+                        self.manageError(error: error)
+                    })
                 }, failure: { error in
                     self.manageError(error: error)
                 })

@@ -44,6 +44,8 @@ class GameTableViewCell: UITableViewCell {
             
             ivGame.kf.indicatorType = .activity
             ivGame.kf.setImage(with: imageUrl)
+        } else {
+            ivGame.image = nil
         }
         
         lbName.attributedText = NSAttributedString(string: gameCellViewModel?.name ?? "",
