@@ -98,13 +98,6 @@ class LoginViewController: BaseViewController {
         btRegister.titleLabel?.numberOfLines = 0
         btRegister.titleLabel?.textAlignment = .center
     }
-    
-    @objc private func hideKeyboard() {
-        
-        tfUsername.resignFirstResponder()
-        tfPassword.resignFirstResponder()
-    }
-    
 }
 
 // MARK: - LoginViewProtocol

@@ -34,7 +34,7 @@
 "GAMES" = "Mis Juegos";
 "GAMES_FILTER_BUTTON_TITLE_PENDING" = "Pendientes";
 "GAMES_FILTER_BUTTON_TITLE_IN_PROGRESS" = "En Progreso";
-"GAMES_FILTER_BUTTON_TITLE_FINISHED" = "Terminado";
+"GAMES_FILTER_BUTTON_TITLE_FINISHED" = "Terminados";
 "GAMES_RELEASED" = "Lanzado";
 "GAMES_UNRELEASED" = "No lanzado";
 "GAMES_NUMBER_TITLE" = "juegos";
@@ -59,6 +59,45 @@
 
 "SYNC_TITLE" = "Sincronizando...";
 "SYNC_CONFIRMATION" = "¿Estás seguro de que quieres sincronizar la app? Este proceso puede llevar un tiempo";
+
+// Game detail
+
+"GAME_DETAIL" = "Detalle";
+"GAME_DETAIL_IMAGE_MODAL_TITLE" = "Introduce un enlace válido";
+"GAME_DETAIL_PLATFORM" = "Plataforma";
+"GAME_DETAIL_SELECT_PLATFORM" = "Selecciona una plataforma";
+"GAME_DETAIL_GENRE" = "Género";
+"GAME_DETAIL_SELECT_GENRE" = "Selecciona un género";
+"GAME_DETAIL_FORMAT" = "Formato";
+"GAME_DETAIL_SELECT_FORMAT" = "Selecciona un formato";
+"GAME_DETAIL_RELEASE_DATE" = "Fecha de publicación";
+"GAME_DETAIL_SELECT_DATE" = "Selecciona una fecha";
+"GAME_DETAIL_BUTTON_TITLE_PENDING" = "Pendiente";
+"GAME_DETAIL_BUTTON_TITLE_IN_PROGRESS" = "En Progreso";
+"GAME_DETAIL_BUTTON_TITLE_FINISHED" = "Terminado";
+"GAME_DETAIL_TITLE" = "Detalles";
+"GAME_DETAIL_DISTRIBUTOR" = "Distribuidor";
+"GAME_DETAIL_PLACEHOLDER_DISTRIBUTOR" = "Añade el distributor";
+"GAME_DETAIL_DEVELOPER" = "Desarrollador";
+"GAME_DETAIL_PLACEHOLDER_DEVELOPER" = "Añade el desarrollador";
+"GAME_DETAIL_PEGI" = "Pegi";
+"GAME_DETAIL_SELECT_PEGI" = "Selecciona una categoría";
+"GAME_DETAIL_PLAYERS" = "Nº Jugadores";
+"GAME_DETAIL_PLACEHOLDER_PLAYERS" = "Añade el nº de jugadores";
+"GAME_DETAIL_PRICE" = "Precio";
+"GAME_DETAIL_PLACEHOLDER_PRICE" = "Añade el precio";
+"GAME_DETAIL_PURCHASE_DATE" = "Fecha de compra";
+"GAME_DETAIL_PURCHASE_LOCATION" = "Lugar de compra";
+"GAME_DETAIL_PLACEHOLDER_PURCHASE_LOCATION" = "Añade el lugar de compra";
+"GAME_DETAIL_GOTY" = "Juego del año (GOTY)";
+"GAME_DETAIL_LOANED_TO" = "Prestado a";
+"GAME_DETAIL_PLACEHOLDER_LOANED_TO" = "Añade un usuario";
+"GAME_DETAIL_VIDEO_URL" = "Enlace de vídeo";
+"GAME_DETAIL_PLACEHOLDER_VIDEO_URL" = "Añade un enlace";
+"GAME_DETAIL_OBSERVATIONS" = "Observaciones";
+"GAME_DETAIL_PLACEHOLDER_OBSERVATIONS" = "Añade unas observaciones";
+"GAME_DETAIL_DELETE" = "Borrar";
+"GAME_DETAIL_DELETE_CONFIRMATION" = "¿Estás seguro de que quieres borrar este juego? Esta acción no se puede deshacer";
 
 // Errors
 

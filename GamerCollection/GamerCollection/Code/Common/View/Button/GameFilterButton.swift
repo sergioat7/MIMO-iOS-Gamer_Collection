@@ -2,7 +2,8 @@
 //  GameFilterButton.swift
 //  GamerCollection
 //
-//  Created by alumno on 24/03/2020.
+//  Created by Sergio Aragonés on 24/03/2020.
+//  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
 import UIKit
@@ -69,12 +70,14 @@ class GameFilterButton: UIButton {
     // MARK: - Private functions
     
     private func setTitle(title: String) {
+        
         lbTitle.attributedText = NSAttributedString(string: title,
                                                     attributes: [.font : UIFont.roman16,
                                                                  .foregroundColor: Color.color2])
     }
     
     private func setGamesNumber(number: String) {
+        
         lbGamesNumber.attributedText = NSAttributedString(string: number,
                                                           attributes: [.font : UIFont.bold16,
                                                                        .foregroundColor: Color.color2])

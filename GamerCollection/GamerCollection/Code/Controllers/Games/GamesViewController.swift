@@ -159,7 +159,7 @@ extension GamesViewController:  UITableViewDelegate {
         
         let gameCellViewModels = viewModel?.getGameCellViewModels()
         let gameId = gameCellViewModels?[indexPath.row].id ?? 0
-        //TODO go to detail
+        GameDetailRouter(gameId: gameId).push()
     }
 }
 

@@ -15,6 +15,8 @@ protocol RegisterApiClientProtocol {
 
 class RegisterApiClient: RegisterApiClientProtocol {
     
+    // MARK: - RegisterApiClientProtocol
+    
     func register(username: String, password: String, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
         let registerParameters = RegisterDataModelRequest(username: username,

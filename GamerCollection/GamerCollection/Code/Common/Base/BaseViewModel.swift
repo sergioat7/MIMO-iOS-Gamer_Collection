@@ -15,6 +15,9 @@ class BaseViewModel {
     var logoutHandler: Selector?
     var addHandler: Selector?
     var filterHandler: Selector?
+    var editHandler: Selector?
+    var saveHandler: Selector?
+    var cancelHandler: Selector?
     
     init(view: BaseViewProtocol) {
         self.view = view
@@ -23,7 +26,20 @@ class BaseViewModel {
     func showNavBarButtons() {
         
         let rightBarButtonItems = getRightButtons()
-        view?.showRighBarButtonItems(rightBarButtonItem: rightBarButtonItems)
+        view?.showRightBarButtonItems(rightBarButtonItems: rightBarButtonItems)
+    }
+    
+    func showSaveCancelButtons() {
+        
+        // MARK: Save button
+        let saveButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: saveHandler)
+        
+        // MARK: Cancel button
+        let cancelButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: cancelHandler)
+        
+        view?.showRightBarButtonItems(rightBarButtonItems: [saveButtonItem])
+        
+        view?.showLeftBarButtonItems(leftBarButtonItems: [cancelButtonItem])
     }
     
     // MARK: - Private functions
@@ -56,6 +72,9 @@ class BaseViewModel {
         syncButton.tintColor = Color.color1
         syncButton.setImage(UIImage(named: "sync"), for: UIControl.State())
         let syncButtonItem = UIBarButtonItem(customView: syncButton)
+        
+        // MARK: Edit button
+        let editButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: editHandler)
 
         var rightBarButtonItems = [UIBarButtonItem]()
         
@@ -74,6 +93,11 @@ class BaseViewModel {
         if let filter = filterHandler {
             filterButton.addTarget(self, action: filter, for: .touchUpInside)
             rightBarButtonItems.append(filterButtonItem)
+            rightBarButtonItems.append(space)
+        }
+        
+        if let _ = editHandler {
+            rightBarButtonItems.append(editButtonItem)
             rightBarButtonItems.append(space)
         }
         

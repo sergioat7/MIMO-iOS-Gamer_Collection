@@ -81,14 +81,6 @@ class RegisterViewController: BaseViewController {
         btRegister.background = Color.color3
         btRegister.text = Color.color2
     }
-    
-    @objc private func hideKeyboard() {
-        
-        tfUsername.resignFirstResponder()
-        tfPassword.resignFirstResponder()
-        tfRepeatPassword.resignFirstResponder()
-    }
-    
 }
 
 // MARK: - RegisterViewProtocol

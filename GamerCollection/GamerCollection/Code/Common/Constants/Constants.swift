@@ -39,4 +39,11 @@ struct Constants {
     struct NavBar {
         static let space: CGFloat = 15
     }
+    
+    // MARK: - Date format constants
+    
+    struct DateFormat {
+        static let english: String = "MM-dd-yyyy"
+        static let spanish: String = "dd-MM-yyyy"
+    }
 }

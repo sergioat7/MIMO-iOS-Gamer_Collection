@@ -2,7 +2,7 @@
 //  ActionButton.swift
 //  GamerCollection
 //
-//  Created by alumno on 15/03/2020.
+//  Created by Sergio Aragonés on 15/03/2020.
 //  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
@@ -10,12 +10,12 @@ import UIKit
 
 class ActionButton: UIButton {
     
-    var background: UIColor? {
+    @IBInspectable var background: UIColor? {
         didSet {
             setUp()
         }
     }
-    var text: UIColor? {
+    @IBInspectable var text: UIColor? {
         didSet {
             setUp()
         }

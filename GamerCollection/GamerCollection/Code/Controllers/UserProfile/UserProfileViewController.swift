@@ -27,8 +27,6 @@ class UserProfileViewController: BaseViewController {
     
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
-    @IBOutlet weak var btSave: ActionButton!
-    @IBOutlet weak var btDelete: ActionButton!
     
     // MARK: - Private properties
     
@@ -80,17 +78,7 @@ class UserProfileViewController: BaseViewController {
         tfPassword.delegate = self
         tfUsername.placeholder = "REGISTRATION_USERNAME".localized()
         tfPassword.placeholder = "REGISTRATION_PASSWORD".localized()
-        
-        btSave.background = Color.color3
-        btSave.text = Color.color2
-        btDelete.background = Color.color4
-        btDelete.text = Color.color2
     }
-    
-    @objc private func hideKeyboard() {
-        tfPassword.resignFirstResponder()
-    }
-    
 }
 
 // MARK: - UserProfileViewProtocol

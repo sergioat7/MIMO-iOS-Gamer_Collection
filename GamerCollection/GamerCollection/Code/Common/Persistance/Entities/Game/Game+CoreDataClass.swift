@@ -2,7 +2,8 @@
 //  Game+CoreDataClass.swift
 //  GamerCollection
 //
-//  Created by alumno on 21/03/2020.
+//  Created by Sergio Aragonés on 21/03/2020.
+//  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 //
 
