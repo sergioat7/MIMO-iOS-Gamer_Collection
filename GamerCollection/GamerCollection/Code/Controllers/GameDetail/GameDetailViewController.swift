@@ -47,7 +47,19 @@ class GameDetailViewController: BaseViewController {
     @IBOutlet weak var btPending: GameFilterButton!
     @IBOutlet weak var btInProgress: GameFilterButton!
     @IBOutlet weak var btFinished: GameFilterButton!
+    
     @IBOutlet weak var lbDetailsTitle: UILabel!
+    @IBOutlet weak var tvDistributor: UnderlinedTextView!
+    @IBOutlet weak var tvDeveloper: UnderlinedTextView!
+    @IBOutlet weak var btPegi: DropdownButton!
+    @IBOutlet weak var tvPlayers: UnderlinedTextView!
+    @IBOutlet weak var tvPrice: UnderlinedTextView!
+    @IBOutlet weak var btPurchaseDate: DropdownButton!
+    @IBOutlet weak var tvPurchaseLocation: UnderlinedTextView!
+    @IBOutlet weak var swGoty: UISwitch!
+    @IBOutlet weak var tvLoanedTo: UnderlinedTextView!
+    @IBOutlet weak var tvVideoUrl: UnderlinedTextView!
+    @IBOutlet weak var tvObservations: UnderlinedTextView!
         
     // MARK: - Private properties
     
@@ -123,6 +135,17 @@ class GameDetailViewController: BaseViewController {
                 self.btFormat.value = format
                 return
             }
+        } else if sender == btPegi {
+            
+            title = "GAME_DETAIL_SELECT_PEGI".localized()
+            let rowsAux = ["+3", "+4", "+6", "+7", "+12", "+16", "+18"]
+            rows = rowsAux
+            initialSelection = rowsAux.firstIndex(where: {$0 == btPegi.value}) ?? 0
+            actionDoneBlock = { picker, value, index in
+                let format = String(describing: index ?? "")
+                self.btPegi.value = format
+                return
+            }
         }
 
         ActionSheetStringPicker.show(withTitle: title,
@@ -156,6 +179,20 @@ class GameDetailViewController: BaseViewController {
                 self.btReleaseDate.value = value
                 return
             }
+        } else if sender == btPurchaseDate {
+
+            title = "GAME_DETAIL_SELECT_DATE".localized()
+            defaultDate = self.btPurchaseDate.value?.toDate(format: format) ?? Date()
+            actionDoneBlock = { picker, date, origin in
+                
+                var value = ""
+                if let date = date as? Date {
+                    let format = Locale.current.languageCode == "es" ? Constants.DateFormat.spanish : Constants.DateFormat.english
+                    value = date.toString(format: format)
+                }
+                self.btPurchaseDate.value = value
+                return
+            }
         }
         
         ActionSheetDatePicker.show(withTitle: title,
@@ -174,7 +211,7 @@ class GameDetailViewController: BaseViewController {
                                                                  .foregroundColor: Color.color2])
     }
     
-    @IBAction func selectFormat(_ sender: UIButton) {
+    @IBAction func selectState(_ sender: UIButton) {
         
         btPending.isSelected = sender == btPending
         btInProgress.isSelected = sender == btInProgress
@@ -208,8 +245,19 @@ class GameDetailViewController: BaseViewController {
         btFinished.gameState = Constants.State.finished
         
         lbDetailsTitle.attributedText = NSAttributedString(string: "GAME_DETAIL_TITLE".localized(),
-                                                           attributes: [.font : UIFont.bold16,
+                                                           attributes: [.font : UIFont.bold18,
                                                                         .foregroundColor: Color.color2])
+        
+        tvDistributor.placeholder = "GAME_DETAIL_PLACEHOLDER_DISTRIBUTOR".localized()
+        tvDeveloper.placeholder = "GAME_DETAIL_PLACEHOLDER_DEVELOPER".localized()
+        btPegi.placeholder = "GAME_DETAIL_SELECT_PEGI".localized()
+        tvPlayers.placeholder = "GAME_DETAIL_PLACEHOLDER_PLAYERS".localized()
+        tvPrice.placeholder = "GAME_DETAIL_PLACEHOLDER_PRICE".localized()
+        btPurchaseDate.placeholder = "GAME_DETAIL_SELECT_DATE".localized()
+        tvPurchaseLocation.placeholder = "GAME_DETAIL_PLACEHOLDER_PURCHASE_LOCATION".localized()
+        tvLoanedTo.placeholder = "GAME_DETAIL_PLACEHOLDER_LOANED_TO".localized()
+        tvVideoUrl.placeholder = "GAME_DETAIL_PLACEHOLDER_VIDEO_URL".localized()
+        tvObservations.placeholder = "GAME_DETAIL_PLACEHOLDER_OBSERVATIONS".localized()
     }
     
 }
@@ -275,6 +323,18 @@ extension GameDetailViewController:  GameDetailViewProtocol {
             btInProgress.isSelected = stateId == Constants.State.inProgress
             btFinished.isSelected = stateId == Constants.State.finished
         }
+        
+        tvDistributor.text = game.distributor
+        tvDeveloper.text = game.developer
+        btPegi.value = game.pegi
+        tvPlayers.text = game.players
+        tvPrice.text = "\(game.price)"
+        btPurchaseDate.value = game.purchaseDate
+        tvPurchaseLocation.text = game.purchaseLocation
+        swGoty.isOn = game.goty
+        tvLoanedTo.text = game.loanedTo
+        tvVideoUrl.text = game.videoUrl
+        tvObservations.text = game.observations
     }
     
     func enableEdition(enable: Bool) {
@@ -289,30 +349,42 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         btPending.isEnabled = enable
         btInProgress.isEnabled = enable
         btFinished.isEnabled = enable
+        
+        tvDistributor.isEnabled = enable
+        tvDeveloper.isEnabled = enable
+        btPegi.isEnabled = enable
+        tvPlayers.isEnabled = enable
+        tvPrice.isEnabled = enable
+        btPurchaseDate.isEnabled = enable
+        tvPurchaseLocation.isEnabled = enable
+        swGoty.isEnabled = enable
+        tvLoanedTo.isEnabled = enable
+        tvVideoUrl.isEnabled = enable
+        tvObservations.isEnabled = enable
     }
     
     func getGameData() -> GameResponse {
         
         let id = gameId
-        let name = tvName.text ?? nil //TODO
+        let name = tvName.text
         let platform = platforms.first(where: { $0.name == btPlatform.value })?.id ?? nil
         let score = vwScore.rating
-        let pegi = "" //TODO
-        let distributor = "" //TODO
-        let developer = "" //TODO
-        let players = "" //TODO
-        let releaseDate = btReleaseDate.value ?? nil
-        let goty = !ivGoty.isHidden
+        let pegi = btPegi.value
+        let distributor = tvDistributor.text
+        let developer = tvDeveloper.text
+        let players = tvPlayers.text
+        let releaseDate = btReleaseDate.value
+        let goty = swGoty.isOn
         let format = formats.first(where: { $0.name == btFormat.value })?.id ?? nil
         let genre = genres.first(where: { $0.name == btGenre.value })?.id ?? nil
         let state = btPending.isSelected ? Constants.State.pending : ( btInProgress.isSelected ? Constants.State.inProgress : Constants.State.finished )
-        let purchaseDate = "" //TODO
-        let purchaseLocation = "" //TODO
-        let price = 0.0 //TODO
+        let purchaseDate = btPurchaseDate.value
+        let purchaseLocation = tvPurchaseLocation.text
+        let price = Double(tvPrice.text ?? "0") ?? 0
         let imageUrl: String? = nil //TODO
-        let videoUrl = "" //TODO
-        let loanedTo = "" //TODO
-        let observations = "" //TODO
+        let videoUrl = tvVideoUrl.text
+        let loanedTo = tvLoanedTo.text
+        let observations = tvObservations.text
         
         let game = GameResponse(id: id,
                                 name: name,

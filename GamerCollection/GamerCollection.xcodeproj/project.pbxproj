@@ -64,6 +64,9 @@
 		FB463CA6241D69DF006F1A12 /* LoginDataModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463CA5241D69DF006F1A12 /* LoginDataModelRequest.swift */; };
 		FB463CA9241D6AA5006F1A12 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463CA8241D6AA5006F1A12 /* Encodable+Extension.swift */; };
 		FB50FAFC242F90BB009E6173 /* SetGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50FAFB242F90BB009E6173 /* SetGameRequest.swift */; };
+		FB50FAFF242FED0D009E6173 /* LocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50FAFE242FED0D009E6173 /* LocalizedLabel.swift */; };
+		FB50FB0224300EE6009E6173 /* UnderlinedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50FB0124300EE6009E6173 /* UnderlinedTextView.swift */; };
+		FB50FB0424300EF1009E6173 /* UnderlinedTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB50FB0324300EF1009E6173 /* UnderlinedTextView.xib */; };
 		FB62877E241E3D2800F5FF6E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB62877D241E3D2800F5FF6E /* ActionButton.swift */; };
 		FB6E00E9242EACBB00448CD3 /* DropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E00E8242EACBB00448CD3 /* DropdownButton.swift */; };
 		FB6E00EB242EACC300448CD3 /* DropdownButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6E00EA242EACC300448CD3 /* DropdownButton.xib */; };
@@ -218,6 +221,9 @@
 		FB463CA5241D69DF006F1A12 /* LoginDataModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModelRequest.swift; sourceTree = "<group>"; };
 		FB463CA8241D6AA5006F1A12 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		FB50FAFB242F90BB009E6173 /* SetGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameRequest.swift; sourceTree = "<group>"; };
+		FB50FAFE242FED0D009E6173 /* LocalizedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLabel.swift; sourceTree = "<group>"; };
+		FB50FB0124300EE6009E6173 /* UnderlinedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextView.swift; sourceTree = "<group>"; };
+		FB50FB0324300EF1009E6173 /* UnderlinedTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnderlinedTextView.xib; sourceTree = "<group>"; };
 		FB62877D241E3D2800F5FF6E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		FB6E00E8242EACBB00448CD3 /* DropdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButton.swift; sourceTree = "<group>"; };
 		FB6E00EA242EACC300448CD3 /* DropdownButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButton.xib; sourceTree = "<group>"; };
@@ -354,7 +360,9 @@
 			isa = PBXGroup;
 			children = (
 				FB62877C241E3C2600F5FF6E /* Button */,
+				FB50FAFD242FECE9009E6173 /* Label */,
 				FB1DFEB42416BADB000CAD7B /* LoadingScreen */,
+				FB50FB0024300EBF009E6173 /* TextView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -670,6 +678,23 @@
 				FB50FAFB242F90BB009E6173 /* SetGameRequest.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		FB50FAFD242FECE9009E6173 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				FB50FAFE242FED0D009E6173 /* LocalizedLabel.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		FB50FB0024300EBF009E6173 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				FB50FB0124300EE6009E6173 /* UnderlinedTextView.swift */,
+				FB50FB0324300EF1009E6173 /* UnderlinedTextView.xib */,
+			);
+			path = TextView;
 			sourceTree = "<group>";
 		};
 		FB62877C241E3C2600F5FF6E /* Button */ = {
@@ -1293,6 +1318,7 @@
 				FB6E00EB242EACC300448CD3 /* DropdownButton.xib in Resources */,
 				FB7EC328242BCAD50022C447 /* GameDetailView.storyboard in Resources */,
 				FB463C5E241CFE53006F1A12 /* LoginView.storyboard in Resources */,
+				FB50FB0424300EF1009E6173 /* UnderlinedTextView.xib in Resources */,
 				FBF6C52524267CA300FC5469 /* GameTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1421,6 +1447,7 @@
 				FBC1F642242ABBCF003A87EA /* ModalSyncAppViewController.swift in Sources */,
 				FB448DEB24200410008ACE69 /* UpdatePasswordDataModelRequest.swift in Sources */,
 				FBF19EEA2425927600E836FD /* GetGamesRequest.swift in Sources */,
+				FB50FB0224300EE6009E6173 /* UnderlinedTextView.swift in Sources */,
 				FBF19EBA2425397000E836FD /* GetPlatformsRequest.swift in Sources */,
 				FBA5483A241580D400C23DB3 /* BaseViewModel.swift in Sources */,
 				FB1DFEBF2416BE62000CAD7B /* APIRequest.swift in Sources */,
@@ -1468,6 +1495,7 @@
 				FBF19ECB24254C2300E836FD /* FormatRepository.swift in Sources */,
 				FBC1F644242ABBCF003A87EA /* ModalSyncAppDataManager.swift in Sources */,
 				FB463CA4241D65DB006F1A12 /* LoginResponse.swift in Sources */,
+				FB50FAFF242FED0D009E6173 /* LocalizedLabel.swift in Sources */,
 				FB463C92241D0C29006F1A12 /* RankingViewController.swift in Sources */,
 				FB7DB5872424430B0040FC84 /* ModelHandlerProtocol.swift in Sources */,
 			);

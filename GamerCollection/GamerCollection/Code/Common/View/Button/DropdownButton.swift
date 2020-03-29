@@ -86,7 +86,7 @@ class DropdownButton: UIButton {
     
     private func setValue(value: String?) {
         
-        if let value = value {
+        if let value = value, !value.isEmpty {
 
             let color = theme == .dark ? Color.color2 : Color.color1
             lbValue.attributedText = NSAttributedString(string: value,
