@@ -19,7 +19,7 @@ protocol GameDetailViewProtocol: BaseViewProtocol {
     func showGenres(genres: GenresResponse)
     func showFormats(formats: FormatsResponse)
     func showStates(states: StatesResponse)
-    func showData(game: GameResponse)
+    func showData(game: GameResponse?)
     func enableEdition(enable: Bool)
     func getGameData() -> GameResponse
 }
@@ -35,7 +35,7 @@ class GameDetailViewController: BaseViewController {
     // MARK: - Public properties
     
     @IBOutlet weak var svDetails: UIScrollView!
-    @IBOutlet weak var tvName: UITextView!
+    @IBOutlet weak var tvName: UnderlinedTextView!
     @IBOutlet weak var ivGame: UIImageView!
     @IBOutlet weak var ivGoty: UIImageView!
     @IBOutlet weak var btPlatform: DropdownButton!
@@ -80,7 +80,6 @@ class GameDetailViewController: BaseViewController {
         navigationItem.title = "GAME_DETAIL".localized()
         scrollView = svDetails
         configViews()
-        enableEdition(enable: false)
         viewModel?.viewDidLoad()
     }
     
@@ -237,6 +236,10 @@ class GameDetailViewController: BaseViewController {
     
     private func configViews() {
         
+        tvName.placeholder = "GAME_DETAIL_PLACEHOLDER_NAME".localized()
+        tvName.placeholderFont = .bold24
+        tvName.textFont = .bold24
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(setImage))
         ivGame.addGestureRecognizer(tapGesture)
         
@@ -303,65 +306,63 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         self.states = states
     }
     
-    func showData(game: GameResponse) {
+    func showData(game: GameResponse?) {
         
-        gameId = game.id
+        gameId = game?.id ?? 0
         
-        tvName.attributedText = NSAttributedString(string: game.name ?? "",
-                                                   attributes: [.font : UIFont.bold24,
-                                                                .foregroundColor: Color.color2])
+        tvName.text = game?.name
         
-        imageUrl = game.imageUrl
+        imageUrl = game?.imageUrl
         if let image = imageUrl, let imageUrl = URL(string: image) {
             
             ivGame.kf.indicatorType = .activity
             ivGame.kf.setImage(with: imageUrl)
         }
         
-        ivGoty.isHidden = !game.goty
+        ivGoty.isHidden = !(game?.goty ?? false)
         
-        let platform = platforms.first(where: { $0.id == game.platform })
+        let platform = platforms.first(where: { $0.id == game?.platform })
         btPlatform.value = platform?.name
 
-        if let genreId = game.genre, let genre = genres.first(where: { $0.id == genreId }) {
+        if let genreId = game?.genre, let genre = genres.first(where: { $0.id == genreId }) {
             btGenre.value = genre.name
         }
-        let genre = genres.first(where: { $0.id == game.genre })
+        let genre = genres.first(where: { $0.id == game?.genre })
         btGenre.value = genre?.name
 
-        let format = formats.first(where: { $0.id == game.format })
+        let format = formats.first(where: { $0.id == game?.format })
         btFormat.value = format?.name
 
-        btReleaseDate.value = game.releaseDate
+        btReleaseDate.value = game?.releaseDate
         
-        vwScore.rating = game.score
-        lbScore.attributedText = NSAttributedString(string: "\(game.score)",
+        vwScore.rating = game?.score ?? 0.0
+        lbScore.attributedText = NSAttributedString(string: "\(game?.score ?? 0.0)",
                                                     attributes: [.font : UIFont.roman16,
                                                                  .foregroundColor: Color.color2])
         
-        if let stateId = game.state {
+        if let stateId = game?.state {
             
             btPending.isSelected = stateId == Constants.State.pending
             btInProgress.isSelected = stateId == Constants.State.inProgress
             btFinished.isSelected = stateId == Constants.State.finished
         }
         
-        tvDistributor.text = game.distributor
-        tvDeveloper.text = game.developer
-        btPegi.value = game.pegi
-        tvPlayers.text = game.players
-        tvPrice.text = "\(game.price)"
-        btPurchaseDate.value = game.purchaseDate
-        tvPurchaseLocation.text = game.purchaseLocation
-        swGoty.isOn = game.goty
-        tvLoanedTo.text = game.loanedTo
-        tvVideoUrl.text = game.videoUrl
-        tvObservations.text = game.observations
+        tvDistributor.text = game?.distributor
+        tvDeveloper.text = game?.developer
+        btPegi.value = game?.pegi
+        tvPlayers.text = game?.players
+        tvPrice.text = "\(game?.price ?? 0.0)"
+        btPurchaseDate.value = game?.purchaseDate
+        tvPurchaseLocation.text = game?.purchaseLocation
+        swGoty.isOn = game?.goty ?? false
+        tvLoanedTo.text = game?.loanedTo
+        tvVideoUrl.text = game?.videoUrl
+        tvObservations.text = game?.observations
     }
     
     func enableEdition(enable: Bool) {
         
-        tvName.isUserInteractionEnabled = enable
+        tvName.isEnabled = enable
         ivGame.isUserInteractionEnabled = enable
         btPlatform.isEnabled = enable
         btGenre.isEnabled = enable

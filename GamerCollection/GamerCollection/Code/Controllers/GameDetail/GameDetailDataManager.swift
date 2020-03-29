@@ -12,14 +12,15 @@ protocol GameDetailDataManagerProtocol: class {
     /**
      * Add here your methods for communication VIEW_MODEL -> DATA_MANAGER
      */
-    func getGame(success: @escaping (GameResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGame(success: @escaping (GameResponse?) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getFormats(success: @escaping (FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func setGame(game: GameResponse, success: @escaping (GameResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func deleteGame(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
-    func getGameId() -> Int64
+    func createGame(game: GameResponse, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGameId() -> Int64?
 }
 
 class GameDetailDataManager: BaseDataManager {
@@ -32,7 +33,7 @@ class GameDetailDataManager: BaseDataManager {
     private let genreRepository: GenreRepository
     private let platformRepository: PlatformRepository
     private let stateRepository: StateRepository
-    private let gameId: Int64
+    private let gameId: Int64?
     
     // MARK: - Private variables
     
@@ -44,7 +45,7 @@ class GameDetailDataManager: BaseDataManager {
          genreRepository: GenreRepository,
          platformRepository: PlatformRepository,
          stateRepository: StateRepository,
-         gameId: Int64) {
+         gameId: Int64?) {
         self.apiClient = apiClient
         self.gameRepository = gameRepository
         self.formatRepository = formatRepository
@@ -57,19 +58,22 @@ class GameDetailDataManager: BaseDataManager {
 
 extension GameDetailDataManager: GameDetailDataManagerProtocol {
     
-    func getGame(success: @escaping (GameResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+    func getGame(success: @escaping (GameResponse?) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
-        let gameId = getGameId()
-        gameRepository.get(id: gameId, success: { gameResponse in
-            
-            guard let selectedGame = gameResponse else {
-                let error = ErrorResponse(error: "ERROR_CORE_DATA".localized())
-                failure(error)
-                return
-            }
-            
-            success(selectedGame)
-        }, failure: failure)
+        if let gameId = getGameId() {
+            gameRepository.get(id: gameId, success: { gameResponse in
+                
+                guard let selectedGame = gameResponse else {
+                    let error = ErrorResponse(error: "ERROR_CORE_DATA".localized())
+                    failure(error)
+                    return
+                }
+                
+                success(selectedGame)
+            }, failure: failure)
+        } else {
+            success(nil)
+        }
     }
     
     func getFormats(success: @escaping (FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
@@ -100,13 +104,21 @@ extension GameDetailDataManager: GameDetailDataManagerProtocol {
     
     func deleteGame(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
-        let gameId = getGameId()
-        apiClient.deleteGame(gameId: gameId, success: { _ in
-            self.gameRepository.delete(id: gameId, success: success, failure: failure)
-        }, failure: failure)
+        if let gameId = getGameId() {
+            apiClient.deleteGame(gameId: gameId, success: { _ in
+                self.gameRepository.delete(id: gameId, success: success, failure: failure)
+            }, failure: failure)
+        } else {
+            success()
+        }
     }
     
-    func getGameId() -> Int64 {
+    func createGame(game: GameResponse, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        print("create game")
+        success()
+    }
+    
+    func getGameId() -> Int64? {
         return gameId
     }
 }

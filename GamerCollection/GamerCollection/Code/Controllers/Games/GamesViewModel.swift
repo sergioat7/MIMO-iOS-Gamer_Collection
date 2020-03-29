@@ -72,8 +72,7 @@ class GamesViewModel: BaseViewModel {
     }
     
     @objc private func addGame() {
-        print("add")
-        //TODO go to game detail
+        GameDetailRouter(gameId: nil).push()
     }
     
     @objc private func filterGames() {

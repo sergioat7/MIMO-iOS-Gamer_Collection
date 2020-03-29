@@ -17,12 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="z8H-h0-bE7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="z8H-h0-bE7" customClass="UnderlinedTextView" customModule="Gamer_Collection" customModuleProvider="target">
                                 <rect key="frame" x="182.5" y="20" width="10" height="33"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="187.5" maxX="0.0" maxY="20"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CrT-sz-5yi">
                                 <rect key="frame" x="0.0" y="53" width="375" height="614"/>
@@ -500,7 +500,7 @@
                         <outlet property="tvDeveloper" destination="qZA-Cc-Z6a" id="LY0-7z-eGM"/>
                         <outlet property="tvDistributor" destination="vTa-kn-wzI" id="PSi-eX-dHA"/>
                         <outlet property="tvLoanedTo" destination="daw-d6-eYY" id="NRo-AK-6Ob"/>
-                        <outlet property="tvName" destination="z8H-h0-bE7" id="nbz-jn-o5D"/>
+                        <outlet property="tvName" destination="z8H-h0-bE7" id="HNE-Le-g3B"/>
                         <outlet property="tvObservations" destination="4ze-Rr-1Pf" id="COM-VN-Uxi"/>
                         <outlet property="tvPlayers" destination="zVh-O4-uDc" id="mEp-fg-rbV"/>
                         <outlet property="tvPrice" destination="IWY-TA-cXA" id="dMu-MB-HcS"/>

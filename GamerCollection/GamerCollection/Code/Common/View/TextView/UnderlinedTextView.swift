@@ -21,18 +21,22 @@ class UnderlinedTextView: UITextView {
     
     override var text: String? {
         set {
-            setValue(text: newValue)
+            setText(text: newValue)
         }
         get {
             return tvText.text
         }
     }
     
+    var textFont: UIFont = .roman16
+    
     var placeholder: String? {
         didSet {
             setPlaceholder(placeholder: placeholder ?? "")
         }
     }
+    
+    var placeholderFont: UIFont = .roman16
     
     var isEnabled: Bool = true {
         didSet {
@@ -63,21 +67,23 @@ class UnderlinedTextView: UITextView {
             addSubview(view)
         }
         
+        tvText.keyboardType = keyboardType
+        tvText.textAlignment = self.textAlignment
+        
         vwBottomLine.backgroundColor = theme == .dark ? Color.color2 : Color.color1
         
-        tvText.keyboardType = keyboardType
         self.isEditable = false
     }
     
     // MARK: - Private functions
     
-    private func setValue(text: String?) {
+    private func setText(text: String?) {
         
         if let text = text, !text.isEmpty {
 
             let color = theme == .dark ? Color.color2 : Color.color1
             tvText.attributedText = NSAttributedString(string: text,
-                                                       attributes: [.font : UIFont.roman16,
+                                                       attributes: [.font : textFont,
                                                                     .foregroundColor: color])
             lbPlaceholder.isHidden = true
         } else {
@@ -90,7 +96,7 @@ class UnderlinedTextView: UITextView {
         
         let color = theme == .dark ? Color.color2SuperLight : Color.color1SuperLight
         lbPlaceholder.attributedText = NSAttributedString(string: placeholder,
-                                                          attributes: [.font : UIFont.roman16,
+                                                          attributes: [.font : placeholderFont,
                                                                        .foregroundColor: color])
         lbPlaceholder.isHidden = false
         

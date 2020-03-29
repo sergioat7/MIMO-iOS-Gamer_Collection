@@ -65,9 +65,9 @@ class GameDetailRouter: BaseRouter {
     
     // MARK: - Initialization
     
-    private let gameId: Int64
+    private let gameId: Int64?
     
-    init (gameId: Int64) {
+    init (gameId: Int64?) {
         self.gameId = gameId
     }
     
