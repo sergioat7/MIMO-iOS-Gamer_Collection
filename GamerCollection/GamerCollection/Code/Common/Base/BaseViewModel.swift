@@ -29,16 +29,15 @@ class BaseViewModel {
         view?.showRightBarButtonItems(rightBarButtonItems: rightBarButtonItems)
     }
     
-    func showSaveCancelButtons() {
+    func showSaveButton() {
         
-        // MARK: Save button
         let saveButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: saveHandler)
-        
-        // MARK: Cancel button
-        let cancelButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: cancelHandler)
-        
         view?.showRightBarButtonItems(rightBarButtonItems: [saveButtonItem])
+    }
+    
+    func showCancelButton() {
         
+        let cancelButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: cancelHandler)
         view?.showLeftBarButtonItems(leftBarButtonItems: [cancelButtonItem])
     }
     

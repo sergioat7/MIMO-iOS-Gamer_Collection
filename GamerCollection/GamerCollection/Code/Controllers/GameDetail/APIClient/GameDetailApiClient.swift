@@ -12,6 +12,8 @@ protocol GameDetailApiClientProtocol {
     
     func setGame(game: GameResponse, success: @escaping (GameResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func deleteGame(gameId: Int64, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func createGame(game: GameResponse, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class GameDetailApiClient: GameDetailApiClientProtocol {
@@ -53,6 +55,25 @@ class GameDetailApiClient: GameDetailApiClientProtocol {
             
             let request = DeleteGameRequest(token: authData.token,
                                             gameId: gameId)
+            APIClient.shared.sendServer(request, success: success, failure: failure)
+        }, failure: failure)
+    }
+    
+    func createGame(game: GameResponse, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        getCredentials(success: { authData in
+            
+            let request = CreateGameRequest(token: authData.token,
+                                            game: game)
+            APIClient.shared.sendServer(request, success: success, failure: failure)
+        }, failure: failure)
+    }
+    
+    func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        getCredentials(success: { authData in
+            
+            let request = GetGamesRequest(token: authData.token)
             APIClient.shared.sendServer(request, success: success, failure: failure)
         }, failure: failure)
     }

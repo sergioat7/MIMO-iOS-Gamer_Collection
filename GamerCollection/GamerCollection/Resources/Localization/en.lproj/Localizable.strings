@@ -63,6 +63,7 @@
 // Game detail
 
 "GAME_DETAIL" = "Detail";
+"GAME_DETAIL_PLACEHOLDER_NAME" = "Add a name";
 "GAME_DETAIL_IMAGE_MODAL_TITLE" = "Introduce a valid URL";
 "GAME_DETAIL_PLATFORM" = "Platform";
 "GAME_DETAIL_SELECT_PLATFORM" = "Select a platform";

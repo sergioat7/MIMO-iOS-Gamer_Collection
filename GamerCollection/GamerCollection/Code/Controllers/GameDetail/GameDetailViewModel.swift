@@ -26,7 +26,7 @@ class GameDetailViewModel: BaseViewModel {
     
     private var dataManager: GameDetailDataManagerProtocol
     
-    private var game: GameResponse!
+    private var game: GameResponse?
     
     // MARK: - Initialization
     
@@ -81,7 +81,8 @@ class GameDetailViewModel: BaseViewModel {
     @objc private func editGame() {
         
         view?.enableEdition(enable: true)
-        showSaveCancelButtons()
+        showSaveButton()
+        showCancelButton()
     }
     
     @objc private func saveGame() {
@@ -89,17 +90,34 @@ class GameDetailViewModel: BaseViewModel {
         if let gameData = view?.getGameData() {
             
             view?.showLoading()
-            dataManager.setGame(game: gameData, success: { gameResponse in
+            
+            if dataManager.getGameId() != nil {
                 
-                self.game = gameResponse
-                self.view?.enableEdition(enable: false)
-                self.showNavBarButtons()
-                self.view?.showBackbarButtonItem()
-                self.view?.showData(game: gameResponse)
-                self.view?.hideLoading()
-            }, failure: { error in
-                self.manageError(error: error)
-            })
+                dataManager.setGame(game: gameData, success: { gameResponse in
+                    
+                    self.game = gameResponse
+                    self.view?.enableEdition(enable: false)
+                    self.showNavBarButtons()
+                    self.view?.showBackbarButtonItem()
+                    self.view?.showData(game: gameResponse)
+                    self.view?.hideLoading()
+                }, failure: { error in
+                    self.manageError(error: error)
+                })
+            } else {
+                
+                dataManager.createGame(game: gameData, success: {
+                    self.dataManager.updateGames(success: {
+                        
+                        self.view?.hideLoading()
+                        self.view?.popViewController()
+                    }, failure: { error in
+                        self.manageError(error: error)
+                    })
+                }, failure: { error in
+                    self.manageError(error: error)
+                })
+            }
         }
     }
     
@@ -117,9 +135,17 @@ extension GameDetailViewModel: GameDetailViewModelProtocol {
     func viewDidLoad() {
         
         editHandler = #selector(editGame)
-        saveHandler = #selector(saveGame)
         cancelHandler = #selector(cancelEdition)
-        showNavBarButtons()
+        saveHandler = #selector(saveGame)
+        
+        if dataManager.getGameId() != nil {
+            showNavBarButtons()
+            view?.enableEdition(enable: false)
+        } else {
+            showSaveButton()
+            view?.enableEdition(enable: true)
+        }
+
         getContent()
     }
     
