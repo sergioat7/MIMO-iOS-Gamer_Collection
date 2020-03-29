@@ -94,6 +94,7 @@
 		FB9C41A3243111E7004526A6 /* ModalFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C419E243111E7004526A6 /* ModalFilterViewController.swift */; };
 		FB9C41A4243111E7004526A6 /* ModalFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C419F243111E7004526A6 /* ModalFilterViewModel.swift */; };
 		FB9C41A5243111E7004526A6 /* ModalFilterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C41A0243111E7004526A6 /* ModalFilterDataManager.swift */; };
+		FB9C41A824314034004526A6 /* FilterActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C41A724314034004526A6 /* FilterActionButton.swift */; };
 		FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA547F124157AE900C23DB3 /* AppDelegate.swift */; };
 		FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBA547FA24157AE900C23DB3 /* GamerCollection.xcdatamodeld */; };
 		FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA547FD24157AEA00C23DB3 /* Assets.xcassets */; };
@@ -258,6 +259,7 @@
 		FB9C419E243111E7004526A6 /* ModalFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFilterViewController.swift; sourceTree = "<group>"; };
 		FB9C419F243111E7004526A6 /* ModalFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFilterViewModel.swift; sourceTree = "<group>"; };
 		FB9C41A0243111E7004526A6 /* ModalFilterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFilterDataManager.swift; sourceTree = "<group>"; };
+		FB9C41A724314034004526A6 /* FilterActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterActionButton.swift; sourceTree = "<group>"; };
 		FBA547EE24157AE900C23DB3 /* Gamer Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gamer Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA547F124157AE900C23DB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBA547FB24157AE900C23DB3 /* GamerCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GamerCollection.xcdatamodel; sourceTree = "<group>"; };
@@ -719,6 +721,7 @@
 				FB62877D241E3D2800F5FF6E /* ActionButton.swift */,
 				FB6E00E8242EACBB00448CD3 /* DropdownButton.swift */,
 				FB6E00EA242EACC300448CD3 /* DropdownButton.xib */,
+				FB9C41A724314034004526A6 /* FilterActionButton.swift */,
 				FBBE9E66242A805A0080CE18 /* GameFilterButton.swift */,
 				FBBE9E68242A81430080CE18 /* GameFilterButton.xib */,
 			);
@@ -1481,6 +1484,7 @@
 				FB8E2233242D56E100B043FB /* Platform+CoreDataProperties.swift in Sources */,
 				FB463C60241CFE53006F1A12 /* LoginViewController.swift in Sources */,
 				FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */,
+				FB9C41A824314034004526A6 /* FilterActionButton.swift in Sources */,
 				FB62877E241E3D2800F5FF6E /* ActionButton.swift in Sources */,
 				FBA548342415809000C23DB3 /* BaseDataManager.swift in Sources */,
 				FBF19EC924254BDE00E836FD /* Format+FormatResponse.swift in Sources */,
