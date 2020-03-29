@@ -390,7 +390,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         
         let id = gameId
         let name = tvName.text
-        let platform = platforms.first(where: { $0.name == btPlatform.value })?.id ?? nil
+        let platform = platforms.first(where: { $0.name == btPlatform.value })?.id
         let score = vwScore.rating
         let pegi = btPegi.value
         let distributor = tvDistributor.text
@@ -398,9 +398,9 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         let players = tvPlayers.text
         let releaseDate = btReleaseDate.value
         let goty = swGoty.isOn
-        let format = formats.first(where: { $0.name == btFormat.value })?.id ?? nil
-        let genre = genres.first(where: { $0.name == btGenre.value })?.id ?? nil
-        let state = btPending.isSelected ? Constants.State.pending : ( btInProgress.isSelected ? Constants.State.inProgress : Constants.State.finished )
+        let format = formats.first(where: { $0.name == btFormat.value })?.id
+        let genre = genres.first(where: { $0.name == btGenre.value })?.id
+        let state = btPending.isSelected ? Constants.State.pending : ( btInProgress.isSelected ? Constants.State.inProgress : ( btFinished.isSelected ? Constants.State.finished : nil ) )
         let purchaseDate = btPurchaseDate.value
         let purchaseLocation = tvPurchaseLocation.text
         let price = Double(tvPrice.text ?? "0") ?? 0
