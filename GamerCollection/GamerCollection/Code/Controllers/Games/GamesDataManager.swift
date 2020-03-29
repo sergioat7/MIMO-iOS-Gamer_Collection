@@ -61,9 +61,11 @@ extension GamesDataManager: GamesDataManagerProtocol {
             predicate = NSPredicate(value: true)
         }
         
-        let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
+        var sortDescriptors = [NSSortDescriptor]()
+        sortDescriptors.append(NSSortDescriptor(key: "name", ascending: true))
+        sortDescriptors.append(NSSortDescriptor(key: "id", ascending: true))
         gameRepository.execute(predicate: predicate,
-                               sortDescriptors: [sortDescriptor],
+                               sortDescriptors: sortDescriptors,
                                success: { (gameModels, _) in
                                 success(gameModels)
         }, failure: failure)

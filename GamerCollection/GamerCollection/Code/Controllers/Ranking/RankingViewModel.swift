@@ -12,6 +12,9 @@ protocol RankingViewModelProtocol: class {
     /**
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
+     func viewDidLoad()
+     func viewWillAppear()
+     func getGameCellViewModels() -> [GameCellViewModel]
 }
 
 class RankingViewModel: BaseViewModel {
@@ -23,6 +26,7 @@ class RankingViewModel: BaseViewModel {
     // MARK: - Private variables
     
     private var dataManager: RankingDataManagerProtocol
+    private var gameCellViewModels: [GameCellViewModel] = []
     
     // MARK: - Initialization
     
@@ -32,9 +36,68 @@ class RankingViewModel: BaseViewModel {
         self.dataManager = dataManager
         super.init(view: view)
     }
+    
+    // MARK: - Private functions
+    
+    private func manageError(error: ErrorResponse) {
+
+        view?.hideLoading()
+        view?.showError(message: error.error, handler: nil)
+    }
+    
+    private func getContent(success: @escaping ([GameCellViewModel]) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        view?.showLoading()
+        dataManager.getGames(success: { games in
+            self.dataManager.getFormats(success: { formats in
+                self.dataManager.getPlatforms(success: { platforms in
+                    self.dataManager.getStates(success: { states in
+                        
+                        let gameCellViewModels = games.compactMap({ game -> GameCellViewModel in
+                            
+                            let format = formats.first(where: { $0.id == game.format })
+                            let platform = platforms.first(where: { $0.id == game.platform })
+                            let state = states.first(where: { $0.id == game.state })
+                            return GameCellViewModel(game: game,
+                                                     format: format,
+                                                     platform: platform,
+                                                     state: state)
+                        })
+                        success(gameCellViewModels)
+                    }, failure: failure)
+                }, failure: failure)
+            }, failure: failure)
+        }, failure: failure)
+    }
+    
+    @objc private func filterGames() {
+        print("filter")
+         //TODO
+    }
 }
 
 extension RankingViewModel: RankingViewModelProtocol {
     
+    func viewDidLoad() {
+        
+        filterHandler = #selector(filterGames)
+        showNavBarButtons()
+    }
+    
+    func viewWillAppear() {
+        
+        getContent(success: { gameCellViewModels in
+            
+            self.gameCellViewModels = gameCellViewModels
+            self.view?.showGames()
+            self.view?.hideLoading()
+        }, failure: { error in
+            self.manageError(error: error)
+        })
+    }
+    
+    func getGameCellViewModels() -> [GameCellViewModel] {
+        return gameCellViewModels
+    }
 }
 
