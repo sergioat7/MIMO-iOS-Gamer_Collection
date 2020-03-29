@@ -11,6 +11,7 @@ import UIKit
 protocol GameDetailApiClientProtocol {
     
     func setGame(game: GameResponse, success: @escaping (GameResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func deleteGame(gameId: Int64, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class GameDetailApiClient: GameDetailApiClientProtocol {
@@ -42,6 +43,16 @@ class GameDetailApiClient: GameDetailApiClientProtocol {
             
             let request = SetGameRequest(token: authData.token,
                                          game: game)
+            APIClient.shared.sendServer(request, success: success, failure: failure)
+        }, failure: failure)
+    }
+    
+    func deleteGame(gameId: Int64, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        getCredentials(success: { authData in
+            
+            let request = DeleteGameRequest(token: authData.token,
+                                            gameId: gameId)
             APIClient.shared.sendServer(request, success: success, failure: failure)
         }, failure: failure)
     }

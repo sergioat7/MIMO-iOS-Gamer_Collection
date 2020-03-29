@@ -67,6 +67,7 @@
 		FB50FAFF242FED0D009E6173 /* LocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50FAFE242FED0D009E6173 /* LocalizedLabel.swift */; };
 		FB50FB0224300EE6009E6173 /* UnderlinedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50FB0124300EE6009E6173 /* UnderlinedTextView.swift */; };
 		FB50FB0424300EF1009E6173 /* UnderlinedTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB50FB0324300EF1009E6173 /* UnderlinedTextView.xib */; };
+		FB50FB0624303755009E6173 /* DeleteGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50FB0524303755009E6173 /* DeleteGameRequest.swift */; };
 		FB62877E241E3D2800F5FF6E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB62877D241E3D2800F5FF6E /* ActionButton.swift */; };
 		FB6E00E9242EACBB00448CD3 /* DropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E00E8242EACBB00448CD3 /* DropdownButton.swift */; };
 		FB6E00EB242EACC300448CD3 /* DropdownButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6E00EA242EACC300448CD3 /* DropdownButton.xib */; };
@@ -224,6 +225,7 @@
 		FB50FAFE242FED0D009E6173 /* LocalizedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLabel.swift; sourceTree = "<group>"; };
 		FB50FB0124300EE6009E6173 /* UnderlinedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextView.swift; sourceTree = "<group>"; };
 		FB50FB0324300EF1009E6173 /* UnderlinedTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnderlinedTextView.xib; sourceTree = "<group>"; };
+		FB50FB0524303755009E6173 /* DeleteGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteGameRequest.swift; sourceTree = "<group>"; };
 		FB62877D241E3D2800F5FF6E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		FB6E00E8242EACBB00448CD3 /* DropdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButton.swift; sourceTree = "<group>"; };
 		FB6E00EA242EACC300448CD3 /* DropdownButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButton.xib; sourceTree = "<group>"; };
@@ -676,6 +678,7 @@
 			isa = PBXGroup;
 			children = (
 				FB50FAFB242F90BB009E6173 /* SetGameRequest.swift */,
+				FB50FB0524303755009E6173 /* DeleteGameRequest.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -1459,6 +1462,7 @@
 				FBF19ED52425522200E836FD /* Genre+CoreDataProperties.swift in Sources */,
 				FB6E00E9242EACBB00448CD3 /* DropdownButton.swift in Sources */,
 				FBF6C52424267CA300FC5469 /* GameTableViewCell.swift in Sources */,
+				FB50FB0624303755009E6173 /* DeleteGameRequest.swift in Sources */,
 				FBF19EE32425554E00E836FD /* State+StateResponse.swift in Sources */,
 				FB31D5CB241EB17300B16558 /* EmptyResponse.swift in Sources */,
 				FBF19EAF242536CA00E836FD /* FormatResponse.swift in Sources */,
