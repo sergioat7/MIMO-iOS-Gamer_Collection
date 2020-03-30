@@ -52,17 +52,16 @@ class ActionButton: UIButton {
         setUp()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = layer.frame.height / 2
+    }
+    
     func setUp() {
         titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         titleLabel?.textAlignment = NSTextAlignment.center
         
         setTitleColor(text, for: UIControl.State())
-        if layer.frame.height == 0.0 {
-            layer.cornerRadius = 24
-        }
-        else {
-            layer.cornerRadius = layer.frame.height / 2
-        }
         
         self.setTitle(self.currentTitle?.localized().uppercased(), for: UIControl.State())
         self.backgroundColor = background

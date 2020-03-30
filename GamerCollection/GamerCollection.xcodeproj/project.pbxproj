@@ -124,6 +124,7 @@
 		FBC78EB82427FAD0008608F2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FBC78EB72427FAD0008608F2 /* Kingfisher */; };
 		FBC78EBB2427FAFB008608F2 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = FBC78EBA2427FAFB008608F2 /* Cosmos */; };
 		FBDEF512242921CC0076F832 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDEF511242921CC0076F832 /* UIFont+Extension.swift */; };
+		FBE79E2C24314A1F0053C6FB /* RoundLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE79E2B24314A1F0053C6FB /* RoundLabelButton.swift */; };
 		FBF19EAC242536A600E836FD /* GetFormatsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */; };
 		FBF19EAF242536CA00E836FD /* FormatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAE242536CA00E836FD /* FormatResponse.swift */; };
 		FBF19EB32425388F00E836FD /* GenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EB22425388F00E836FD /* GenreResponse.swift */; };
@@ -294,6 +295,7 @@
 		FBDEF50E2429213B0076F832 /* Palatino-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palatino-Bold.ttf"; sourceTree = "<group>"; };
 		FBDEF50F2429213B0076F832 /* Palatino-Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palatino-Roman.ttf"; sourceTree = "<group>"; };
 		FBDEF511242921CC0076F832 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		FBE79E2B24314A1F0053C6FB /* RoundLabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLabelButton.swift; sourceTree = "<group>"; };
 		FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFormatsRequest.swift; sourceTree = "<group>"; };
 		FBF19EAE242536CA00E836FD /* FormatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatResponse.swift; sourceTree = "<group>"; };
 		FBF19EB22425388F00E836FD /* GenreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResponse.swift; sourceTree = "<group>"; };
@@ -724,6 +726,7 @@
 				FB9C41A724314034004526A6 /* FilterActionButton.swift */,
 				FBBE9E66242A805A0080CE18 /* GameFilterButton.swift */,
 				FBBE9E68242A81430080CE18 /* GameFilterButton.xib */,
+				FBE79E2B24314A1F0053C6FB /* RoundLabelButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -1512,6 +1515,7 @@
 				FBF19EAF242536CA00E836FD /* FormatResponse.swift in Sources */,
 				FB463C88241D0BBF006F1A12 /* SagasApiClient.swift in Sources */,
 				FBF19EAC242536A600E836FD /* GetFormatsRequest.swift in Sources */,
+				FBE79E2C24314A1F0053C6FB /* RoundLabelButton.swift in Sources */,
 				FB448DDF241FE87F008ACE69 /* UserProfileViewController.swift in Sources */,
 				FB463C5F241CFE53006F1A12 /* LoginRouter.swift in Sources */,
 				FBF19ED1242551E000E836FD /* Genre+GenreResponse.swift in Sources */,
