@@ -25,6 +25,8 @@ class ModalFilterViewController: BaseViewController {
     
     // MARK: - Public properties
     
+    @IBOutlet weak var svFilters: UIScrollView!
+    
     // MARK: - Private properties
     
     private var viewModel:ModalFilterViewModelProtocol?
@@ -35,14 +37,27 @@ class ModalFilterViewController: BaseViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .clear
+        scrollView = svFilters
         viewModel?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        registerKeyboardNotifications()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tap)
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.animatedDarkenBackground()
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        removeKeyboardNotifications()
+        view.removeGestureRecognizers()
     }
     
     // MARK: - Actions

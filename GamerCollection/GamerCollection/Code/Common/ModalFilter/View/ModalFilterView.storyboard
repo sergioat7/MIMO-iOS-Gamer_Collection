@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="262.5" height="417"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrY-zm-n8F" userLabel="Content View">
-                                                <rect key="frame" x="20" y="20" width="222.5" height="972"/>
+                                                <rect key="frame" x="20" y="20" width="222.5" height="870"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_PLATFORM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIi-Rx-M8I" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="222.5" height="18"/>
@@ -32,77 +32,74 @@
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCw-kL-NTG">
-                                                        <rect key="frame" x="0.0" y="28" width="222.5" height="50"/>
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCw-kL-NTG">
+                                                        <rect key="frame" x="0.0" y="28" width="222.5" height="30"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRf-cM-j0w" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="50"/>
-                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="222.5" placeholderIntrinsicHeight="30" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qmx-OE-R69">
+                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="30"/>
+                                                            </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="QRf-cM-j0w" firstAttribute="leading" secondItem="TCw-kL-NTG" secondAttribute="leading" id="2v6-a7-6np"/>
-                                                            <constraint firstAttribute="trailing" secondItem="QRf-cM-j0w" secondAttribute="trailing" priority="750" id="4e1-db-z3l"/>
-                                                            <constraint firstItem="QRf-cM-j0w" firstAttribute="centerX" secondItem="TCw-kL-NTG" secondAttribute="centerX" priority="750" id="BNK-GH-lU0"/>
-                                                            <constraint firstItem="QRf-cM-j0w" firstAttribute="top" secondItem="TCw-kL-NTG" secondAttribute="top" id="GJO-GO-rTq"/>
-                                                            <constraint firstAttribute="height" constant="50" id="GVF-vk-fNs"/>
-                                                            <constraint firstAttribute="bottom" secondItem="QRf-cM-j0w" secondAttribute="bottom" id="by9-If-qxn"/>
-                                                            <constraint firstItem="QRf-cM-j0w" firstAttribute="centerY" secondItem="TCw-kL-NTG" secondAttribute="centerY" id="eKw-Z3-X54"/>
+                                                            <constraint firstAttribute="height" constant="30" id="GVF-vk-fNs"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Qmx-OE-R69" secondAttribute="trailing" id="dDr-q6-35I"/>
+                                                            <constraint firstItem="Qmx-OE-R69" firstAttribute="height" secondItem="TCw-kL-NTG" secondAttribute="height" id="efG-xU-aEZ"/>
+                                                            <constraint firstItem="Qmx-OE-R69" firstAttribute="leading" secondItem="TCw-kL-NTG" secondAttribute="leading" id="m8N-PP-CMy"/>
+                                                            <constraint firstItem="Qmx-OE-R69" firstAttribute="top" secondItem="TCw-kL-NTG" secondAttribute="top" id="oTG-Bl-A68"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Qmx-OE-R69" secondAttribute="bottom" id="wza-i0-OxS"/>
                                                         </constraints>
                                                     </scrollView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_GENRE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkL-Am-aPa" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="98" width="222.5" height="18"/>
+                                                        <rect key="frame" x="0.0" y="78" width="222.5" height="18"/>
                                                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoy-Q7-saw">
-                                                        <rect key="frame" x="0.0" y="126" width="222.5" height="50"/>
+                                                        <rect key="frame" x="0.0" y="106" width="222.5" height="30"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vK-iw-Ka1" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="50"/>
-                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="222.5" placeholderIntrinsicHeight="30" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DLx-7y-qTd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="30"/>
+                                                            </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="5vK-iw-Ka1" firstAttribute="centerX" secondItem="uoy-Q7-saw" secondAttribute="centerX" priority="750" id="1lB-FC-3XO"/>
-                                                            <constraint firstAttribute="height" constant="50" id="8F0-rp-mne"/>
-                                                            <constraint firstItem="5vK-iw-Ka1" firstAttribute="top" secondItem="uoy-Q7-saw" secondAttribute="top" id="N46-8V-9GA"/>
-                                                            <constraint firstAttribute="trailing" secondItem="5vK-iw-Ka1" secondAttribute="trailing" priority="750" id="P8c-51-vup"/>
-                                                            <constraint firstAttribute="bottom" secondItem="5vK-iw-Ka1" secondAttribute="bottom" id="rfD-pT-wqT"/>
-                                                            <constraint firstItem="5vK-iw-Ka1" firstAttribute="leading" secondItem="uoy-Q7-saw" secondAttribute="leading" id="w4G-pk-fxX"/>
-                                                            <constraint firstItem="5vK-iw-Ka1" firstAttribute="centerY" secondItem="uoy-Q7-saw" secondAttribute="centerY" id="wN6-70-TvJ"/>
+                                                            <constraint firstAttribute="height" constant="30" id="8F0-rp-mne"/>
+                                                            <constraint firstAttribute="trailing" secondItem="DLx-7y-qTd" secondAttribute="trailing" id="K7d-Aj-LgU"/>
+                                                            <constraint firstAttribute="bottom" secondItem="DLx-7y-qTd" secondAttribute="bottom" id="Npu-5R-6fg"/>
+                                                            <constraint firstItem="DLx-7y-qTd" firstAttribute="leading" secondItem="uoy-Q7-saw" secondAttribute="leading" id="Wcy-qY-0op"/>
+                                                            <constraint firstItem="DLx-7y-qTd" firstAttribute="height" secondItem="uoy-Q7-saw" secondAttribute="height" id="tQe-m3-e4p"/>
+                                                            <constraint firstItem="DLx-7y-qTd" firstAttribute="top" secondItem="uoy-Q7-saw" secondAttribute="top" id="wGg-WM-0hK"/>
                                                         </constraints>
                                                     </scrollView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_FORMAT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imA-8U-joz" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="196" width="222.5" height="18"/>
+                                                        <rect key="frame" x="0.0" y="156" width="222.5" height="18"/>
                                                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEU-20-hEq">
-                                                        <rect key="frame" x="0.0" y="224" width="222.5" height="50"/>
+                                                        <rect key="frame" x="0.0" y="184" width="222.5" height="30"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3um-Y2-i0b" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="50"/>
-                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="222.5" placeholderIntrinsicHeight="30" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="o3n-i4-85b">
+                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="30"/>
+                                                            </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="3um-Y2-i0b" firstAttribute="top" secondItem="IEU-20-hEq" secondAttribute="top" id="9V9-6g-e7X"/>
-                                                            <constraint firstItem="3um-Y2-i0b" firstAttribute="centerY" secondItem="IEU-20-hEq" secondAttribute="centerY" id="Ed1-AY-M2z"/>
-                                                            <constraint firstAttribute="bottom" secondItem="3um-Y2-i0b" secondAttribute="bottom" id="HAN-5e-LFt"/>
-                                                            <constraint firstItem="3um-Y2-i0b" firstAttribute="centerX" secondItem="IEU-20-hEq" secondAttribute="centerX" priority="750" id="OpN-CG-qwu"/>
-                                                            <constraint firstAttribute="height" constant="50" id="Skc-PU-Iyd"/>
-                                                            <constraint firstItem="3um-Y2-i0b" firstAttribute="leading" secondItem="IEU-20-hEq" secondAttribute="leading" id="oCW-XV-lCi"/>
-                                                            <constraint firstAttribute="trailing" secondItem="3um-Y2-i0b" secondAttribute="trailing" priority="750" id="yeb-nA-8jk"/>
+                                                            <constraint firstItem="o3n-i4-85b" firstAttribute="height" secondItem="IEU-20-hEq" secondAttribute="height" id="N0x-Co-izU"/>
+                                                            <constraint firstAttribute="height" constant="30" id="Skc-PU-Iyd"/>
+                                                            <constraint firstItem="o3n-i4-85b" firstAttribute="leading" secondItem="IEU-20-hEq" secondAttribute="leading" id="f4f-sQ-afy"/>
+                                                            <constraint firstItem="o3n-i4-85b" firstAttribute="top" secondItem="IEU-20-hEq" secondAttribute="top" id="g7c-bM-9Xk"/>
+                                                            <constraint firstAttribute="bottom" secondItem="o3n-i4-85b" secondAttribute="bottom" id="lh7-rS-JbO"/>
+                                                            <constraint firstAttribute="trailing" secondItem="o3n-i4-85b" secondAttribute="trailing" id="v8G-qG-94h"/>
                                                         </constraints>
                                                     </scrollView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_SCORE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyO-KK-eBQ" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="294" width="222.5" height="18"/>
+                                                        <rect key="frame" x="0.0" y="234" width="222.5" height="18"/>
                                                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-TF-hgr" customClass="CosmosView" customModule="Cosmos">
-                                                        <rect key="frame" x="10" y="322" width="202.5" height="0.0"/>
+                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="202.5" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-TF-hgr" customClass="CosmosView" customModule="Cosmos">
+                                                        <rect key="frame" x="10" y="262" width="202.5" height="0.0"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
                                                                 <integer key="value" value="5"/>
@@ -131,8 +128,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aqW-ZW-js4" customClass="CosmosView" customModule="Cosmos">
-                                                        <rect key="frame" x="10" y="342" width="202.5" height="0.0"/>
+                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="202.5" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="aqW-ZW-js4" customClass="CosmosView" customModule="Cosmos">
+                                                        <rect key="frame" x="10" y="282" width="202.5" height="0.0"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
                                                                 <integer key="value" value="5"/>
@@ -162,82 +159,112 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_RELEASE_DATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSt-3a-2DY" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="362" width="222.5" height="18"/>
+                                                        <rect key="frame" x="0.0" y="302" width="222.5" height="18"/>
                                                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BjG-Pd-x43">
-                                                        <rect key="frame" x="0.0" y="390" width="222.5" height="50"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BjG-Pd-x43">
+                                                        <rect key="frame" x="0.0" y="330" width="222.5" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22A-bU-lDU" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="106" height="34"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeI-ly-Lee" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="116" y="0.0" width="106.5" height="34"/>
+                                                            </button>
+                                                        </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="Xb9-E2-ppi"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Xb9-E2-ppi"/>
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_PURCHASE_DATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxv-8C-lWJ" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="450" width="222.5" height="18"/>
+                                                        <rect key="frame" x="0.0" y="384" width="222.5" height="18"/>
                                                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJC-qW-sQd">
-                                                        <rect key="frame" x="0.0" y="478" width="222.5" height="50"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tJC-qW-sQd">
+                                                        <rect key="frame" x="0.0" y="412" width="222.5" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsp-rG-DNz" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="106" height="34"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eti-5Y-p0I" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="116" y="0.0" width="106.5" height="34"/>
+                                                            </button>
+                                                        </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="mrh-lV-6vi"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="mrh-lV-6vi"/>
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_PRICE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhq-hV-1ck" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="548" width="222.5" height="18"/>
+                                                        <rect key="frame" x="0.0" y="466" width="222.5" height="18"/>
                                                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DEP-xJ-ebz">
-                                                        <rect key="frame" x="0.0" y="576" width="222.5" height="50"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DEP-xJ-ebz">
+                                                        <rect key="frame" x="0.0" y="494" width="222.5" height="30"/>
+                                                        <subviews>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48S-ig-gJV" customClass="UnderlinedTextView" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="30"/>
+                                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                            </textView>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3U-ou-ATG" customClass="UnderlinedTextView" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="118.5" y="0.0" width="104" height="30"/>
+                                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                            </textView>
+                                                        </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="LOc-8f-0DF"/>
+                                                            <constraint firstAttribute="height" constant="30" id="LOc-8f-0DF"/>
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_GOTY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ije-2E-jhH" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="646" width="222.5" height="18"/>
+                                                        <rect key="frame" x="0.0" y="544" width="222.5" height="18"/>
                                                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SDj-26-8nF">
-                                                        <rect key="frame" x="86.5" y="674" width="51" height="31"/>
+                                                        <rect key="frame" x="86.5" y="572" width="51" height="31"/>
                                                         <color key="onTintColor" name="color3"/>
                                                         <color key="thumbTintColor" name="color2"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_LOANED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o27-9B-Qs4" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="725" width="222.5" height="18"/>
+                                                        <rect key="frame" x="0.0" y="623" width="222.5" height="18"/>
                                                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jD0-Ic-ARk">
-                                                        <rect key="frame" x="86.5" y="753" width="51" height="31"/>
+                                                        <rect key="frame" x="86.5" y="651" width="51" height="31"/>
                                                         <color key="onTintColor" name="color3"/>
                                                         <color key="thumbTintColor" name="color2"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_HAS_SAGA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m1-bE-eF2" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="804" width="222.5" height="18"/>
+                                                        <rect key="frame" x="0.0" y="702" width="222.5" height="18"/>
                                                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="E3A-Ui-syE">
-                                                        <rect key="frame" x="86.5" y="832" width="51" height="31"/>
+                                                        <rect key="frame" x="86.5" y="730" width="51" height="31"/>
                                                         <color key="onTintColor" name="color3"/>
                                                         <color key="thumbTintColor" name="color2"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_HAS_SONGS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKE-5e-eBK" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="883" width="222.5" height="18"/>
+                                                        <rect key="frame" x="0.0" y="781" width="222.5" height="18"/>
                                                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vfz-jY-8Xt">
-                                                        <rect key="frame" x="86.5" y="921" width="51" height="31"/>
+                                                        <rect key="frame" x="86.5" y="819" width="51" height="31"/>
                                                         <color key="onTintColor" name="color3"/>
                                                         <color key="thumbTintColor" name="color2"/>
                                                     </switch>
@@ -260,7 +287,7 @@
                                                     <constraint firstItem="BjG-Pd-x43" firstAttribute="top" secondItem="aSt-3a-2DY" secondAttribute="bottom" constant="10" id="C9s-FH-Ipk"/>
                                                     <constraint firstItem="DEP-xJ-ebz" firstAttribute="top" secondItem="Qhq-hV-1ck" secondAttribute="bottom" constant="10" id="Dn5-pg-Ne7"/>
                                                     <constraint firstItem="uoy-Q7-saw" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="Doz-Qo-7Qu"/>
-                                                    <constraint firstItem="bxv-8C-lWJ" firstAttribute="top" secondItem="BjG-Pd-x43" secondAttribute="bottom" constant="10" id="FzF-aF-1A7"/>
+                                                    <constraint firstItem="bxv-8C-lWJ" firstAttribute="top" secondItem="BjG-Pd-x43" secondAttribute="bottom" constant="20" id="FzF-aF-1A7"/>
                                                     <constraint firstAttribute="trailing" secondItem="bxv-8C-lWJ" secondAttribute="trailing" id="G7U-04-k0h"/>
                                                     <constraint firstItem="4ib-TF-hgr" firstAttribute="centerX" secondItem="mrY-zm-n8F" secondAttribute="centerX" id="GO8-Fa-vUD"/>
                                                     <constraint firstAttribute="trailing" secondItem="uoy-Q7-saw" secondAttribute="trailing" id="KXm-do-3en"/>
@@ -415,6 +442,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="svFilters" destination="aV2-2G-qlB" id="6wc-3D-XnR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
