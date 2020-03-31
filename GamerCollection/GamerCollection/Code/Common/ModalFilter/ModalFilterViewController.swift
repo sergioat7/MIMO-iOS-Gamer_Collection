@@ -14,9 +14,9 @@ protocol ModalFilterViewProtocol: BaseViewProtocol {
     /**
      * Add here your methods for communication VIEW_MODEL -> VIEW
      */
-    func setPlatforms(platforms: PlatformsResponse)
-    func setGenres(genres: GenresResponse)
     func setFormats(formats: FormatsResponse)
+    func setGenres(genres: GenresResponse)
+    func setPlatforms(platforms: PlatformsResponse)
     func closePopup()
 }
 
@@ -322,13 +322,13 @@ class ModalFilterViewController: BaseViewController {
 
 extension ModalFilterViewController:  ModalFilterViewProtocol {
     
-    func setPlatforms(platforms: PlatformsResponse) {
+    func setFormats(formats: FormatsResponse) {
         
         var button: RoundLabelButton
-        for platform in platforms {
+        for format in formats {
             
-            button = getRoundLabelButton(title: platform.name)
-            svPlatforms.addArrangedSubview(button)
+            button = getRoundLabelButton(title: format.name)
+            svFormats.addArrangedSubview(button)
         }
     }
     
@@ -342,13 +342,13 @@ extension ModalFilterViewController:  ModalFilterViewProtocol {
         }
     }
     
-    func setFormats(formats: FormatsResponse) {
+    func setPlatforms(platforms: PlatformsResponse) {
         
         var button: RoundLabelButton
-        for format in formats {
+        for platform in platforms {
             
-            button = getRoundLabelButton(title: format.name)
-            svFormats.addArrangedSubview(button)
+            button = getRoundLabelButton(title: platform.name)
+            svPlatforms.addArrangedSubview(button)
         }
     }
     

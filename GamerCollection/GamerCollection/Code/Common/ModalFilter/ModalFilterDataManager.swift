@@ -12,6 +12,9 @@ protocol ModalFilterDataManagerProtocol: class {
     /**
      * Add here your methods for communication VIEW_MODEL -> DATA_MANAGER
      */
+    func getFormats(success: @escaping (FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class ModalFilterDataManager: BaseDataManager {
@@ -20,12 +23,33 @@ class ModalFilterDataManager: BaseDataManager {
     
     // MARK: - Private variables
     
+    private let formatRepository: FormatRepository
+    private let genreRepository: GenreRepository
+    private let platformRepository: PlatformRepository
+    
     // MARK: - Initialization
     
-    override init() {}
+    init(formatRepository: FormatRepository,
+         genreRepository: GenreRepository,
+         platformRepository: PlatformRepository) {
+        self.formatRepository = formatRepository
+        self.genreRepository = genreRepository
+        self.platformRepository = platformRepository
+    }
 }
 
 extension ModalFilterDataManager: ModalFilterDataManagerProtocol {
     
+    func getFormats(success: @escaping (FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        formatRepository.getAll(success: success, failure: failure)
+    }
+    
+    func getGenres(success: @escaping (GenresResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        genreRepository.getAll(success: success, failure: failure)
+    }
+    
+    func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        platformRepository.getAll(success: success, failure: failure)
+    }
 }
 

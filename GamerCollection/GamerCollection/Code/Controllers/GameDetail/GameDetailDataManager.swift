@@ -28,6 +28,8 @@ class GameDetailDataManager: BaseDataManager {
     
     // MARK: - Public variables
     
+    // MARK: - Private variables
+    
     private let apiClient: GameDetailApiClientProtocol
     private let gameRepository: GameRepository
     private let formatRepository: FormatRepository
@@ -35,8 +37,6 @@ class GameDetailDataManager: BaseDataManager {
     private let platformRepository: PlatformRepository
     private let stateRepository: StateRepository
     private let gameId: Int64?
-    
-    // MARK: - Private variables
     
     // MARK: - Initialization
     

@@ -26,7 +26,21 @@ class ModalFilterRouter: BaseRouter {
     }
     
     private var dataManager: ModalFilterDataManagerProtocol {
-        return ModalFilterDataManager()
+        return ModalFilterDataManager(formatRepository: formatRepository,
+                                      genreRepository: genreRepository,
+                                      platformRepository: platformRepository)
+    }
+    
+    private var formatRepository: FormatRepository {
+        return FormatRepository()
+    }
+    
+    private var genreRepository: GenreRepository {
+        return GenreRepository()
+    }
+    
+    private var platformRepository: PlatformRepository {
+        return PlatformRepository()
     }
     
     // MARK: - Initialization
