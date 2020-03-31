@@ -122,9 +122,11 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="minTouchRating">
                                                                 <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Min"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
                                                                 <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -152,8 +154,10 @@
                                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                                 <color key="value" name="color2"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Max"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
                                                                 <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
@@ -169,9 +173,15 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22A-bU-lDU" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="106" height="34"/>
+                                                                <connections>
+                                                                    <action selector="showDatePickerView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V2i-T9-hze"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeI-ly-Lee" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
                                                                 <rect key="frame" x="116" y="0.0" width="106.5" height="34"/>
+                                                                <connections>
+                                                                    <action selector="showDatePickerView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qpV-gw-DfA"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -189,9 +199,15 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsp-rG-DNz" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="106" height="34"/>
+                                                                <connections>
+                                                                    <action selector="showDatePickerView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pdU-TC-tm1"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eti-5Y-p0I" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
                                                                 <rect key="frame" x="116" y="0.0" width="106.5" height="34"/>
+                                                                <connections>
+                                                                    <action selector="showDatePickerView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6cR-c4-BRm"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -443,7 +459,22 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="btMaxPurchaseDate" destination="Eti-5Y-p0I" id="FLS-eA-ySq"/>
+                        <outlet property="btMaxReleaseDate" destination="eeI-ly-Lee" id="YQW-3H-QW3"/>
+                        <outlet property="btMinPurchaseDate" destination="hsp-rG-DNz" id="g1x-bM-QtN"/>
+                        <outlet property="btMinReleaseDate" destination="22A-bU-lDU" id="PrH-t2-iwv"/>
                         <outlet property="svFilters" destination="aV2-2G-qlB" id="6wc-3D-XnR"/>
+                        <outlet property="svFormats" destination="o3n-i4-85b" id="owe-p1-kQS"/>
+                        <outlet property="svGenres" destination="DLx-7y-qTd" id="A1I-re-8Ab"/>
+                        <outlet property="svPlatforms" destination="Qmx-OE-R69" id="QJg-6k-KPz"/>
+                        <outlet property="swGoty" destination="SDj-26-8nF" id="GoM-mi-49u"/>
+                        <outlet property="swLoaned" destination="jD0-Ic-ARk" id="RAb-rL-IQj"/>
+                        <outlet property="swSaga" destination="E3A-Ui-syE" id="iTX-yn-xPk"/>
+                        <outlet property="swSongs" destination="vfz-jY-8Xt" id="8dA-US-KkF"/>
+                        <outlet property="tvMaxPrice" destination="D3U-ou-ATG" id="aoZ-q3-pMd"/>
+                        <outlet property="tvMinPrice" destination="48S-ig-gJV" id="QxU-xJ-Awn"/>
+                        <outlet property="vwMaxScore" destination="aqW-ZW-js4" id="FXU-Ji-lb8"/>
+                        <outlet property="vwMinScore" destination="4ib-TF-hgr" id="xE0-Zn-dIm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

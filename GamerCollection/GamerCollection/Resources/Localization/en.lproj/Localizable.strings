@@ -14,6 +14,8 @@
 "CANCEL" = "Cancel";
 "RESET" = "Reset";
 "SAVE" = "Save";
+"MIN" = "Min";
+"MAX" = "Max";
 
 // Login
 
