@@ -36,6 +36,8 @@ class RoundLabelButton: UIButton {
         }
     }
     
+    var id: String?
+    
     override var isSelected: Bool {
         willSet {
             

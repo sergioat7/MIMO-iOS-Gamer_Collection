@@ -69,7 +69,7 @@ class ModalFilterViewController: BaseViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tap)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
             self.animatedDarkenBackground()
         }
     }
@@ -208,22 +208,22 @@ class ModalFilterViewController: BaseViewController {
         
         var platforms = [String?]()
         for view in svPlatforms.arrangedSubviews {
-            if let button = view as? UIButton, button.isSelected {
-                platforms.append(button.titleLabel?.text)
+            if let button = view as? RoundLabelButton, button.isSelected {
+                platforms.append(button.id)
             }
         }
         
         var genres = [String?]()
         for view in svGenres.arrangedSubviews {
-            if let button = view as? UIButton, button.isSelected {
-                genres.append(button.titleLabel?.text)
+            if let button = view as? RoundLabelButton, button.isSelected {
+                genres.append(button.id)
             }
         }
         
         var formats = [String?]()
         for view in svFormats.arrangedSubviews {
-            if let button = view as? UIButton, button.isSelected {
-                formats.append(button.titleLabel?.text)
+            if let button = view as? RoundLabelButton, button.isSelected {
+                formats.append(button.id)
             }
         }
         
@@ -248,23 +248,23 @@ class ModalFilterViewController: BaseViewController {
         
         let hasSongs = swSongs.isOn
         
-        print(platforms)
-        print(genres)
-        print(formats)
-        print(minScore)
-        print(maxScore)
-        print(minReleaseDate)
-        print(maxReleaseDate)
-        print(minPurchaseDate)
-        print(maxPurchaseDate)
-        print(minPrice)
-        print(maxPrice)
-        print(isGoty)
-        print(isLoaned)
-        print(hasSaga)
-        print(hasSongs)
-        
         closePopup()
+        let filters = FiltersModel(platforms: platforms.compactMap({$0}),
+                                   genres: genres.compactMap({$0}),
+                                   formats: formats.compactMap({$0}),
+                                   minScore: minScore,
+                                   maxScore: maxScore,
+                                   minReleaseDate: minReleaseDate,
+                                   maxReleaseDate: maxReleaseDate,
+                                   minPurchaseDate: minPurchaseDate,
+                                   maxPurchaseDate: maxPurchaseDate,
+                                   minPrice: minPrice,
+                                   maxPrice: maxPrice,
+                                   isGoty: isGoty,
+                                   isLoaned: isLoaned,
+                                   hasSaga: hasSaga,
+                                   hasSongs: hasSongs)
+        print(filters)
     }
     
     @objc func selectButton(_ sender: UIButton) {
@@ -328,6 +328,7 @@ extension ModalFilterViewController:  ModalFilterViewProtocol {
         for format in formats {
             
             button = getRoundLabelButton(title: format.name)
+            button.id = format.id
             svFormats.addArrangedSubview(button)
         }
     }
@@ -338,6 +339,7 @@ extension ModalFilterViewController:  ModalFilterViewProtocol {
         for genre in genres {
             
             button = getRoundLabelButton(title: genre.name)
+            button.id = genre.id
             svGenres.addArrangedSubview(button)
         }
     }
@@ -348,6 +350,7 @@ extension ModalFilterViewController:  ModalFilterViewProtocol {
         for platform in platforms {
             
             button = getRoundLabelButton(title: platform.name)
+            button.id = platform.id
             svPlatforms.addArrangedSubview(button)
         }
     }
