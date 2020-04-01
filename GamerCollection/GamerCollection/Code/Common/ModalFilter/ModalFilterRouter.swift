@@ -18,7 +18,8 @@ class ModalFilterRouter: BaseRouter {
         let storyboard: UIStoryboard = UIStoryboard(name: "ModalFilterView", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "ModalFilter") as? ModalFilterViewController {
             let viewModel: ModalFilterViewModelProtocol = ModalFilterViewModel(view: controller,
-                                                                               dataManager: dataManager)
+                                                                               dataManager: dataManager,
+                                                                               handler: handler)
             controller.set(viewModel: viewModel)
             return controller
         }
@@ -45,7 +46,11 @@ class ModalFilterRouter: BaseRouter {
     
     // MARK: - Initialization
     
-    override init() {}
+    private let handler: ((FiltersModel?) -> Void)?
+    
+    init (handler: ((FiltersModel?) -> Void)?) {
+        self.handler = handler
+    }
     
     // MARK: - Presentation Methods
 

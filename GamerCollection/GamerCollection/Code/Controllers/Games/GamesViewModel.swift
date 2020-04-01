@@ -77,8 +77,13 @@ class GamesViewModel: BaseViewModel {
     
     @objc private func filterGames() {
         
-        let viewControllerToPresent = ModalFilterRouter().view
+        let viewControllerToPresent = ModalFilterRouter(handler: applyFilters).view
         view?.showFilterPopup(viewControllerToPresent: viewControllerToPresent)
+    }
+    
+    private func applyFilters(filters: FiltersModel?) {
+        print("applying filters")
+        print(filters)
     }
 }
 

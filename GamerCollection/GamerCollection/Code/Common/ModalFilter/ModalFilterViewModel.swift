@@ -13,6 +13,7 @@ protocol ModalFilterViewModelProtocol: class {
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
     func viewDidLoad()
+    func getHandler() -> ((FiltersModel?) -> Void)?
 }
 
 class ModalFilterViewModel: BaseViewModel {
@@ -24,13 +25,16 @@ class ModalFilterViewModel: BaseViewModel {
     // MARK: - Private variables
     
     private var dataManager: ModalFilterDataManagerProtocol
+    private let handler: ((FiltersModel?) -> Void)?
     
     // MARK: - Initialization
     
     init(view:ModalFilterViewProtocol,
-         dataManager: ModalFilterDataManagerProtocol) {
+         dataManager: ModalFilterDataManagerProtocol,
+         handler: ((FiltersModel?) -> Void)?) {
         self.view = view
         self.dataManager = dataManager
+        self.handler = handler
         super.init(view: view)
     }
     
@@ -69,6 +73,10 @@ extension ModalFilterViewModel: ModalFilterViewModelProtocol {
     
     func viewDidLoad() {
         getContent()
+    }
+    
+    func getHandler() -> ((FiltersModel?) -> Void)? {
+        return handler
     }
 }
 

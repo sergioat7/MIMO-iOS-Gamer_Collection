@@ -17,7 +17,6 @@ protocol ModalFilterViewProtocol: BaseViewProtocol {
     func setFormats(formats: FormatsResponse)
     func setGenres(genres: GenresResponse)
     func setPlatforms(platforms: PlatformsResponse)
-    func closePopup()
 }
 
 protocol ModalFilterConfigurableViewProtocol: class {
@@ -248,7 +247,6 @@ class ModalFilterViewController: BaseViewController {
         
         let hasSongs = swSongs.isOn
         
-        closePopup()
         let filters = FiltersModel(platforms: platforms.compactMap({$0}),
                                    genres: genres.compactMap({$0}),
                                    formats: formats.compactMap({$0}),
@@ -264,7 +262,9 @@ class ModalFilterViewController: BaseViewController {
                                    isLoaned: isLoaned,
                                    hasSaga: hasSaga,
                                    hasSongs: hasSongs)
-        print(filters)
+        
+        let handler = viewModel?.getHandler()
+        closePopup(filters: filters, handler: handler)
     }
     
     @objc func selectButton(_ sender: UIButton) {
@@ -316,6 +316,15 @@ class ModalFilterViewController: BaseViewController {
         button.addTarget(self, action: #selector(selectButton), for: .touchUpInside)
         return button
     }
+    
+    private func closePopup(filters: FiltersModel? = nil, handler: ((FiltersModel?) -> Void)? = nil) {
+        
+        animatedClearBackground()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.hidePopup()
+            handler?(filters)
+        }
+    }
 }
 
 // MARK: - ModalFilterViewProtocol
@@ -352,14 +361,6 @@ extension ModalFilterViewController:  ModalFilterViewProtocol {
             button = getRoundLabelButton(title: platform.name)
             button.id = platform.id
             svPlatforms.addArrangedSubview(button)
-        }
-    }
-    
-    func closePopup() {
-        
-        animatedClearBackground()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.hidePopup()
         }
     }
 }
