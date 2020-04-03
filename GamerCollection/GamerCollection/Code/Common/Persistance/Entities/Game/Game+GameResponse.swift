@@ -21,6 +21,8 @@ extension Game: ModelHandlerProtocol {
             return
         }
         
+        let dateFormat = Locale.current.languageCode == "es" ? Constants.DateFormat.spanish : Constants.DateFormat.english
+        
         id = item.id
         name = item.name
         platform = item.platform
@@ -29,12 +31,12 @@ extension Game: ModelHandlerProtocol {
         distributor = item.distributor
         developer = item.developer
         players = item.players
-        releaseDate = item.releaseDate
+        releaseDate = item.releaseDate?.toDate(format: dateFormat)
         goty = item.goty
         format = item.format
         genre = item.genre
         state = item.state
-        purchaseDate = item.purchaseDate
+        purchaseDate = item.purchaseDate?.toDate(format: dateFormat)
         purchaseLocation = item.purchaseLocation
         price = item.price
         imageUrl = item.imageUrl
@@ -60,6 +62,10 @@ extension Game: ModelHandlerProtocol {
     
     func getModel<M>(success: @escaping (M) -> Void,
                      failure: @escaping (ErrorResponse) -> Void) {
+        
+        let dateFormat = Locale.current.languageCode == "es" ? Constants.DateFormat.spanish : Constants.DateFormat.english
+        let releaseDate = self.releaseDate?.toString(format: dateFormat)
+        let purchaseDate = self.purchaseDate?.toString(format: dateFormat)
         
         guard let gameResponse = GameResponse(id: id,
                                               name: name,
