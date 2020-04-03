@@ -28,6 +28,7 @@ class GamesViewModel: BaseViewModel {
     
     private var dataManager: GamesDataManagerProtocol
     private var gameCellViewModels: [GameCellViewModel] = []
+    private var filters: FiltersModel?
     
     // MARK: - Initialization
     
@@ -77,13 +78,14 @@ class GamesViewModel: BaseViewModel {
     
     @objc private func filterGames() {
         
-        let viewControllerToPresent = ModalFilterRouter(handler: applyFilters).view
+        let viewControllerToPresent = ModalFilterRouter(handler: applyFilters,
+                                                        filters: filters).view
         view?.showFilterPopup(viewControllerToPresent: viewControllerToPresent)
     }
     
     private func applyFilters(filters: FiltersModel?) {
-        print("applying filters")
-        print(filters)
+        
+        self.filters = filters
     }
 }
 

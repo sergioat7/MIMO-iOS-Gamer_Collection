@@ -27,6 +27,7 @@ class RankingViewModel: BaseViewModel {
     
     private var dataManager: RankingDataManagerProtocol
     private var gameCellViewModels: [GameCellViewModel] = []
+    private var filters: FiltersModel?
     
     // MARK: - Initialization
     
@@ -72,7 +73,8 @@ class RankingViewModel: BaseViewModel {
     
     @objc private func filterGames() {
         
-        let viewControllerToPresent = ModalFilterRouter(handler: applyFilters).view
+        let viewControllerToPresent = ModalFilterRouter(handler: applyFilters,
+                                                        filters: filters).view
         view?.showFilterPopup(viewControllerToPresent: viewControllerToPresent)
     }
     

@@ -26,15 +26,18 @@ class ModalFilterViewModel: BaseViewModel {
     
     private var dataManager: ModalFilterDataManagerProtocol
     private let handler: ((FiltersModel?) -> Void)?
+    private let filters: FiltersModel?
     
     // MARK: - Initialization
     
     init(view:ModalFilterViewProtocol,
          dataManager: ModalFilterDataManagerProtocol,
-         handler: ((FiltersModel?) -> Void)?) {
+         handler: ((FiltersModel?) -> Void)?,
+         filters: FiltersModel?) {
         self.view = view
         self.dataManager = dataManager
         self.handler = handler
+        self.filters = filters
         super.init(view: view)
     }
     
@@ -56,6 +59,7 @@ class ModalFilterViewModel: BaseViewModel {
                     self.view?.setFormats(formats: formatsResponse)
                     self.view?.setGenres(genres: genresResponse)
                     self.view?.setPlatforms(platforms: platformsResponse)
+                    self.view?.configFilters(filters: self.filters)
                     self.view?.hideLoading()
                 }, failure: { error in
                     self.manageError(error: error)

@@ -17,6 +17,7 @@ protocol ModalFilterViewProtocol: BaseViewProtocol {
     func setFormats(formats: FormatsResponse)
     func setGenres(genres: GenresResponse)
     func setPlatforms(platforms: PlatformsResponse)
+    func configFilters(filters: FiltersModel?)
 }
 
 protocol ModalFilterConfigurableViewProtocol: class {
@@ -361,6 +362,71 @@ extension ModalFilterViewController:  ModalFilterViewProtocol {
             button = getRoundLabelButton(title: platform.name)
             button.id = platform.id
             svPlatforms.addArrangedSubview(button)
+        }
+    }
+    
+    func configFilters(filters: FiltersModel?) {
+        
+        if let filters = filters {
+
+            let formats = filters.formats
+            if !formats.isEmpty {
+                for view in svFormats.arrangedSubviews {
+                    if let button = view as? RoundLabelButton, formats.first(where: { $0 == button.id }) != nil {
+                        button.isSelected = true
+                    }
+                }
+            }
+
+            let genres = filters.genres
+            if !genres.isEmpty {
+                for view in svGenres.arrangedSubviews {
+                    if let button = view as? RoundLabelButton, genres.first(where: { $0 == button.id }) != nil {
+                        button.isSelected = true
+                    }
+                }
+            }
+            
+            let platforms = filters.platforms
+            if !platforms.isEmpty {
+                for view in svPlatforms.arrangedSubviews {
+                    if let button = view as? RoundLabelButton, platforms.first(where: { $0 == button.id }) != nil {
+                        button.isSelected = true
+                    }
+                }
+            }
+            
+            vwMinScore.rating = filters.minScore
+            vwMaxScore.rating = filters.maxScore
+            
+            let format = Locale.current.languageCode == "es" ? Constants.DateFormat.spanish : Constants.DateFormat.english
+            if let minReleaseDate = filters.minReleaseDate?.toString(format: format) {
+                btMinReleaseDate.value = minReleaseDate
+            }
+            if let maxReleaseDate = filters.maxReleaseDate?.toString(format: format) {
+                btMaxReleaseDate.value = maxReleaseDate
+            }
+            
+            if let minPurchaseDate = filters.minPurchaseDate?.toString(format: format) {
+                btMinPurchaseDate.value = minPurchaseDate
+            }
+            if let maxPurchaseDate = filters.maxPurchaseDate?.toString(format: format) {
+                btMaxPurchaseDate.value = maxPurchaseDate
+            }
+                        
+            let minPrice = filters.minPrice
+            if minPrice > 0 {
+                tvMinPrice.text = "\(minPrice)"
+            }
+            let maxPrice = filters.maxPrice
+            if maxPrice > 0 {
+                tvMaxPrice.text = "\(maxPrice)"
+            }
+            
+            swGoty.isOn = filters.isGoty
+            swLoaned.isOn = filters.isLoaned
+            swSaga.isOn = filters.hasSaga
+            swSongs.isOn = filters.hasSongs
         }
     }
 }
