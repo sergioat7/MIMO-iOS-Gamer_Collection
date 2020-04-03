@@ -184,7 +184,7 @@ class ModalFilterViewController: BaseViewController {
         }
         
         vwMinScore.rating = 0
-        vwMaxScore.rating = 10
+        vwMaxScore.rating = 5
         
         btMinReleaseDate.value = nil
         btMaxReleaseDate.value = nil
@@ -227,8 +227,8 @@ class ModalFilterViewController: BaseViewController {
             }
         }
         
-        let minScore = vwMinScore.rating
-        let maxScore = vwMaxScore.rating
+        let minScore = vwMinScore.rating * 2
+        let maxScore = vwMaxScore.rating * 2
         
         let format = Locale.current.languageCode == "es" ? Constants.DateFormat.spanish : Constants.DateFormat.english
         let minReleaseDate = btMinReleaseDate.value?.toDate(format: format)
@@ -396,8 +396,8 @@ extension ModalFilterViewController:  ModalFilterViewProtocol {
                 }
             }
             
-            vwMinScore.rating = filters.minScore
-            vwMaxScore.rating = filters.maxScore
+            vwMinScore.rating = filters.minScore / 2
+            vwMaxScore.rating = filters.maxScore / 2
             
             let format = Locale.current.languageCode == "es" ? Constants.DateFormat.spanish : Constants.DateFormat.english
             if let minReleaseDate = filters.minReleaseDate?.toString(format: format) {
