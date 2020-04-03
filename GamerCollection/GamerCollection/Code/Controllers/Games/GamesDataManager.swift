@@ -12,7 +12,7 @@ protocol GamesDataManagerProtocol: class {
     /**
      * Add here your methods for communication VIEW_MODEL -> DATA_MANAGER
      */
-    func getGames(state: String?, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGames(state: String?, filters: FiltersModel?, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getFormats(success: @escaping(FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getPlatforms(success: @escaping(PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getStates(success: @escaping(StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
@@ -47,23 +47,14 @@ class GamesDataManager: BaseDataManager {
 
 extension GamesDataManager: GamesDataManagerProtocol {
     
-    func getGames(state: String?, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+    func getGames(state: String?, filters: FiltersModel?, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
-        var predicate: NSPredicate
-        switch state {
-        case Constants.State.pending:
-            predicate = NSPredicate(format: "state = %@", Constants.State.pending)
-        case Constants.State.inProgress:
-            predicate = NSPredicate(format: "state = %@", Constants.State.inProgress)
-        case Constants.State.finished:
-            predicate = NSPredicate(format: "state = %@", Constants.State.finished)
-        default:
-            predicate = NSPredicate(value: true)
-        }
+        let predicate = getFilterPredicates(state: state, filters: filters)
         
         var sortDescriptors = [NSSortDescriptor]()
         sortDescriptors.append(NSSortDescriptor(key: "name", ascending: true))
         sortDescriptors.append(NSSortDescriptor(key: "id", ascending: true))
+        
         gameRepository.execute(predicate: predicate,
                                sortDescriptors: sortDescriptors,
                                success: { (gameModels, _) in
@@ -81,6 +72,94 @@ extension GamesDataManager: GamesDataManagerProtocol {
     
     func getStates(success: @escaping(StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         stateRepository.getAll(success: success, failure: failure)
+    }
+    
+    // MARK: - Private functions
+    
+    func getFilterPredicates(state: String?, filters: FiltersModel?) -> NSCompoundPredicate {
+        
+        var predicates = [NSPredicate]()
+        
+        switch state {
+        case Constants.State.pending:
+            predicates.append(NSPredicate(format: "state = %@", Constants.State.pending))
+        case Constants.State.inProgress:
+            predicates.append(NSPredicate(format: "state = %@", Constants.State.inProgress))
+        case Constants.State.finished:
+            predicates.append(NSPredicate(format: "state = %@", Constants.State.finished))
+        default:
+            predicates.append(NSPredicate(value: true))
+        }
+        
+        if let filters = filters {
+            
+            var platformPredicates = [NSPredicate]()
+            
+            let platforms = filters.platforms
+            if !platforms.isEmpty {
+                for platform in platforms {
+                    platformPredicates.append(NSPredicate(format: "platform = %@", platform))
+                }
+            }
+
+            let genres = filters.genres
+            if !genres.isEmpty {
+                for genre in genres {
+                    platformPredicates.append(NSPredicate(format: "genre = %@", genre))
+                }
+            }
+
+            let formats = filters.formats
+            if !formats.isEmpty {
+                for format in formats {
+                    platformPredicates.append(NSPredicate(format: "format = %@", format))
+                }
+            }
+            
+            if platformPredicates.count > 0 {
+                predicates.append(NSCompoundPredicate(orPredicateWithSubpredicates: platformPredicates))
+            }
+
+            let minScore = filters.minScore
+            let maxScore = filters.maxScore
+            predicates.append(NSPredicate(format: "(score >= %f) AND (score <= %f)", minScore, maxScore))
+
+            if let minReleaseDate = filters.minReleaseDate as NSDate? {
+                predicates.append(NSPredicate(format: "releaseDate >= %@", minReleaseDate))
+            }
+            if let maxReleaseDate = filters.maxReleaseDate as NSDate? {
+                predicates.append(NSPredicate(format: "releaseDate <= %@", maxReleaseDate))
+            }
+
+            if let minPurchaseDate = filters.minPurchaseDate as NSDate? {
+                predicates.append(NSPredicate(format: "purchaseDate >= %@", minPurchaseDate))
+            }
+            if let maxPurchaseDate = filters.maxPurchaseDate as NSDate? {
+                predicates.append(NSPredicate(format: "purchaseDate <= %@", maxPurchaseDate))
+            }
+
+            let minPrice = filters.minPrice
+            let maxPrice = filters.maxPrice
+            if maxPrice > 0 {
+                predicates.append(NSPredicate(format: "(price >= %f) AND (price <= %f)", minPrice, maxPrice))
+            }
+
+            if filters.isGoty {
+                predicates.append(NSPredicate(format: "goty = true"))
+            }
+
+            if filters.isLoaned {
+                predicates.append(NSPredicate(format: "loanedTo != nil"))
+            }
+            
+//            let hasSaga = filters.hasSaga
+            //TODO
+            
+//            let hasSongs = filters.hasSongs
+            //TODO
+        }
+        
+        return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
     }
 }
 
