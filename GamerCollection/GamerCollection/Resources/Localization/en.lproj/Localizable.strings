@@ -16,6 +16,7 @@
 "SAVE" = "Save";
 "MIN" = "Min";
 "MAX" = "Max";
+"EMPTY_LIST" = "The list is empty";
 
 // Login
 
@@ -42,7 +43,6 @@
 "GAMES_RELEASED" = "Released";
 "GAMES_UNRELEASED" = "Unreleased";
 "GAMES_NUMBER_TITLE" = "games";
-"GAMES_EMPTY_LIST" = "The list is empty";
 
 // Game detail
 

@@ -175,7 +175,7 @@ extension GamesViewController:  UITableViewDataSource {
         
         let gameCellViewModelsCount = viewModel?.getGameCellViewModels().count ?? 0
         ivEmptyList.image = gameCellViewModelsCount != 0 ? nil : UIImage(named: "game pad")
-        lbEmptyList.attributedText = gameCellViewModelsCount != 0 ? nil : NSAttributedString(string: "GAMES_EMPTY_LIST".localized(),
+        lbEmptyList.attributedText = gameCellViewModelsCount != 0 ? nil : NSAttributedString(string: "EMPTY_LIST".localized(),
                                                                                              attributes: [.font : UIFont.bold24,
                                                                                                           .foregroundColor: Color.color2])
         return gameCellViewModelsCount
