@@ -44,11 +44,10 @@ class SagasViewModel: BaseViewModel {
     }
     
     private func getContent() {
-        
-        
     }
     
     @objc private func addSaga() {
+        print("add saga")
     }
 }
 

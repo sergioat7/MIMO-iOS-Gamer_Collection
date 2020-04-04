@@ -16,6 +16,7 @@ protocol LoginApiClientProtocol {
     func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getSagas(success: @escaping (SagasResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class LoginApiClient: LoginApiClientProtocol {
@@ -78,6 +79,15 @@ class LoginApiClient: LoginApiClientProtocol {
         getCredentials(success: { authData in
             
             let request = GetGamesRequest(token: authData.token)
+            APIClient.shared.sendServer(request, success: success, failure: failure)
+        }, failure: failure)
+    }
+    
+    func getSagas(success: @escaping (SagasResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        getCredentials(success: { authData in
+            
+            let request = GetSagasRequest(token: authData.token)
             APIClient.shared.sendServer(request, success: success, failure: failure)
         }, failure: failure)
     }
