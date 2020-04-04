@@ -21,6 +21,7 @@ protocol LoginDataManagerProtocol: class {
     func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getSagas(success: @escaping (SagasResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class LoginDataManager: BaseDataManager {
@@ -170,6 +171,20 @@ extension LoginDataManager: LoginDataManagerProtocol {
                     }
                 }, failure: failure)
             }
+        }, failure: failure)
+    }
+    
+    func getSagas(success: @escaping (SagasResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        apiClient.getSagas(success: { sagas in
+            
+            guard !sagas.isEmpty else {
+                success(sagas)
+                return
+            }
+            
+            //TODO insert in CoreData
+            success(sagas)
         }, failure: failure)
     }
 }
