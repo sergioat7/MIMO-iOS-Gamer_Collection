@@ -37,6 +37,7 @@ class LoginDataManager: BaseDataManager {
     private let platformRepository: PlatformRepository
     private let stateRepository: StateRepository
     private let gameRepository: GameRepository
+    private let sagaRepository: SagaRepository
     
     // MARK: - Initialization
     
@@ -46,7 +47,8 @@ class LoginDataManager: BaseDataManager {
          genreRepository: GenreRepository,
          platformRepository: PlatformRepository,
          stateRepository: StateRepository,
-         gameRepository: GameRepository) {
+         gameRepository: GameRepository,
+         sagaRepository: SagaRepository) {
         self.apiClient = apiClient
         self.userManager = userManager
         self.formatRepository = formatRepository
@@ -54,6 +56,7 @@ class LoginDataManager: BaseDataManager {
         self.platformRepository = platformRepository
         self.stateRepository = stateRepository
         self.gameRepository = gameRepository
+        self.sagaRepository = sagaRepository
     }
 }
 
@@ -183,8 +186,14 @@ extension LoginDataManager: LoginDataManagerProtocol {
                 return
             }
             
-            //TODO insert in CoreData
-            success(sagas)
+            for (index, saga) in sagas.enumerated() {
+                self.sagaRepository.update(item: saga, success: { _ in
+                    
+                    if index == sagas.count - 1 {
+                        success(sagas)
+                    }
+                }, failure: failure)
+            }
         }, failure: failure)
     }
 }
