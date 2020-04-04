@@ -1,21 +1,25 @@
 //
-//  ActionButton.swift
+//  FilterActionButton.swift
 //  GamerCollection
 //
-//  Created by Sergio Aragonés on 15/03/2020.
-//  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
+//  Created by alumno on 29/03/2020.
 //
 
 import UIKit
 
-class ActionButton: UIButton {
-    
-    @IBInspectable var background: UIColor? {
+class FilterActionButton: UIButton {
+
+    @IBInspectable var background: UIColor = .clear {
         didSet {
             setUp()
         }
     }
-    @IBInspectable var text: UIColor? {
+    @IBInspectable var titleColor: UIColor = .white {
+        didSet {
+            setUp()
+        }
+    }
+    @IBInspectable var border: UIColor = .clear {
         didSet {
             setUp()
         }
@@ -52,19 +56,18 @@ class ActionButton: UIButton {
         setUp()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layer.cornerRadius = layer.frame.height / 2
-    }
-    
     func setUp() {
         titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         titleLabel?.textAlignment = NSTextAlignment.center
+                
+        self.setAttributedTitle(NSAttributedString(string: self.currentTitle?.localized() ?? "",
+                                                   attributes: [.font : UIFont.bold16, .foregroundColor: titleColor]),
+                                for: UIControl.State())
         
-        setTitleColor(text, for: UIControl.State())
-        
-        self.setTitle(self.currentTitle?.localized().uppercased(), for: UIControl.State())
         self.backgroundColor = background
+        
+        layer.borderWidth = 1
+        layer.borderColor = border.cgColor
     }
 
 }

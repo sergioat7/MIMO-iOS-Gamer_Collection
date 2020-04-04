@@ -25,10 +25,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CrT-sz-5yi">
-                                <rect key="frame" x="0.0" y="53" width="375" height="614"/>
+                                <rect key="frame" x="10" y="53" width="355" height="614"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cya-zX-sYc" userLabel="Container View">
-                                        <rect key="frame" x="10" y="0.0" width="355" height="1020.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="1020.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0a-Pa-68c">
                                                 <rect key="frame" x="0.0" y="0.0" width="177.5" height="266.5"/>
@@ -84,7 +84,7 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0CL-X6-kjK" customClass="CosmosView" customModule="Cosmos">
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="345" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="0CL-X6-kjK" customClass="CosmosView" customModule="Cosmos">
                                                 <rect key="frame" x="5" y="286.5" width="345" height="0.0"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
@@ -275,7 +275,7 @@
                                                                 <rect key="frame" x="147" y="0.0" width="208" height="35.5"/>
                                                                 <color key="textColor" name="color2"/>
                                                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                             </textView>
                                                         </subviews>
                                                         <constraints>
@@ -460,12 +460,11 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="cya-zX-sYc" firstAttribute="top" secondItem="CrT-sz-5yi" secondAttribute="top" id="FJe-hd-DyW"/>
-                                    <constraint firstItem="cya-zX-sYc" firstAttribute="centerX" secondItem="CrT-sz-5yi" secondAttribute="centerX" id="adw-j4-XfO"/>
-                                    <constraint firstItem="cya-zX-sYc" firstAttribute="centerY" secondItem="CrT-sz-5yi" secondAttribute="centerY" priority="750" id="eOQ-2i-2ko"/>
-                                    <constraint firstItem="cya-zX-sYc" firstAttribute="leading" secondItem="CrT-sz-5yi" secondAttribute="leading" constant="10" id="jK0-XK-vUt"/>
-                                    <constraint firstAttribute="bottom" secondItem="cya-zX-sYc" secondAttribute="bottom" priority="750" id="olR-Oa-PNM"/>
-                                    <constraint firstAttribute="trailing" secondItem="cya-zX-sYc" secondAttribute="trailing" constant="10" id="pWR-wy-xNT"/>
+                                    <constraint firstItem="cya-zX-sYc" firstAttribute="width" secondItem="CrT-sz-5yi" secondAttribute="width" id="BZL-MU-oGW"/>
+                                    <constraint firstItem="cya-zX-sYc" firstAttribute="top" secondItem="CrT-sz-5yi" secondAttribute="top" id="EUo-1r-1mo"/>
+                                    <constraint firstItem="cya-zX-sYc" firstAttribute="leading" secondItem="CrT-sz-5yi" secondAttribute="leading" id="YVo-t1-SbO"/>
+                                    <constraint firstAttribute="trailing" secondItem="cya-zX-sYc" secondAttribute="trailing" id="mT9-aE-Tzm"/>
+                                    <constraint firstAttribute="bottom" secondItem="cya-zX-sYc" secondAttribute="bottom" id="qKg-i6-Dti"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -474,9 +473,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CrT-sz-5yi" secondAttribute="bottom" id="FtH-Tc-Tfg"/>
                             <constraint firstItem="CrT-sz-5yi" firstAttribute="top" secondItem="z8H-h0-bE7" secondAttribute="bottom" id="GRH-Ne-ulE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="z8H-h0-bE7" secondAttribute="trailing" constant="20" id="MQF-UJ-ULx"/>
-                            <constraint firstItem="CrT-sz-5yi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SS4-75-63C"/>
+                            <constraint firstItem="CrT-sz-5yi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="SS4-75-63C"/>
                             <constraint firstItem="z8H-h0-bE7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UhR-RC-DY8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CrT-sz-5yi" secondAttribute="trailing" id="Wv5-O0-Feb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CrT-sz-5yi" secondAttribute="trailing" constant="10" id="Wv5-O0-Feb"/>
                             <constraint firstItem="z8H-h0-bE7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="oIk-n5-Co5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

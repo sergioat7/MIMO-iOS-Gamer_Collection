@@ -27,6 +27,7 @@ class RankingViewModel: BaseViewModel {
     
     private var dataManager: RankingDataManagerProtocol
     private var gameCellViewModels: [GameCellViewModel] = []
+    private var filters: FiltersModel?
     
     // MARK: - Initialization
     
@@ -45,10 +46,10 @@ class RankingViewModel: BaseViewModel {
         view?.showError(message: error.error, handler: nil)
     }
     
-    private func getContent(success: @escaping ([GameCellViewModel]) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+    private func getContent(filters: FiltersModel?, success: @escaping ([GameCellViewModel]) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
         view?.showLoading()
-        dataManager.getGames(success: { games in
+        dataManager.getGames(filters: filters, success: { games in
             self.dataManager.getFormats(success: { formats in
                 self.dataManager.getPlatforms(success: { platforms in
                     self.dataManager.getStates(success: { states in
@@ -71,8 +72,23 @@ class RankingViewModel: BaseViewModel {
     }
     
     @objc private func filterGames() {
-        print("filter")
-         //TODO
+        
+        let viewControllerToPresent = ModalFilterRouter(handler: applyFilters,
+                                                        filters: filters).view
+        view?.showFilterPopup(viewControllerToPresent: viewControllerToPresent)
+    }
+    
+    private func applyFilters(filters: FiltersModel?) {
+        
+        self.filters = filters
+        getContent(filters: filters, success: { gameCellViewModels in
+            
+            self.gameCellViewModels = gameCellViewModels
+            self.view?.showGames()
+            self.view?.hideLoading()
+        }, failure: { error in
+            self.manageError(error: error)
+        })
     }
 }
 
@@ -86,7 +102,7 @@ extension RankingViewModel: RankingViewModelProtocol {
     
     func viewWillAppear() {
         
-        getContent(success: { gameCellViewModels in
+        getContent(filters: filters, success: { gameCellViewModels in
             
             self.gameCellViewModels = gameCellViewModels
             self.view?.showGames()

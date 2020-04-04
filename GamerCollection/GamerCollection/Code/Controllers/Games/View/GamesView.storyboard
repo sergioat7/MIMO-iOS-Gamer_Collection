@@ -114,18 +114,41 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="164" placeholderIntrinsicHeight="164" translatesAutoresizingMaskIntoConstraints="NO" id="r0J-KI-j6W">
+                                <rect key="frame" x="125" y="411" width="164" height="164"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="r0J-KI-j6W" secondAttribute="height" multiplier="1:1" id="e9O-c6-N93"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Db8-Pp-EBf">
+                                <rect key="frame" x="207" y="590" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BBt-gz-HqF" secondAttribute="bottom" id="00T-xk-VWM"/>
                             <constraint firstItem="Sui-hr-4aD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1gX-eW-etU"/>
+                            <constraint firstItem="r0J-KI-j6W" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.1" id="3QN-Dh-Nhj"/>
                             <constraint firstItem="9kk-no-Ldf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ci6-qB-aHN"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Db8-Pp-EBf" secondAttribute="trailing" constant="20" id="H6z-7Z-k6j"/>
                             <constraint firstItem="BBt-gz-HqF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jx8-sV-k9f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="r0J-KI-j6W" secondAttribute="trailing" id="KUt-gL-JBt"/>
+                            <constraint firstItem="r0J-KI-j6W" firstAttribute="width" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.4" id="L0i-jQ-eMY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BBt-gz-HqF" secondAttribute="trailing" id="MJ8-mP-Hko"/>
+                            <constraint firstItem="r0J-KI-j6W" firstAttribute="height" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.4" id="QTJ-Rl-ZTP"/>
                             <constraint firstItem="Sui-hr-4aD" firstAttribute="top" secondItem="9kk-no-Ldf" secondAttribute="bottom" id="Swg-Js-ECb"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Db8-Pp-EBf" secondAttribute="bottom" id="T0y-tF-uPt"/>
+                            <constraint firstItem="Db8-Pp-EBf" firstAttribute="top" secondItem="r0J-KI-j6W" secondAttribute="bottom" priority="999" constant="15" id="WAB-zt-Pnh"/>
                             <constraint firstItem="BBt-gz-HqF" firstAttribute="top" secondItem="Sui-hr-4aD" secondAttribute="bottom" id="ZA9-N3-3MU"/>
                             <constraint firstItem="9kk-no-Ldf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bsc-NJ-4iA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9kk-no-Ldf" secondAttribute="trailing" id="cnO-Aa-fa0"/>
                             <constraint firstItem="Sui-hr-4aD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fjj-dz-gMm"/>
+                            <constraint firstItem="r0J-KI-j6W" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hDs-Xa-KIs"/>
+                            <constraint firstItem="r0J-KI-j6W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iA9-Y0-90R"/>
+                            <constraint firstItem="Db8-Pp-EBf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="t4G-ge-jOw"/>
+                            <constraint firstItem="Db8-Pp-EBf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wCG-cE-Bdc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -133,6 +156,8 @@
                         <outlet property="btFinished" destination="kGD-Ym-YE4" id="Ff3-82-XQT"/>
                         <outlet property="btInProgress" destination="zYI-dh-rgE" id="gJj-5B-XDL"/>
                         <outlet property="btPending" destination="bgy-Jh-WF5" id="cOn-eQ-FWw"/>
+                        <outlet property="ivEmptyList" destination="r0J-KI-j6W" id="gWM-gD-qlQ"/>
+                        <outlet property="lbEmptyList" destination="Db8-Pp-EBf" id="o2a-7G-TSi"/>
                         <outlet property="lbGamesNumber" destination="2ES-ek-0y2" id="J4D-bE-qcX"/>
                         <outlet property="tvGames" destination="BBt-gz-HqF" id="MCX-a8-wf5"/>
                     </connections>

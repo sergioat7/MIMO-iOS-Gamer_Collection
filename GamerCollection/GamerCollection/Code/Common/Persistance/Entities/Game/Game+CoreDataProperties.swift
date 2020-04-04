@@ -25,12 +25,12 @@ extension Game {
     @NSManaged public var distributor: String?
     @NSManaged public var developer: String?
     @NSManaged public var players: String?
-    @NSManaged public var releaseDate: String?
+    @NSManaged public var releaseDate: Date?
     @NSManaged public var goty: Bool
     @NSManaged public var format: String?
     @NSManaged public var genre: String?
     @NSManaged public var state: String?
-    @NSManaged public var purchaseDate: String?
+    @NSManaged public var purchaseDate: Date?
     @NSManaged public var purchaseLocation: String?
     @NSManaged public var price: Double
     @NSManaged public var imageUrl: String?

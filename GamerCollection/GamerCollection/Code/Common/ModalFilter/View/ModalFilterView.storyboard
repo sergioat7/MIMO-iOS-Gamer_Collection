@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Modal Filter View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ModalFilter" id="BYZ-38-t0r" customClass="ModalFilterViewController" customModule="Gamer_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIZ-Mv-8cD">
+                                <rect key="frame" x="56.5" y="100" width="262.5" height="467"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aV2-2G-qlB">
+                                        <rect key="frame" x="0.0" y="0.0" width="262.5" height="417"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrY-zm-n8F" userLabel="Content View">
+                                                <rect key="frame" x="20" y="20" width="222.5" height="870"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_PLATFORM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIi-Rx-M8I" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="222.5" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <color key="textColor" name="color2"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCw-kL-NTG">
+                                                        <rect key="frame" x="0.0" y="28" width="222.5" height="30"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="222.5" placeholderIntrinsicHeight="30" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qmx-OE-R69">
+                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="30"/>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="GVF-vk-fNs"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Qmx-OE-R69" secondAttribute="trailing" id="dDr-q6-35I"/>
+                                                            <constraint firstItem="Qmx-OE-R69" firstAttribute="height" secondItem="TCw-kL-NTG" secondAttribute="height" id="efG-xU-aEZ"/>
+                                                            <constraint firstItem="Qmx-OE-R69" firstAttribute="leading" secondItem="TCw-kL-NTG" secondAttribute="leading" id="m8N-PP-CMy"/>
+                                                            <constraint firstItem="Qmx-OE-R69" firstAttribute="top" secondItem="TCw-kL-NTG" secondAttribute="top" id="oTG-Bl-A68"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Qmx-OE-R69" secondAttribute="bottom" id="wza-i0-OxS"/>
+                                                        </constraints>
+                                                    </scrollView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_GENRE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkL-Am-aPa" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="78" width="222.5" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <color key="textColor" name="color2"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoy-Q7-saw">
+                                                        <rect key="frame" x="0.0" y="106" width="222.5" height="30"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="222.5" placeholderIntrinsicHeight="30" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DLx-7y-qTd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="30"/>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="8F0-rp-mne"/>
+                                                            <constraint firstAttribute="trailing" secondItem="DLx-7y-qTd" secondAttribute="trailing" id="K7d-Aj-LgU"/>
+                                                            <constraint firstAttribute="bottom" secondItem="DLx-7y-qTd" secondAttribute="bottom" id="Npu-5R-6fg"/>
+                                                            <constraint firstItem="DLx-7y-qTd" firstAttribute="leading" secondItem="uoy-Q7-saw" secondAttribute="leading" id="Wcy-qY-0op"/>
+                                                            <constraint firstItem="DLx-7y-qTd" firstAttribute="height" secondItem="uoy-Q7-saw" secondAttribute="height" id="tQe-m3-e4p"/>
+                                                            <constraint firstItem="DLx-7y-qTd" firstAttribute="top" secondItem="uoy-Q7-saw" secondAttribute="top" id="wGg-WM-0hK"/>
+                                                        </constraints>
+                                                    </scrollView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_FORMAT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imA-8U-joz" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="156" width="222.5" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <color key="textColor" name="color2"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEU-20-hEq">
+                                                        <rect key="frame" x="0.0" y="184" width="222.5" height="30"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="222.5" placeholderIntrinsicHeight="30" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="o3n-i4-85b">
+                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="30"/>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="o3n-i4-85b" firstAttribute="height" secondItem="IEU-20-hEq" secondAttribute="height" id="N0x-Co-izU"/>
+                                                            <constraint firstAttribute="height" constant="30" id="Skc-PU-Iyd"/>
+                                                            <constraint firstItem="o3n-i4-85b" firstAttribute="leading" secondItem="IEU-20-hEq" secondAttribute="leading" id="f4f-sQ-afy"/>
+                                                            <constraint firstItem="o3n-i4-85b" firstAttribute="top" secondItem="IEU-20-hEq" secondAttribute="top" id="g7c-bM-9Xk"/>
+                                                            <constraint firstAttribute="bottom" secondItem="o3n-i4-85b" secondAttribute="bottom" id="lh7-rS-JbO"/>
+                                                            <constraint firstAttribute="trailing" secondItem="o3n-i4-85b" secondAttribute="trailing" id="v8G-qG-94h"/>
+                                                        </constraints>
+                                                    </scrollView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_SCORE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyO-KK-eBQ" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="234" width="222.5" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <color key="textColor" name="color2"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="202.5" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-TF-hgr" customClass="CosmosView" customModule="Cosmos">
+                                                        <rect key="frame" x="10" y="262" width="202.5" height="0.0"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                                <color key="value" name="color5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                                <color key="value" name="color2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                <color key="value" name="color2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="minTouchRating">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="202.5" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="aqW-ZW-js4" customClass="CosmosView" customModule="Cosmos">
+                                                        <rect key="frame" x="10" y="282" width="202.5" height="0.0"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                                <color key="value" name="color2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                                <color key="value" name="color5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="minTouchRating">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                <color key="value" name="color2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_RELEASE_DATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSt-3a-2DY" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="302" width="222.5" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <color key="textColor" name="color2"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BjG-Pd-x43">
+                                                        <rect key="frame" x="0.0" y="330" width="222.5" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22A-bU-lDU" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="106" height="34"/>
+                                                                <connections>
+                                                                    <action selector="showDatePickerView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V2i-T9-hze"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeI-ly-Lee" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="116" y="0.0" width="106.5" height="34"/>
+                                                                <connections>
+                                                                    <action selector="showDatePickerView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qpV-gw-DfA"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Xb9-E2-ppi"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_PURCHASE_DATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxv-8C-lWJ" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="384" width="222.5" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <color key="textColor" name="color2"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tJC-qW-sQd">
+                                                        <rect key="frame" x="0.0" y="412" width="222.5" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsp-rG-DNz" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="106" height="34"/>
+                                                                <connections>
+                                                                    <action selector="showDatePickerView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pdU-TC-tm1"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eti-5Y-p0I" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="116" y="0.0" width="106.5" height="34"/>
+                                                                <connections>
+                                                                    <action selector="showDatePickerView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6cR-c4-BRm"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="mrh-lV-6vi"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_PRICE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhq-hV-1ck" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="466" width="222.5" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <color key="textColor" name="color2"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DEP-xJ-ebz">
+                                                        <rect key="frame" x="0.0" y="494" width="222.5" height="30"/>
+                                                        <subviews>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48S-ig-gJV" customClass="UnderlinedTextView" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="30"/>
+                                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                            </textView>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3U-ou-ATG" customClass="UnderlinedTextView" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="118.5" y="0.0" width="104" height="30"/>
+                                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                            </textView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="LOc-8f-0DF"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_GOTY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ije-2E-jhH" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="544" width="222.5" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <color key="textColor" name="color2"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SDj-26-8nF">
+                                                        <rect key="frame" x="86.5" y="572" width="51" height="31"/>
+                                                        <color key="onTintColor" name="color3"/>
+                                                        <color key="thumbTintColor" name="color2"/>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_LOANED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o27-9B-Qs4" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="623" width="222.5" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <color key="textColor" name="color2"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jD0-Ic-ARk">
+                                                        <rect key="frame" x="86.5" y="651" width="51" height="31"/>
+                                                        <color key="onTintColor" name="color3"/>
+                                                        <color key="thumbTintColor" name="color2"/>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_HAS_SAGA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m1-bE-eF2" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="702" width="222.5" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <color key="textColor" name="color2"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="E3A-Ui-syE">
+                                                        <rect key="frame" x="86.5" y="730" width="51" height="31"/>
+                                                        <color key="onTintColor" name="color3"/>
+                                                        <color key="thumbTintColor" name="color2"/>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_HAS_SONGS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKE-5e-eBK" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="781" width="222.5" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <color key="textColor" name="color2"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vfz-jY-8Xt">
+                                                        <rect key="frame" x="86.5" y="819" width="51" height="31"/>
+                                                        <color key="onTintColor" name="color3"/>
+                                                        <color key="thumbTintColor" name="color2"/>
+                                                    </switch>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="TCw-kL-NTG" firstAttribute="top" secondItem="rIi-Rx-M8I" secondAttribute="bottom" constant="10" id="0LP-5B-rdj"/>
+                                                    <constraint firstItem="jD0-Ic-ARk" firstAttribute="centerX" secondItem="mrY-zm-n8F" secondAttribute="centerX" id="2OQ-E1-A83"/>
+                                                    <constraint firstItem="IEU-20-hEq" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="2eO-PU-nmA"/>
+                                                    <constraint firstItem="E3A-Ui-syE" firstAttribute="centerX" secondItem="mrY-zm-n8F" secondAttribute="centerX" id="3ir-Ds-4XY"/>
+                                                    <constraint firstItem="o27-9B-Qs4" firstAttribute="top" secondItem="SDj-26-8nF" secondAttribute="bottom" constant="20" id="4uf-JJ-HuH"/>
+                                                    <constraint firstItem="uoy-Q7-saw" firstAttribute="top" secondItem="BkL-Am-aPa" secondAttribute="bottom" constant="10" id="5Ow-Bx-eie"/>
+                                                    <constraint firstItem="Qhq-hV-1ck" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="5Td-XG-NCh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5m1-bE-eF2" secondAttribute="trailing" id="5hB-Df-lxY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="XKE-5e-eBK" secondAttribute="trailing" id="6aY-kH-ycO"/>
+                                                    <constraint firstItem="vfz-jY-8Xt" firstAttribute="centerX" secondItem="mrY-zm-n8F" secondAttribute="centerX" id="79g-yg-VDM"/>
+                                                    <constraint firstItem="aqW-ZW-js4" firstAttribute="centerX" secondItem="mrY-zm-n8F" secondAttribute="centerX" id="87f-3A-aDR"/>
+                                                    <constraint firstItem="Ije-2E-jhH" firstAttribute="top" secondItem="DEP-xJ-ebz" secondAttribute="bottom" constant="20" id="95w-Gi-jdB"/>
+                                                    <constraint firstItem="BkL-Am-aPa" firstAttribute="top" secondItem="TCw-kL-NTG" secondAttribute="bottom" constant="20" id="9t3-Bp-AuY"/>
+                                                    <constraint firstItem="bxv-8C-lWJ" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="AtL-m0-bL2"/>
+                                                    <constraint firstItem="BjG-Pd-x43" firstAttribute="top" secondItem="aSt-3a-2DY" secondAttribute="bottom" constant="10" id="C9s-FH-Ipk"/>
+                                                    <constraint firstItem="DEP-xJ-ebz" firstAttribute="top" secondItem="Qhq-hV-1ck" secondAttribute="bottom" constant="10" id="Dn5-pg-Ne7"/>
+                                                    <constraint firstItem="uoy-Q7-saw" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="Doz-Qo-7Qu"/>
+                                                    <constraint firstItem="bxv-8C-lWJ" firstAttribute="top" secondItem="BjG-Pd-x43" secondAttribute="bottom" constant="20" id="FzF-aF-1A7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bxv-8C-lWJ" secondAttribute="trailing" id="G7U-04-k0h"/>
+                                                    <constraint firstItem="4ib-TF-hgr" firstAttribute="centerX" secondItem="mrY-zm-n8F" secondAttribute="centerX" id="GO8-Fa-vUD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uoy-Q7-saw" secondAttribute="trailing" id="KXm-do-3en"/>
+                                                    <constraint firstItem="aSt-3a-2DY" firstAttribute="top" secondItem="aqW-ZW-js4" secondAttribute="bottom" constant="20" id="MWe-fb-JGq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ije-2E-jhH" secondAttribute="trailing" id="P5H-e8-tPn"/>
+                                                    <constraint firstItem="aSt-3a-2DY" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="RZ4-yx-Sol"/>
+                                                    <constraint firstItem="tJC-qW-sQd" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="S24-V6-cXT"/>
+                                                    <constraint firstItem="XKE-5e-eBK" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="SOv-9F-h1H"/>
+                                                    <constraint firstItem="Qhq-hV-1ck" firstAttribute="top" secondItem="tJC-qW-sQd" secondAttribute="bottom" constant="20" id="Uis-Ko-VOB"/>
+                                                    <constraint firstItem="SDj-26-8nF" firstAttribute="top" secondItem="Ije-2E-jhH" secondAttribute="bottom" constant="10" id="Uw2-kR-fRd"/>
+                                                    <constraint firstItem="aqW-ZW-js4" firstAttribute="top" secondItem="4ib-TF-hgr" secondAttribute="bottom" constant="20" id="VAt-6q-rCo"/>
+                                                    <constraint firstItem="imA-8U-joz" firstAttribute="top" secondItem="uoy-Q7-saw" secondAttribute="bottom" constant="20" id="Vma-sR-xI8"/>
+                                                    <constraint firstItem="4ib-TF-hgr" firstAttribute="top" secondItem="GyO-KK-eBQ" secondAttribute="bottom" constant="10" id="WTJ-H9-Ank"/>
+                                                    <constraint firstAttribute="trailing" secondItem="DEP-xJ-ebz" secondAttribute="trailing" id="ZlF-VJ-rtS"/>
+                                                    <constraint firstItem="TCw-kL-NTG" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="a7q-vf-EhG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="tJC-qW-sQd" secondAttribute="trailing" id="aeG-D3-Xeh"/>
+                                                    <constraint firstItem="rIi-Rx-M8I" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="ayf-LH-OaB"/>
+                                                    <constraint firstAttribute="bottom" secondItem="vfz-jY-8Xt" secondAttribute="bottom" constant="20" id="bt2-hG-tzy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aSt-3a-2DY" secondAttribute="trailing" id="cG0-f8-4g5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="o27-9B-Qs4" secondAttribute="trailing" id="cdp-4f-heT"/>
+                                                    <constraint firstItem="GyO-KK-eBQ" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="cme-CV-KHm"/>
+                                                    <constraint firstItem="5m1-bE-eF2" firstAttribute="top" secondItem="jD0-Ic-ARk" secondAttribute="bottom" constant="20" id="dHI-Op-3p4"/>
+                                                    <constraint firstItem="DEP-xJ-ebz" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="eQW-9b-qsc"/>
+                                                    <constraint firstItem="BjG-Pd-x43" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="eeg-I8-tlk"/>
+                                                    <constraint firstItem="Ije-2E-jhH" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="fwC-lc-5Rs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BkL-Am-aPa" secondAttribute="trailing" id="g7P-5I-Frz"/>
+                                                    <constraint firstItem="imA-8U-joz" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="gTW-9R-JJ1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BjG-Pd-x43" secondAttribute="trailing" id="hNx-el-Vto"/>
+                                                    <constraint firstItem="GyO-KK-eBQ" firstAttribute="top" secondItem="IEU-20-hEq" secondAttribute="bottom" constant="20" id="iAz-Ur-3wL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="imA-8U-joz" secondAttribute="trailing" id="mGh-So-vuc"/>
+                                                    <constraint firstItem="tJC-qW-sQd" firstAttribute="top" secondItem="bxv-8C-lWJ" secondAttribute="bottom" constant="10" id="n2J-bp-xz3"/>
+                                                    <constraint firstItem="jD0-Ic-ARk" firstAttribute="top" secondItem="o27-9B-Qs4" secondAttribute="bottom" constant="10" id="pOK-vV-Ckm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Qhq-hV-1ck" secondAttribute="trailing" id="pXD-JB-FeT"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rIi-Rx-M8I" secondAttribute="trailing" id="pwV-6J-0xg"/>
+                                                    <constraint firstItem="SDj-26-8nF" firstAttribute="centerX" secondItem="mrY-zm-n8F" secondAttribute="centerX" id="qSC-J3-KFS"/>
+                                                    <constraint firstItem="E3A-Ui-syE" firstAttribute="top" secondItem="5m1-bE-eF2" secondAttribute="bottom" constant="10" id="r2a-Ya-NXB"/>
+                                                    <constraint firstItem="IEU-20-hEq" firstAttribute="top" secondItem="imA-8U-joz" secondAttribute="bottom" constant="10" id="sFT-G9-1ta"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TCw-kL-NTG" secondAttribute="trailing" id="shg-ww-u5c"/>
+                                                    <constraint firstItem="BkL-Am-aPa" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="srm-18-s6a"/>
+                                                    <constraint firstItem="rIi-Rx-M8I" firstAttribute="top" secondItem="mrY-zm-n8F" secondAttribute="top" id="tU7-J8-13t"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GyO-KK-eBQ" secondAttribute="trailing" id="vF5-5B-vRU"/>
+                                                    <constraint firstItem="vfz-jY-8Xt" firstAttribute="top" secondItem="XKE-5e-eBK" secondAttribute="bottom" constant="20" id="vjY-cf-WkG"/>
+                                                    <constraint firstItem="5m1-bE-eF2" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="vlf-fB-bTC"/>
+                                                    <constraint firstItem="XKE-5e-eBK" firstAttribute="top" secondItem="E3A-Ui-syE" secondAttribute="bottom" constant="20" id="vvz-VT-I4b"/>
+                                                    <constraint firstItem="o27-9B-Qs4" firstAttribute="leading" secondItem="mrY-zm-n8F" secondAttribute="leading" id="zpN-Ga-Mjs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IEU-20-hEq" secondAttribute="trailing" id="ztG-ya-aKH"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="mrY-zm-n8F" secondAttribute="bottom" priority="750" id="M5k-wJ-ows"/>
+                                            <constraint firstItem="mrY-zm-n8F" firstAttribute="leading" secondItem="aV2-2G-qlB" secondAttribute="leading" constant="20" id="NhH-dK-w0d"/>
+                                            <constraint firstItem="mrY-zm-n8F" firstAttribute="centerY" secondItem="aV2-2G-qlB" secondAttribute="centerY" priority="750" id="ORt-NP-cwW"/>
+                                            <constraint firstItem="mrY-zm-n8F" firstAttribute="top" secondItem="aV2-2G-qlB" secondAttribute="top" constant="20" id="cFw-Bu-Mha"/>
+                                            <constraint firstAttribute="trailing" secondItem="mrY-zm-n8F" secondAttribute="trailing" constant="20" id="isg-RL-fBb"/>
+                                            <constraint firstItem="mrY-zm-n8F" firstAttribute="centerX" secondItem="aV2-2G-qlB" secondAttribute="centerX" id="odr-fF-flt"/>
+                                        </constraints>
+                                    </scrollView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fLR-xQ-r3j">
+                                        <rect key="frame" x="0.0" y="417" width="262.5" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="220-u9-ReC" customClass="FilterActionButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.5" height="50"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="CANCEL"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="background">
+                                                        <color key="value" name="color4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                        <color key="value" name="color1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="border">
+                                                        <color key="value" name="color2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zjz-SL-SoO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWO-W7-7Kw" customClass="FilterActionButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                <rect key="frame" x="87.5" y="0.0" width="87.5" height="50"/>
+                                                <state key="normal" title="RESET"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="background">
+                                                        <color key="value" name="color5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                        <color key="value" name="color1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="border">
+                                                        <color key="value" name="color2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aeh-4b-3K4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lX-Le-exh" customClass="FilterActionButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                <rect key="frame" x="175" y="0.0" width="87.5" height="50"/>
+                                                <state key="normal" title="SAVE"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="background">
+                                                        <color key="value" name="color3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                        <color key="value" name="color1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="border">
+                                                        <color key="value" name="color2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8KX-dJ-E2s"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="uZY-03-FFS"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="color1"/>
+                                <constraints>
+                                    <constraint firstItem="aV2-2G-qlB" firstAttribute="top" secondItem="lIZ-Mv-8cD" secondAttribute="top" id="3Gy-Xa-Sqg"/>
+                                    <constraint firstItem="aV2-2G-qlB" firstAttribute="leading" secondItem="lIZ-Mv-8cD" secondAttribute="leading" id="55b-eN-lwt"/>
+                                    <constraint firstAttribute="bottom" secondItem="fLR-xQ-r3j" secondAttribute="bottom" id="HSX-cu-uLy"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="IJN-3R-oec"/>
+                                    <constraint firstItem="fLR-xQ-r3j" firstAttribute="leading" secondItem="lIZ-Mv-8cD" secondAttribute="leading" id="OMz-kY-4ce"/>
+                                    <constraint firstAttribute="trailing" secondItem="aV2-2G-qlB" secondAttribute="trailing" id="PED-WR-1Pv"/>
+                                    <constraint firstAttribute="trailing" secondItem="fLR-xQ-r3j" secondAttribute="trailing" id="qmj-Wn-W7m"/>
+                                    <constraint firstItem="fLR-xQ-r3j" firstAttribute="top" secondItem="aV2-2G-qlB" secondAttribute="bottom" id="yUR-01-HpB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="color2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="lIZ-Mv-8cD" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.7" priority="999" id="L2k-kC-Fer"/>
+                            <constraint firstItem="lIZ-Mv-8cD" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.7" id="NFs-eE-4YF"/>
+                            <constraint firstItem="lIZ-Mv-8cD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Umi-Fk-0Oi"/>
+                            <constraint firstItem="lIZ-Mv-8cD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qcf-qS-x0u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="btMaxPurchaseDate" destination="Eti-5Y-p0I" id="FLS-eA-ySq"/>
+                        <outlet property="btMaxReleaseDate" destination="eeI-ly-Lee" id="YQW-3H-QW3"/>
+                        <outlet property="btMinPurchaseDate" destination="hsp-rG-DNz" id="g1x-bM-QtN"/>
+                        <outlet property="btMinReleaseDate" destination="22A-bU-lDU" id="PrH-t2-iwv"/>
+                        <outlet property="svFilters" destination="aV2-2G-qlB" id="6wc-3D-XnR"/>
+                        <outlet property="svFormats" destination="o3n-i4-85b" id="owe-p1-kQS"/>
+                        <outlet property="svGenres" destination="DLx-7y-qTd" id="A1I-re-8Ab"/>
+                        <outlet property="svPlatforms" destination="Qmx-OE-R69" id="QJg-6k-KPz"/>
+                        <outlet property="swGoty" destination="SDj-26-8nF" id="GoM-mi-49u"/>
+                        <outlet property="swLoaned" destination="jD0-Ic-ARk" id="RAb-rL-IQj"/>
+                        <outlet property="swSaga" destination="E3A-Ui-syE" id="iTX-yn-xPk"/>
+                        <outlet property="swSongs" destination="vfz-jY-8Xt" id="8dA-US-KkF"/>
+                        <outlet property="tvMaxPrice" destination="D3U-ou-ATG" id="aoZ-q3-pMd"/>
+                        <outlet property="tvMinPrice" destination="48S-ig-gJV" id="QxU-xJ-Awn"/>
+                        <outlet property="vwMaxScore" destination="aqW-ZW-js4" id="FXU-Ji-lb8"/>
+                        <outlet property="vwMinScore" destination="4ib-TF-hgr" id="xE0-Zn-dIm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="134"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="color1">
+            <color red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="color2">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="color3">
+            <color red="0.10196078431372549" green="0.73725490196078436" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="color4">
+            <color red="0.92549019607843142" green="0.33333333333333331" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="color5">
+            <color red="0.99607843137254903" green="0.80392156862745101" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
