@@ -21,16 +21,41 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="150" translatesAutoresizingMaskIntoConstraints="NO" id="RaV-Uc-SNg">
+                                <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RaV-Uc-SNg" secondAttribute="height" multiplier="1:1" id="l3G-ky-4xb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6b-xi-yab">
+                                <rect key="frame" x="187.5" y="423.5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="L6b-xi-yab" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5df-To-fkQ"/>
                             <constraint firstItem="SlL-7L-lZ7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="97Z-Nd-X1D"/>
+                            <constraint firstItem="RaV-Uc-SNg" firstAttribute="width" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.4" id="ARW-yz-Gmw"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RaV-Uc-SNg" secondAttribute="trailing" id="DJZ-7H-qmE"/>
+                            <constraint firstItem="RaV-Uc-SNg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H36-q4-5go"/>
+                            <constraint firstItem="RaV-Uc-SNg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Haa-dv-AF5"/>
+                            <constraint firstItem="L6b-xi-yab" firstAttribute="top" secondItem="RaV-Uc-SNg" secondAttribute="bottom" priority="999" constant="15" id="RFx-j9-xHp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SlL-7L-lZ7" secondAttribute="trailing" id="SM9-an-cEz"/>
                             <constraint firstItem="SlL-7L-lZ7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dSP-MY-KbJ"/>
+                            <constraint firstItem="L6b-xi-yab" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fEu-G8-saW"/>
+                            <constraint firstItem="RaV-Uc-SNg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gty-oj-0dl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SlL-7L-lZ7" secondAttribute="bottom" id="lUh-E8-3an"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="L6b-xi-yab" secondAttribute="trailing" constant="20" id="pK7-uR-Ixb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="L6b-xi-yab" secondAttribute="bottom" id="qJw-kc-UKj"/>
+                            <constraint firstItem="RaV-Uc-SNg" firstAttribute="height" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.4" id="vUo-Px-HSM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="ivEmptyList" destination="RaV-Uc-SNg" id="oiK-z9-zmU"/>
+                        <outlet property="lbEmptyList" destination="L6b-xi-yab" id="eB3-c2-PPU"/>
                         <outlet property="tvGames" destination="SlL-7L-lZ7" id="8rc-1b-Bgk"/>
                     </connections>
                 </viewController>

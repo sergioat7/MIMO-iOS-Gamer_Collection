@@ -31,6 +31,8 @@ class GamesViewController: BaseViewController {
     @IBOutlet weak var btInProgress: GameFilterButton!
     @IBOutlet weak var btFinished: GameFilterButton!
     @IBOutlet weak var tvGames: UITableView!
+    @IBOutlet weak var ivEmptyList: UIImageView!
+    @IBOutlet weak var lbEmptyList: UILabel!
     
     // MARK: - Private properties
     
@@ -171,8 +173,12 @@ extension GamesViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let gameCellViewModels = viewModel?.getGameCellViewModels()
-        return gameCellViewModels?.count ?? 0
+        let gameCellViewModelsCount = viewModel?.getGameCellViewModels().count ?? 0
+        ivEmptyList.image = gameCellViewModelsCount != 0 ? nil : UIImage(named: "game pad")
+        lbEmptyList.attributedText = gameCellViewModelsCount != 0 ? nil : NSAttributedString(string: "GAMES_EMPTY_LIST".localized(),
+                                                                                             attributes: [.font : UIFont.bold24,
+                                                                                                          .foregroundColor: Color.color2])
+        return gameCellViewModelsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
