@@ -144,6 +144,11 @@
 		FBEE25CE243A39650092F73F /* SetSagaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25CD243A39650092F73F /* SetSagaRequest.swift */; };
 		FBEE25D0243A416B0092F73F /* CreateSagaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25CF243A416B0092F73F /* CreateSagaRequest.swift */; };
 		FBEE25D2243A61520092F73F /* DeleteSagaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25D1243A61520092F73F /* DeleteSagaRequest.swift */; };
+		FBEE25D9243A68280092F73F /* ModalGamesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBEE25D4243A68280092F73F /* ModalGamesView.storyboard */; };
+		FBEE25DA243A68280092F73F /* ModalGamesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25D5243A68280092F73F /* ModalGamesRouter.swift */; };
+		FBEE25DB243A68280092F73F /* ModalGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25D6243A68280092F73F /* ModalGamesViewController.swift */; };
+		FBEE25DC243A68280092F73F /* ModalGamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25D7243A68280092F73F /* ModalGamesViewModel.swift */; };
+		FBEE25DD243A68280092F73F /* ModalGamesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25D8243A68280092F73F /* ModalGamesDataManager.swift */; };
 		FBF19EAC242536A600E836FD /* GetFormatsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */; };
 		FBF19EAF242536CA00E836FD /* FormatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAE242536CA00E836FD /* FormatResponse.swift */; };
 		FBF19EB32425388F00E836FD /* GenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EB22425388F00E836FD /* GenreResponse.swift */; };
@@ -334,6 +339,11 @@
 		FBEE25CD243A39650092F73F /* SetSagaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSagaRequest.swift; sourceTree = "<group>"; };
 		FBEE25CF243A416B0092F73F /* CreateSagaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSagaRequest.swift; sourceTree = "<group>"; };
 		FBEE25D1243A61520092F73F /* DeleteSagaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSagaRequest.swift; sourceTree = "<group>"; };
+		FBEE25D4243A68280092F73F /* ModalGamesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModalGamesView.storyboard; sourceTree = "<group>"; };
+		FBEE25D5243A68280092F73F /* ModalGamesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalGamesRouter.swift; sourceTree = "<group>"; };
+		FBEE25D6243A68280092F73F /* ModalGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalGamesViewController.swift; sourceTree = "<group>"; };
+		FBEE25D7243A68280092F73F /* ModalGamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalGamesViewModel.swift; sourceTree = "<group>"; };
+		FBEE25D8243A68280092F73F /* ModalGamesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalGamesDataManager.swift; sourceTree = "<group>"; };
 		FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFormatsRequest.swift; sourceTree = "<group>"; };
 		FBF19EAE242536CA00E836FD /* FormatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatResponse.swift; sourceTree = "<group>"; };
 		FBF19EB22425388F00E836FD /* GenreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResponse.swift; sourceTree = "<group>"; };
@@ -1019,6 +1029,7 @@
 				FBB1A368241C10DB00E91579 /* Constants */,
 				FBA5483B2415832B00C23DB3 /* Extensions */,
 				FB9C419B24311178004526A6 /* ModalFilter */,
+				FBEE25D3243A68010092F73F /* ModalGames */,
 				FBC1F63A242ABB8E003A87EA /* ModalSyncApp */,
 				FBA5482924157DC600C23DB3 /* Persistance */,
 				FBB1A373241C4AB000E91579 /* UserManager */,
@@ -1211,6 +1222,26 @@
 				FBEE25CD243A39650092F73F /* SetSagaRequest.swift */,
 			);
 			path = Saga;
+			sourceTree = "<group>";
+		};
+		FBEE25D3243A68010092F73F /* ModalGames */ = {
+			isa = PBXGroup;
+			children = (
+				FBEE25D8243A68280092F73F /* ModalGamesDataManager.swift */,
+				FBEE25D5243A68280092F73F /* ModalGamesRouter.swift */,
+				FBEE25D6243A68280092F73F /* ModalGamesViewController.swift */,
+				FBEE25D7243A68280092F73F /* ModalGamesViewModel.swift */,
+				FBEE25DE243A682C0092F73F /* View */,
+			);
+			path = ModalGames;
+			sourceTree = "<group>";
+		};
+		FBEE25DE243A682C0092F73F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FBEE25D4243A68280092F73F /* ModalGamesView.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FBF19EA82425363E00E836FD /* Formats */ = {
@@ -1511,6 +1542,7 @@
 				FB463C5E241CFE53006F1A12 /* LoginView.storyboard in Resources */,
 				FB50FB0424300EF1009E6173 /* UnderlinedTextView.xib in Resources */,
 				FBF6C52524267CA300FC5469 /* GameTableViewCell.xib in Resources */,
+				FBEE25D9243A68280092F73F /* ModalGamesView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1623,6 +1655,7 @@
 				FBF19EED2425928400E836FD /* GameResponse.swift in Sources */,
 				FB1DFEBD2416BE2C000CAD7B /* APIClient.swift in Sources */,
 				FB8D50B82438DB040037BA52 /* GetSagasRequest.swift in Sources */,
+				FBEE25DB243A68280092F73F /* ModalGamesViewController.swift in Sources */,
 				FBEE25C8243A0D050092F73F /* SagaDetailViewModel.swift in Sources */,
 				FBEE25C6243A0D050092F73F /* SagaDetailViewController.swift in Sources */,
 				FBF19EF624259AF400E836FD /* GameRepository.swift in Sources */,
@@ -1670,6 +1703,7 @@
 				FBF19EE32425554E00E836FD /* State+StateResponse.swift in Sources */,
 				FB8D50BE2438E1410037BA52 /* Saga+CoreDataClass.swift in Sources */,
 				FB31D5CB241EB17300B16558 /* EmptyResponse.swift in Sources */,
+				FBEE25DC243A68280092F73F /* ModalGamesViewModel.swift in Sources */,
 				FBF19EAF242536CA00E836FD /* FormatResponse.swift in Sources */,
 				FB463C88241D0BBF006F1A12 /* SagasApiClient.swift in Sources */,
 				FBF19EAC242536A600E836FD /* GetFormatsRequest.swift in Sources */,
@@ -1686,6 +1720,7 @@
 				FB463C75241D0A48006F1A12 /* GamesViewController.swift in Sources */,
 				FBEE25C7243A0D050092F73F /* SagaDetailApiClient.swift in Sources */,
 				FB448DDE241FE87F008ACE69 /* UserProfileRouter.swift in Sources */,
+				FBEE25DD243A68280092F73F /* ModalGamesDataManager.swift in Sources */,
 				FB463C89241D0BBF006F1A12 /* SagasViewModel.swift in Sources */,
 				FB463C77241D0A48006F1A12 /* GamesViewModel.swift in Sources */,
 				FBF19EB5242538A600E836FD /* GetGenresRequest.swift in Sources */,
@@ -1711,6 +1746,7 @@
 				FBF19ECB24254C2300E836FD /* FormatRepository.swift in Sources */,
 				FBC1F644242ABBCF003A87EA /* ModalSyncAppDataManager.swift in Sources */,
 				FB463CA4241D65DB006F1A12 /* LoginResponse.swift in Sources */,
+				FBEE25DA243A68280092F73F /* ModalGamesRouter.swift in Sources */,
 				FB50FAFF242FED0D009E6173 /* LocalizedLabel.swift in Sources */,
 				FB463C92241D0C29006F1A12 /* RankingViewController.swift in Sources */,
 				FB7DB5872424430B0040FC84 /* ModelHandlerProtocol.swift in Sources */,

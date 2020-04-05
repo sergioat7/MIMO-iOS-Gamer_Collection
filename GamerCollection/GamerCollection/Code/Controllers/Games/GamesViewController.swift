@@ -118,7 +118,6 @@ class GamesViewController: BaseViewController {
     private func registerNib() {
         tvGames.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameCell")
     }
-    
 }
 
 // MARK: - GamesViewProtocol

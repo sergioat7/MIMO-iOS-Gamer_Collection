@@ -18,8 +18,7 @@ protocol BaseViewProtocol: class {
     func showRightBarButtonItems(rightBarButtonItems: [UIBarButtonItem])
     func showLeftBarButtonItems(leftBarButtonItems: [UIBarButtonItem])
     func showBackbarButtonItem()
-    func showSyncPopup(viewControllerToPresent: UIViewController)
-    func showFilterPopup(viewControllerToPresent: UIViewController)
+    func showPopup(viewControllerToPresent: UIViewController)
     func hidePopup()
     func registerKeyboardNotifications()
     func removeKeyboardNotifications()
@@ -105,12 +104,7 @@ class BaseViewController: UIViewController {
         navigationItem.leftBarButtonItems = []
     }
     
-    func showSyncPopup(viewControllerToPresent: UIViewController) {
-        viewControllerToPresent.modalPresentationStyle = .overFullScreen
-        present(viewControllerToPresent, animated: true, completion: nil)
-    }
-    
-    func showFilterPopup(viewControllerToPresent: UIViewController) {
+    func showPopup(viewControllerToPresent: UIViewController) {
         viewControllerToPresent.modalPresentationStyle = .overFullScreen
         present(viewControllerToPresent, animated: true, completion: nil)
     }

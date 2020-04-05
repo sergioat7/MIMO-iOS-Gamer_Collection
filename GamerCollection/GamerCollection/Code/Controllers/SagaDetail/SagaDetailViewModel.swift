@@ -13,6 +13,7 @@ protocol SagaDetailViewModelProtocol: class {
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
     func viewDidLoad()
+    func showGamesModal()
     func deleteSaga()
 }
 
@@ -121,6 +122,14 @@ class SagaDetailViewModel: BaseViewModel {
         view?.setName(name: saga?.name)
         view?.showGames(games: saga?.games ?? GamesResponse())
     }
+    
+    private func addGames(games: GamesResponse?) {
+        
+        if let games = games {
+            self.saga?.games = games
+            self.view?.showGames(games: games)
+        }
+    }
 }
 
 extension SagaDetailViewModel: SagaDetailViewModelProtocol {
@@ -140,6 +149,12 @@ extension SagaDetailViewModel: SagaDetailViewModelProtocol {
         }
 
         getContent()
+    }
+    
+    func showGamesModal() {
+        
+        let viewControllerToPresent = ModalGamesRouter(handler: addGames).view
+        view?.showPopup(viewControllerToPresent: viewControllerToPresent)
     }
     
     func deleteSaga() {

@@ -62,7 +62,7 @@ class SagaDetailViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func addGame(_ sender: Any) {
-        print("add game to saga")//TODO
+        viewModel?.showGamesModal()
     }
     
     @IBAction func deleteSaga(_ sender: UIButton) {
