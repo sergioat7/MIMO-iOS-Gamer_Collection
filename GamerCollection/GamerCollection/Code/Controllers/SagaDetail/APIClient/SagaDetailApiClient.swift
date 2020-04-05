@@ -11,6 +11,7 @@ import UIKit
 protocol SagaDetailApiClientProtocol {
     
     func setSaga(saga: SagaResponse, success: @escaping (SagaResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func deleteSaga(sagaId: Int64, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func createSaga(saga: SagaResponse, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getSagas(success: @escaping (SagasResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
@@ -44,6 +45,16 @@ class SagaDetailApiClient: SagaDetailApiClientProtocol {
             
             let request = SetSagaRequest(token: authData.token,
                                          saga: saga)
+            APIClient.shared.sendServer(request, success: success, failure: failure)
+        }, failure: failure)
+    }
+    
+    func deleteSaga(sagaId: Int64, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        getCredentials(success: { authData in
+            
+            let request = DeleteSagaRequest(token: authData.token,
+                                            sagaId: sagaId)
             APIClient.shared.sendServer(request, success: success, failure: failure)
         }, failure: failure)
     }

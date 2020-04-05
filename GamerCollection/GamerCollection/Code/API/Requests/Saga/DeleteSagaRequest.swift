@@ -1,22 +1,22 @@
 //
-//  DeleteGameRequest.swift
+//  DeleteSagaRequest.swift
 //  GamerCollection
 //
-//  Created by Sergio Aragonés on 29/03/2020.
+//  Created by Sergio Aragonés on 05/04/2020.
 //  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-class DeleteGameRequest: APIRequest {
+class DeleteSagaRequest: APIRequest {
     
     public typealias Response = EmptyResponse
     
     public typealias Error = ErrorResponse
         
     public var resourceName: String {
-        return "/game"
+        return "/saga"
     }
     
     public var method: HTTPMethod {
@@ -30,9 +30,9 @@ class DeleteGameRequest: APIRequest {
     public var interceptor: RequestInterceptor?
             
     public init(token: String,
-                gameId: Int64) {
+                sagaId: Int64) {
         let authorizationHandler = AuthorizationHandler(token: token)
         self.interceptor = authorizationHandler
-        self.resourcePath = String(format: "/%ld", gameId)
+        self.resourcePath = String(format: "/%ld", sagaId)
     }
 }
