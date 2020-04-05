@@ -93,6 +93,10 @@ extension SagasViewController:  SagasConfigurableViewProtocol {
 extension SagasViewController:  UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let gameCellViewModels = viewModel?.getGameCellViewModels()
+        let gameId = gameCellViewModels?[indexPath.row].id ?? 0
+        GameDetailRouter(gameId: gameId).push()
     }
 }
 
@@ -100,9 +104,13 @@ extension SagasViewController:  UITableViewDelegate {
 
 extension SagasViewController:  UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel?.getSagaHeaderViewModels().count ?? 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let gameCellViewModelsCount = 0
+        let gameCellViewModelsCount = viewModel?.getGameCellViewModels().count ?? 0
         ivEmptyList.image = gameCellViewModelsCount != 0 ? nil : UIImage(named: "sagas image")
         lbEmptyList.attributedText = gameCellViewModelsCount != 0 ? nil : NSAttributedString(string: "EMPTY_LIST".localized(),
                                                                                              attributes: [.font : UIFont.bold24,
@@ -110,13 +118,24 @@ extension SagasViewController:  UITableViewDataSource {
         return gameCellViewModelsCount
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SagaHeader") as! SagaTableViewHeaderView
+        
+        let sagaHeaderViewModels = viewModel?.getSagaHeaderViewModels()
+        let sagaHeaderViewModel = sagaHeaderViewModels?[section]
+        header.sagaHeaderViewModel = sagaHeaderViewModel
+        
+        return header
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as! GameTableViewCell
         
-//        let gameCellViewModels = viewModel?.getGameCellViewModels()
-//        let gameCellViewModel = gameCellViewModels?[indexPath.row]
-//        cell.gameCellViewModel = gameCellViewModel
+        let gameCellViewModels = viewModel?.getGameCellViewModels()
+        let gameCellViewModel = gameCellViewModels?[indexPath.row]
+        cell.gameCellViewModel = gameCellViewModel
         
         cell.selectionStyle = .none
         
