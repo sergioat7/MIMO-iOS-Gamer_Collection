@@ -142,6 +142,7 @@
 		FBEE25C8243A0D050092F73F /* SagaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25C2243A0D050092F73F /* SagaDetailViewModel.swift */; };
 		FBEE25C9243A0D050092F73F /* SagaDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25C3243A0D050092F73F /* SagaDetailDataManager.swift */; };
 		FBEE25CE243A39650092F73F /* SetSagaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25CD243A39650092F73F /* SetSagaRequest.swift */; };
+		FBEE25D0243A416B0092F73F /* CreateSagaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25CF243A416B0092F73F /* CreateSagaRequest.swift */; };
 		FBF19EAC242536A600E836FD /* GetFormatsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */; };
 		FBF19EAF242536CA00E836FD /* FormatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAE242536CA00E836FD /* FormatResponse.swift */; };
 		FBF19EB32425388F00E836FD /* GenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EB22425388F00E836FD /* GenreResponse.swift */; };
@@ -330,6 +331,7 @@
 		FBEE25C2243A0D050092F73F /* SagaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaDetailViewModel.swift; sourceTree = "<group>"; };
 		FBEE25C3243A0D050092F73F /* SagaDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaDetailDataManager.swift; sourceTree = "<group>"; };
 		FBEE25CD243A39650092F73F /* SetSagaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSagaRequest.swift; sourceTree = "<group>"; };
+		FBEE25CF243A416B0092F73F /* CreateSagaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSagaRequest.swift; sourceTree = "<group>"; };
 		FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFormatsRequest.swift; sourceTree = "<group>"; };
 		FBF19EAE242536CA00E836FD /* FormatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatResponse.swift; sourceTree = "<group>"; };
 		FBF19EB22425388F00E836FD /* GenreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResponse.swift; sourceTree = "<group>"; };
@@ -1202,6 +1204,7 @@
 		FBEE25CC243A38D00092F73F /* Saga */ = {
 			isa = PBXGroup;
 			children = (
+				FBEE25CF243A416B0092F73F /* CreateSagaRequest.swift */,
 				FBEE25CD243A39650092F73F /* SetSagaRequest.swift */,
 			);
 			path = Saga;
@@ -1694,6 +1697,7 @@
 				FB463C78241D0A48006F1A12 /* GamesDataManager.swift in Sources */,
 				FBF19EC224253A7400E836FD /* GetStatesRequest.swift in Sources */,
 				FBF19EF424259AEB00E836FD /* Game+GameResponse.swift in Sources */,
+				FBEE25D0243A416B0092F73F /* CreateSagaRequest.swift in Sources */,
 				FB7EC32A242BCAD50022C447 /* GameDetailViewController.swift in Sources */,
 				FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */,
 				FBB1A36A241C10E800E91579 /* Constants.swift in Sources */,
