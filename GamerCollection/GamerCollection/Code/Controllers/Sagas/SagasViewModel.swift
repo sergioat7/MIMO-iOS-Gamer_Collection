@@ -12,8 +12,8 @@ protocol SagasViewModelProtocol: class {
     /**
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
-     func viewDidLoad()
-     func viewWillAppear()
+    func viewDidLoad()
+    func viewWillAppear()
 }
 
 class SagasViewModel: BaseViewModel {

@@ -14,6 +14,7 @@
 "CANCEL" = "Cancelar";
 "RESET" = "Reiniciar";
 "SAVE" = "Guardar";
+"EDIT" = "Editar";
 "MIN" = "Min";
 "MAX" = "Max";
 "EMPTY_LIST" = "La lista está vacía";

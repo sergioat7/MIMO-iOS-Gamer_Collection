@@ -90,6 +90,9 @@
 		FB8D50C32438E1F50037BA52 /* Game+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D50C12438E1F50037BA52 /* Game+CoreDataProperties.swift */; };
 		FB8D50C52438E3740037BA52 /* Saga+SagaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D50C42438E3740037BA52 /* Saga+SagaResponse.swift */; };
 		FB8D50C72438E3860037BA52 /* SagaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D50C62438E3860037BA52 /* SagaRepository.swift */; };
+		FB8D50CA243948A70037BA52 /* SagaTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D50C9243948A70037BA52 /* SagaTableViewHeaderView.swift */; };
+		FB8D50CE24394C080037BA52 /* SagaTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8D50CD24394C080037BA52 /* SagaTableViewHeaderView.xib */; };
+		FB8D50D124394FFA0037BA52 /* SagaHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D50D024394FFA0037BA52 /* SagaHeaderViewModel.swift */; };
 		FB8E2232242D56E100B043FB /* Platform+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2230242D56E100B043FB /* Platform+CoreDataClass.swift */; };
 		FB8E2233242D56E100B043FB /* Platform+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2231242D56E100B043FB /* Platform+CoreDataProperties.swift */; };
 		FB8E2236242D570800B043FB /* State+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2234242D570800B043FB /* State+CoreDataProperties.swift */; };
@@ -263,6 +266,9 @@
 		FB8D50C12438E1F50037BA52 /* Game+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FB8D50C42438E3740037BA52 /* Saga+SagaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Saga+SagaResponse.swift"; sourceTree = "<group>"; };
 		FB8D50C62438E3860037BA52 /* SagaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaRepository.swift; sourceTree = "<group>"; };
+		FB8D50C9243948A70037BA52 /* SagaTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaTableViewHeaderView.swift; sourceTree = "<group>"; };
+		FB8D50CD24394C080037BA52 /* SagaTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SagaTableViewHeaderView.xib; sourceTree = "<group>"; };
+		FB8D50D024394FFA0037BA52 /* SagaHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaHeaderViewModel.swift; sourceTree = "<group>"; };
 		FB8E2230242D56E100B043FB /* Platform+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Platform+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FB8E2231242D56E100B043FB /* Platform+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Platform+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FB8E2234242D570800B043FB /* State+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -650,6 +656,7 @@
 		FB463C7B241D0A59006F1A12 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FB8D50C8243947ED0037BA52 /* Header */,
 				FB463C7F241D0BBF006F1A12 /* SagasView.storyboard */,
 			);
 			path = View;
@@ -855,6 +862,24 @@
 				FB8D50C62438E3860037BA52 /* SagaRepository.swift */,
 			);
 			path = Saga;
+			sourceTree = "<group>";
+		};
+		FB8D50C8243947ED0037BA52 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				FB8D50CF24394FE60037BA52 /* Model */,
+				FB8D50C9243948A70037BA52 /* SagaTableViewHeaderView.swift */,
+				FB8D50CD24394C080037BA52 /* SagaTableViewHeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		FB8D50CF24394FE60037BA52 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB8D50D024394FFA0037BA52 /* SagaHeaderViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FB935A252424D88A00352DA3 /* NSManagedObject */ = {
@@ -1280,9 +1305,9 @@
 		FBF6C521242679FB00FC5469 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				FB80296E24351D9F00235A99 /* Model */,
 				FBF6C52224267CA300FC5469 /* GameTableViewCell.swift */,
 				FBF6C52324267CA300FC5469 /* GameTableViewCell.xib */,
+				FB80296E24351D9F00235A99 /* Model */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1415,6 +1440,7 @@
 				FBBE9E69242A81430080CE18 /* GameFilterButton.xib in Resources */,
 				FB31D5BA241E7DF800B16558 /* RegisterView.storyboard in Resources */,
 				FB1DFEB82416BAF2000CAD7B /* LoadingScreen.xib in Resources */,
+				FB8D50CE24394C080037BA52 /* SagaTableViewHeaderView.xib in Resources */,
 				FB463C90241D0C29006F1A12 /* RankingView.storyboard in Resources */,
 				FB448DDD241FE87F008ACE69 /* UserProfileView.storyboard in Resources */,
 				FB463C85241D0BBF006F1A12 /* SagasView.storyboard in Resources */,
@@ -1511,6 +1537,7 @@
 				FBA5483D2415834000C23DB3 /* UIViewController+Extension.swift in Sources */,
 				FB463C8A241D0BBF006F1A12 /* SagasDataManager.swift in Sources */,
 				FB463C68241D0678006F1A12 /* MainTabBarController.swift in Sources */,
+				FB8D50D124394FFA0037BA52 /* SagaHeaderViewModel.swift in Sources */,
 				FB463C62241CFE53006F1A12 /* LoginViewModel.swift in Sources */,
 				FBF6C52724267CB700FC5469 /* GameCellViewModel.swift in Sources */,
 				FB9C41A2243111E7004526A6 /* ModalFilterRouter.swift in Sources */,
@@ -1570,6 +1597,7 @@
 				FB7EC329242BCAD50022C447 /* GameDetailRouter.swift in Sources */,
 				FB31D5C9241EB08800B16558 /* RegisterDataModelRequest.swift in Sources */,
 				FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */,
+				FB8D50CA243948A70037BA52 /* SagaTableViewHeaderView.swift in Sources */,
 				FBF19ED52425522200E836FD /* Genre+CoreDataProperties.swift in Sources */,
 				FB6E00E9242EACBB00448CD3 /* DropdownButton.swift in Sources */,
 				FBF6C52424267CA300FC5469 /* GameTableViewCell.swift in Sources */,

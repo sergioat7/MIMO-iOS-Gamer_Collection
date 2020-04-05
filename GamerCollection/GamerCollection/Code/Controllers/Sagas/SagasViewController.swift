@@ -66,6 +66,8 @@ class SagasViewController: BaseViewController {
     }
     
     private func registerNib() {
+        
+        tvSagas.register(UINib(nibName: "SagaTableViewHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "SagaHeader")
         tvSagas.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameCell")
     }
     
