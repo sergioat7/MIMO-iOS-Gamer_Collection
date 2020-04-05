@@ -12,7 +12,8 @@ protocol SagaDetailViewProtocol: BaseViewProtocol {
     /**
      * Add here your methods for communication VIEW_MODEL -> VIEW
      */
-    
+    func setName(name: String?)
+    func showGames(games: GamesResponse)
 }
 
 protocol SagaDetailConfigurableViewProtocol: class {
@@ -77,6 +78,27 @@ class SagaDetailViewController: BaseViewController {
 
 extension SagaDetailViewController:  SagaDetailViewProtocol {
     
+    func setName(name: String?) {
+        tvName.text = name
+    }
+    
+    func showGames(games: GamesResponse) {
+        
+        var label: UILabel
+        for game in games {
+            if let name = game.name {
+                
+                label = UILabel()
+                label.attributedText = NSAttributedString(string: "- \(name)",
+                                                          attributes: [.font: UIFont.roman16,
+                                                                       .foregroundColor: Color.color2])
+                label.numberOfLines = 0
+                label.setContentHuggingPriority(.required, for: .vertical)
+                label.setContentCompressionResistancePriority(.required, for: .vertical)
+                svGames.addArrangedSubview(label)
+            }
+        }
+    }
 }
 
 // MARK: - SagaDetailViewProtocol

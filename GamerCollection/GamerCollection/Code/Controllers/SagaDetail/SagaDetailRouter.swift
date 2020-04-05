@@ -26,11 +26,22 @@ class SagaDetailRouter: BaseRouter {
     }
     
     private var dataManager: SagaDetailDataManagerProtocol {
-        return SagaDetailDataManager(apiClient: apiClient)
+        return SagaDetailDataManager(apiClient: apiClient,
+                                     gameRepository: gameRepository,
+                                     sagaRepository: sagaRepository,
+                                     sagaId: sagaId)
     }
     
     private var apiClient: SagaDetailApiClientProtocol {
         return SagaDetailApiClient()
+    }
+    
+    private var gameRepository: GameRepository {
+        return GameRepository()
+    }
+    
+    private var sagaRepository: SagaRepository {
+        return SagaRepository()
     }
     
     // MARK: - Initialization
