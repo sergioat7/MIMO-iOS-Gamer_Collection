@@ -24,26 +24,26 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="SAGA_DETAIL_GAMES_TITLE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hug-OI-VS1" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                <rect key="frame" x="20" y="83" width="271.5" height="20"/>
+                                <rect key="frame" x="20" y="73" width="271.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="18"/>
                                 <color key="textColor" name="color2"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBm-ll-aR6">
-                                <rect key="frame" x="330" y="79" width="25" height="24"/>
+                                <rect key="frame" x="330" y="69" width="25" height="24"/>
                                 <connections>
                                     <action selector="addGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nzw-Xc-cH4"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jUm-Ll-4Lw">
-                                <rect key="frame" x="20" y="113" width="335" height="2"/>
+                                <rect key="frame" x="20" y="103" width="335" height="2"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="kHL-YJ-r1i"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSs-OP-cO3">
-                                <rect key="frame" x="20" y="135" width="335" height="438"/>
+                                <rect key="frame" x="20" y="125" width="335" height="468"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="335" placeholderIntrinsicHeight="377" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KWh-tZ-TLj">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="377"/>
@@ -58,7 +58,7 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4a-jF-ad6" customClass="ActionButton" customModule="Gamer_Collection" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="603" width="200" height="34"/>
+                                <rect key="frame" x="87.5" y="613" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="LzD-yn-5sg"/>
                                 </constraints>
@@ -74,10 +74,10 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="d4a-jF-ad6" firstAttribute="top" secondItem="OSs-OP-cO3" secondAttribute="bottom" constant="30" id="75Y-Yc-WHg"/>
+                            <constraint firstItem="d4a-jF-ad6" firstAttribute="top" secondItem="OSs-OP-cO3" secondAttribute="bottom" constant="20" id="75Y-Yc-WHg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rBm-ll-aR6" secondAttribute="trailing" constant="20" id="7YX-ir-DAM"/>
                             <constraint firstItem="fwa-3u-dhc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="BxU-F1-PuA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d4a-jF-ad6" secondAttribute="bottom" constant="30" id="Fhp-M1-qeA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d4a-jF-ad6" secondAttribute="bottom" constant="20" id="Fhp-M1-qeA"/>
                             <constraint firstItem="OSs-OP-cO3" firstAttribute="top" secondItem="jUm-Ll-4Lw" secondAttribute="bottom" constant="20" id="HzN-41-BMQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jUm-Ll-4Lw" secondAttribute="trailing" constant="20" id="LXe-MP-yhi"/>
                             <constraint firstItem="Hug-OI-VS1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="LvN-9W-STz"/>
@@ -90,7 +90,7 @@
                             <constraint firstItem="fwa-3u-dhc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="geS-IF-zMC"/>
                             <constraint firstItem="jUm-Ll-4Lw" firstAttribute="top" secondItem="Hug-OI-VS1" secondAttribute="bottom" constant="10" id="iQN-fO-0RF"/>
                             <constraint firstItem="OSs-OP-cO3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kPs-fK-eVQ"/>
-                            <constraint firstItem="Hug-OI-VS1" firstAttribute="top" secondItem="fwa-3u-dhc" secondAttribute="bottom" constant="30" id="nD1-hA-KIm"/>
+                            <constraint firstItem="Hug-OI-VS1" firstAttribute="top" secondItem="fwa-3u-dhc" secondAttribute="bottom" constant="20" id="nD1-hA-KIm"/>
                             <constraint firstItem="jUm-Ll-4Lw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="szJ-FB-WWY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
