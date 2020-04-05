@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Saga Detail View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="SagaDetail" id="BYZ-38-t0r" customClass="SagaDetailViewController" customModule="Gamer_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fwa-3u-dhc" customClass="UnderlinedTextView" customModule="Gamer_Collection" customModuleProvider="target">
+                                <rect key="frame" x="182.5" y="20" width="10" height="33"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="SAGA_DETAIL_GAMES_TITLE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hug-OI-VS1" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
+                                <rect key="frame" x="20" y="83" width="271.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="18"/>
+                                <color key="textColor" name="color2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jUm-Ll-4Lw">
+                                <rect key="frame" x="20" y="113" width="335" height="2"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="kHL-YJ-r1i"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSs-OP-cO3">
+                                <rect key="frame" x="20" y="135" width="335" height="532"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="335" placeholderIntrinsicHeight="377" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KWh-tZ-TLj">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="377"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="KWh-tZ-TLj" secondAttribute="bottom" id="Dgp-P8-lRp"/>
+                                    <constraint firstItem="KWh-tZ-TLj" firstAttribute="width" secondItem="OSs-OP-cO3" secondAttribute="width" id="aEK-vW-UMw"/>
+                                    <constraint firstAttribute="trailing" secondItem="KWh-tZ-TLj" secondAttribute="trailing" id="bJO-Xg-ceM"/>
+                                    <constraint firstItem="KWh-tZ-TLj" firstAttribute="top" secondItem="OSs-OP-cO3" secondAttribute="top" id="dOy-Gb-01X"/>
+                                    <constraint firstItem="KWh-tZ-TLj" firstAttribute="leading" secondItem="OSs-OP-cO3" secondAttribute="leading" id="y1e-3K-u7w"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBm-ll-aR6">
+                                <rect key="frame" x="330" y="79" width="25" height="24"/>
+                                <connections>
+                                    <action selector="addGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nzw-Xc-cH4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rBm-ll-aR6" secondAttribute="trailing" constant="20" id="7YX-ir-DAM"/>
+                            <constraint firstItem="fwa-3u-dhc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="BxU-F1-PuA"/>
+                            <constraint firstItem="OSs-OP-cO3" firstAttribute="top" secondItem="jUm-Ll-4Lw" secondAttribute="bottom" constant="20" id="HzN-41-BMQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jUm-Ll-4Lw" secondAttribute="trailing" constant="20" id="LXe-MP-yhi"/>
+                            <constraint firstItem="Hug-OI-VS1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="LvN-9W-STz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OSs-OP-cO3" secondAttribute="trailing" constant="20" id="LxW-ah-AWL"/>
+                            <constraint firstItem="fwa-3u-dhc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="NL7-9P-Rmc"/>
+                            <constraint firstItem="jUm-Ll-4Lw" firstAttribute="top" secondItem="rBm-ll-aR6" secondAttribute="bottom" constant="10" id="PVG-aW-afF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OSs-OP-cO3" secondAttribute="bottom" id="Uj8-0z-Y4W"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fwa-3u-dhc" secondAttribute="trailing" constant="20" id="WFK-MZ-Xsn"/>
+                            <constraint firstItem="rBm-ll-aR6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hug-OI-VS1" secondAttribute="trailing" constant="10" id="Y4N-bd-fSX"/>
+                            <constraint firstItem="fwa-3u-dhc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="geS-IF-zMC"/>
+                            <constraint firstItem="jUm-Ll-4Lw" firstAttribute="top" secondItem="Hug-OI-VS1" secondAttribute="bottom" constant="10" id="iQN-fO-0RF"/>
+                            <constraint firstItem="OSs-OP-cO3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kPs-fK-eVQ"/>
+                            <constraint firstItem="Hug-OI-VS1" firstAttribute="top" secondItem="fwa-3u-dhc" secondAttribute="bottom" constant="30" id="nD1-hA-KIm"/>
+                            <constraint firstItem="jUm-Ll-4Lw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="szJ-FB-WWY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="svGames" destination="KWh-tZ-TLj" id="bIt-AW-WTw"/>
+                        <outlet property="tvName" destination="fwa-3u-dhc" id="BxE-pD-BH3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="color2">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

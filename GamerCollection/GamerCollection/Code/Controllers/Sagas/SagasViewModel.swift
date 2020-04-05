@@ -79,7 +79,7 @@ class SagasViewModel: BaseViewModel {
     }
     
     @objc private func addSaga() {
-        print("add saga")
+        SagaDetailRouter(sagaId: nil).push()
     }
 }
 

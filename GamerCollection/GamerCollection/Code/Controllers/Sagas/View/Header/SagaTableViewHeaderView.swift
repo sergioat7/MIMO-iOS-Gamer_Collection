@@ -35,7 +35,7 @@ class SagaTableViewHeaderView: UITableViewHeaderFooterView {
     @objc private func editSaga() {
         
         if let sagaId = sagaHeaderViewModel?.id {
-            print("edit saga \(sagaId)")
+            SagaDetailRouter(sagaId: sagaId).push()
         }
     }
 }

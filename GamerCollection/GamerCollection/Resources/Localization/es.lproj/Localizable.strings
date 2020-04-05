@@ -89,6 +89,12 @@
 
 "SAGAS" = "Mis Sagas";
 
+// Saga detail
+
+"SAGA_DETAIL" = "Detail";
+"SAGA_DETAIL_PLACEHOLDER_NAME" = "Añade un nombre";
+"SAGA_DETAIL_GAMES_TITLE" = "Juegos";
+
 // Ranking
 
 "RANKING" = "Mi Ranking";
