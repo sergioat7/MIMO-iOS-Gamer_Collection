@@ -13,6 +13,7 @@ protocol ModalGamesViewModelProtocol: class {
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
      func viewDidLoad()
+     func getHandler() -> (([Int64]?) -> Void)?
      func getGameCellViewModels() -> [GameCellViewModel]
 }
 
@@ -25,14 +26,20 @@ class ModalGamesViewModel: BaseViewModel {
     // MARK: - Private variables
     
     private var dataManager: ModalGamesDataManagerProtocol
+    private let gameIds: [Int64]
+    private let handler: (([Int64]?) -> Void)?
     private var gameCellViewModels: [GameCellViewModel] = []
     
     // MARK: - Initialization
     
     init(view:ModalGamesViewProtocol,
-         dataManager: ModalGamesDataManagerProtocol) {
+         dataManager: ModalGamesDataManagerProtocol,
+         gameIds: [Int64],
+         handler: (([Int64]?) -> Void)?) {
         self.view = view
         self.dataManager = dataManager
+        self.gameIds = gameIds
+        self.handler = handler
         super.init(view: view)
     }
     
@@ -57,8 +64,10 @@ class ModalGamesViewModel: BaseViewModel {
                         let state = states.first(where: { $0.id == game.state })
                         return GameCellViewModel(game: game,
                                                  platform: platform,
-                                                 state: state)
+                                                 state: state,
+                                                 selectable: true)
                     })
+                    gameCellViewModels.forEach({ $0.isSelected = self.gameIds.contains($0.id) })
                     self.gameCellViewModels = gameCellViewModels
                     self.view?.hideLoading()
                 }, failure: { error in
@@ -77,6 +86,10 @@ extension ModalGamesViewModel: ModalGamesViewModelProtocol {
     
     func viewDidLoad() {
         getContent()
+    }
+    
+    func getHandler() -> (([Int64]?) -> Void)? {
+        return handler
     }
     
     func getGameCellViewModels() -> [GameCellViewModel] {

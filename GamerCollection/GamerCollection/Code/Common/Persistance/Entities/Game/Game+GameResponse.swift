@@ -113,6 +113,8 @@ extension Game: ModelHandlerProtocol {
             sagaRepository.getRecords(success: { sagaRecords in
                 self.saga = sagaRecords.first(where: { $0.id == sagaId })
             }, failure: failure)
+        } else {
+            self.saga = nil
         }
     }
 }

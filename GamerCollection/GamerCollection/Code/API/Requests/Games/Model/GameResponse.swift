@@ -31,6 +31,6 @@ struct GameResponse: Codable {
     let videoUrl: String?
     let loanedTo: String?
     let observations: String?
-    let saga: SagaResponse?
+    var saga: SagaResponse?
 //    let songs: Songs?
 }

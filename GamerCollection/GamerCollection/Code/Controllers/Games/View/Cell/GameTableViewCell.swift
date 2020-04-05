@@ -19,7 +19,8 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet weak var lbReleaseDate: UILabel!
     @IBOutlet weak var vwScore: CosmosView!
     @IBOutlet weak var ivIsGoty: UIImageView!
-
+    @IBOutlet weak var vsSelected: UIView!
+    
     var gameCellViewModel: GameCellViewModel? {
         didSet {
             configure()
@@ -82,6 +83,9 @@ class GameTableViewCell: UITableViewCell {
         vwScore.rating = (gameCellViewModel?.score ?? 0) / 2
         
         ivIsGoty.image = gameCellViewModel?.isGoty == true ? UIImage(named: "goty_label") : nil
+        
+        vsSelected.isHidden = !(gameCellViewModel?.isSelectable ?? false)
+        vsSelected.backgroundColor = gameCellViewModel?.isSelected == true ? .blue : .white
     }
     
 }

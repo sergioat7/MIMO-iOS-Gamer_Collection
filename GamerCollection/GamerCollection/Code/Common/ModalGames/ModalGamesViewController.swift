@@ -58,7 +58,19 @@ class ModalGamesViewController: BaseViewController {
     }
     
     @IBAction func save(_ sender: Any) {
-        closePopup()
+        
+        var selectedGameIds = [Int64]()
+        if let gameCellViewModels = viewModel?.getGameCellViewModels() {
+            for gameCellViewModel in gameCellViewModels {
+                
+                if gameCellViewModel.isSelected {
+                    selectedGameIds.append(gameCellViewModel.id)
+                }
+            }
+        }
+        
+        let handler = viewModel?.getHandler()
+        closePopup(gameIds: selectedGameIds, handler: handler)
     }
     
     // MARK: - Overrides
@@ -94,12 +106,12 @@ class ModalGamesViewController: BaseViewController {
         }, completion:nil)
     }
     
-    private func closePopup(games: GamesResponse? = nil, handler: ((GamesResponse?) -> Void)? = nil) {
+    private func closePopup(gameIds: [Int64]? = nil, handler: (([Int64]?) -> Void)? = nil) {
         
         animatedClearBackground()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.hidePopup()
-            handler?(games)
+            handler?(gameIds)
         }
     }
 }
@@ -124,6 +136,11 @@ extension ModalGamesViewController:  ModalGamesConfigurableViewProtocol {
 extension ModalGamesViewController:  UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let gameCellViewModels = viewModel?.getGameCellViewModels()
+        let isCellSelected = gameCellViewModels?[indexPath.row].isSelected ?? false
+        gameCellViewModels?[indexPath.row].isSelected = !isCellSelected
+        tvGames.reloadData()
     }
 }
 

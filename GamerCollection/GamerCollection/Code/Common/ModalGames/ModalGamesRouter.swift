@@ -18,7 +18,9 @@ class ModalGamesRouter: BaseRouter {
         let storyboard: UIStoryboard = UIStoryboard(name: "ModalGamesView", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "ModalGames") as? ModalGamesViewController {
             let viewModel: ModalGamesViewModelProtocol = ModalGamesViewModel(view: controller,
-                                                                             dataManager: dataManager)
+                                                                             dataManager: dataManager,
+                                                                             gameIds: gameIds,
+                                                                             handler: handler)
             controller.set(viewModel: viewModel)
             return controller
         }
@@ -45,9 +47,12 @@ class ModalGamesRouter: BaseRouter {
     
     // MARK: - Initialization
     
-    private let handler: ((GamesResponse?) -> Void)?
+    private let gameIds: [Int64]
+    private let handler: (([Int64]?) -> Void)?
     
-    init (handler: ((GamesResponse?) -> Void)?) {
+    init (gameIds: [Int64],
+          handler: (([Int64]?) -> Void)?) {
+        self.gameIds = gameIds
         self.handler = handler
     }
     

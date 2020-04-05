@@ -123,11 +123,19 @@ class SagaDetailViewModel: BaseViewModel {
         view?.showGames(games: saga?.games ?? GamesResponse())
     }
     
-    private func addGames(games: GamesResponse?) {
+    private func addGames(gameIds: [Int64]?) {
         
-        if let games = games {
-            self.saga?.games = games
-            self.view?.showGames(games: games)
+        if let gameIds = gameIds {
+            
+            view?.showLoading()
+            dataManager.getSelectedGames(gameIds: gameIds, success: { games in
+                
+                self.saga?.games = games
+                self.view?.showGames(games: games)
+                self.view?.hideLoading()
+            }, failure: { error in
+                self.manageError(error: error)
+            })
         }
     }
 }
@@ -153,7 +161,9 @@ extension SagaDetailViewModel: SagaDetailViewModelProtocol {
     
     func showGamesModal() {
         
-        let viewControllerToPresent = ModalGamesRouter(handler: addGames).view
+        let gameIds = saga?.games.compactMap({$0.id}) ?? []
+        let viewControllerToPresent = ModalGamesRouter(gameIds: gameIds,
+                                                       handler: addGames).view
         view?.showPopup(viewControllerToPresent: viewControllerToPresent)
     }
     

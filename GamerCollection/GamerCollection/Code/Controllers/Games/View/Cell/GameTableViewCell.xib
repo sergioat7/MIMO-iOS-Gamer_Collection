@@ -105,6 +105,10 @@
                                     <constraint firstAttribute="width" secondItem="2VF-HS-iA8" secondAttribute="height" multiplier="1:1" id="lad-zw-17a"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYN-N2-mQA">
+                                <rect key="frame" x="286" y="36.5" width="24" height="24"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -117,11 +121,15 @@
                             <constraint firstItem="ucR-En-fxO" firstAttribute="top" secondItem="MJI-M0-5Ne" secondAttribute="top" constant="20" id="UFA-ft-aIk"/>
                             <constraint firstItem="oxi-Da-eze" firstAttribute="top" secondItem="MJI-M0-5Ne" secondAttribute="top" id="X7s-22-ZK0"/>
                             <constraint firstItem="ucR-En-fxO" firstAttribute="leading" secondItem="LxY-P6-Ic1" secondAttribute="trailing" constant="20" id="bD0-SX-oTA"/>
+                            <constraint firstItem="EYN-N2-mQA" firstAttribute="top" secondItem="2VF-HS-iA8" secondAttribute="top" id="hjy-k4-SBe"/>
                             <constraint firstItem="LxY-P6-Ic1" firstAttribute="leading" secondItem="MJI-M0-5Ne" secondAttribute="leading" constant="10" id="llv-s9-RfW"/>
                             <constraint firstAttribute="bottom" secondItem="Qht-5q-8jM" secondAttribute="bottom" constant="20" id="lzZ-ii-jul"/>
+                            <constraint firstItem="EYN-N2-mQA" firstAttribute="bottom" secondItem="2VF-HS-iA8" secondAttribute="bottom" id="msD-Bh-v08"/>
+                            <constraint firstItem="EYN-N2-mQA" firstAttribute="trailing" secondItem="2VF-HS-iA8" secondAttribute="trailing" id="qNV-kg-hNz"/>
                             <constraint firstAttribute="bottom" secondItem="LxY-P6-Ic1" secondAttribute="bottom" id="qQO-oG-llm"/>
                             <constraint firstAttribute="trailing" secondItem="2VF-HS-iA8" secondAttribute="trailing" constant="10" id="qit-wo-RFA"/>
                             <constraint firstItem="2VF-HS-iA8" firstAttribute="leading" secondItem="ucR-En-fxO" secondAttribute="trailing" constant="10" id="uCo-Gj-laF"/>
+                            <constraint firstItem="EYN-N2-mQA" firstAttribute="leading" secondItem="2VF-HS-iA8" secondAttribute="leading" id="uNN-1a-fvC"/>
                             <constraint firstItem="Qht-5q-8jM" firstAttribute="leading" secondItem="ucR-En-fxO" secondAttribute="leading" id="ueb-7h-zkP"/>
                             <constraint firstItem="Qht-5q-8jM" firstAttribute="top" secondItem="ucR-En-fxO" secondAttribute="bottom" constant="10" id="wg3-Vn-vlg"/>
                         </constraints>
@@ -143,6 +151,7 @@
                 <outlet property="lbName" destination="4BS-eS-V5K" id="cDI-Kd-1O1"/>
                 <outlet property="lbPlatform" destination="aVo-oK-LVK" id="iUw-Lf-39E"/>
                 <outlet property="lbReleaseDate" destination="xfi-ro-gva" id="iZo-cg-G3c"/>
+                <outlet property="vsSelected" destination="EYN-N2-mQA" id="gql-YF-hfm"/>
                 <outlet property="vwGameImage" destination="oxi-Da-eze" id="3vl-zD-Zvg"/>
                 <outlet property="vwScore" destination="Qht-5q-8jM" id="VGo-vE-qGP"/>
             </connections>
