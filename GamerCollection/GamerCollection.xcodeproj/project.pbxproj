@@ -141,6 +141,7 @@
 		FBEE25C7243A0D050092F73F /* SagaDetailApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25C1243A0D050092F73F /* SagaDetailApiClient.swift */; };
 		FBEE25C8243A0D050092F73F /* SagaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25C2243A0D050092F73F /* SagaDetailViewModel.swift */; };
 		FBEE25C9243A0D050092F73F /* SagaDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25C3243A0D050092F73F /* SagaDetailDataManager.swift */; };
+		FBEE25CE243A39650092F73F /* SetSagaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE25CD243A39650092F73F /* SetSagaRequest.swift */; };
 		FBF19EAC242536A600E836FD /* GetFormatsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */; };
 		FBF19EAF242536CA00E836FD /* FormatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EAE242536CA00E836FD /* FormatResponse.swift */; };
 		FBF19EB32425388F00E836FD /* GenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF19EB22425388F00E836FD /* GenreResponse.swift */; };
@@ -328,6 +329,7 @@
 		FBEE25C1243A0D050092F73F /* SagaDetailApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaDetailApiClient.swift; sourceTree = "<group>"; };
 		FBEE25C2243A0D050092F73F /* SagaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaDetailViewModel.swift; sourceTree = "<group>"; };
 		FBEE25C3243A0D050092F73F /* SagaDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaDetailDataManager.swift; sourceTree = "<group>"; };
+		FBEE25CD243A39650092F73F /* SetSagaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSagaRequest.swift; sourceTree = "<group>"; };
 		FBF19EAB242536A600E836FD /* GetFormatsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFormatsRequest.swift; sourceTree = "<group>"; };
 		FBF19EAE242536CA00E836FD /* FormatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatResponse.swift; sourceTree = "<group>"; };
 		FBF19EB22425388F00E836FD /* GenreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResponse.swift; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 				FBF19EEE2425968800E836FD /* Logout */,
 				FBF19EB72425395300E836FD /* Platforms */,
 				FB31D5C2241EB02D00B16558 /* Register */,
+				FBEE25CC243A38D00092F73F /* Saga */,
 				FB8D50B52438DAD50037BA52 /* Sagas */,
 				FBF19EBD24253A4D00E836FD /* States */,
 				FB448DE4242003CE008ACE69 /* UpdatePassword */,
@@ -1196,6 +1199,14 @@
 			path = APIClient;
 			sourceTree = "<group>";
 		};
+		FBEE25CC243A38D00092F73F /* Saga */ = {
+			isa = PBXGroup;
+			children = (
+				FBEE25CD243A39650092F73F /* SetSagaRequest.swift */,
+			);
+			path = Saga;
+			sourceTree = "<group>";
+		};
 		FBF19EA82425363E00E836FD /* Formats */ = {
 			isa = PBXGroup;
 			children = (
@@ -1687,6 +1698,7 @@
 				FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */,
 				FBB1A36A241C10E800E91579 /* Constants.swift in Sources */,
 				FBA5482B24157E4800C23DB3 /* CoreDataStack.swift in Sources */,
+				FBEE25CE243A39650092F73F /* SetSagaRequest.swift in Sources */,
 				FB1DFEB62416BAE8000CAD7B /* LoadingScreen.swift in Sources */,
 				FBF19ECB24254C2300E836FD /* FormatRepository.swift in Sources */,
 				FBC1F644242ABBCF003A87EA /* ModalSyncAppDataManager.swift in Sources */,

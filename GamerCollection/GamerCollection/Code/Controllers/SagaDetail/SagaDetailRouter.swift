@@ -33,7 +33,11 @@ class SagaDetailRouter: BaseRouter {
     }
     
     private var apiClient: SagaDetailApiClientProtocol {
-        return SagaDetailApiClient()
+        return SagaDetailApiClient(userManager: userManager)
+    }
+    
+    private var userManager: UserManager {
+        return UserManager()
     }
     
     private var gameRepository: GameRepository {
