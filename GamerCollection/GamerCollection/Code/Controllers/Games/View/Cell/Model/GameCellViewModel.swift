@@ -77,4 +77,10 @@ class GameCellViewModel {
             }
         }
     }
+    
+    var sagaId: Int64? {
+        get {
+            return game.saga?.id
+        }
+    }
 }

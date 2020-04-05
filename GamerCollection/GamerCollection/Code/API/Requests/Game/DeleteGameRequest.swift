@@ -31,8 +31,8 @@ class DeleteGameRequest: APIRequest {
             
     public init(token: String,
                 gameId: Int64) {
-           let authorizationHandler = AuthorizationHandler(token: token)
-           self.interceptor = authorizationHandler
-           self.resourcePath = String(format: "/%ld", gameId)
-       }
+        let authorizationHandler = AuthorizationHandler(token: token)
+        self.interceptor = authorizationHandler
+        self.resourcePath = String(format: "/%ld", gameId)
+    }
 }

@@ -1,43 +1,44 @@
 //
-//  SetGameRequest.swift
+//  CreateSagaRequest.swift
 //  GamerCollection
 //
-//  Created by Sergio Aragonés on 28/03/2020.
+//  Created by Sergio Aragonés on 05/04/2020.
 //  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-class SetGameRequest: APIRequest {
+class CreateSagaRequest: APIRequest {
     
-    public typealias Response = GameResponse
+    public typealias Response = EmptyResponse
     
     public typealias Error = ErrorResponse
         
     public var resourceName: String {
-        return "/game"
+        return "/saga"
     }
     
     public var method: HTTPMethod {
-        return HTTPMethod.patch
+        return HTTPMethod.post
     }
     
-    public var resourcePath: String
+    public var resourcePath: String {
+        return ""
+    }
     
     public var body: Parameters? {
-        return game.dictionary
+        return saga.dictionary
     }
     
     public var interceptor: RequestInterceptor?
            
-    private var game: GameResponse
+    private var saga: SagaResponse
             
     public init(token: String,
-                game: GameResponse) {
+                saga: SagaResponse) {
         let authorizationHandler = AuthorizationHandler(token: token)
         self.interceptor = authorizationHandler
-        self.game = game
-        self.resourcePath = String(format: "/%ld", game.id)
+        self.saga = saga
     }
 }

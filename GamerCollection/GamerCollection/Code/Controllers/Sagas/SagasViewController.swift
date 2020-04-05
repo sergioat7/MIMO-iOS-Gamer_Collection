@@ -12,7 +12,7 @@ protocol SagasViewProtocol: BaseViewProtocol {
     /**
      * Add here your methods for communication VIEW_MODEL -> VIEW
      */
-    
+    func showSagas()
 }
 
 protocol SagasConfigurableViewProtocol: class {
@@ -77,6 +77,9 @@ class SagasViewController: BaseViewController {
 
 extension SagasViewController:  SagasViewProtocol {
     
+    func showSagas() {
+        tvSagas.reloadData()
+    }
 }
 
 // MARK: - SagasViewProtocol
@@ -94,7 +97,9 @@ extension SagasViewController:  UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let gameCellViewModels = viewModel?.getGameCellViewModels()
+        let sagaHeaderViewModels = viewModel?.getSagaHeaderViewModels()
+        let sagaId = sagaHeaderViewModels?[indexPath.section].id ?? 0
+        let gameCellViewModels = viewModel?.getSagaGameCellViewModels(sagaId: sagaId)
         let gameId = gameCellViewModels?[indexPath.row].id ?? 0
         GameDetailRouter(gameId: gameId).push()
     }
@@ -105,16 +110,20 @@ extension SagasViewController:  UITableViewDelegate {
 extension SagasViewController:  UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel?.getSagaHeaderViewModels().count ?? 1
+        
+        let sagaHeaderViewModelsCount = viewModel?.getSagaHeaderViewModels().count ?? 0
+        ivEmptyList.image = sagaHeaderViewModelsCount != 0 ? nil : UIImage(named: "sagas image")
+        lbEmptyList.attributedText = sagaHeaderViewModelsCount != 0 ? nil : NSAttributedString(string: "EMPTY_LIST".localized(),
+                                                                                               attributes: [.font : UIFont.bold24,
+                                                                                                            .foregroundColor: Color.color2])
+        return sagaHeaderViewModelsCount
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let gameCellViewModelsCount = viewModel?.getGameCellViewModels().count ?? 0
-        ivEmptyList.image = gameCellViewModelsCount != 0 ? nil : UIImage(named: "sagas image")
-        lbEmptyList.attributedText = gameCellViewModelsCount != 0 ? nil : NSAttributedString(string: "EMPTY_LIST".localized(),
-                                                                                             attributes: [.font : UIFont.bold24,
-                                                                                                          .foregroundColor: Color.color2])
+        let sagaHeaderViewModels = viewModel?.getSagaHeaderViewModels()
+        let sagaId = sagaHeaderViewModels?[section].id ?? 0
+        let gameCellViewModelsCount = viewModel?.getSagaGameCellViewModels(sagaId: sagaId).count ?? 0
         return gameCellViewModelsCount
     }
     
@@ -133,7 +142,9 @@ extension SagasViewController:  UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as! GameTableViewCell
         
-        let gameCellViewModels = viewModel?.getGameCellViewModels()
+        let sagaHeaderViewModels = viewModel?.getSagaHeaderViewModels()
+        let sagaId = sagaHeaderViewModels?[indexPath.section].id ?? 0
+        let gameCellViewModels = viewModel?.getSagaGameCellViewModels(sagaId: sagaId)
         let gameCellViewModel = gameCellViewModels?[indexPath.row]
         cell.gameCellViewModel = gameCellViewModel
         

@@ -15,7 +15,7 @@ protocol SagasViewModelProtocol: class {
     func viewDidLoad()
     func viewWillAppear()
     func getSagaHeaderViewModels() -> [SagaHeaderViewModel]
-    func getGameCellViewModels() -> [GameCellViewModel]
+    func getSagaGameCellViewModels(sagaId: Int64) -> [GameCellViewModel]
 }
 
 class SagasViewModel: BaseViewModel {
@@ -63,6 +63,7 @@ class SagasViewModel: BaseViewModel {
                                                      platform: platform,
                                                      state: state)
                         })
+                        self.view?.showSagas()
                         self.view?.hideLoading()
                     }, failure: { error in
                         self.manageError(error: error)
@@ -79,7 +80,7 @@ class SagasViewModel: BaseViewModel {
     }
     
     @objc private func addSaga() {
-        print("add saga")
+        SagaDetailRouter(sagaId: nil).push()
     }
 }
 
@@ -99,8 +100,10 @@ extension SagasViewModel: SagasViewModelProtocol {
         return sagaHeaderViewModels
     }
     
-    func getGameCellViewModels() -> [GameCellViewModel] {
-        return gameCellViewModels
+    func getSagaGameCellViewModels(sagaId: Int64) -> [GameCellViewModel] {
+        
+        let sagaGameCellViewModels = gameCellViewModels.filter({ $0.sagaId == sagaId })
+        return sagaGameCellViewModels
     }
 }
 

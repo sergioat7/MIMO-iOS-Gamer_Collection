@@ -89,6 +89,14 @@
 
 "SAGAS" = "Mis Sagas";
 
+// Saga detail
+
+"SAGA_DETAIL" = "Detail";
+"SAGA_DETAIL_PLACEHOLDER_NAME" = "Añade un nombre";
+"SAGA_DETAIL_GAMES_TITLE" = "Juegos";
+"SAGA_DETAIL_DELETE" = "Borrar";
+"SAGA_DETAIL_DELETE_CONFIRMATION" = "¿Estás seguro de que quieres borrar esta saga? Esta acción no se puede deshacer";
+
 // Ranking
 
 "RANKING" = "Mi Ranking";
