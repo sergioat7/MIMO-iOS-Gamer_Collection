@@ -44,6 +44,8 @@ extension Game: ModelHandlerProtocol {
         loanedTo = item.loanedTo
         observations = item.observations
         
+        manageSaga(item: item, failure: failure)
+        
         do {
             try CoreDataStack.shared.saveContext(context)
         } catch {
@@ -67,6 +69,11 @@ extension Game: ModelHandlerProtocol {
         let releaseDate = self.releaseDate?.toString(format: dateFormat)
         let purchaseDate = self.purchaseDate?.toString(format: dateFormat)
         
+        var saga: SagaResponse?
+        self.saga?.getModel(success: { sagaResponse in
+            saga = sagaResponse
+        }, failure: failure)
+        
         guard let gameResponse = GameResponse(id: id,
                                               name: name,
                                               platform: platform,
@@ -86,12 +93,26 @@ extension Game: ModelHandlerProtocol {
                                               imageUrl: imageUrl,
                                               videoUrl: videoUrl,
                                               loanedTo: loanedTo,
-                                              observations: observations) as? M else {
+                                              observations: observations,
+                                              saga: saga) as? M else {
                                                 let error = ErrorResponse(error: "ERROR_CORE_DATA")
                                                 failure(error)
                                                 return
         }
         
         success(gameResponse)
+    }
+    
+    // MARK: - Private functions
+    
+    private func manageSaga(item: GameResponse, failure: @escaping (ErrorResponse) -> Void) {
+        
+        let sagaRepository = SagaRepository()
+        
+        if let sagaId = item.saga?.id {
+            sagaRepository.getRecords(success: { sagaRecords in
+                self.saga = sagaRecords.first(where: { $0.id == sagaId })
+            }, failure: failure)
+        }
     }
 }

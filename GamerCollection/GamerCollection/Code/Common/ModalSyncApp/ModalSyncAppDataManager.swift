@@ -17,6 +17,7 @@ protocol ModalSyncAppDataManagerProtocol: class {
     func getPlatforms(success: @escaping (PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getSagas(success: @escaping (SagasResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class ModalSyncAppDataManager: BaseDataManager {
@@ -31,6 +32,7 @@ class ModalSyncAppDataManager: BaseDataManager {
     private let platformRepository: PlatformRepository
     private let stateRepository: StateRepository
     private let gameRepository: GameRepository
+    private let sagaRepository: SagaRepository
     
     // MARK: - Initialization
     
@@ -39,13 +41,15 @@ class ModalSyncAppDataManager: BaseDataManager {
          genreRepository: GenreRepository,
          platformRepository: PlatformRepository,
          stateRepository: StateRepository,
-         gameRepository: GameRepository) {
+         gameRepository: GameRepository,
+         sagaRepository: SagaRepository) {
         self.loginApiClient = loginApiClient
         self.formatRepository = formatRepository
         self.genreRepository = genreRepository
         self.platformRepository = platformRepository
         self.stateRepository = stateRepository
         self.gameRepository = gameRepository
+        self.sagaRepository = sagaRepository
     }
 }
 
@@ -141,6 +145,26 @@ extension ModalSyncAppDataManager: ModalSyncAppDataManagerProtocol {
                     
                     if index == games.count - 1 {
                         success(games)
+                    }
+                }, failure: failure)
+            }
+        }, failure: failure)
+    }
+    
+    func getSagas(success: @escaping (SagasResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        loginApiClient.getSagas(success: { sagas in
+            
+            guard !sagas.isEmpty else {
+                success(sagas)
+                return
+            }
+            
+            for (index, saga) in sagas.enumerated() {
+                self.sagaRepository.update(item: saga, success: { _ in
+                    
+                    if index == sagas.count - 1 {
+                        success(sagas)
                     }
                 }, failure: failure)
             }

@@ -31,7 +31,8 @@ class ModalSyncAppRouter: BaseRouter {
                                        genreRepository: genreRepository,
                                        platformRepository: platformRepository,
                                        stateRepository: stateRepository,
-                                       gameRepository: gameRepository)
+                                       gameRepository: gameRepository,
+                                       sagaRepository: sagaRepository)
     }
     
     private var loginApiClient: LoginApiClientProtocol {
@@ -60,6 +61,10 @@ class ModalSyncAppRouter: BaseRouter {
     
     private var gameRepository: GameRepository {
         return GameRepository()
+    }
+    
+    private var sagaRepository: SagaRepository {
+        return SagaRepository()
     }
     
     // MARK: - Initialization

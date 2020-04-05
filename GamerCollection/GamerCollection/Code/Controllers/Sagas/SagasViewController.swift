@@ -25,6 +25,10 @@ class SagasViewController: BaseViewController {
     
     // MARK: - Public properties
     
+    @IBOutlet weak var tvSagas: UITableView!
+    @IBOutlet weak var ivEmptyList: UIImageView!
+    @IBOutlet weak var lbEmptyList: UILabel!
+    
     // MARK: - Private properties
     
     private var viewModel:SagasViewModelProtocol?
@@ -33,11 +37,15 @@ class SagasViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.title = "SAGAS".localized()
+        configViews()
+        viewModel?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel?.viewWillAppear()
     }
     
     // MARK: - Actions
@@ -45,6 +53,23 @@ class SagasViewController: BaseViewController {
     // MARK: - Overrides
     
     // MARK: - Private functions
+    
+    private func configViews() {
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        
+        tvSagas.delegate = self
+        tvSagas.dataSource = self
+        registerNib()
+    }
+    
+    private func registerNib() {
+        
+        tvSagas.register(UINib(nibName: "SagaTableViewHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "SagaHeader")
+        tvSagas.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameCell")
+    }
     
 }
 
@@ -61,5 +86,59 @@ extension SagasViewController:  SagasConfigurableViewProtocol {
     func set(viewModel: SagasViewModelProtocol) {
         self.viewModel = viewModel
     }
+}
+
+// MARK: - UITableViewDelegate
+
+extension SagasViewController:  UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let gameCellViewModels = viewModel?.getGameCellViewModels()
+        let gameId = gameCellViewModels?[indexPath.row].id ?? 0
+        GameDetailRouter(gameId: gameId).push()
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension SagasViewController:  UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel?.getSagaHeaderViewModels().count ?? 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        let gameCellViewModelsCount = viewModel?.getGameCellViewModels().count ?? 0
+        ivEmptyList.image = gameCellViewModelsCount != 0 ? nil : UIImage(named: "sagas image")
+        lbEmptyList.attributedText = gameCellViewModelsCount != 0 ? nil : NSAttributedString(string: "EMPTY_LIST".localized(),
+                                                                                             attributes: [.font : UIFont.bold24,
+                                                                                                          .foregroundColor: Color.color2])
+        return gameCellViewModelsCount
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SagaHeader") as! SagaTableViewHeaderView
+        
+        let sagaHeaderViewModels = viewModel?.getSagaHeaderViewModels()
+        let sagaHeaderViewModel = sagaHeaderViewModels?[section]
+        header.sagaHeaderViewModel = sagaHeaderViewModel
+        
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as! GameTableViewCell
+        
+        let gameCellViewModels = viewModel?.getGameCellViewModels()
+        let gameCellViewModel = gameCellViewModels?[indexPath.row]
+        cell.gameCellViewModel = gameCellViewModel
+        
+        cell.selectionStyle = .none
+        
+        return cell
+    }
 }

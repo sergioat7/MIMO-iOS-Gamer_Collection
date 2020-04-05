@@ -13,7 +13,6 @@ protocol GamesDataManagerProtocol: class {
      * Add here your methods for communication VIEW_MODEL -> DATA_MANAGER
      */
     func getGames(state: String?, filters: FiltersModel?, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
-    func getFormats(success: @escaping(FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getPlatforms(success: @escaping(PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getStates(success: @escaping(StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
@@ -26,7 +25,6 @@ class GamesDataManager: BaseDataManager {
     
     private let apiClient: GamesApiClientProtocol
     private let gameRepository: GameRepository
-    private let formatRepository: FormatRepository
     private let platformRepository: PlatformRepository
     private let stateRepository: StateRepository
     
@@ -34,12 +32,10 @@ class GamesDataManager: BaseDataManager {
     
     init(apiClient: GamesApiClientProtocol,
          gameRepository: GameRepository,
-         formatRepository: FormatRepository,
          platformRepository: PlatformRepository,
          stateRepository: StateRepository) {
         self.apiClient = apiClient
         self.gameRepository = gameRepository
-        self.formatRepository = formatRepository
         self.platformRepository = platformRepository
         self.stateRepository = stateRepository
     }
@@ -60,10 +56,6 @@ extension GamesDataManager: GamesDataManagerProtocol {
                                success: { (gameModels, _) in
                                 success(gameModels)
         }, failure: failure)
-    }
-    
-    func getFormats(success: @escaping(FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
-        formatRepository.getAll(success: success, failure: failure)
     }
     
     func getPlatforms(success: @escaping(PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {

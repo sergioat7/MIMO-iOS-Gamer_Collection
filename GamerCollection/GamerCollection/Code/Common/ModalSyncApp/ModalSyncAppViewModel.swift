@@ -55,7 +55,12 @@ class ModalSyncAppViewModel: BaseViewModel {
                 self.dataManager.getPlatforms(success: { _ in
                     self.dataManager.getStates(success: { _ in
                         self.dataManager.getGames(success: { _ in
-                            group.leave()
+                            self.dataManager.getSagas(success: { _ in
+                                group.leave()
+                            }, failure: { error in
+                                errorResponse = error
+                                group.leave()
+                            })
                         }, failure: { error in
                             errorResponse = error
                             group.leave()

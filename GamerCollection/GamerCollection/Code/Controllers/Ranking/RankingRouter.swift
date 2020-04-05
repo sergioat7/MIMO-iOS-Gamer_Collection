@@ -27,17 +27,12 @@ class RankingRouter: BaseRouter {
     
     private var dataManager: RankingDataManagerProtocol {
         return RankingDataManager(gameRepository: gameRepository,
-                                  formatRepository: formatRepository,
                                   platformRepository: platformRepository,
                                   stateRepository: stateRepository)
     }
     
     private var gameRepository: GameRepository {
         return GameRepository()
-    }
-    
-    private var formatRepository: FormatRepository {
-        return FormatRepository()
     }
     
     private var platformRepository: PlatformRepository {

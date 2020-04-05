@@ -51,9 +51,13 @@ class LoginViewModel: BaseViewModel {
                 self.dataManager.getPlatforms(success: { _ in
                     self.dataManager.getStates(success: { _ in
                         self.dataManager.getGames(success: { _ in
-                            
-                            MainTabBarController.show()
-                            self.view?.hideLoading()
+                            self.dataManager.getSagas(success: { _ in
+                                
+                                MainTabBarController.show()
+                                self.view?.hideLoading()
+                            }, failure: { error in
+                                self.manageError(error: error)
+                            })
                         }, failure: { error in
                             self.manageError(error: error)
                         })

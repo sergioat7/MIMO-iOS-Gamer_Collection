@@ -14,8 +14,10 @@
 "CANCEL" = "Cancelar";
 "RESET" = "Reiniciar";
 "SAVE" = "Guardar";
+"EDIT" = "Editar";
 "MIN" = "Min";
 "MAX" = "Max";
+"EMPTY_LIST" = "La lista está vacía";
 
 // Login
 
@@ -42,7 +44,6 @@
 "GAMES_RELEASED" = "Lanzado";
 "GAMES_UNRELEASED" = "No lanzado";
 "GAMES_NUMBER_TITLE" = "juegos";
-"GAMES_EMPTY_LIST" = "La lista está vacía";
 
 // Game detail
 

@@ -428,7 +428,8 @@ extension GameDetailViewController:  GameDetailViewProtocol {
                                 imageUrl: imageUrl,
                                 videoUrl: videoUrl,
                                 loanedTo: loanedTo,
-                                observations: observations)
+                                observations: observations,
+                                saga: nil)//TODO set saga properly
         
         return game
     }
