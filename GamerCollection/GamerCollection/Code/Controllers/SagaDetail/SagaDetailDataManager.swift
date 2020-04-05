@@ -14,6 +14,7 @@ protocol SagaDetailDataManagerProtocol: class {
      */
     func getSaga(success: @escaping (SagaResponse?) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func deleteSaga(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
     func setSaga(saga: SagaResponse, success: @escaping (SagaResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func createSaga(saga: SagaResponse, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
     func updateSagas(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
@@ -87,6 +88,17 @@ extension SagaDetailDataManager: SagaDetailDataManagerProtocol {
                 success(sagaResponse)
             }, failure: failure)
         }, failure: failure)
+    }
+    
+    func deleteSaga(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        if let sagaId = getSagaId() {
+            apiClient.deleteSaga(sagaId: sagaId, success: { _ in
+                self.sagaRepository.delete(id: sagaId, success: success, failure: failure)
+            }, failure: failure)
+        } else {
+            success()
+        }
     }
     
     func createSaga(saga: SagaResponse, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void) {

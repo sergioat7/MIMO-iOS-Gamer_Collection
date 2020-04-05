@@ -94,6 +94,8 @@
 "SAGA_DETAIL" = "Detail";
 "SAGA_DETAIL_PLACEHOLDER_NAME" = "Add a name";
 "SAGA_DETAIL_GAMES_TITLE" = "Games";
+"SAGA_DETAIL_DELETE" = "Delete";
+"SAGA_DETAIL_DELETE_CONFIRMATION" = "Are you sure you want to delete this saga? This action can't be undone";
 
 // Ranking
 

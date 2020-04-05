@@ -13,6 +13,7 @@ protocol SagaDetailViewModelProtocol: class {
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
     func viewDidLoad()
+    func deleteSaga()
 }
 
 class SagaDetailViewModel: BaseViewModel {
@@ -139,6 +140,18 @@ extension SagaDetailViewModel: SagaDetailViewModelProtocol {
         }
 
         getContent()
+    }
+    
+    func deleteSaga() {
+        
+        view?.showLoading()
+        dataManager.deleteSaga(success: {
+            
+            self.view?.hideLoading()
+            self.view?.popViewController()
+        }, failure: { error in
+            self.manageError(error: error)
+        })
     }
 }
 

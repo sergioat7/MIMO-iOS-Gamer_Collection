@@ -65,6 +65,13 @@ class SagaDetailViewController: BaseViewController {
         print("add game to saga")//TODO
     }
     
+    @IBAction func deleteSaga(_ sender: UIButton) {
+        
+        showConfirmationDialog(message: "SAGA_DETAIL_DELETE_CONFIRMATION".localized(), handler: {
+            self.viewModel?.deleteSaga()
+        }, handlerCancel: nil)
+    }
+    
     // MARK: - Overrides
     
     // MARK: - Private functions
