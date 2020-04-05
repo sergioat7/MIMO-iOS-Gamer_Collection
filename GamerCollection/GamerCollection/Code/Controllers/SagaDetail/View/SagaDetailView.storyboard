@@ -79,6 +79,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="btAddGame" destination="rBm-ll-aR6" id="A5G-4W-OVe"/>
                         <outlet property="svGames" destination="KWh-tZ-TLj" id="bIt-AW-WTw"/>
                         <outlet property="tvName" destination="fwa-3u-dhc" id="BxE-pD-BH3"/>
                     </connections>

@@ -14,6 +14,7 @@ protocol SagaDetailViewProtocol: BaseViewProtocol {
      */
     func setName(name: String?)
     func showGames(games: GamesResponse)
+    func enableEdition(enable: Bool)
 }
 
 protocol SagaDetailConfigurableViewProtocol: class {
@@ -28,6 +29,7 @@ class SagaDetailViewController: BaseViewController {
     
     @IBOutlet weak var tvName: UnderlinedTextView!
     @IBOutlet weak var svGames: UIStackView!
+    @IBOutlet weak var btAddGame: UIButton!
     
     // MARK: - Private properties
     
@@ -98,6 +100,12 @@ extension SagaDetailViewController:  SagaDetailViewProtocol {
                 svGames.addArrangedSubview(label)
             }
         }
+    }
+    
+    func enableEdition(enable: Bool) {
+        
+        tvName.isEnabled = enable
+        btAddGame.isHidden = !enable
     }
 }
 

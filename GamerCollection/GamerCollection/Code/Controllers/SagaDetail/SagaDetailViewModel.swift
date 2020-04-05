@@ -24,6 +24,7 @@ class SagaDetailViewModel: BaseViewModel {
     // MARK: - Private variables
     
     private var dataManager: SagaDetailDataManagerProtocol
+    private var saga: SagaResponse?
     
     // MARK: - Initialization
     
@@ -48,6 +49,7 @@ class SagaDetailViewModel: BaseViewModel {
         dataManager.getSaga(success: { saga in
             self.dataManager.getGames(success: { games in
                 
+                self.saga = saga
                 self.view?.setName(name: saga?.name)
                 self.view?.showGames(games: games)
                 self.view?.hideLoading()
@@ -58,11 +60,43 @@ class SagaDetailViewModel: BaseViewModel {
             self.manageError(error: error)
         })
     }
+    
+    @objc private func editGame() {
+        
+        view?.enableEdition(enable: true)
+        showSaveButton()
+        showCancelButton()
+    }
+    
+    @objc private func saveGame() {
+        print("save saga")
+    }
+    
+    @objc private func cancelEdition() {
+        
+        view?.enableEdition(enable: false)
+        showNavBarButtons()
+        view?.showBackbarButtonItem()
+        view?.setName(name: saga?.name)
+    }
 }
 
 extension SagaDetailViewModel: SagaDetailViewModelProtocol {
     
     func viewDidLoad() {
+        
+        editHandler = #selector(editGame)
+        cancelHandler = #selector(cancelEdition)
+        saveHandler = #selector(saveGame)
+        
+        if dataManager.getSagaId() != nil {
+            showNavBarButtons()
+            view?.enableEdition(enable: false)
+        } else {
+            showSaveButton()
+            view?.enableEdition(enable: true)
+        }
+
         getContent()
     }
 }
