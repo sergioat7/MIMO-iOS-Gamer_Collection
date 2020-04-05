@@ -69,7 +69,36 @@ class SagaDetailViewModel: BaseViewModel {
     }
     
     @objc private func saveGame() {
-        print("save saga")
+        
+        view?.showLoading()
+        if let sagaId = dataManager.getSagaId() {
+            
+            let sagaName = view?.getSagaName()
+            dataManager.getGames(success: { games in
+                
+                let saga = SagaResponse(id: sagaId,
+                                        name: sagaName,
+                                        games: games)
+                self.dataManager.setSaga(saga: saga, success: { sagaResponse in
+                    
+                    self.saga = sagaResponse
+                    self.view?.enableEdition(enable: false)
+                    self.showNavBarButtons()
+                    self.view?.showBackbarButtonItem()
+                    self.view?.setName(name: sagaResponse.name)
+                    self.view?.showGames(games: games)
+                    self.view?.hideLoading()
+                }, failure: { error in
+                    self.manageError(error: error)
+                })
+            }, failure: { error in
+                self.manageError(error: error)
+            })
+        } else {
+            
+            //TODO create saga
+            view?.hideLoading()
+        }
     }
     
     @objc private func cancelEdition() {

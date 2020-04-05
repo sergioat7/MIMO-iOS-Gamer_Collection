@@ -15,6 +15,7 @@ protocol SagaDetailViewProtocol: BaseViewProtocol {
     func setName(name: String?)
     func showGames(games: GamesResponse)
     func enableEdition(enable: Bool)
+    func getSagaName() -> String?
 }
 
 protocol SagaDetailConfigurableViewProtocol: class {
@@ -61,6 +62,7 @@ class SagaDetailViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func addGame(_ sender: Any) {
+        print("add game to saga")//TODO
     }
     
     // MARK: - Overrides
@@ -86,7 +88,9 @@ extension SagaDetailViewController:  SagaDetailViewProtocol {
     
     func showGames(games: GamesResponse) {
         
+        svGames.removeArrangedSubviews()
         var label: UILabel
+        
         for game in games {
             if let name = game.name {
                 
@@ -106,6 +110,10 @@ extension SagaDetailViewController:  SagaDetailViewProtocol {
         
         tvName.isEnabled = enable
         btAddGame.isHidden = !enable
+    }
+    
+    func getSagaName() -> String? {
+        return tvName.text
     }
 }
 

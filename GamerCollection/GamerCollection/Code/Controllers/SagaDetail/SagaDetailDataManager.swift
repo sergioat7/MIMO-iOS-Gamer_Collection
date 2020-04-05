@@ -14,6 +14,7 @@ protocol SagaDetailDataManagerProtocol: class {
      */
     func getSaga(success: @escaping (SagaResponse?) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func setSaga(saga: SagaResponse, success: @escaping (SagaResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getSagaId() -> Int64?
 }
 
@@ -74,6 +75,16 @@ extension SagaDetailDataManager: SagaDetailDataManagerProtocol {
         } else {
             success([])
         }
+    }
+    
+    func setSaga(saga: SagaResponse, success: @escaping (SagaResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        apiClient.setSaga(saga: saga, success: { sagaResponse in
+            
+            self.sagaRepository.update(item: sagaResponse, success: { _ in
+                success(sagaResponse)
+            }, failure: failure)
+        }, failure: failure)
     }
     
     func getSagaId() -> Int64? {
