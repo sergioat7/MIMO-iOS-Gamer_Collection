@@ -50,6 +50,7 @@ class SagaDetailViewModel: BaseViewModel {
             self.dataManager.getGames(success: { games in
                 
                 self.saga = saga
+                self.saga?.games = games
                 self.view?.setName(name: saga?.name)
                 self.view?.showGames(games: games)
                 self.view?.hideLoading()
@@ -74,30 +75,40 @@ class SagaDetailViewModel: BaseViewModel {
         if let sagaId = dataManager.getSagaId() {
             
             let sagaName = view?.getSagaName()
-            dataManager.getGames(success: { games in
+            let games = saga?.games ?? GamesResponse()
+            let saga = SagaResponse(id: sagaId,
+                                    name: sagaName,
+                                    games: games)
+            self.dataManager.setSaga(saga: saga, success: { sagaResponse in
                 
-                let saga = SagaResponse(id: sagaId,
-                                        name: sagaName,
-                                        games: games)
-                self.dataManager.setSaga(saga: saga, success: { sagaResponse in
+                self.saga = sagaResponse
+                self.view?.enableEdition(enable: false)
+                self.showNavBarButtons()
+                self.view?.showBackbarButtonItem()
+                self.view?.setName(name: sagaResponse.name)
+                self.view?.showGames(games: games)
+                self.view?.hideLoading()
+            }, failure: { error in
+                self.manageError(error: error)
+            })
+        } else {
+            
+            let sagaName = view?.getSagaName()
+            let games = saga?.games ?? GamesResponse()
+            let saga = SagaResponse(id: 0,
+                                    name: sagaName,
+                                    games: games)
+            dataManager.createSaga(saga: saga, success: {
+                self.dataManager.updateSagas(success: {
                     
-                    self.saga = sagaResponse
-                    self.view?.enableEdition(enable: false)
-                    self.showNavBarButtons()
-                    self.view?.showBackbarButtonItem()
-                    self.view?.setName(name: sagaResponse.name)
-                    self.view?.showGames(games: games)
                     self.view?.hideLoading()
+                    self.view?.popViewController()
                 }, failure: { error in
                     self.manageError(error: error)
                 })
             }, failure: { error in
                 self.manageError(error: error)
             })
-        } else {
-            
-            //TODO create saga
-            view?.hideLoading()
         }
     }
     
@@ -107,6 +118,7 @@ class SagaDetailViewModel: BaseViewModel {
         showNavBarButtons()
         view?.showBackbarButtonItem()
         view?.setName(name: saga?.name)
+        view?.showGames(games: saga?.games ?? GamesResponse())
     }
 }
 

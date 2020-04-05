@@ -15,6 +15,8 @@ protocol SagaDetailDataManagerProtocol: class {
     func getSaga(success: @escaping (SagaResponse?) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func setSaga(saga: SagaResponse, success: @escaping (SagaResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func createSaga(saga: SagaResponse, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func updateSagas(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getSagaId() -> Int64?
 }
 
@@ -84,6 +86,33 @@ extension SagaDetailDataManager: SagaDetailDataManagerProtocol {
             self.sagaRepository.update(item: sagaResponse, success: { _ in
                 success(sagaResponse)
             }, failure: failure)
+        }, failure: failure)
+    }
+    
+    func createSaga(saga: SagaResponse, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        apiClient.createSaga(saga: saga, success: { _ in
+            success()
+        }, failure: failure)
+    }
+    
+    func updateSagas(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        apiClient.getSagas(success: { sagas in
+            
+            guard !sagas.isEmpty else {
+                success()
+                return
+            }
+            
+            for (index, saga) in sagas.enumerated() {
+                self.sagaRepository.update(item: saga, success: { _ in
+                    
+                    if index == sagas.count - 1 {
+                        success()
+                    }
+                }, failure: failure)
+            }
         }, failure: failure)
     }
     

@@ -12,6 +12,7 @@ protocol SagaDetailApiClientProtocol {
     
     func setSaga(saga: SagaResponse, success: @escaping (SagaResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func createSaga(saga: SagaResponse, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getSagas(success: @escaping (SagasResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class SagaDetailApiClient: SagaDetailApiClientProtocol {
@@ -53,6 +54,15 @@ class SagaDetailApiClient: SagaDetailApiClientProtocol {
 
             let request = CreateSagaRequest(token: authData.token,
                                             saga: saga)
+            APIClient.shared.sendServer(request, success: success, failure: failure)
+        }, failure: failure)
+    }
+    
+    func getSagas(success: @escaping (SagasResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        getCredentials(success: { authData in
+            
+            let request = GetSagasRequest(token: authData.token)
             APIClient.shared.sendServer(request, success: success, failure: failure)
         }, failure: failure)
     }
