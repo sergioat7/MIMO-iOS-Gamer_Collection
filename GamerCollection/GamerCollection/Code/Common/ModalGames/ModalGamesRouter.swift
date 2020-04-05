@@ -26,7 +26,21 @@ class ModalGamesRouter: BaseRouter {
     }
     
     private var dataManager: ModalGamesDataManagerProtocol {
-        return ModalGamesDataManager()
+        return ModalGamesDataManager(gameRepository: gameRepository,
+                                     platformRepository: platformRepository,
+                                     stateRepository: stateRepository)
+    }
+    
+    private var gameRepository: GameRepository {
+        return GameRepository()
+    }
+    
+    private var platformRepository: PlatformRepository {
+        return PlatformRepository()
+    }
+    
+    private var stateRepository: StateRepository {
+        return StateRepository()
     }
     
     // MARK: - Initialization

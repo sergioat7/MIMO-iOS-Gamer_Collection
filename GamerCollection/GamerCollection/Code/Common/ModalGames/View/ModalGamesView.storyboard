@@ -25,6 +25,18 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="105" placeholderIntrinsicHeight="105" translatesAutoresizingMaskIntoConstraints="NO" id="YlT-Kr-OJv">
+                                        <rect key="frame" x="78.5" y="157.5" width="105" height="105"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="YlT-Kr-OJv" secondAttribute="height" multiplier="1:1" id="msb-9z-dei"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocM-4U-709">
+                                        <rect key="frame" x="131" y="277.5" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qgb-cd-p3s">
                                         <rect key="frame" x="0.0" y="417" width="262.5" height="50"/>
                                         <subviews>
@@ -73,13 +85,24 @@
                                 <color key="backgroundColor" name="color1"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="qgb-cd-p3s" secondAttribute="trailing" id="853-qP-sFU"/>
+                                    <constraint firstItem="YlT-Kr-OJv" firstAttribute="centerY" secondItem="ugw-iB-sTv" secondAttribute="centerY" multiplier="0.9" id="8q6-AW-UzS"/>
+                                    <constraint firstItem="YlT-Kr-OJv" firstAttribute="width" relation="lessThanOrEqual" secondItem="ugw-iB-sTv" secondAttribute="width" multiplier="0.4" id="Bpj-tO-KgD"/>
+                                    <constraint firstItem="YlT-Kr-OJv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ugw-iB-sTv" secondAttribute="leading" id="CJM-ER-xM2"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YlT-Kr-OJv" secondAttribute="trailing" id="FqO-bT-GNb"/>
+                                    <constraint firstItem="ocM-4U-709" firstAttribute="centerX" secondItem="ugw-iB-sTv" secondAttribute="centerX" id="G9n-sZ-Npk"/>
+                                    <constraint firstItem="qgb-cd-p3s" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ocM-4U-709" secondAttribute="bottom" id="Iab-7Z-nsj"/>
+                                    <constraint firstItem="ocM-4U-709" firstAttribute="top" secondItem="YlT-Kr-OJv" secondAttribute="bottom" priority="999" constant="15" id="MKN-L6-h32"/>
                                     <constraint firstItem="9sq-4M-CVr" firstAttribute="top" secondItem="ugw-iB-sTv" secondAttribute="top" id="Oxy-DD-cxq"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ocM-4U-709" secondAttribute="trailing" constant="10" id="RM8-vX-gyD"/>
                                     <constraint firstItem="qgb-cd-p3s" firstAttribute="leading" secondItem="ugw-iB-sTv" secondAttribute="leading" id="UML-gB-hZz"/>
+                                    <constraint firstItem="YlT-Kr-OJv" firstAttribute="centerX" secondItem="ugw-iB-sTv" secondAttribute="centerX" id="YFn-aN-JFl"/>
                                     <constraint firstAttribute="trailing" secondItem="9sq-4M-CVr" secondAttribute="trailing" id="esH-qp-vLQ"/>
                                     <constraint firstItem="qgb-cd-p3s" firstAttribute="top" secondItem="9sq-4M-CVr" secondAttribute="bottom" id="fPd-pL-CTu"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="iMc-Ft-Iqy"/>
                                     <constraint firstItem="9sq-4M-CVr" firstAttribute="leading" secondItem="ugw-iB-sTv" secondAttribute="leading" id="j4w-fQ-LaO"/>
                                     <constraint firstAttribute="bottom" secondItem="qgb-cd-p3s" secondAttribute="bottom" id="kO6-B8-LDa"/>
+                                    <constraint firstItem="ocM-4U-709" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ugw-iB-sTv" secondAttribute="leading" constant="10" id="wem-nT-RNj"/>
+                                    <constraint firstItem="YlT-Kr-OJv" firstAttribute="height" relation="lessThanOrEqual" secondItem="ugw-iB-sTv" secondAttribute="height" multiplier="0.4" id="yia-dA-Fvc"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -103,6 +126,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="ivEmptyList" destination="YlT-Kr-OJv" id="UkJ-cs-aqS"/>
+                        <outlet property="lbEmptyList" destination="ocM-4U-709" id="wLH-fx-hHv"/>
                         <outlet property="tvGames" destination="9sq-4M-CVr" id="lWb-9z-4hX"/>
                     </connections>
                 </viewController>

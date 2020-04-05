@@ -26,6 +26,8 @@ class ModalGamesViewController: BaseViewController {
     // MARK: - Public properties
     
     @IBOutlet weak var tvGames: UITableView!
+    @IBOutlet weak var ivEmptyList: UIImageView!
+    @IBOutlet weak var lbEmptyList: UILabel!
     
     // MARK: - Private properties
     
@@ -130,12 +132,25 @@ extension ModalGamesViewController:  UITableViewDelegate {
 extension ModalGamesViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        
+        let gameCellViewModelsCount = viewModel?.getGameCellViewModels().count ?? 0
+        ivEmptyList.image = gameCellViewModelsCount != 0 ? nil : UIImage(named: "game pad")
+        lbEmptyList.attributedText = gameCellViewModelsCount != 0 ? nil : NSAttributedString(string: "EMPTY_LIST".localized(),
+                                                                                             attributes: [.font : UIFont.bold24,
+                                                                                                          .foregroundColor: Color.color2])
+        return gameCellViewModelsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as! GameTableViewCell
+        
+        let gameCellViewModels = viewModel?.getGameCellViewModels()
+        let gameCellViewModel = gameCellViewModels?[indexPath.row]
+        cell.gameCellViewModel = gameCellViewModel
+        
+        cell.selectionStyle = .none
+        
         return cell
     }
 }
