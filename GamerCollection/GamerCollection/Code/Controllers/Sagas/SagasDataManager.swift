@@ -14,7 +14,6 @@ protocol SagasDataManagerProtocol: class {
      */
      func getSagas(success: @escaping(SagasResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
      func getGames(sagas: SagasResponse, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
-     func getFormats(success: @escaping(FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
      func getPlatforms(success: @escaping(PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
      func getStates(success: @escaping(StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
@@ -28,7 +27,6 @@ class SagasDataManager: BaseDataManager {
     private let apiClient: SagasApiClientProtocol
     private let gameRepository: GameRepository
     private let sagaRepository: SagaRepository
-    private let formatRepository: FormatRepository
     private let platformRepository: PlatformRepository
     private let stateRepository: StateRepository
     
@@ -37,13 +35,11 @@ class SagasDataManager: BaseDataManager {
     init(apiClient: SagasApiClientProtocol,
          gameRepository: GameRepository,
          sagaRepository: SagaRepository,
-         formatRepository: FormatRepository,
          platformRepository: PlatformRepository,
          stateRepository: StateRepository) {
         self.apiClient = apiClient
         self.gameRepository = gameRepository
         self.sagaRepository = sagaRepository
-        self.formatRepository = formatRepository
         self.platformRepository = platformRepository
         self.stateRepository = stateRepository
     }
@@ -68,10 +64,6 @@ extension SagasDataManager: SagasDataManagerProtocol {
                                success: { (gameModels, _) in
                                 success(gameModels)
         }, failure: failure)
-    }
-    
-    func getFormats(success: @escaping(FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
-        formatRepository.getAll(success: success, failure: failure)
     }
     
     func getPlatforms(success: @escaping(PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {

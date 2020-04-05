@@ -28,7 +28,6 @@ class GamesRouter: BaseRouter {
     private var dataManager: GamesDataManagerProtocol {
         return GamesDataManager(apiClient: apiClient,
                                 gameRepository: gameRepository,
-                                formatRepository: formatRepository,
                                 platformRepository: platformRepository,
                                 stateRepository: stateRepository)
     }
@@ -39,10 +38,6 @@ class GamesRouter: BaseRouter {
     
     private var gameRepository: GameRepository {
         return GameRepository()
-    }
-    
-    private var formatRepository: FormatRepository {
-        return FormatRepository()
     }
     
     private var platformRepository: PlatformRepository {

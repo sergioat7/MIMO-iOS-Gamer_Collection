@@ -13,7 +13,6 @@ protocol RankingDataManagerProtocol: class {
      * Add here your methods for communication VIEW_MODEL -> DATA_MANAGER
      */
      func getGames(filters: FiltersModel?, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
-     func getFormats(success: @escaping(FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
      func getPlatforms(success: @escaping(PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
      func getStates(success: @escaping(StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
@@ -25,18 +24,15 @@ class RankingDataManager: BaseDataManager {
     // MARK: - Private variables
     
     private let gameRepository: GameRepository
-    private let formatRepository: FormatRepository
     private let platformRepository: PlatformRepository
     private let stateRepository: StateRepository
     
     // MARK: - Initialization
     
     init(gameRepository: GameRepository,
-         formatRepository: FormatRepository,
          platformRepository: PlatformRepository,
          stateRepository: StateRepository) {
         self.gameRepository = gameRepository
-        self.formatRepository = formatRepository
         self.platformRepository = platformRepository
         self.stateRepository = stateRepository
     }
@@ -57,10 +53,6 @@ extension RankingDataManager: RankingDataManagerProtocol {
                                success: { (gameModels, _) in
                                 success(gameModels)
         }, failure: failure)
-    }
-    
-    func getFormats(success: @escaping(FormatsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
-        formatRepository.getAll(success: success, failure: failure)
     }
     
     func getPlatforms(success: @escaping(PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {

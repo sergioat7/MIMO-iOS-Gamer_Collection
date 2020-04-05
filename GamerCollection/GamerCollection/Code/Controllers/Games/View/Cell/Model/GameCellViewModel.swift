@@ -9,16 +9,13 @@
 class GameCellViewModel {
 
     private let game: GameResponse
-    private let format: FormatResponse?
     private let platform: PlatformResponse?
     private let state: StateResponse?
     
     init(game: GameResponse,
-         format: FormatResponse?,
          platform: PlatformResponse?,
          state: StateResponse?) {
         self.game = game
-        self.format = format
         self.platform = platform
         self.state = state
     }
@@ -62,12 +59,6 @@ class GameCellViewModel {
     var isGoty: Bool {
         get {
             return game.goty
-        }
-    }
-    
-    var formatId: String {
-        get {
-            return format?.id ?? ""
         }
     }
     

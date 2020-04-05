@@ -29,7 +29,6 @@ class SagasRouter: BaseRouter {
         return SagasDataManager(apiClient: apiClient,
                                 gameRepository: gameRepository,
                                 sagaRepository: sagaRepository,
-                                formatRepository: formatRepository,
                                 platformRepository: platformRepository,
                                 stateRepository: stateRepository)
     }
@@ -44,10 +43,6 @@ class SagasRouter: BaseRouter {
     
     private var sagaRepository: SagaRepository {
         return SagaRepository()
-    }
-    
-    private var formatRepository: FormatRepository {
-        return FormatRepository()
     }
     
     private var platformRepository: PlatformRepository {
