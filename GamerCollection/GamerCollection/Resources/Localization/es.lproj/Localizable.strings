@@ -83,6 +83,7 @@
 "GAME_DETAIL_OBSERVATIONS" = "Observaciones";
 "GAME_DETAIL_PLACEHOLDER_OBSERVATIONS" = "Añade unas observaciones";
 "GAME_DETAIL_SAGA" = "Saga";
+"GAME_DETAIL_SONGS_TITLE" = "Canciones";
 "GAME_DETAIL_DELETE" = "Borrar";
 "GAME_DETAIL_DELETE_CONFIRMATION" = "¿Estás seguro de que quieres borrar este juego? Esta acción no se puede deshacer";
 

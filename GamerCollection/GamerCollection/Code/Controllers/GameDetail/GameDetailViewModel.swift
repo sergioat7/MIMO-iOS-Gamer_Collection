@@ -13,6 +13,7 @@ protocol GameDetailViewModelProtocol: class {
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
     func viewDidLoad()
+    func showAddSongModal()
     func deleteGame()
 }
 
@@ -147,6 +148,12 @@ extension GameDetailViewModel: GameDetailViewModelProtocol {
         }
 
         getContent()
+    }
+    
+    func showAddSongModal() {
+        
+        let viewControllerToPresent = ModalSongRouter().view
+        view?.showPopup(viewControllerToPresent: viewControllerToPresent)
     }
     
     func deleteGame() {

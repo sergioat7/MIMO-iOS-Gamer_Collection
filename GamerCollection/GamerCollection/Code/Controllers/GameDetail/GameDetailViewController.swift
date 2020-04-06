@@ -61,6 +61,8 @@ class GameDetailViewController: BaseViewController {
     @IBOutlet weak var tvObservations: UnderlinedTextView!
     @IBOutlet weak var tvSaga: UnderlinedTextView!
     
+    @IBOutlet weak var btAddSong: UIButton!
+    
     // MARK: - Private properties
     
     private var viewModel:GameDetailViewModelProtocol?
@@ -210,6 +212,10 @@ class GameDetailViewController: BaseViewController {
         btPending.isSelected = sender == btPending
         btInProgress.isSelected = sender == btInProgress
         btFinished.isSelected = sender == btFinished
+    }
+    
+    @IBAction func addSong(_ sender: Any) {
+        viewModel?.showAddSongModal()
     }
     
     @IBAction func deleteGame(_ sender: UIButton) {
@@ -385,6 +391,8 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         tvLoanedTo.isEnabled = enable
         tvVideoUrl.isEnabled = enable
         tvObservations.isEnabled = enable
+        
+        btAddSong.isHidden = !enable
     }
     
     func getGameData() -> GameResponse {

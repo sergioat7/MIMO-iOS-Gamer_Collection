@@ -224,13 +224,13 @@
                                                         <rect key="frame" x="0.0" y="494" width="222.5" height="30"/>
                                                         <subviews>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48S-ig-gJV" customClass="UnderlinedTextView" customModule="Gamer_Collection" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="65.5" height="30"/>
                                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                             </textView>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3U-ou-ATG" customClass="UnderlinedTextView" customModule="Gamer_Collection" customModuleProvider="target">
-                                                                <rect key="frame" x="118.5" y="0.0" width="104" height="30"/>
+                                                                <rect key="frame" x="75.5" y="0.0" width="147" height="30"/>
                                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
