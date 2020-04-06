@@ -152,8 +152,10 @@ extension GameDetailViewModel: GameDetailViewModelProtocol {
     
     func showAddSongModal() {
         
-        let viewControllerToPresent = ModalSongRouter().view
-        view?.showPopup(viewControllerToPresent: viewControllerToPresent)
+        if let gameId = dataManager.getGameId() {
+            let viewControllerToPresent = ModalSongRouter(gameId: gameId).view
+            view?.showPopup(viewControllerToPresent: viewControllerToPresent)
+        }
     }
     
     func deleteGame() {

@@ -66,7 +66,16 @@ class ModalSongViewController: BaseModalViewController {
     }
     
     @IBAction func save(_ sender: Any) {
-        closePopup(success: {})
+        
+        let name = tvName.text
+        let singer = tvSinger.text
+        let url = tvUrl.text
+        
+        let song = SongResponse(id: 0,
+                                name: name,
+                                singer: singer,
+                                url: url)
+        viewModel?.createSong(song: song)
     }
     
     // MARK: - Overrides
@@ -79,7 +88,6 @@ class ModalSongViewController: BaseModalViewController {
         tvSinger.placeholder = "MODAL_SONG_PLACEHOLDER_SINGER".localized()
         tvUrl.placeholder = "MODAL_SONG_PLACEHOLDER_URL".localized()
     }
-    
 }
 
 // MARK: - ModalSongViewProtocol

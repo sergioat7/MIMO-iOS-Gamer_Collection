@@ -26,16 +26,25 @@ class ModalSongRouter: BaseRouter {
     }
     
     private var dataManager: ModalSongDataManagerProtocol {
-        return ModalSongDataManager(apiClient: apiClient)
+        return ModalSongDataManager(apiClient: apiClient,
+                                    gameId: gameId)
     }
     
     private var apiClient: ModalSongApiClientProtocol {
-        return ModalSongApiClient()
+        return ModalSongApiClient(userManager: userManager)
+    }
+    
+    private var userManager: UserManager {
+        return UserManager()
     }
     
     // MARK: - Initialization
     
-    override init() {}
+    private let gameId: Int64
+    
+    init(gameId: Int64) {
+        self.gameId = gameId
+    }
     
     // MARK: - Presentation Methods
 
