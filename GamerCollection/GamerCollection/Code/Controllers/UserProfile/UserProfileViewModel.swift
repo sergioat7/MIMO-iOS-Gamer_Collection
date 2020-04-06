@@ -47,11 +47,14 @@ class UserProfileViewModel: BaseViewModel {
     private func removeData() {
         
         dataManager.deleteGames(success: {
-            
-            //TODO delete sagas
-            //TODO delete songs
-            self.dataManager.removeCredentials()
-            LoginRouter().show()
+            self.dataManager.deleteSagas(success: {
+                
+                //TODO delete songs
+                self.dataManager.removeCredentials()
+                LoginRouter().show()
+            }, failure: { error in
+                self.manageError(error: error)
+            })
         }, failure: { error in
             self.manageError(error: error)
         })

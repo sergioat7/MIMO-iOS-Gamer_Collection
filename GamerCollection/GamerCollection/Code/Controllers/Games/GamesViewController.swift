@@ -57,7 +57,7 @@ class GamesViewController: BaseViewController {
     
     @IBAction func sortGames(_ sender: Any) {
         print("sort")
-         //TODO
+         //TODO sort games
     }
     
     @IBAction func showPendingGames(_ sender: Any) {
@@ -118,7 +118,6 @@ class GamesViewController: BaseViewController {
     private func registerNib() {
         tvGames.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameCell")
     }
-    
 }
 
 // MARK: - GamesViewProtocol

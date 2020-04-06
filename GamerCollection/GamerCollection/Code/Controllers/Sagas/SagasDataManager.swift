@@ -48,7 +48,18 @@ class SagasDataManager: BaseDataManager {
 extension SagasDataManager: SagasDataManagerProtocol {
 
     func getSagas(success: @escaping(SagasResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
-        sagaRepository.getAll(success: success, failure: failure)
+        
+        let predicate = NSPredicate(value: true)
+        
+        var sortDescriptors = [NSSortDescriptor]()
+        sortDescriptors.append(NSSortDescriptor(key: "name", ascending: true))
+        sortDescriptors.append(NSSortDescriptor(key: "id", ascending: true))
+        
+        sagaRepository.execute(predicate: predicate,
+                               sortDescriptors: sortDescriptors,
+                               success: { (sagaModels, _) in
+                                success(sagaModels)
+        }, failure: failure)
     }
 
     func getGames(sagas: SagasResponse, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {

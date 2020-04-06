@@ -13,6 +13,7 @@ protocol SagaDetailViewModelProtocol: class {
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
     func viewDidLoad()
+    func showGamesModal()
     func deleteSaga()
 }
 
@@ -26,6 +27,7 @@ class SagaDetailViewModel: BaseViewModel {
     
     private var dataManager: SagaDetailDataManagerProtocol
     private var saga: SagaResponse?
+    private var newGames = GamesResponse()
     
     // MARK: - Initialization
     
@@ -76,10 +78,9 @@ class SagaDetailViewModel: BaseViewModel {
         if let sagaId = dataManager.getSagaId() {
             
             let sagaName = view?.getSagaName()
-            let games = saga?.games ?? GamesResponse()
             let saga = SagaResponse(id: sagaId,
                                     name: sagaName,
-                                    games: games)
+                                    games: newGames)
             self.dataManager.setSaga(saga: saga, success: { sagaResponse in
                 
                 self.saga = sagaResponse
@@ -87,7 +88,7 @@ class SagaDetailViewModel: BaseViewModel {
                 self.showNavBarButtons()
                 self.view?.showBackbarButtonItem()
                 self.view?.setName(name: sagaResponse.name)
-                self.view?.showGames(games: games)
+                self.view?.showGames(games: sagaResponse.games)
                 self.view?.hideLoading()
             }, failure: { error in
                 self.manageError(error: error)
@@ -95,10 +96,9 @@ class SagaDetailViewModel: BaseViewModel {
         } else {
             
             let sagaName = view?.getSagaName()
-            let games = saga?.games ?? GamesResponse()
             let saga = SagaResponse(id: 0,
                                     name: sagaName,
-                                    games: games)
+                                    games: newGames)
             dataManager.createSaga(saga: saga, success: {
                 self.dataManager.updateSagas(success: {
                     
@@ -121,6 +121,22 @@ class SagaDetailViewModel: BaseViewModel {
         view?.setName(name: saga?.name)
         view?.showGames(games: saga?.games ?? GamesResponse())
     }
+    
+    private func addGames(gameIds: [Int64]?) {
+        
+        if let gameIds = gameIds {
+            
+            view?.showLoading()
+            dataManager.getSelectedGames(gameIds: gameIds, success: { games in
+                
+                self.newGames = games
+                self.view?.showGames(games: games)
+                self.view?.hideLoading()
+            }, failure: { error in
+                self.manageError(error: error)
+            })
+        }
+    }
 }
 
 extension SagaDetailViewModel: SagaDetailViewModelProtocol {
@@ -140,6 +156,14 @@ extension SagaDetailViewModel: SagaDetailViewModelProtocol {
         }
 
         getContent()
+    }
+    
+    func showGamesModal() {
+        
+        let gameIds = saga?.games.compactMap({$0.id}) ?? []
+        let viewControllerToPresent = ModalGamesRouter(gameIds: gameIds,
+                                                       handler: addGames).view
+        view?.showPopup(viewControllerToPresent: viewControllerToPresent)
     }
     
     func deleteSaga() {

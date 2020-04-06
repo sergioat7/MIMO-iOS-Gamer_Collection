@@ -11,13 +11,16 @@ class GameCellViewModel {
     private let game: GameResponse
     private let platform: PlatformResponse?
     private let state: StateResponse?
+    private let selectable: Bool?
     
     init(game: GameResponse,
          platform: PlatformResponse?,
-         state: StateResponse?) {
+         state: StateResponse?,
+         selectable: Bool? = false) {
         self.game = game
         self.platform = platform
         self.state = state
+        self.selectable = selectable
     }
     
     var id: Int64 {
@@ -83,4 +86,12 @@ class GameCellViewModel {
             return game.saga?.id
         }
     }
+    
+    var isSelectable: Bool? {
+        get {
+            return selectable
+        }
+    }
+    
+    var isSelected = false
 }

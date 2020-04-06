@@ -14,6 +14,7 @@ protocol SagaDetailDataManagerProtocol: class {
      */
     func getSaga(success: @escaping (SagaResponse?) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getSelectedGames(gameIds: [Int64], success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func deleteSaga(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
     func setSaga(saga: SagaResponse, success: @escaping (SagaResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func createSaga(saga: SagaResponse, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
@@ -69,9 +70,10 @@ extension SagaDetailDataManager: SagaDetailDataManagerProtocol {
         
         if let sagaId = getSagaId() {
             
-            let predicate = NSPredicate(format: "(ANY saga.id = %ld)", sagaId)
+            let predicate = NSPredicate(format: "ANY saga.id = %ld", sagaId)
+            let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
             gameRepository.execute(predicate: predicate,
-                                   sortDescriptors: nil,
+                                   sortDescriptors: [sortDescriptor],
                                    success: { (gameModels, _) in
                                     success(gameModels)
             }, failure: failure)
@@ -80,12 +82,27 @@ extension SagaDetailDataManager: SagaDetailDataManagerProtocol {
         }
     }
     
+    func getSelectedGames(gameIds: [Int64], success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        let predicate = NSPredicate(format: "ANY id IN %@", gameIds)
+        
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        
+        gameRepository.execute(predicate: predicate,
+                               sortDescriptors: [sortDescriptor],
+                               success: { (gameModels, _) in
+                               success(gameModels)
+        }, failure: failure)
+    }
+    
     func setSaga(saga: SagaResponse, success: @escaping (SagaResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
         apiClient.setSaga(saga: saga, success: { sagaResponse in
             
-            self.sagaRepository.update(item: sagaResponse, success: { _ in
-                success(sagaResponse)
+            self.removeSagaFromGames(saga: saga, success: {
+                self.sagaRepository.update(item: sagaResponse, success: { _ in
+                    success(sagaResponse)
+                }, failure: failure)
             }, failure: failure)
         }, failure: failure)
     }
@@ -130,6 +147,36 @@ extension SagaDetailDataManager: SagaDetailDataManagerProtocol {
     
     func getSagaId() -> Int64? {
         return sagaId
+    }
+    
+    // MARK: - Private functions
+    
+    private func removeSagaFromGames(saga: SagaResponse, success: @escaping() -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        self.getGames(success: { games in
+            
+            if !games.isEmpty {
+                for (index,game) in games.enumerated() {
+                    if !saga.games.contains(where: { $0.id == game.id }) {
+                        
+                        var gameVar = game
+                        gameVar.saga = nil
+                        self.gameRepository.update(item: gameVar, success: { _ in
+                            
+                            if index == games.count-1 {
+                                success()
+                            }
+                        }, failure: failure)
+                    } else {
+                        if index == games.count-1 {
+                            success()
+                        }
+                    }
+                }
+            } else {
+                success()
+            }
+        }, failure: failure)
     }
 }
 

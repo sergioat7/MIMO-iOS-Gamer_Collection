@@ -71,7 +71,7 @@ class RankingViewModel: BaseViewModel {
         
         let viewControllerToPresent = ModalFilterRouter(handler: applyFilters,
                                                         filters: filters).view
-        view?.showFilterPopup(viewControllerToPresent: viewControllerToPresent)
+        view?.showPopup(viewControllerToPresent: viewControllerToPresent)
     }
     
     private func applyFilters(filters: FiltersModel?) {

@@ -48,7 +48,6 @@ class GameDetailViewController: BaseViewController {
     @IBOutlet weak var btInProgress: GameFilterButton!
     @IBOutlet weak var btFinished: GameFilterButton!
     
-    @IBOutlet weak var lbDetailsTitle: UILabel!
     @IBOutlet weak var tvDistributor: UnderlinedTextView!
     @IBOutlet weak var tvDeveloper: UnderlinedTextView!
     @IBOutlet weak var btPegi: DropdownButton!
@@ -60,7 +59,8 @@ class GameDetailViewController: BaseViewController {
     @IBOutlet weak var tvLoanedTo: UnderlinedTextView!
     @IBOutlet weak var tvVideoUrl: UnderlinedTextView!
     @IBOutlet weak var tvObservations: UnderlinedTextView!
-        
+    @IBOutlet weak var tvSaga: UnderlinedTextView!
+    
     // MARK: - Private properties
     
     private var viewModel:GameDetailViewModelProtocol?
@@ -69,7 +69,7 @@ class GameDetailViewController: BaseViewController {
     private var genres = GenresResponse()
     private var formats = FormatsResponse()
     private var states = StatesResponse()
-    private var gameId:Int64 = 0
+    private var currentGame: GameResponse?
     private var imageUrl: String?
     
     // MARK: - View lifecycle
@@ -263,10 +263,6 @@ class GameDetailViewController: BaseViewController {
         btInProgress.gameState = Constants.State.inProgress
         btFinished.gameState = Constants.State.finished
         
-        lbDetailsTitle.attributedText = NSAttributedString(string: "GAME_DETAIL_TITLE".localized(),
-                                                           attributes: [.font : UIFont.bold18,
-                                                                        .foregroundColor: Color.color2])
-        
         tvDistributor.placeholder = "GAME_DETAIL_PLACEHOLDER_DISTRIBUTOR".localized()
         tvDeveloper.placeholder = "GAME_DETAIL_PLACEHOLDER_DEVELOPER".localized()
         btPegi.placeholder = "GAME_DETAIL_SELECT_PEGI".localized()
@@ -277,6 +273,8 @@ class GameDetailViewController: BaseViewController {
         tvLoanedTo.placeholder = "GAME_DETAIL_PLACEHOLDER_LOANED_TO".localized()
         tvVideoUrl.placeholder = "GAME_DETAIL_PLACEHOLDER_VIDEO_URL".localized()
         tvObservations.placeholder = "GAME_DETAIL_PLACEHOLDER_OBSERVATIONS".localized()
+        
+        tvSaga.isEnabled = false
     }
     
     private func setScoreLabel(rating: Double) {
@@ -308,7 +306,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
     
     func showData(game: GameResponse?) {
         
-        gameId = game?.id ?? 0
+        currentGame = game
         
         tvName.text = game?.name
         
@@ -358,6 +356,9 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         tvLoanedTo.text = game?.loanedTo
         tvVideoUrl.text = game?.videoUrl
         tvObservations.text = game?.observations
+        tvSaga.text = game?.saga?.name
+        
+        view.layoutIfNeeded()
     }
     
     func enableEdition(enable: Bool) {
@@ -388,7 +389,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
     
     func getGameData() -> GameResponse {
         
-        let id = gameId
+        let id = currentGame?.id ?? 0
         let name = tvName.text
         let platform = platforms.first(where: { $0.name == btPlatform.value })?.id
         let score = vwScore.rating
@@ -408,6 +409,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         let videoUrl = tvVideoUrl.text
         let loanedTo = tvLoanedTo.text
         let observations = tvObservations.text
+        let saga = currentGame?.saga
         
         let game = GameResponse(id: id,
                                 name: name,
@@ -429,7 +431,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
                                 videoUrl: videoUrl,
                                 loanedTo: loanedTo,
                                 observations: observations,
-                                saga: nil)//TODO set saga properly
+                                saga: saga)
         
         return game
     }

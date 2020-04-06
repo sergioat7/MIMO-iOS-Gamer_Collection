@@ -62,7 +62,7 @@ class SagaDetailViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func addGame(_ sender: Any) {
-        print("add game to saga")//TODO
+        viewModel?.showGamesModal()
     }
     
     @IBAction func deleteSaga(_ sender: UIButton) {
@@ -95,7 +95,7 @@ extension SagaDetailViewController:  SagaDetailViewProtocol {
     
     func showGames(games: GamesResponse) {
         
-        svGames.removeArrangedSubviews()
+        svGames.removeSubviews()
         var label: UILabel
         
         for game in games {

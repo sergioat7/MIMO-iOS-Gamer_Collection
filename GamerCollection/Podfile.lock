@@ -1,24 +1,28 @@
 PODS:
   - ActionSheetPicker-3.0 (2.4.2)
+  - BEMCheckBox (1.4.1)
   - DynamicBlurView (4.0.0)
   - PopupDialog (1.1.1):
     - DynamicBlurView (~> 4.0)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0 (~> 2.4.2)
+  - BEMCheckBox (~> 1.4.1)
   - PopupDialog (~> 1.1)
 
 SPEC REPOS:
   trunk:
     - ActionSheetPicker-3.0
+    - BEMCheckBox
     - DynamicBlurView
     - PopupDialog
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: 5b62e07b00bd970509cf5ece99cb7447eae5dd0d
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   DynamicBlurView: ccf9acd2b20c883cc2c72e3524a04d8d3ee20533
   PopupDialog: 720c92befd8bc23c13442254945213db5612f149
 
-PODFILE CHECKSUM: 2962a1cd89612f48fcb5c3191e067e21b61f2fbe
+PODFILE CHECKSUM: 82a8b4dc0ef4f1d16afccbeb8f244696f1b56f60
 
 COCOAPODS: 1.9.0
