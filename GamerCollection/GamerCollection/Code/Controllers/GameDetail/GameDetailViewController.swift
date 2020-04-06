@@ -48,7 +48,6 @@ class GameDetailViewController: BaseViewController {
     @IBOutlet weak var btInProgress: GameFilterButton!
     @IBOutlet weak var btFinished: GameFilterButton!
     
-    @IBOutlet weak var lbDetailsTitle: UILabel!
     @IBOutlet weak var tvDistributor: UnderlinedTextView!
     @IBOutlet weak var tvDeveloper: UnderlinedTextView!
     @IBOutlet weak var btPegi: DropdownButton!
@@ -263,10 +262,6 @@ class GameDetailViewController: BaseViewController {
         btInProgress.gameState = Constants.State.inProgress
         btFinished.gameState = Constants.State.finished
         
-        lbDetailsTitle.attributedText = NSAttributedString(string: "GAME_DETAIL_TITLE".localized(),
-                                                           attributes: [.font : UIFont.bold18,
-                                                                        .foregroundColor: Color.color2])
-        
         tvDistributor.placeholder = "GAME_DETAIL_PLACEHOLDER_DISTRIBUTOR".localized()
         tvDeveloper.placeholder = "GAME_DETAIL_PLACEHOLDER_DEVELOPER".localized()
         btPegi.placeholder = "GAME_DETAIL_SELECT_PEGI".localized()
@@ -358,6 +353,8 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         tvLoanedTo.text = game?.loanedTo
         tvVideoUrl.text = game?.videoUrl
         tvObservations.text = game?.observations
+        
+        view.layoutIfNeeded()
     }
     
     func enableEdition(enable: Bool) {

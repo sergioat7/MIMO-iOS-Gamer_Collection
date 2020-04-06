@@ -93,7 +93,7 @@ class GameTableViewCell: UITableViewCell {
             cbSelected.offAnimationType = .fill
             cbSelected.delegate = self
             let isOn = gameCellViewModel?.isSelected == true
-            cbSelected.setOn(isOn, animated: true)
+            cbSelected.setOn(isOn, animated: false)
         } else {
             cbSelected.isHidden = true
         }
