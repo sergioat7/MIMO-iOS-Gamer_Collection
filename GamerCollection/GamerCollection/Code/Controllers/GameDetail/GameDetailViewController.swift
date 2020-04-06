@@ -68,7 +68,7 @@ class GameDetailViewController: BaseViewController {
     private var genres = GenresResponse()
     private var formats = FormatsResponse()
     private var states = StatesResponse()
-    private var gameId:Int64 = 0
+    private var currentGame: GameResponse?
     private var imageUrl: String?
     
     // MARK: - View lifecycle
@@ -303,7 +303,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
     
     func showData(game: GameResponse?) {
         
-        gameId = game?.id ?? 0
+        currentGame = game
         
         tvName.text = game?.name
         
@@ -385,7 +385,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
     
     func getGameData() -> GameResponse {
         
-        let id = gameId
+        let id = currentGame?.id ?? 0
         let name = tvName.text
         let platform = platforms.first(where: { $0.name == btPlatform.value })?.id
         let score = vwScore.rating
@@ -405,6 +405,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         let videoUrl = tvVideoUrl.text
         let loanedTo = tvLoanedTo.text
         let observations = tvObservations.text
+        let saga = currentGame?.saga
         
         let game = GameResponse(id: id,
                                 name: name,
@@ -426,7 +427,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
                                 videoUrl: videoUrl,
                                 loanedTo: loanedTo,
                                 observations: observations,
-                                saga: nil)//TODO set saga properly
+                                saga: saga)
         
         return game
     }

@@ -130,11 +130,12 @@ extension RankingDataManager: RankingDataManagerProtocol {
                 predicates.append(NSPredicate(format: "loanedTo != nil"))
             }
             
-//            let hasSaga = filters.hasSaga
-            //TODO
+            if filters.hasSaga {
+                predicates.append(NSPredicate(format: "saga != nil"))
+            }
             
 //            let hasSongs = filters.hasSongs
-            //TODO
+            //TODO filter by songs
         }
         
         return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)

@@ -28,7 +28,8 @@ class UserProfileRouter: BaseRouter {
     private var dataManager: UserProfileDataManagerProtocol {
         return UserProfileDataManager(apiClient: apiClient,
                                       userManager: userManager,
-                                      gameRepository: gameRepository)
+                                      gameRepository: gameRepository,
+                                      sagaRepository: sagaRepository)
     }
     
     private var apiClient: UserProfileApiClientProtocol {
@@ -41,6 +42,10 @@ class UserProfileRouter: BaseRouter {
     
     private var gameRepository: GameRepository {
         return GameRepository()
+    }
+    
+    private var sagaRepository: SagaRepository {
+        return SagaRepository()
     }
     
     // MARK: - Initialization
@@ -58,7 +63,7 @@ class UserProfileRouter: BaseRouter {
         let tabBarController = UIViewController.getRootTabBarViewController()
         let viewController = view
         let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "profile"), tag: 0)//TODO set icons
+        navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "profile"), tag: 0)
         navigationController.tabBarItem.selectedImage = UIImage(named: "profile on")
         navigationController.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         

@@ -68,7 +68,7 @@ class SagasRouter: BaseRouter {
         let tabBarController = UIViewController.getRootTabBarViewController()
         let viewController = view
         let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "sagas"), tag: 0)//TODO set icons
+        navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "sagas"), tag: 0)
         navigationController.tabBarItem.selectedImage = UIImage(named: "sagas on")
         navigationController.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         
