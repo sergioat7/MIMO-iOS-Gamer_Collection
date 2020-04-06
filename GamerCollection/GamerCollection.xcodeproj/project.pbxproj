@@ -35,6 +35,7 @@
 		FB323D2A243B65D700E1CA8A /* BaseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D29243B65D700E1CA8A /* BaseModalViewController.swift */; };
 		FB323D30243BD6AF00E1CA8A /* GetSongsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D2F243BD6AF00E1CA8A /* GetSongsRequest.swift */; };
 		FB323D33243BD6C200E1CA8A /* SongResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D32243BD6C200E1CA8A /* SongResponse.swift */; };
+		FB323D36243BD99200E1CA8A /* CreateSongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D35243BD99200E1CA8A /* CreateSongRequest.swift */; };
 		FB448DDD241FE87F008ACE69 /* UserProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB448DD7241FE87F008ACE69 /* UserProfileView.storyboard */; };
 		FB448DDE241FE87F008ACE69 /* UserProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DD8241FE87F008ACE69 /* UserProfileRouter.swift */; };
 		FB448DDF241FE87F008ACE69 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DD9241FE87F008ACE69 /* UserProfileViewController.swift */; };
@@ -234,6 +235,7 @@
 		FB323D29243B65D700E1CA8A /* BaseModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModalViewController.swift; sourceTree = "<group>"; };
 		FB323D2F243BD6AF00E1CA8A /* GetSongsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSongsRequest.swift; sourceTree = "<group>"; };
 		FB323D32243BD6C200E1CA8A /* SongResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResponse.swift; sourceTree = "<group>"; };
+		FB323D35243BD99200E1CA8A /* CreateSongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSongRequest.swift; sourceTree = "<group>"; };
 		FB448DD7241FE87F008ACE69 /* UserProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfileView.storyboard; sourceTree = "<group>"; };
 		FB448DD8241FE87F008ACE69 /* UserProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRouter.swift; sourceTree = "<group>"; };
 		FB448DD9241FE87F008ACE69 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 				FB31D5C2241EB02D00B16558 /* Register */,
 				FBEE25CC243A38D00092F73F /* Saga */,
 				FB8D50B52438DAD50037BA52 /* Sagas */,
+				FB323D34243BD97D00E1CA8A /* Song */,
 				FB323D2E243BD69300E1CA8A /* Songs */,
 				FBF19EBD24253A4D00E836FD /* States */,
 				FB448DE4242003CE008ACE69 /* UpdatePassword */,
@@ -618,6 +621,14 @@
 				FB323D32243BD6C200E1CA8A /* SongResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FB323D34243BD97D00E1CA8A /* Song */ = {
+			isa = PBXGroup;
+			children = (
+				FB323D35243BD99200E1CA8A /* CreateSongRequest.swift */,
+			);
+			path = Song;
 			sourceTree = "<group>";
 		};
 		FB448DCA241FE136008ACE69 /* APIClient */ = {
@@ -1729,6 +1740,7 @@
 				FBF19EF1242596A500E836FD /* LogoutRequest.swift in Sources */,
 				FB448DE1241FE87F008ACE69 /* UserProfileViewModel.swift in Sources */,
 				FB9C419A2430E403004526A6 /* CreateGameRequest.swift in Sources */,
+				FB323D36243BD99200E1CA8A /* CreateSongRequest.swift in Sources */,
 				FB1DFEC12416BEA5000CAD7B /* ErrorResponse.swift in Sources */,
 				FBEE25D2243A61520092F73F /* DeleteSagaRequest.swift in Sources */,
 				FBF19EED2425928400E836FD /* GameResponse.swift in Sources */,
