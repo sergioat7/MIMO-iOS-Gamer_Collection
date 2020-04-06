@@ -130,6 +130,12 @@
 "MODAL_FILTER_HAS_SAGA" = "Has saga";
 "MODAL_FILTER_HAS_SONGS" = "Has songs";
 
+// Modal song
+
+"MODAL_SONG_PLACEHOLDER_NAME" = "Add a name";
+"MODAL_SONG_PLACEHOLDER_SINGER" = "Add a singer";
+"MODAL_SONG_PLACEHOLDER_URL" = "Add a link";
+
 // Errors
 
 "ERROR_BUTTON_ACCEPT" = "Accept";

@@ -25,6 +25,11 @@ class ModalSongViewController: BaseModalViewController {
     
     // MARK: - Public properties
     
+    @IBOutlet weak var svData: UIScrollView!
+    @IBOutlet weak var tvName: UnderlinedTextView!
+    @IBOutlet weak var tvSinger: UnderlinedTextView!
+    @IBOutlet weak var tvUrl: UnderlinedTextView!
+    
     // MARK: - Private properties
     
     private var viewModel:ModalSongViewModelProtocol?
@@ -34,8 +39,24 @@ class ModalSongViewController: BaseModalViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollView = svData
         configViews()
         viewModel?.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        registerKeyboardNotifications()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        removeKeyboardNotifications()
+        view.removeGestureRecognizers()
     }
     
     // MARK: - Actions
@@ -53,6 +74,10 @@ class ModalSongViewController: BaseModalViewController {
     // MARK: - Private functions
     
     private func configViews() {
+        
+        tvName.placeholder = "MODAL_SONG_PLACEHOLDER_NAME".localized()
+        tvSinger.placeholder = "MODAL_SONG_PLACEHOLDER_SINGER".localized()
+        tvUrl.placeholder = "MODAL_SONG_PLACEHOLDER_URL".localized()
     }
     
 }
