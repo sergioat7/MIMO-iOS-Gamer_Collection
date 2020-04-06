@@ -33,6 +33,8 @@
 		FB323D23243B5EAC00E1CA8A /* ModalSongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D1D243B5EAC00E1CA8A /* ModalSongViewModel.swift */; };
 		FB323D24243B5EAC00E1CA8A /* ModalSongDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D1E243B5EAC00E1CA8A /* ModalSongDataManager.swift */; };
 		FB323D2A243B65D700E1CA8A /* BaseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D29243B65D700E1CA8A /* BaseModalViewController.swift */; };
+		FB323D30243BD6AF00E1CA8A /* GetSongsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D2F243BD6AF00E1CA8A /* GetSongsRequest.swift */; };
+		FB323D33243BD6C200E1CA8A /* SongResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D32243BD6C200E1CA8A /* SongResponse.swift */; };
 		FB448DDD241FE87F008ACE69 /* UserProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB448DD7241FE87F008ACE69 /* UserProfileView.storyboard */; };
 		FB448DDE241FE87F008ACE69 /* UserProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DD8241FE87F008ACE69 /* UserProfileRouter.swift */; };
 		FB448DDF241FE87F008ACE69 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DD9241FE87F008ACE69 /* UserProfileViewController.swift */; };
@@ -230,6 +232,8 @@
 		FB323D1D243B5EAC00E1CA8A /* ModalSongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSongViewModel.swift; sourceTree = "<group>"; };
 		FB323D1E243B5EAC00E1CA8A /* ModalSongDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSongDataManager.swift; sourceTree = "<group>"; };
 		FB323D29243B65D700E1CA8A /* BaseModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModalViewController.swift; sourceTree = "<group>"; };
+		FB323D2F243BD6AF00E1CA8A /* GetSongsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSongsRequest.swift; sourceTree = "<group>"; };
+		FB323D32243BD6C200E1CA8A /* SongResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResponse.swift; sourceTree = "<group>"; };
 		FB448DD7241FE87F008ACE69 /* UserProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfileView.storyboard; sourceTree = "<group>"; };
 		FB448DD8241FE87F008ACE69 /* UserProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRouter.swift; sourceTree = "<group>"; };
 		FB448DD9241FE87F008ACE69 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
@@ -481,6 +485,7 @@
 				FB31D5C2241EB02D00B16558 /* Register */,
 				FBEE25CC243A38D00092F73F /* Saga */,
 				FB8D50B52438DAD50037BA52 /* Sagas */,
+				FB323D2E243BD69300E1CA8A /* Songs */,
 				FBF19EBD24253A4D00E836FD /* States */,
 				FB448DE4242003CE008ACE69 /* UpdatePassword */,
 			);
@@ -596,6 +601,23 @@
 				FB323D1C243B5EAC00E1CA8A /* ModalSongApiClient.swift */,
 			);
 			path = APIClient;
+			sourceTree = "<group>";
+		};
+		FB323D2E243BD69300E1CA8A /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				FB323D2F243BD6AF00E1CA8A /* GetSongsRequest.swift */,
+				FB323D31243BD6B400E1CA8A /* Model */,
+			);
+			path = Songs;
+			sourceTree = "<group>";
+		};
+		FB323D31243BD6B400E1CA8A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB323D32243BD6C200E1CA8A /* SongResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FB448DCA241FE136008ACE69 /* APIClient */ = {
@@ -1786,6 +1808,7 @@
 				FB6E00EE242ECDBB00448CD3 /* Date+Extension.swift in Sources */,
 				FB323D23243B5EAC00E1CA8A /* ModalSongViewModel.swift in Sources */,
 				FB448DE6242003EF008ACE69 /* UpdatePasswordRequest.swift in Sources */,
+				FB323D30243BD6AF00E1CA8A /* GetSongsRequest.swift in Sources */,
 				FB31D5BF241E7DF800B16558 /* RegisterDataManager.swift in Sources */,
 				FB463C93241D0C29006F1A12 /* RankingViewModel.swift in Sources */,
 				FB50FAFC242F90BB009E6173 /* SetGameRequest.swift in Sources */,
@@ -1810,6 +1833,7 @@
 				FB323D2A243B65D700E1CA8A /* BaseModalViewController.swift in Sources */,
 				FB463C92241D0C29006F1A12 /* RankingViewController.swift in Sources */,
 				FB7DB5872424430B0040FC84 /* ModelHandlerProtocol.swift in Sources */,
+				FB323D33243BD6C200E1CA8A /* SongResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
