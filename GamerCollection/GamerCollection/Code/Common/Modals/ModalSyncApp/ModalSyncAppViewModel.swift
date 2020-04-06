@@ -40,7 +40,7 @@ class ModalSyncAppViewModel: BaseViewModel {
 
         view?.hideLoading()
         view?.showError(message: error.error, handler: {
-            self.view?.closePopup()
+            self.view?.closePopup(success: {})
         })
     }
     
@@ -86,7 +86,7 @@ class ModalSyncAppViewModel: BaseViewModel {
             if let error = errorResponse {
                 self.manageError(error: error)
             } else {
-                self.view?.closePopup()
+                self.view?.closePopup(success: {})
             }
             MainTabBarController.show()
         }

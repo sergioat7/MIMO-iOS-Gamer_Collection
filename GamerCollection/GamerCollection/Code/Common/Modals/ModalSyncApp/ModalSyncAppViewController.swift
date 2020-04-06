@@ -8,11 +8,10 @@
 
 import UIKit
 
-protocol ModalSyncAppViewProtocol: BaseViewProtocol {
+protocol ModalSyncAppViewProtocol: BaseModalViewProtocol {
     /**
      * Add here your methods for communication VIEW_MODEL -> VIEW
      */
-    func closePopup()
 }
 
 protocol ModalSyncAppConfigurableViewProtocol: class {
@@ -21,7 +20,7 @@ protocol ModalSyncAppConfigurableViewProtocol: class {
     
 }
 
-class ModalSyncAppViewController: BaseViewController {
+class ModalSyncAppViewController: BaseModalViewController {
     
     // MARK: - Public properties
     
@@ -36,16 +35,8 @@ class ModalSyncAppViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .clear
         configLabel()
         viewModel?.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.animatedDarkenBackground()
-        }
     }
     
     // MARK: - Actions
@@ -59,33 +50,11 @@ class ModalSyncAppViewController: BaseViewController {
                                                     attributes: [.font: UIFont.bold18,
                                                                  .foregroundColor: Color.color1])
     }
-    
-    private func animatedDarkenBackground() {
-        
-        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-            self.view.backgroundColor = Color.color1Light
-        }, completion:nil)
-    }
-    
-    private func animatedClearBackground() {
-        
-        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-            self.view.backgroundColor = UIColor.clear
-        }, completion:nil)
-    }
 }
 
 // MARK: - ModalSyncAppViewProtocol
 
 extension ModalSyncAppViewController:  ModalSyncAppViewProtocol {
-    
-    func closePopup() {
-        
-        animatedClearBackground()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.hidePopup()
-        }
-    }
 }
 
 // MARK: - ModalSyncAppViewProtocol

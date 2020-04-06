@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ModalSongViewProtocol: BaseViewProtocol {
+protocol ModalSongViewProtocol: BaseModalViewProtocol {
     /**
      * Add here your methods for communication VIEW_MODEL -> VIEW
      */
@@ -21,7 +21,7 @@ protocol ModalSongConfigurableViewProtocol: class {
     
 }
 
-class ModalSongViewController: BaseViewController {
+class ModalSongViewController: BaseModalViewController {
     
     // MARK: - Public properties
     
@@ -34,27 +34,18 @@ class ModalSongViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .clear
         configViews()
         viewModel?.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-            self.animatedDarkenBackground()
-        }
     }
     
     // MARK: - Actions
     
     @IBAction func cancel(_ sender: Any) {
-        closePopup()
+        closePopup(success: {})
     }
     
     @IBAction func save(_ sender: Any) {
-        closePopup()
+        closePopup(success: {})
     }
     
     // MARK: - Overrides
@@ -62,28 +53,6 @@ class ModalSongViewController: BaseViewController {
     // MARK: - Private functions
     
     private func configViews() {
-    }
-    
-    private func animatedDarkenBackground() {
-        
-        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-            self.view.backgroundColor = Color.color1Light
-        }, completion:nil)
-    }
-    
-    private func animatedClearBackground() {
-        
-        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-            self.view.backgroundColor = UIColor.clear
-        }, completion:nil)
-    }
-    
-    private func closePopup() {
-        
-        animatedClearBackground()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.hidePopup()
-        }
     }
     
 }

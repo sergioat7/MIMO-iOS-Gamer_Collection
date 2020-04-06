@@ -10,7 +10,7 @@ import UIKit
 import Cosmos
 import ActionSheetPicker_3_0
 
-protocol ModalFilterViewProtocol: BaseViewProtocol {
+protocol ModalFilterViewProtocol: BaseModalViewProtocol {
     /**
      * Add here your methods for communication VIEW_MODEL -> VIEW
      */
@@ -26,7 +26,7 @@ protocol ModalFilterConfigurableViewProtocol: class {
     
 }
 
-class ModalFilterViewController: BaseViewController {
+class ModalFilterViewController: BaseModalViewController {
     
     // MARK: - Public properties
     
@@ -56,7 +56,6 @@ class ModalFilterViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .clear
         scrollView = svFilters
         configViews()
         viewModel?.viewDidLoad()
@@ -68,10 +67,6 @@ class ModalFilterViewController: BaseViewController {
         registerKeyboardNotifications()
         let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tap)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-            self.animatedDarkenBackground()
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -160,7 +155,7 @@ class ModalFilterViewController: BaseViewController {
     }
     
     @IBAction func cancel(_ sender: Any) {
-        closePopup()
+        closePopup(success: {})
     }
     
     @IBAction func reset(_ sender: Any) {
@@ -265,7 +260,7 @@ class ModalFilterViewController: BaseViewController {
                                    hasSongs: hasSongs)
         
         let handler = viewModel?.getHandler()
-        closePopup(filters: filters, handler: handler)
+        close(filters: filters, handler: handler)
     }
     
     @objc func selectButton(_ sender: UIButton) {
@@ -291,20 +286,6 @@ class ModalFilterViewController: BaseViewController {
         tvMaxPrice.placeholder = "MAX".localized()
     }
     
-    private func animatedDarkenBackground() {
-        
-        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-            self.view.backgroundColor = Color.color1Light
-        }, completion:nil)
-    }
-    
-    private func animatedClearBackground() {
-        
-        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-            self.view.backgroundColor = UIColor.clear
-        }, completion:nil)
-    }
-    
     private func getRoundLabelButton(title: String) -> RoundLabelButton {
         
         let button = RoundLabelButton()
@@ -318,13 +299,11 @@ class ModalFilterViewController: BaseViewController {
         return button
     }
     
-    private func closePopup(filters: FiltersModel? = nil, handler: ((FiltersModel?) -> Void)? = nil) {
+    private func close(filters: FiltersModel?, handler: ((FiltersModel?) -> Void)?) {
         
-        animatedClearBackground()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.hidePopup()
+        closePopup(success: {
             handler?(filters)
-        }
+        })
     }
 }
 
