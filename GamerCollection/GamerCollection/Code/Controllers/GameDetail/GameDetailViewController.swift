@@ -392,7 +392,9 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         tvVideoUrl.isEnabled = enable
         tvObservations.isEnabled = enable
         
-        btAddSong.isHidden = !enable
+        if currentGame != nil {
+            btAddSong.isHidden = !enable
+        }
     }
     
     func getGameData() -> GameResponse {

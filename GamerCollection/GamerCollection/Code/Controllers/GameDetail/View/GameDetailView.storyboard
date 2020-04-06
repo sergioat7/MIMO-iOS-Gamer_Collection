@@ -441,7 +441,7 @@
                                                 <color key="textColor" name="color2"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmH-0v-G1f">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmH-0v-G1f">
                                                 <rect key="frame" x="337" y="1081" width="18" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="GmH-0v-G1f" secondAttribute="height" multiplier="1:1" id="8ZA-VU-Egq"/>
