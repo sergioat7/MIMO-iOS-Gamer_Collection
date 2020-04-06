@@ -32,5 +32,5 @@ struct GameResponse: Codable {
     let loanedTo: String?
     let observations: String?
     var saga: SagaResponse?
-//    let songs: Songs?
+    let songs: SongsResponse
 }

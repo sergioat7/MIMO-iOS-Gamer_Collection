@@ -420,6 +420,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         let loanedTo = tvLoanedTo.text
         let observations = tvObservations.text
         let saga = currentGame?.saga
+        let songs = currentGame?.songs ?? SongsResponse()
         
         let game = GameResponse(id: id,
                                 name: name,
@@ -441,7 +442,8 @@ extension GameDetailViewController:  GameDetailViewProtocol {
                                 videoUrl: videoUrl,
                                 loanedTo: loanedTo,
                                 observations: observations,
-                                saga: saga)
+                                saga: saga,
+                                songs: songs)
         
         return game
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-
+//TODO hace falta esta llamada?
 class GetSongsRequest: APIRequest {
     
     public typealias Response = SongsResponse

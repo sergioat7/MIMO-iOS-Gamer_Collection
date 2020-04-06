@@ -612,7 +612,6 @@
 			isa = PBXGroup;
 			children = (
 				FB323D2F243BD6AF00E1CA8A /* GetSongsRequest.swift */,
-				FB323D31243BD6B400E1CA8A /* Model */,
 			);
 			path = Songs;
 			sourceTree = "<group>";
@@ -630,6 +629,7 @@
 			children = (
 				FB323D35243BD99200E1CA8A /* CreateSongRequest.swift */,
 				FB323D37243BDBA100E1CA8A /* SetSongRequest.swift */,
+				FB323D31243BD6B400E1CA8A /* Model */,
 			);
 			path = Song;
 			sourceTree = "<group>";

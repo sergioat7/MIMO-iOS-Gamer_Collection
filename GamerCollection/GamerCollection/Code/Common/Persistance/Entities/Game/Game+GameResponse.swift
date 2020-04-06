@@ -45,6 +45,7 @@ extension Game: ModelHandlerProtocol {
         observations = item.observations
         
         manageSaga(item: item, failure: failure)
+        //TODO manage songs
         
         do {
             try CoreDataStack.shared.saveContext(context)
@@ -74,6 +75,9 @@ extension Game: ModelHandlerProtocol {
             saga = sagaResponse
         }, failure: failure)
         
+        var songs = SongsResponse()
+        //TODO get songs
+        
         guard let gameResponse = GameResponse(id: id,
                                               name: name,
                                               platform: platform,
@@ -94,7 +98,8 @@ extension Game: ModelHandlerProtocol {
                                               videoUrl: videoUrl,
                                               loanedTo: loanedTo,
                                               observations: observations,
-                                              saga: saga) as? M else {
+                                              saga: saga,
+                                              songs: songs) as? M else {
                                                 let error = ErrorResponse(error: "ERROR_CORE_DATA")
                                                 failure(error)
                                                 return
