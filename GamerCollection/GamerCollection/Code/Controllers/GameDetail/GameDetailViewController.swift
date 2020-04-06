@@ -59,7 +59,8 @@ class GameDetailViewController: BaseViewController {
     @IBOutlet weak var tvLoanedTo: UnderlinedTextView!
     @IBOutlet weak var tvVideoUrl: UnderlinedTextView!
     @IBOutlet weak var tvObservations: UnderlinedTextView!
-        
+    @IBOutlet weak var tvSaga: UnderlinedTextView!
+    
     // MARK: - Private properties
     
     private var viewModel:GameDetailViewModelProtocol?
@@ -272,6 +273,8 @@ class GameDetailViewController: BaseViewController {
         tvLoanedTo.placeholder = "GAME_DETAIL_PLACEHOLDER_LOANED_TO".localized()
         tvVideoUrl.placeholder = "GAME_DETAIL_PLACEHOLDER_VIDEO_URL".localized()
         tvObservations.placeholder = "GAME_DETAIL_PLACEHOLDER_OBSERVATIONS".localized()
+        
+        tvSaga.isEnabled = false
     }
     
     private func setScoreLabel(rating: Double) {
@@ -353,6 +356,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         tvLoanedTo.text = game?.loanedTo
         tvVideoUrl.text = game?.videoUrl
         tvObservations.text = game?.observations
+        tvSaga.text = game?.saga?.name
         
         view.layoutIfNeeded()
     }

@@ -28,7 +28,7 @@
                                 <rect key="frame" x="10" y="58" width="355" height="609"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cya-zX-sYc" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="1108.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="1154"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0a-Pa-68c">
                                                 <rect key="frame" x="0.0" y="0.0" width="177.5" height="355"/>
@@ -183,7 +183,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y88-ds-jd3">
-                                                <rect key="frame" x="0.0" y="492" width="355" height="522.5"/>
+                                                <rect key="frame" x="0.0" y="492" width="355" height="568"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rGc-Fb-dSz">
                                                         <rect key="frame" x="0.0" y="0.0" width="355" height="35.5"/>
@@ -413,10 +413,30 @@
                                                             <constraint firstItem="2la-du-0lF" firstAttribute="width" secondItem="1uw-eF-wek" secondAttribute="width" multiplier="0.4" id="NPx-eU-zre"/>
                                                         </constraints>
                                                     </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DPZ-4l-l3h">
+                                                        <rect key="frame" x="0.0" y="532.5" width="355" height="35.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="GAME_DETAIL_SAGA" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6p6-d7-SYx" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="35.5"/>
+                                                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                                <color key="textColor" name="color2"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiY-Wb-59U" customClass="UnderlinedTextView" customModule="Gamer_Collection" customModuleProvider="target">
+                                                                <rect key="frame" x="147" y="0.0" width="208" height="35.5"/>
+                                                                <color key="textColor" name="color2"/>
+                                                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="6p6-d7-SYx" firstAttribute="width" secondItem="DPZ-4l-l3h" secondAttribute="width" multiplier="0.4" id="Msu-we-hla"/>
+                                                        </constraints>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUE-xH-Uhj" customClass="ActionButton" customModule="Gamer_Collection" customModuleProvider="target">
-                                                <rect key="frame" x="77.5" y="1044.5" width="200" height="34"/>
+                                                <rect key="frame" x="77.5" y="1090" width="200" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="7XV-aN-Uc6"/>
                                                 </constraints>
@@ -506,6 +526,7 @@
                         <outlet property="tvPlayers" destination="zVh-O4-uDc" id="mEp-fg-rbV"/>
                         <outlet property="tvPrice" destination="IWY-TA-cXA" id="dMu-MB-HcS"/>
                         <outlet property="tvPurchaseLocation" destination="xN4-Hq-b4h" id="KRm-Rv-Gu1"/>
+                        <outlet property="tvSaga" destination="tiY-Wb-59U" id="DpF-ub-Ekd"/>
                         <outlet property="tvVideoUrl" destination="k9Q-rq-7LS" id="tFr-a3-RUI"/>
                         <outlet property="vwScore" destination="0CL-X6-kjK" id="A8G-tR-CJX"/>
                     </connections>
