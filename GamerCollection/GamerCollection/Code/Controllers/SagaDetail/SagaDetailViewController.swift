@@ -95,7 +95,7 @@ extension SagaDetailViewController:  SagaDetailViewProtocol {
     
     func showGames(games: GamesResponse) {
         
-        svGames.removeArrangedSubviews()
+        svGames.removeSubviews()
         var label: UILabel
         
         for game in games {

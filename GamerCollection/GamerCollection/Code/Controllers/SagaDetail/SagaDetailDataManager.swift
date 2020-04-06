@@ -99,7 +99,7 @@ extension SagaDetailDataManager: SagaDetailDataManagerProtocol {
         
         apiClient.setSaga(saga: saga, success: { sagaResponse in
             
-            self.updateSagaGames(saga: saga, success: {
+            self.removeSagaFromGames(saga: saga, success: {
                 self.sagaRepository.update(item: sagaResponse, success: { _ in
                     success(sagaResponse)
                 }, failure: failure)
@@ -151,7 +151,7 @@ extension SagaDetailDataManager: SagaDetailDataManagerProtocol {
     
     // MARK: - Private functions
     
-    private func updateSagaGames(saga: SagaResponse, success: @escaping() -> Void, failure: @escaping (ErrorResponse) -> Void) {
+    private func removeSagaFromGames(saga: SagaResponse, success: @escaping() -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
         self.getGames(success: { games in
             
