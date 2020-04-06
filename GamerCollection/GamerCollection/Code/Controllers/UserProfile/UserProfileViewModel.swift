@@ -49,7 +49,6 @@ class UserProfileViewModel: BaseViewModel {
         dataManager.deleteGames(success: {
             self.dataManager.deleteSagas(success: {
                 
-                //TODO delete songs
                 self.dataManager.removeCredentials()
                 LoginRouter().show()
             }, failure: { error in

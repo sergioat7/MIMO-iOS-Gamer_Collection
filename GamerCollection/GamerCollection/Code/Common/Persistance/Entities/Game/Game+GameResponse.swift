@@ -45,7 +45,7 @@ extension Game: ModelHandlerProtocol {
         observations = item.observations
         
         manageSaga(item: item, failure: failure)
-        //TODO manage songs
+        manageSongs(item: item, failure: failure)
         
         do {
             try CoreDataStack.shared.saveContext(context)
@@ -66,6 +66,12 @@ extension Game: ModelHandlerProtocol {
     func getModel<M>(success: @escaping (M) -> Void,
                      failure: @escaping (ErrorResponse) -> Void) {
         
+        guard let songs = songs?.allObjects as? [Song] else {
+            let error = ErrorResponse(error: "ERROR_CORE_DATA")
+            failure(error)
+            return
+        }
+        
         let dateFormat = Locale.current.languageCode == "es" ? Constants.DateFormat.spanish : Constants.DateFormat.english
         let releaseDate = self.releaseDate?.toString(format: dateFormat)
         let purchaseDate = self.purchaseDate?.toString(format: dateFormat)
@@ -75,8 +81,12 @@ extension Game: ModelHandlerProtocol {
             saga = sagaResponse
         }, failure: failure)
         
-        var songs = SongsResponse()
-        //TODO get songs
+        var songsResponse = SongsResponse()
+        for song in songs {
+            song.getModel(success: { songResponse in
+                songsResponse.append(songResponse)
+            }, failure: failure)
+        }
         
         guard let gameResponse = GameResponse(id: id,
                                               name: name,
@@ -99,7 +109,7 @@ extension Game: ModelHandlerProtocol {
                                               loanedTo: loanedTo,
                                               observations: observations,
                                               saga: saga,
-                                              songs: songs) as? M else {
+                                              songs: songsResponse) as? M else {
                                                 let error = ErrorResponse(error: "ERROR_CORE_DATA")
                                                 failure(error)
                                                 return
@@ -120,6 +130,17 @@ extension Game: ModelHandlerProtocol {
             }, failure: failure)
         } else {
             self.saga = nil
+        }
+    }
+    
+    private func manageSongs(item: GameResponse, failure: @escaping (ErrorResponse) -> Void) {
+        
+        let songRepository = SongRepository()
+        
+        for song in item.songs {
+            songRepository.update(item: song, success: { songResponse in
+                self.addToSongs(songResponse)
+            }, failure: failure)
         }
     }
 }

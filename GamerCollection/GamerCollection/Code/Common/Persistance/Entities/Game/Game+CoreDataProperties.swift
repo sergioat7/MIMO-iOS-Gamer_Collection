@@ -2,7 +2,7 @@
 //  Game+CoreDataProperties.swift
 //  GamerCollection
 //
-//  Created by alumno on 04/04/2020.
+//  Created by alumno on 07/04/2020.
 //
 //
 
@@ -37,5 +37,23 @@ extension Game {
     @NSManaged public var state: String?
     @NSManaged public var videoUrl: String?
     @NSManaged public var saga: Saga?
+    @NSManaged public var songs: NSSet?
+
+}
+
+// MARK: Generated accessors for songs
+extension Game {
+
+    @objc(addSongsObject:)
+    @NSManaged public func addToSongs(_ value: Song)
+
+    @objc(removeSongsObject:)
+    @NSManaged public func removeFromSongs(_ value: Song)
+
+    @objc(addSongs:)
+    @NSManaged public func addToSongs(_ values: NSSet)
+
+    @objc(removeSongs:)
+    @NSManaged public func removeFromSongs(_ values: NSSet)
 
 }

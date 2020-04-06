@@ -364,6 +364,8 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         tvObservations.text = game?.observations
         tvSaga.text = game?.saga?.name
         
+        //TODO show songs
+        
         view.layoutIfNeeded()
     }
     
