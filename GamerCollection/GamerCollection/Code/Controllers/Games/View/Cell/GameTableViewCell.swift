@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import Cosmos
+import BEMCheckBox
 
 class GameTableViewCell: UITableViewCell {
     
@@ -19,7 +20,7 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet weak var lbReleaseDate: UILabel!
     @IBOutlet weak var vwScore: CosmosView!
     @IBOutlet weak var ivIsGoty: UIImageView!
-    @IBOutlet weak var vsSelected: UIView!
+    @IBOutlet weak var cbSelected: BEMCheckBox!
     
     var gameCellViewModel: GameCellViewModel? {
         didSet {
@@ -30,6 +31,7 @@ class GameTableViewCell: UITableViewCell {
     func configure() {
         
         if let state = gameCellViewModel?.stateId {
+            
             switch state {
             case Constants.State.pending:
                 vwGameImage.backgroundColor = Color.color4
@@ -84,8 +86,27 @@ class GameTableViewCell: UITableViewCell {
         
         ivIsGoty.image = gameCellViewModel?.isGoty == true ? UIImage(named: "goty_label") : nil
         
-        vsSelected.isHidden = !(gameCellViewModel?.isSelectable ?? false)
-        vsSelected.backgroundColor = gameCellViewModel?.isSelected == true ? .blue : .white
+        if gameCellViewModel?.isSelectable == true {
+            
+            cbSelected.isHidden = false
+            cbSelected.onAnimationType = .fill
+            cbSelected.offAnimationType = .fill
+            cbSelected.delegate = self
+            let isOn = gameCellViewModel?.isSelected == true
+            cbSelected.setOn(isOn, animated: true)
+        } else {
+            cbSelected.isHidden = true
+        }
     }
+}
+
+// MARK: - BEMCheckBoxDelegate
+
+extension GameTableViewCell: BEMCheckBoxDelegate {
     
+    func didTap(_ checkBox: BEMCheckBox) {
+        
+        let isSelected = gameCellViewModel?.isSelected ?? false
+        gameCellViewModel?.isSelected = !isSelected
+    }
 }

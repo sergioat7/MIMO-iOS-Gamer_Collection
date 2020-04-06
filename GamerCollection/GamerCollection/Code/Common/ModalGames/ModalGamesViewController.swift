@@ -83,7 +83,6 @@ class ModalGamesViewController: BaseViewController {
     
     private func setupTableView() {
         
-        tvGames.delegate = self
         tvGames.dataSource = self
         registerNib()
     }
@@ -128,19 +127,6 @@ extension ModalGamesViewController:  ModalGamesConfigurableViewProtocol {
     
     func set(viewModel: ModalGamesViewModelProtocol) {
         self.viewModel = viewModel
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension ModalGamesViewController:  UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let gameCellViewModels = viewModel?.getGameCellViewModels()
-        let isCellSelected = gameCellViewModels?[indexPath.row].isSelected ?? false
-        gameCellViewModels?[indexPath.row].isSelected = !isCellSelected
-        tvGames.reloadData()
     }
 }
 

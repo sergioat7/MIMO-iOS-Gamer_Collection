@@ -105,9 +105,26 @@
                                     <constraint firstAttribute="width" secondItem="2VF-HS-iA8" secondAttribute="height" multiplier="1:1" id="lad-zw-17a"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYN-N2-mQA">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYN-N2-mQA" customClass="BEMCheckBox">
                                 <rect key="frame" x="286" y="36.5" width="24" height="24"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="onTintColor">
+                                        <color key="value" name="color3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="onFillColor">
+                                        <color key="value" name="color3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="offFillColor">
+                                        <color key="value" name="color2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="onCheckColor">
+                                        <color key="value" name="color2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                        <color key="value" name="color3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -146,12 +163,12 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cbSelected" destination="EYN-N2-mQA" id="Yyj-u9-I4b"/>
                 <outlet property="ivGame" destination="iTv-1O-ow0" id="yEL-4M-Na5"/>
                 <outlet property="ivIsGoty" destination="W9s-S0-LIb" id="Fuz-Yy-vbJ"/>
                 <outlet property="lbName" destination="4BS-eS-V5K" id="cDI-Kd-1O1"/>
                 <outlet property="lbPlatform" destination="aVo-oK-LVK" id="iUw-Lf-39E"/>
                 <outlet property="lbReleaseDate" destination="xfi-ro-gva" id="iZo-cg-G3c"/>
-                <outlet property="vsSelected" destination="EYN-N2-mQA" id="gql-YF-hfm"/>
                 <outlet property="vwGameImage" destination="oxi-Da-eze" id="3vl-zD-Zvg"/>
                 <outlet property="vwScore" destination="Qht-5q-8jM" id="VGo-vE-qGP"/>
             </connections>
@@ -166,6 +183,9 @@
         </namedColor>
         <namedColor name="color2">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="color3">
+            <color red="0.10196078431372549" green="0.73725490196078436" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="color5">
             <color red="0.99607843137254903" green="0.80392156862745101" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
