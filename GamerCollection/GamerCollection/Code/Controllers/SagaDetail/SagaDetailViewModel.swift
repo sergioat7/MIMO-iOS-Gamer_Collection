@@ -27,6 +27,7 @@ class SagaDetailViewModel: BaseViewModel {
     
     private var dataManager: SagaDetailDataManagerProtocol
     private var saga: SagaResponse?
+    private var newGames = GamesResponse()
     
     // MARK: - Initialization
     
@@ -77,10 +78,9 @@ class SagaDetailViewModel: BaseViewModel {
         if let sagaId = dataManager.getSagaId() {
             
             let sagaName = view?.getSagaName()
-            let games = saga?.games ?? GamesResponse()
             let saga = SagaResponse(id: sagaId,
                                     name: sagaName,
-                                    games: games)
+                                    games: newGames)
             self.dataManager.setSaga(saga: saga, success: { sagaResponse in
                 
                 self.saga = sagaResponse
@@ -88,7 +88,7 @@ class SagaDetailViewModel: BaseViewModel {
                 self.showNavBarButtons()
                 self.view?.showBackbarButtonItem()
                 self.view?.setName(name: sagaResponse.name)
-                self.view?.showGames(games: games)
+                self.view?.showGames(games: sagaResponse.games)
                 self.view?.hideLoading()
             }, failure: { error in
                 self.manageError(error: error)
@@ -96,10 +96,9 @@ class SagaDetailViewModel: BaseViewModel {
         } else {
             
             let sagaName = view?.getSagaName()
-            let games = saga?.games ?? GamesResponse()
             let saga = SagaResponse(id: 0,
                                     name: sagaName,
-                                    games: games)
+                                    games: newGames)
             dataManager.createSaga(saga: saga, success: {
                 self.dataManager.updateSagas(success: {
                     
@@ -130,7 +129,7 @@ class SagaDetailViewModel: BaseViewModel {
             view?.showLoading()
             dataManager.getSelectedGames(gameIds: gameIds, success: { games in
                 
-                self.saga?.games = games
+                self.newGames = games
                 self.view?.showGames(games: games)
                 self.view?.hideLoading()
             }, failure: { error in
