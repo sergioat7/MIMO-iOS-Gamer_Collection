@@ -161,14 +161,27 @@ extension RegisterDataManager: RegisterDataManagerProtocol {
         
         loginApiClient.getStates(success: { states in
             
-            for (index, state) in states.enumerated() {
-                self.stateRepository.update(item: state, success: { _ in
-                    
-                    if index == states.count - 1 {
-                        success(states)
-                    }
-                }, failure: failure)
-            }
+            self.stateRepository.getDisabledContent(enabledContent: states,
+                                                    predicate: NSPredicate(value: true),
+                                                    success: { disabledStates in
+                                                        
+                                                        for disabledState in disabledStates {
+                                                            self.stateRepository.delete(id: disabledState.id, success: {}, failure: failure)
+                                                        }
+                                                        
+                                                        guard !states.isEmpty else {
+                                                            success(states)
+                                                            return
+                                                        }
+                                                        for (index, state) in states.enumerated() {
+                                                            self.stateRepository.update(item: state, success: { _ in
+                                                                
+                                                                if index == states.count - 1 {
+                                                                    success(states)
+                                                                }
+                                                            }, failure: failure)
+                                                        }
+            }, failure: failure)
         }, failure: failure)
     }
 }

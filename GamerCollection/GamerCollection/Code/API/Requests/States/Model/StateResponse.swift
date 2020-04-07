@@ -10,7 +10,17 @@ import Foundation
 
 typealias StatesResponse = [StateResponse]
 
-struct StateResponse: Codable {
+struct StateResponse: Codable, Hashable {
     let id: String
     let name: String
+    
+    // MARK: - Hashable protocol
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: StateResponse, rhs: StateResponse) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
