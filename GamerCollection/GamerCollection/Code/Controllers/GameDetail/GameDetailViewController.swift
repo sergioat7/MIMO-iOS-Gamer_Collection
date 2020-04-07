@@ -411,6 +411,12 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         if currentGame != nil {
             btAddSong.isHidden = !enable
         }
+        
+        for subview in stvSongs.subviews {
+            if let songDetail = subview as? SongDetail {
+                songDetail.isEnabled = enable
+            }
+        }
     }
     
     func getGameData() -> GameResponse {

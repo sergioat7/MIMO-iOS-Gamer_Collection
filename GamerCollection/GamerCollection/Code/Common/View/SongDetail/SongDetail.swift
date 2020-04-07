@@ -12,10 +12,17 @@ class SongDetail: UIView {
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbSinger: UILabel!
     @IBOutlet weak var lbUrl: UILabel!
-
+    @IBOutlet weak var btRemove: UIButton!
+    
     var song: SongResponse? {
         didSet {
             setUp()
+        }
+    }
+    
+    var isEnabled: Bool = false {
+        didSet {
+            btRemove.isHidden = !isEnabled
         }
     }
     
@@ -53,5 +60,10 @@ class SongDetail: UIView {
         lbUrl.attributedText = NSAttributedString(string: url,
                                                   attributes: [.font : UIFont.roman16,
                                                                .foregroundColor: Color.color2])
+        
+        btRemove.setAttributedTitle(NSAttributedString(string: "REMOVE".localized(),
+                                                       attributes: [.font : UIFont.bold16,
+                                                                    .foregroundColor: Color.color4]),
+                                    for: UIControl.State())
     }
 }

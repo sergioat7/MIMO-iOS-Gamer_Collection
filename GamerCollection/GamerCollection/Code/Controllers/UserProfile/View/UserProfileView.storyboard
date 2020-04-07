@@ -33,7 +33,7 @@
                                     <constraint firstAttribute="width" constant="200" id="8uM-z8-6bA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="PROFILE_SAVE"/>
+                                <state key="normal" title="SAVE"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="background">
                                         <color key="value" name="color3"/>
@@ -52,7 +52,7 @@
                                     <constraint firstAttribute="width" constant="200" id="ohM-f2-eqi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="PROFILE_DELETE"/>
+                                <state key="normal" title="DELETE"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="background">
                                         <color key="value" name="color4"/>

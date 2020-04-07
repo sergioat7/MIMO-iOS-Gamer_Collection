@@ -465,7 +465,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="7XV-aN-Uc6"/>
                                                 </constraints>
-                                                <state key="normal" title="GAME_DETAIL_DELETE"/>
+                                                <state key="normal" title="DELETE"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="background">
                                                         <color key="value" name="color4"/>

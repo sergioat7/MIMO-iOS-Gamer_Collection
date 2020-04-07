@@ -15,6 +15,8 @@
 "RESET" = "Reiniciar";
 "SAVE" = "Guardar";
 "EDIT" = "Editar";
+"DELETE" = "Borrar";
+"REMOVE" = "Eliminar";
 "MIN" = "Min";
 "MAX" = "Max";
 "EMPTY_LIST" = "La lista está vacía";
@@ -84,7 +86,6 @@
 "GAME_DETAIL_PLACEHOLDER_OBSERVATIONS" = "Añade unas observaciones";
 "GAME_DETAIL_SAGA" = "Saga";
 "GAME_DETAIL_SONGS_TITLE" = "Canciones";
-"GAME_DETAIL_DELETE" = "Borrar";
 "GAME_DETAIL_DELETE_CONFIRMATION" = "¿Estás seguro de que quieres borrar este juego? Esta acción no se puede deshacer";
 
 // Sagas
@@ -96,7 +97,6 @@
 "SAGA_DETAIL" = "Detail";
 "SAGA_DETAIL_PLACEHOLDER_NAME" = "Añade un nombre";
 "SAGA_DETAIL_GAMES_TITLE" = "Juegos";
-"SAGA_DETAIL_DELETE" = "Borrar";
 "SAGA_DETAIL_DELETE_CONFIRMATION" = "¿Estás seguro de que quieres borrar esta saga? Esta acción no se puede deshacer";
 
 // Ranking
@@ -107,8 +107,6 @@
 
 "PROFILE" = "Mi Perfil";
 "PROFILE_LOGOUT_CONFIRMATION" = "¿Estás seguro de que quieres salir?";
-"PROFILE_SAVE" = "Guardar";
-"PROFILE_DELETE" = "Borrar";
 "PROFILE_DELETE_CONFIRMATION" = "¿Estás seguro de que quieres borrar tu usuario? Perderás toda la información almacenada sobre los juegos";
 
 // Synchronization
