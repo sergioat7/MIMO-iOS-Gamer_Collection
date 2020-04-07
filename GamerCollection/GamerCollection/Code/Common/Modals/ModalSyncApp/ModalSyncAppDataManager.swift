@@ -191,19 +191,28 @@ extension ModalSyncAppDataManager: ModalSyncAppDataManagerProtocol {
         
         loginApiClient.getSagas(success: { sagas in
             
-            guard !sagas.isEmpty else {
-                success(sagas)
-                return
-            }
-            
-            for (index, saga) in sagas.enumerated() {
-                self.sagaRepository.update(item: saga, success: { _ in
-                    
-                    if index == sagas.count - 1 {
-                        success(sagas)
-                    }
-                }, failure: failure)
-            }
+            self.sagaRepository.getDisabledContent(enabledContent: sagas,
+                                                   predicate: NSPredicate(value: true),
+                                                   success: { disabledSagas in
+                                                    
+                                                    for disableSaga in disabledSagas {
+                                                        self.sagaRepository.delete(id: disableSaga.id, success: {}, failure: failure)
+                                                    }
+                                                    
+                                                    guard !sagas.isEmpty else {
+                                                        success(sagas)
+                                                        return
+                                                    }
+                                                    
+                                                    for (index, saga) in sagas.enumerated() {
+                                                        self.sagaRepository.update(item: saga, success: { _ in
+                                                            
+                                                            if index == sagas.count - 1 {
+                                                                success(sagas)
+                                                            }
+                                                        }, failure: failure)
+                                                    }
+            }, failure: failure)
         }, failure: failure)
     }
 }
