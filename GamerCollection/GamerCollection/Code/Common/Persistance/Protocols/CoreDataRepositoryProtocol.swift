@@ -19,6 +19,7 @@ protocol CoreDataRepositoryProtocol {
     func get(id: K, success: @escaping (M?) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getRecords(success: @escaping ([R]) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getAll(success: @escaping ([M]) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getDisabledContent<M: Hashable>(enabledContent: [M], predicate: NSPredicate, success: @escaping ([M]) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func insert(item: M, success: @escaping (R) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func update(item: M, success: @escaping (R) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func delete(id: K, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
@@ -86,6 +87,29 @@ extension CoreDataRepositoryProtocol {
             self.transformToModel(results: results, success: { models in
                 success(models)
             }, failure: failure)
+        }, failure: failure)
+    }
+    
+    func getDisabledContent<M: Hashable>(enabledContent: [M],
+                                         predicate: NSPredicate,
+                                         success: @escaping ([M]) -> Void,
+                                         failure: @escaping (ErrorResponse) -> Void) {
+        
+        let enabledContentSet = Set(enabledContent)
+        
+        execute(predicate: predicate,
+                sortDescriptors: nil,
+                success: { (models, _) in
+                    
+                    guard let models = models as? [M] else {
+                        self.handleError(failure: failure)
+                        return
+                    }
+                    
+                    let allContentSet = Set(models)
+                    let disabledContentSet = allContentSet.subtracting(enabledContentSet)
+                    let disabledContent = Array(disabledContentSet)
+                    success(disabledContent)
         }, failure: failure)
     }
     
