@@ -294,7 +294,12 @@ class GameDetailViewController: BaseViewController {
         
         let songDetail = SongDetail()
         songDetail.song = song
+        songDetail.removeHandler = removeSong
         return songDetail
+    }
+    
+    private func removeSong(songId: Int64) {
+        viewModel?.removeSong(songId: songId)
     }
 }
 

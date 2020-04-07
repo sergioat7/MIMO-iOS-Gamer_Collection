@@ -26,6 +26,8 @@ class SongDetail: UIView {
         }
     }
     
+    var removeHandler: ((Int64) -> Void)?
+    
     init() {
         super.init(frame: UIScreen.main.bounds)
         
@@ -65,5 +67,15 @@ class SongDetail: UIView {
                                                        attributes: [.font : UIFont.bold16,
                                                                     .foregroundColor: Color.color4]),
                                     for: UIControl.State())
+        btRemove.addTarget(self, action: #selector(removeSong), for: .touchUpInside)
+    }
+    
+    // MARK: - Private functions
+    
+    @objc private func removeSong() {
+        
+        if let songId = song?.id {
+            removeHandler?(songId)
+        }
     }
 }

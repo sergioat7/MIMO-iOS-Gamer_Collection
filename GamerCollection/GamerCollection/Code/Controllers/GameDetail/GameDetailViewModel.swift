@@ -14,6 +14,7 @@ protocol GameDetailViewModelProtocol: class {
      */
     func viewDidLoad()
     func showAddSongModal()
+    func removeSong(songId: Int64)
     func deleteGame()
 }
 
@@ -136,7 +137,9 @@ class GameDetailViewModel: BaseViewModel {
         dataManager.updateGame(success: {
             self.dataManager.getGame(success: { gameResponse in
 
+                self.game = gameResponse
                 self.view?.showData(game: gameResponse)
+                self.view?.enableEdition(enable: true)
                 self.view?.hideLoading()
             }, failure: { error in
                 self.manageError(error: error)
@@ -173,6 +176,19 @@ extension GameDetailViewModel: GameDetailViewModelProtocol {
                                                           handler: updateData).view
             view?.showPopup(viewControllerToPresent: viewControllerToPresent)
         }
+    }
+    
+    
+    func removeSong(songId: Int64) {
+        
+        view?.showLoading()
+        dataManager.deleteSong(songId: songId, success: {
+            
+            self.view?.hideLoading()
+            self.updateData()
+        }, failure: { error in
+            self.manageError(error: error)
+        })
     }
     
     func deleteGame() {

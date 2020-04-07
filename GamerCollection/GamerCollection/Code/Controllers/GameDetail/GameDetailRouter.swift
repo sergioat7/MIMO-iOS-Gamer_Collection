@@ -32,6 +32,7 @@ class GameDetailRouter: BaseRouter {
                                      genreRepository: genreRepository,
                                      platformRepository: platformRepository,
                                      stateRepository: stateRepository,
+                                     songRepository: songRepository,
                                      gameId: gameId)
     }
     
@@ -61,6 +62,10 @@ class GameDetailRouter: BaseRouter {
     
     private var stateRepository: StateRepository {
         return StateRepository()
+    }
+    
+    private var songRepository: SongRepository {
+        return SongRepository()
     }
     
     // MARK: - Initialization
