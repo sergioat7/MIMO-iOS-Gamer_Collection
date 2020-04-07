@@ -457,7 +457,7 @@
                                                     <constraint firstAttribute="height" constant="2" id="NRQ-a7-zJI"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="355" placeholderIntrinsicHeight="50" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nu6-1C-2SS">
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="355" placeholderIntrinsicHeight="50" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nu6-1C-2SS">
                                                 <rect key="frame" x="0.0" y="1112" width="355" height="50"/>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUE-xH-Uhj" customClass="ActionButton" customModule="Gamer_Collection" customModuleProvider="target">
@@ -554,6 +554,7 @@
                         <outlet property="ivGame" destination="q5R-4q-mGn" id="GtK-oD-OEo"/>
                         <outlet property="ivGoty" destination="2pO-b8-xQZ" id="Y2c-vZ-nii"/>
                         <outlet property="lbScore" destination="CTI-OW-bxI" id="uvM-tc-gcG"/>
+                        <outlet property="stvSongs" destination="nu6-1C-2SS" id="3C8-bt-bwe"/>
                         <outlet property="svDetails" destination="CrT-sz-5yi" id="Bs9-tU-5ph"/>
                         <outlet property="swGoty" destination="YKq-PF-UOZ" id="JqL-CW-vMC"/>
                         <outlet property="tvDeveloper" destination="qZA-Cc-Z6a" id="LY0-7z-eGM"/>

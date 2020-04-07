@@ -112,6 +112,8 @@
 		FB8E2233242D56E100B043FB /* Platform+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2231242D56E100B043FB /* Platform+CoreDataProperties.swift */; };
 		FB8E2236242D570800B043FB /* State+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2234242D570800B043FB /* State+CoreDataProperties.swift */; };
 		FB8E2237242D570800B043FB /* State+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2235242D570800B043FB /* State+CoreDataClass.swift */; };
+		FB8EA1FC243C80A7008CC3C1 /* SongDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EA1FB243C80A7008CC3C1 /* SongDetail.swift */; };
+		FB8EA1FE243C80B1008CC3C1 /* SongDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8EA1FD243C80B1008CC3C1 /* SongDetail.xib */; };
 		FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB935A262424D8A300352DA3 /* NSManagedObject+Extension.swift */; };
 		FB9C419A2430E403004526A6 /* CreateGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C41992430E403004526A6 /* CreateGameRequest.swift */; };
 		FB9C41A1243111E7004526A6 /* ModalFilterView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB9C419C243111E7004526A6 /* ModalFilterView.storyboard */; };
@@ -317,6 +319,8 @@
 		FB8E2231242D56E100B043FB /* Platform+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Platform+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FB8E2234242D570800B043FB /* State+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FB8E2235242D570800B043FB /* State+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FB8EA1FB243C80A7008CC3C1 /* SongDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetail.swift; sourceTree = "<group>"; };
+		FB8EA1FD243C80B1008CC3C1 /* SongDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongDetail.xib; sourceTree = "<group>"; };
 		FB935A262424D8A300352DA3 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
 		FB9C41992430E403004526A6 /* CreateGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameRequest.swift; sourceTree = "<group>"; };
 		FB9C419C243111E7004526A6 /* ModalFilterView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModalFilterView.storyboard; sourceTree = "<group>"; };
@@ -458,6 +462,7 @@
 				FB62877C241E3C2600F5FF6E /* Button */,
 				FB50FAFD242FECE9009E6173 /* Label */,
 				FB1DFEB42416BADB000CAD7B /* LoadingScreen */,
+				FB8EA1FA243C806A008CC3C1 /* SongDetail */,
 				FB50FB0024300EBF009E6173 /* TextView */,
 			);
 			path = View;
@@ -1011,6 +1016,15 @@
 				FB8D50D024394FFA0037BA52 /* SagaHeaderViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FB8EA1FA243C806A008CC3C1 /* SongDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FB8EA1FB243C80A7008CC3C1 /* SongDetail.swift */,
+				FB8EA1FD243C80B1008CC3C1 /* SongDetail.xib */,
+			);
+			path = SongDetail;
 			sourceTree = "<group>";
 		};
 		FB935A252424D88A00352DA3 /* NSManagedObject */ = {
@@ -1644,6 +1658,7 @@
 				FB463C5E241CFE53006F1A12 /* LoginView.storyboard in Resources */,
 				FB50FB0424300EF1009E6173 /* UnderlinedTextView.xib in Resources */,
 				FBF6C52524267CA300FC5469 /* GameTableViewCell.xib in Resources */,
+				FB8EA1FE243C80B1008CC3C1 /* SongDetail.xib in Resources */,
 				FBEE25D9243A68280092F73F /* ModalGamesView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1784,6 +1799,7 @@
 				FB9C41A824314034004526A6 /* FilterActionButton.swift in Sources */,
 				FB62877E241E3D2800F5FF6E /* ActionButton.swift in Sources */,
 				FBA548342415809000C23DB3 /* BaseDataManager.swift in Sources */,
+				FB8EA1FC243C80A7008CC3C1 /* SongDetail.swift in Sources */,
 				FBF19EC924254BDE00E836FD /* Format+FormatResponse.swift in Sources */,
 				FB463C63241CFE53006F1A12 /* LoginDataManager.swift in Sources */,
 				FB463C91241D0C29006F1A12 /* RankingRouter.swift in Sources */,

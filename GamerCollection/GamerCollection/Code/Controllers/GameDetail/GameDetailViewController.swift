@@ -62,6 +62,7 @@ class GameDetailViewController: BaseViewController {
     @IBOutlet weak var tvSaga: UnderlinedTextView!
     
     @IBOutlet weak var btAddSong: UIButton!
+    @IBOutlet weak var stvSongs: UIStackView!
     
     // MARK: - Private properties
     
@@ -288,6 +289,13 @@ class GameDetailViewController: BaseViewController {
                                                     attributes: [.font : UIFont.roman16,
                                                                  .foregroundColor: Color.color2])
     }
+    
+    private func getSongDetail(song: SongResponse) -> SongDetail {
+        
+        let songDetail = SongDetail()
+        songDetail.song = song
+        return songDetail
+    }
 }
 
 // MARK: - GameDetailViewProtocol
@@ -364,7 +372,13 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         tvObservations.text = game?.observations
         tvSaga.text = game?.saga?.name
         
-        //TODO show songs
+        stvSongs.removeSubviews()
+        if let songs = game?.songs {
+            for song in songs {
+                let songDetail = getSongDetail(song: song)
+                stvSongs.addArrangedSubview(songDetail)
+            }
+        }
         
         view.layoutIfNeeded()
     }
