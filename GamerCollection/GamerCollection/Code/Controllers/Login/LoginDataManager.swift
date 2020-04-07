@@ -141,18 +141,27 @@ extension LoginDataManager: LoginDataManagerProtocol {
         
         apiClient.getPlatforms(success: { platforms in
             
-            guard !platforms.isEmpty else {
-                success(platforms)
-                return
-            }
-            for (index, platform) in platforms.enumerated() {
-                self.platformRepository.update(item: platform, success: { _ in
-                    
-                    if index == platforms.count - 1 {
-                        success(platforms)
-                    }
-                }, failure: failure)
-            }
+            self.platformRepository.getDisabledContent(enabledContent: platforms,
+                                                       predicate: NSPredicate(value: true),
+                                                       success: { disabledPlatforms in
+                                                        
+                                                        for disabledPlatform in disabledPlatforms {
+                                                            self.platformRepository.delete(id: disabledPlatform.id, success: {}, failure: failure)
+                                                        }
+                                                        
+                                                        guard !platforms.isEmpty else {
+                                                            success(platforms)
+                                                            return
+                                                        }
+                                                        for (index, platform) in platforms.enumerated() {
+                                                            self.platformRepository.update(item: platform, success: { _ in
+                                                                
+                                                                if index == platforms.count - 1 {
+                                                                    success(platforms)
+                                                                }
+                                                            }, failure: failure)
+                                                        }
+            }, failure: failure)
         }, failure: failure)
     }
     

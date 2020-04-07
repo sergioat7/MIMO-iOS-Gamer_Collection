@@ -10,7 +10,17 @@ import Foundation
 
 typealias PlatformsResponse = [PlatformResponse]
 
-struct PlatformResponse: Codable {
+struct PlatformResponse: Codable, Hashable {
     let id: String
     let name: String
+    
+    // MARK: - Hashable protocol
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: PlatformResponse, rhs: PlatformResponse) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
