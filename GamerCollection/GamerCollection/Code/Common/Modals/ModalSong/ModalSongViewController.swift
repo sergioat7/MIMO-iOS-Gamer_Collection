@@ -41,7 +41,6 @@ class ModalSongViewController: BaseModalViewController {
         
         scrollView = svData
         configViews()
-        viewModel?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {

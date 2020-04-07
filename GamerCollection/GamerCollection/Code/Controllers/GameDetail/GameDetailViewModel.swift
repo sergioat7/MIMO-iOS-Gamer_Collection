@@ -129,6 +129,22 @@ class GameDetailViewModel: BaseViewModel {
         view?.showBackbarButtonItem()
         view?.showData(game: game)
     }
+    
+    private func updateData() {
+        
+        view?.showLoading()
+        dataManager.updateGame(success: {
+            self.dataManager.getGame(success: { gameResponse in
+
+                self.view?.showData(game: gameResponse)
+                self.view?.hideLoading()
+            }, failure: { error in
+                self.manageError(error: error)
+            })
+        }, failure: { error in
+            self.manageError(error: error)
+        })
+    }
 }
 
 extension GameDetailViewModel: GameDetailViewModelProtocol {
@@ -153,7 +169,8 @@ extension GameDetailViewModel: GameDetailViewModelProtocol {
     func showAddSongModal() {
         
         if let gameId = dataManager.getGameId() {
-            let viewControllerToPresent = ModalSongRouter(gameId: gameId).view
+            let viewControllerToPresent = ModalSongRouter(gameId: gameId,
+                                                          handler: updateData).view
             view?.showPopup(viewControllerToPresent: viewControllerToPresent)
         }
     }

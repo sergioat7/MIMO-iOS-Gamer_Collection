@@ -40,7 +40,6 @@ extension ModalSongDataManager: ModalSongDataManagerProtocol {
         
         let gameId = getGameId()
         apiClient.createSong(gameId: gameId, song: song, success: { _ in
-            //TODO update game
             success()
         }, failure: failure)
     }

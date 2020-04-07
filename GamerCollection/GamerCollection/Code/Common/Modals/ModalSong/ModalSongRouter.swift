@@ -18,7 +18,8 @@ class ModalSongRouter: BaseRouter {
         let storyboard: UIStoryboard = UIStoryboard(name: "ModalSongView", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "ModalSong") as? ModalSongViewController {
             let viewModel: ModalSongViewModelProtocol = ModalSongViewModel(view: controller,
-                                                                           dataManager: dataManager)
+                                                                           dataManager: dataManager,
+                                                                           handler: handler)
             controller.set(viewModel: viewModel)
             return controller
         }
@@ -41,9 +42,12 @@ class ModalSongRouter: BaseRouter {
     // MARK: - Initialization
     
     private let gameId: Int64
+    private let handler: (() -> Void)?
     
-    init(gameId: Int64) {
+    init(gameId: Int64,
+         handler: (() -> Void)?) {
         self.gameId = gameId
+        self.handler = handler
     }
     
     // MARK: - Presentation Methods

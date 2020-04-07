@@ -12,7 +12,6 @@ protocol ModalSongViewModelProtocol: class {
     /**
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
-    func viewDidLoad()
     func createSong(song: SongResponse)
 }
 
@@ -25,13 +24,16 @@ class ModalSongViewModel: BaseViewModel {
     // MARK: - Private variables
     
     private var dataManager: ModalSongDataManagerProtocol
+    private let handler: (() -> Void)?
     
     // MARK: - Initialization
     
     init(view:ModalSongViewProtocol,
-         dataManager: ModalSongDataManagerProtocol) {
+         dataManager: ModalSongDataManagerProtocol,
+         handler: (() -> Void)?) {
         self.view = view
         self.dataManager = dataManager
+        self.handler = handler
         super.init(view: view)
     }
     
@@ -46,17 +48,15 @@ class ModalSongViewModel: BaseViewModel {
 
 extension ModalSongViewModel: ModalSongViewModelProtocol {
     
-    func viewDidLoad() {
-        
-    }
-    
     func createSong(song: SongResponse) {
         
         view?.showLoading()
         dataManager.createSong(song: song, success: {
             
             self.view?.hideLoading()
-            self.view?.closePopup(success: {})
+            self.view?.closePopup(success: {
+                self.handler?()
+            })
         }, failure: { error in
             self.manageError(error: error)
         })
