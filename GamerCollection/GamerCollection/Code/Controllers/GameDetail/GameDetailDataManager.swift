@@ -19,8 +19,9 @@ protocol GameDetailDataManagerProtocol: class {
     func getStates(success: @escaping (StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func setGame(game: GameResponse, success: @escaping (GameResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func deleteGame(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func deleteSong(songId: Int64, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
     func createGame(game: GameResponse, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
-    func updateGames(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func updateGame(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getGameId() -> Int64?
 }
 
@@ -36,6 +37,7 @@ class GameDetailDataManager: BaseDataManager {
     private let genreRepository: GenreRepository
     private let platformRepository: PlatformRepository
     private let stateRepository: StateRepository
+    private let songRepository: SongRepository
     private let gameId: Int64?
     
     // MARK: - Initialization
@@ -46,6 +48,7 @@ class GameDetailDataManager: BaseDataManager {
          genreRepository: GenreRepository,
          platformRepository: PlatformRepository,
          stateRepository: StateRepository,
+         songRepository: SongRepository,
          gameId: Int64?) {
         self.apiClient = apiClient
         self.gameRepository = gameRepository
@@ -53,6 +56,7 @@ class GameDetailDataManager: BaseDataManager {
         self.genreRepository = genreRepository
         self.platformRepository = platformRepository
         self.stateRepository = stateRepository
+        self.songRepository = songRepository
         self.gameId = gameId
     }
 }
@@ -114,6 +118,19 @@ extension GameDetailDataManager: GameDetailDataManagerProtocol {
         }
     }
     
+    func deleteSong(songId: Int64, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        if let gameId = getGameId() {
+            apiClient.deleteSong(gameId: gameId,
+                                 songId: songId,
+                                 success: { _ in
+                                    self.songRepository.delete(id: songId, success: success, failure: failure)
+            }, failure: failure)
+        } else {
+            success()
+        }
+    }
+    
     func createGame(game: GameResponse, success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
         apiClient.createGame(game: game, success: { _ in
@@ -121,24 +138,16 @@ extension GameDetailDataManager: GameDetailDataManagerProtocol {
         }, failure: failure)
     }
     
-    func updateGames(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void) {
+    func updateGame(success: @escaping () -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
-        apiClient.getGames(success: { games in
-            
-            guard !games.isEmpty else {
-                success()
-                return
-            }
-            
-            for (index, game) in games.enumerated() {
-                self.gameRepository.update(item: game, success: { _ in
-                    
-                    if index == games.count - 1 {
-                        success()
-                    }
+        if let gameId = getGameId() {
+            apiClient.getGame(gameId: gameId, success: { gameResponse in
+                
+                self.gameRepository.update(item: gameResponse, success: { _ in
+                    success()
                 }, failure: failure)
-            }
-        }, failure: failure)
+            }, failure: failure)
+        }
     }
     
     func getGameId() -> Int64? {

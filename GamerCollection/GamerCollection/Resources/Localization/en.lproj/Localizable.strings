@@ -15,6 +15,8 @@
 "RESET" = "Reset";
 "SAVE" = "Save";
 "EDIT" = "Edit";
+"DELETE" = "Delete";
+"REMOVE" = "Remove";
 "MIN" = "Min";
 "MAX" = "Max";
 "EMPTY_LIST" = "The list is empty";
@@ -83,7 +85,7 @@
 "GAME_DETAIL_OBSERVATIONS" = "Observations";
 "GAME_DETAIL_PLACEHOLDER_OBSERVATIONS" = "Add some observations";
 "GAME_DETAIL_SAGA" = "Saga";
-"GAME_DETAIL_DELETE" = "Delete";
+"GAME_DETAIL_SONGS_TITLE" = "Songs";
 "GAME_DETAIL_DELETE_CONFIRMATION" = "Are you sure you want to delete this game? This action can't be undone";
 
 // Sagas
@@ -95,7 +97,6 @@
 "SAGA_DETAIL" = "Detail";
 "SAGA_DETAIL_PLACEHOLDER_NAME" = "Add a name";
 "SAGA_DETAIL_GAMES_TITLE" = "Games";
-"SAGA_DETAIL_DELETE" = "Delete";
 "SAGA_DETAIL_DELETE_CONFIRMATION" = "Are you sure you want to delete this saga? This action can't be undone";
 
 // Ranking
@@ -106,8 +107,6 @@
 
 "PROFILE" = "My Profile";
 "PROFILE_LOGOUT_CONFIRMATION" = "Are you sure you want to exit?";
-"PROFILE_SAVE" = "Save";
-"PROFILE_DELETE" = "Delete";
 "PROFILE_DELETE_CONFIRMATION" = "Are you sure you want to delete your user? You will lose all your stored information about the videogames";
 
 // Synchronization
@@ -128,6 +127,12 @@
 "MODAL_FILTER_LOANED" = "Loaned";
 "MODAL_FILTER_HAS_SAGA" = "Has saga";
 "MODAL_FILTER_HAS_SONGS" = "Has songs";
+
+// Modal song
+
+"MODAL_SONG_PLACEHOLDER_NAME" = "Add a name";
+"MODAL_SONG_PLACEHOLDER_SINGER" = "Add a singer";
+"MODAL_SONG_PLACEHOLDER_URL" = "Add a link";
 
 // Errors
 

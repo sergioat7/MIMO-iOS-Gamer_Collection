@@ -13,6 +13,8 @@ protocol GameDetailViewModelProtocol: class {
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
     func viewDidLoad()
+    func showAddSongModal()
+    func removeSong(songId: Int64)
     func deleteGame()
 }
 
@@ -107,7 +109,7 @@ class GameDetailViewModel: BaseViewModel {
             } else {
                 
                 dataManager.createGame(game: gameData, success: {
-                    self.dataManager.updateGames(success: {
+                    self.dataManager.updateGame(success: {
                         
                         self.view?.hideLoading()
                         self.view?.popViewController()
@@ -128,6 +130,24 @@ class GameDetailViewModel: BaseViewModel {
         view?.showBackbarButtonItem()
         view?.showData(game: game)
     }
+    
+    private func updateData() {
+        
+        view?.showLoading()
+        dataManager.updateGame(success: {
+            self.dataManager.getGame(success: { gameResponse in
+
+                self.game = gameResponse
+                self.view?.showData(game: gameResponse)
+                self.view?.enableEdition(enable: true)
+                self.view?.hideLoading()
+            }, failure: { error in
+                self.manageError(error: error)
+            })
+        }, failure: { error in
+            self.manageError(error: error)
+        })
+    }
 }
 
 extension GameDetailViewModel: GameDetailViewModelProtocol {
@@ -147,6 +167,28 @@ extension GameDetailViewModel: GameDetailViewModelProtocol {
         }
 
         getContent()
+    }
+    
+    func showAddSongModal() {
+        
+        if let gameId = dataManager.getGameId() {
+            let viewControllerToPresent = ModalSongRouter(gameId: gameId,
+                                                          handler: updateData).view
+            view?.showPopup(viewControllerToPresent: viewControllerToPresent)
+        }
+    }
+    
+    
+    func removeSong(songId: Int64) {
+        
+        view?.showLoading()
+        dataManager.deleteSong(songId: songId, success: {
+            
+            self.view?.hideLoading()
+            self.updateData()
+        }, failure: { error in
+            self.manageError(error: error)
+        })
     }
     
     func deleteGame() {

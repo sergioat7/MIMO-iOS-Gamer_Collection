@@ -148,8 +148,9 @@ extension GamesDataManager: GamesDataManagerProtocol {
                 predicates.append(NSPredicate(format: "saga != nil"))
             }
             
-//            let hasSongs = filters.hasSongs
-            //TODO filter by songs
+            if filters.hasSongs {
+                predicates.append(NSPredicate(format: "songs.@count > 0"))
+            }
         }
         
         return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)

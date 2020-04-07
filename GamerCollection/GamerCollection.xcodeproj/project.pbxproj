@@ -26,6 +26,22 @@
 		FB31D5C5241EB05200B16558 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5C4241EB05200B16558 /* RegisterRequest.swift */; };
 		FB31D5C9241EB08800B16558 /* RegisterDataModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5C8241EB08800B16558 /* RegisterDataModelRequest.swift */; };
 		FB31D5CB241EB17300B16558 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31D5CA241EB17300B16558 /* EmptyResponse.swift */; };
+		FB323D1F243B5EAC00E1CA8A /* ModalSongView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB323D19243B5EAC00E1CA8A /* ModalSongView.storyboard */; };
+		FB323D20243B5EAC00E1CA8A /* ModalSongRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D1A243B5EAC00E1CA8A /* ModalSongRouter.swift */; };
+		FB323D21243B5EAC00E1CA8A /* ModalSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D1B243B5EAC00E1CA8A /* ModalSongViewController.swift */; };
+		FB323D22243B5EAC00E1CA8A /* ModalSongApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D1C243B5EAC00E1CA8A /* ModalSongApiClient.swift */; };
+		FB323D23243B5EAC00E1CA8A /* ModalSongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D1D243B5EAC00E1CA8A /* ModalSongViewModel.swift */; };
+		FB323D24243B5EAC00E1CA8A /* ModalSongDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D1E243B5EAC00E1CA8A /* ModalSongDataManager.swift */; };
+		FB323D2A243B65D700E1CA8A /* BaseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D29243B65D700E1CA8A /* BaseModalViewController.swift */; };
+		FB323D33243BD6C200E1CA8A /* SongResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D32243BD6C200E1CA8A /* SongResponse.swift */; };
+		FB323D36243BD99200E1CA8A /* CreateSongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D35243BD99200E1CA8A /* CreateSongRequest.swift */; };
+		FB323D3C243BE86E00E1CA8A /* Song+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D3A243BE86E00E1CA8A /* Song+CoreDataClass.swift */; };
+		FB323D3D243BE86E00E1CA8A /* Song+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D3B243BE86E00E1CA8A /* Song+CoreDataProperties.swift */; };
+		FB323D40243BE93E00E1CA8A /* Game+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D3E243BE93E00E1CA8A /* Game+CoreDataClass.swift */; };
+		FB323D41243BE93E00E1CA8A /* Game+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D3F243BE93E00E1CA8A /* Game+CoreDataProperties.swift */; };
+		FB323D43243BE96700E1CA8A /* Song+SongResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D42243BE96700E1CA8A /* Song+SongResponse.swift */; };
+		FB323D45243BE97500E1CA8A /* SongRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D44243BE97500E1CA8A /* SongRepository.swift */; };
+		FB323D47243BEF2F00E1CA8A /* GetGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D46243BEF2F00E1CA8A /* GetGameRequest.swift */; };
 		FB448DDD241FE87F008ACE69 /* UserProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB448DD7241FE87F008ACE69 /* UserProfileView.storyboard */; };
 		FB448DDE241FE87F008ACE69 /* UserProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DD8241FE87F008ACE69 /* UserProfileRouter.swift */; };
 		FB448DDF241FE87F008ACE69 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DD9241FE87F008ACE69 /* UserProfileViewController.swift */; };
@@ -86,8 +102,6 @@
 		FB8D50BA2438DB1B0037BA52 /* SagaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D50B92438DB1B0037BA52 /* SagaResponse.swift */; };
 		FB8D50BE2438E1410037BA52 /* Saga+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D50BC2438E1410037BA52 /* Saga+CoreDataClass.swift */; };
 		FB8D50BF2438E1410037BA52 /* Saga+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D50BD2438E1410037BA52 /* Saga+CoreDataProperties.swift */; };
-		FB8D50C22438E1F50037BA52 /* Game+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D50C02438E1F50037BA52 /* Game+CoreDataClass.swift */; };
-		FB8D50C32438E1F50037BA52 /* Game+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D50C12438E1F50037BA52 /* Game+CoreDataProperties.swift */; };
 		FB8D50C52438E3740037BA52 /* Saga+SagaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D50C42438E3740037BA52 /* Saga+SagaResponse.swift */; };
 		FB8D50C72438E3860037BA52 /* SagaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D50C62438E3860037BA52 /* SagaRepository.swift */; };
 		FB8D50CA243948A70037BA52 /* SagaTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D50C9243948A70037BA52 /* SagaTableViewHeaderView.swift */; };
@@ -97,6 +111,9 @@
 		FB8E2233242D56E100B043FB /* Platform+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2231242D56E100B043FB /* Platform+CoreDataProperties.swift */; };
 		FB8E2236242D570800B043FB /* State+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2234242D570800B043FB /* State+CoreDataProperties.swift */; };
 		FB8E2237242D570800B043FB /* State+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2235242D570800B043FB /* State+CoreDataClass.swift */; };
+		FB8EA1FC243C80A7008CC3C1 /* SongDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EA1FB243C80A7008CC3C1 /* SongDetail.swift */; };
+		FB8EA1FE243C80B1008CC3C1 /* SongDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8EA1FD243C80B1008CC3C1 /* SongDetail.xib */; };
+		FB8EA202243CA6CC008CC3C1 /* DeleteSongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EA201243CA6CC008CC3C1 /* DeleteSongRequest.swift */; };
 		FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB935A262424D8A300352DA3 /* NSManagedObject+Extension.swift */; };
 		FB9C419A2430E403004526A6 /* CreateGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C41992430E403004526A6 /* CreateGameRequest.swift */; };
 		FB9C41A1243111E7004526A6 /* ModalFilterView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB9C419C243111E7004526A6 /* ModalFilterView.storyboard */; };
@@ -216,6 +233,22 @@
 		FB31D5C4241EB05200B16558 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		FB31D5C8241EB08800B16558 /* RegisterDataModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataModelRequest.swift; sourceTree = "<group>"; };
 		FB31D5CA241EB17300B16558 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		FB323D19243B5EAC00E1CA8A /* ModalSongView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModalSongView.storyboard; sourceTree = "<group>"; };
+		FB323D1A243B5EAC00E1CA8A /* ModalSongRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSongRouter.swift; sourceTree = "<group>"; };
+		FB323D1B243B5EAC00E1CA8A /* ModalSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSongViewController.swift; sourceTree = "<group>"; };
+		FB323D1C243B5EAC00E1CA8A /* ModalSongApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSongApiClient.swift; sourceTree = "<group>"; };
+		FB323D1D243B5EAC00E1CA8A /* ModalSongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSongViewModel.swift; sourceTree = "<group>"; };
+		FB323D1E243B5EAC00E1CA8A /* ModalSongDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSongDataManager.swift; sourceTree = "<group>"; };
+		FB323D29243B65D700E1CA8A /* BaseModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModalViewController.swift; sourceTree = "<group>"; };
+		FB323D32243BD6C200E1CA8A /* SongResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResponse.swift; sourceTree = "<group>"; };
+		FB323D35243BD99200E1CA8A /* CreateSongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSongRequest.swift; sourceTree = "<group>"; };
+		FB323D3A243BE86E00E1CA8A /* Song+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FB323D3B243BE86E00E1CA8A /* Song+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FB323D3E243BE93E00E1CA8A /* Game+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FB323D3F243BE93E00E1CA8A /* Game+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FB323D42243BE96700E1CA8A /* Song+SongResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+SongResponse.swift"; sourceTree = "<group>"; };
+		FB323D44243BE97500E1CA8A /* SongRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRepository.swift; sourceTree = "<group>"; };
+		FB323D46243BEF2F00E1CA8A /* GetGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGameRequest.swift; sourceTree = "<group>"; };
 		FB448DD7241FE87F008ACE69 /* UserProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfileView.storyboard; sourceTree = "<group>"; };
 		FB448DD8241FE87F008ACE69 /* UserProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRouter.swift; sourceTree = "<group>"; };
 		FB448DD9241FE87F008ACE69 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
@@ -276,8 +309,6 @@
 		FB8D50B92438DB1B0037BA52 /* SagaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaResponse.swift; sourceTree = "<group>"; };
 		FB8D50BC2438E1410037BA52 /* Saga+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Saga+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FB8D50BD2438E1410037BA52 /* Saga+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Saga+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FB8D50C02438E1F50037BA52 /* Game+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FB8D50C12438E1F50037BA52 /* Game+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FB8D50C42438E3740037BA52 /* Saga+SagaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Saga+SagaResponse.swift"; sourceTree = "<group>"; };
 		FB8D50C62438E3860037BA52 /* SagaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaRepository.swift; sourceTree = "<group>"; };
 		FB8D50C9243948A70037BA52 /* SagaTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaTableViewHeaderView.swift; sourceTree = "<group>"; };
@@ -287,6 +318,9 @@
 		FB8E2231242D56E100B043FB /* Platform+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Platform+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FB8E2234242D570800B043FB /* State+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FB8E2235242D570800B043FB /* State+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FB8EA1FB243C80A7008CC3C1 /* SongDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetail.swift; sourceTree = "<group>"; };
+		FB8EA1FD243C80B1008CC3C1 /* SongDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongDetail.xib; sourceTree = "<group>"; };
+		FB8EA201243CA6CC008CC3C1 /* DeleteSongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSongRequest.swift; sourceTree = "<group>"; };
 		FB935A262424D8A300352DA3 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
 		FB9C41992430E403004526A6 /* CreateGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameRequest.swift; sourceTree = "<group>"; };
 		FB9C419C243111E7004526A6 /* ModalFilterView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModalFilterView.storyboard; sourceTree = "<group>"; };
@@ -428,6 +462,7 @@
 				FB62877C241E3C2600F5FF6E /* Button */,
 				FB50FAFD242FECE9009E6173 /* Label */,
 				FB1DFEB42416BADB000CAD7B /* LoadingScreen */,
+				FB8EA1FA243C806A008CC3C1 /* SongDetail */,
 				FB50FB0024300EBF009E6173 /* TextView */,
 			);
 			path = View;
@@ -467,6 +502,7 @@
 				FB31D5C2241EB02D00B16558 /* Register */,
 				FBEE25CC243A38D00092F73F /* Saga */,
 				FB8D50B52438DAD50037BA52 /* Sagas */,
+				FB323D34243BD97D00E1CA8A /* Song */,
 				FBF19EBD24253A4D00E836FD /* States */,
 				FB448DE4242003CE008ACE69 /* UpdatePassword */,
 			);
@@ -542,6 +578,75 @@
 				FB1DFEC02416BEA5000CAD7B /* ErrorResponse.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		FB323D17243B5DE800E1CA8A /* ModalSong */ = {
+			isa = PBXGroup;
+			children = (
+				FB323D26243B5EC500E1CA8A /* APIClient */,
+				FB323D1E243B5EAC00E1CA8A /* ModalSongDataManager.swift */,
+				FB323D1A243B5EAC00E1CA8A /* ModalSongRouter.swift */,
+				FB323D1B243B5EAC00E1CA8A /* ModalSongViewController.swift */,
+				FB323D1D243B5EAC00E1CA8A /* ModalSongViewModel.swift */,
+				FB323D25243B5EBF00E1CA8A /* View */,
+			);
+			path = ModalSong;
+			sourceTree = "<group>";
+		};
+		FB323D18243B5DF600E1CA8A /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				FB9C419B24311178004526A6 /* ModalFilter */,
+				FBEE25D3243A68010092F73F /* ModalGames */,
+				FB323D17243B5DE800E1CA8A /* ModalSong */,
+				FBC1F63A242ABB8E003A87EA /* ModalSyncApp */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		FB323D25243B5EBF00E1CA8A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB323D19243B5EAC00E1CA8A /* ModalSongView.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB323D26243B5EC500E1CA8A /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				FB323D1C243B5EAC00E1CA8A /* ModalSongApiClient.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		FB323D31243BD6B400E1CA8A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB323D32243BD6C200E1CA8A /* SongResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB323D34243BD97D00E1CA8A /* Song */ = {
+			isa = PBXGroup;
+			children = (
+				FB323D35243BD99200E1CA8A /* CreateSongRequest.swift */,
+				FB8EA201243CA6CC008CC3C1 /* DeleteSongRequest.swift */,
+				FB323D31243BD6B400E1CA8A /* Model */,
+			);
+			path = Song;
+			sourceTree = "<group>";
+		};
+		FB323D39243BE79A00E1CA8A /* Song */ = {
+			isa = PBXGroup;
+			children = (
+				FB323D3A243BE86E00E1CA8A /* Song+CoreDataClass.swift */,
+				FB323D3B243BE86E00E1CA8A /* Song+CoreDataProperties.swift */,
+				FB323D42243BE96700E1CA8A /* Song+SongResponse.swift */,
+				FB323D44243BE97500E1CA8A /* SongRepository.swift */,
+			);
+			path = Song;
 			sourceTree = "<group>";
 		};
 		FB448DCA241FE136008ACE69 /* APIClient */ = {
@@ -746,6 +851,7 @@
 			children = (
 				FB9C41992430E403004526A6 /* CreateGameRequest.swift */,
 				FB50FB0524303755009E6173 /* DeleteGameRequest.swift */,
+				FB323D46243BEF2F00E1CA8A /* GetGameRequest.swift */,
 				FB50FAFB242F90BB009E6173 /* SetGameRequest.swift */,
 			);
 			path = Game;
@@ -806,6 +912,7 @@
 				FBF19ECD242551C000E836FD /* Genre */,
 				FBF19ED6242553DA00E836FD /* Platform */,
 				FB8D50BB2438E0280037BA52 /* Saga */,
+				FB323D39243BE79A00E1CA8A /* Song */,
 				FBF19EDF2425553400E836FD /* State */,
 			);
 			path = Entities;
@@ -909,6 +1016,15 @@
 				FB8D50D024394FFA0037BA52 /* SagaHeaderViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FB8EA1FA243C806A008CC3C1 /* SongDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FB8EA1FB243C80A7008CC3C1 /* SongDetail.swift */,
+				FB8EA1FD243C80B1008CC3C1 /* SongDetail.xib */,
+			);
+			path = SongDetail;
 			sourceTree = "<group>";
 		};
 		FB935A252424D88A00352DA3 /* NSManagedObject */ = {
@@ -1028,9 +1144,7 @@
 				FBA548302415806200C23DB3 /* Base */,
 				FBB1A368241C10DB00E91579 /* Constants */,
 				FBA5483B2415832B00C23DB3 /* Extensions */,
-				FB9C419B24311178004526A6 /* ModalFilter */,
-				FBEE25D3243A68010092F73F /* ModalGames */,
-				FBC1F63A242ABB8E003A87EA /* ModalSyncApp */,
+				FB323D18243B5DF600E1CA8A /* Modals */,
 				FBA5482924157DC600C23DB3 /* Persistance */,
 				FBB1A373241C4AB000E91579 /* UserManager */,
 				FB1DFEB32416BAD1000CAD7B /* View */,
@@ -1069,6 +1183,7 @@
 			isa = PBXGroup;
 			children = (
 				FBA548332415809000C23DB3 /* BaseDataManager.swift */,
+				FB323D29243B65D700E1CA8A /* BaseModalViewController.swift */,
 				FBA54835241580B600C23DB3 /* BaseRouter.swift */,
 				FBA54837241580C300C23DB3 /* BaseViewController.swift */,
 				FBA54839241580D400C23DB3 /* BaseViewModel.swift */,
@@ -1384,8 +1499,8 @@
 		FBF19EF224259AC800E836FD /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				FB8D50C02438E1F50037BA52 /* Game+CoreDataClass.swift */,
-				FB8D50C12438E1F50037BA52 /* Game+CoreDataProperties.swift */,
+				FB323D3E243BE93E00E1CA8A /* Game+CoreDataClass.swift */,
+				FB323D3F243BE93E00E1CA8A /* Game+CoreDataProperties.swift */,
 				FBF19EF324259AEB00E836FD /* Game+GameResponse.swift */,
 				FBF19EF524259AF400E836FD /* GameRepository.swift */,
 			);
@@ -1534,6 +1649,7 @@
 				FB463C90241D0C29006F1A12 /* RankingView.storyboard in Resources */,
 				FBEE25C4243A0D050092F73F /* SagaDetailView.storyboard in Resources */,
 				FB448DDD241FE87F008ACE69 /* UserProfileView.storyboard in Resources */,
+				FB323D1F243B5EAC00E1CA8A /* ModalSongView.storyboard in Resources */,
 				FB463C85241D0BBF006F1A12 /* SagasView.storyboard in Resources */,
 				FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */,
 				FB6E00EB242EACC300448CD3 /* DropdownButton.xib in Resources */,
@@ -1542,6 +1658,7 @@
 				FB463C5E241CFE53006F1A12 /* LoginView.storyboard in Resources */,
 				FB50FB0424300EF1009E6173 /* UnderlinedTextView.xib in Resources */,
 				FBF6C52524267CA300FC5469 /* GameTableViewCell.xib in Resources */,
+				FB8EA1FE243C80B1008CC3C1 /* SongDetail.xib in Resources */,
 				FBEE25D9243A68280092F73F /* ModalGamesView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1612,6 +1729,7 @@
 				FBF19EDC2425540300E836FD /* Platform+PlatformResponse.swift in Sources */,
 				FB463C94241D0C29006F1A12 /* RankingDataManager.swift in Sources */,
 				FBF19ECF242551D500E836FD /* GenreRepository.swift in Sources */,
+				FB323D20243B5EAC00E1CA8A /* ModalSongRouter.swift in Sources */,
 				FB463CA9241D6AA5006F1A12 /* Encodable+Extension.swift in Sources */,
 				FB31D5BC241E7DF800B16558 /* RegisterViewController.swift in Sources */,
 				FBF19EC624254A0A00E836FD /* Format+CoreDataClass.swift in Sources */,
@@ -1630,7 +1748,9 @@
 				FBA5483D2415834000C23DB3 /* UIViewController+Extension.swift in Sources */,
 				FB463C8A241D0BBF006F1A12 /* SagasDataManager.swift in Sources */,
 				FB463C68241D0678006F1A12 /* MainTabBarController.swift in Sources */,
+				FB323D21243B5EAC00E1CA8A /* ModalSongViewController.swift in Sources */,
 				FB8D50D124394FFA0037BA52 /* SagaHeaderViewModel.swift in Sources */,
+				FB323D24243B5EAC00E1CA8A /* ModalSongDataManager.swift in Sources */,
 				FB463C62241CFE53006F1A12 /* LoginViewModel.swift in Sources */,
 				FBF6C52724267CB700FC5469 /* GameCellViewModel.swift in Sources */,
 				FB9C41A2243111E7004526A6 /* ModalFilterRouter.swift in Sources */,
@@ -1639,6 +1759,7 @@
 				FBF19ED42425522200E836FD /* Genre+CoreDataClass.swift in Sources */,
 				FBEE25C9243A0D050092F73F /* SagaDetailDataManager.swift in Sources */,
 				FB31D5BD241E7DF800B16558 /* RegisterApiClient.swift in Sources */,
+				FB323D3D243BE86E00E1CA8A /* Song+CoreDataProperties.swift in Sources */,
 				FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */,
 				FBF19EE12425554300E836FD /* StateRepository.swift in Sources */,
 				FBF19EDE2425540E00E836FD /* PlatformRepository.swift in Sources */,
@@ -1650,6 +1771,7 @@
 				FBF19EF1242596A500E836FD /* LogoutRequest.swift in Sources */,
 				FB448DE1241FE87F008ACE69 /* UserProfileViewModel.swift in Sources */,
 				FB9C419A2430E403004526A6 /* CreateGameRequest.swift in Sources */,
+				FB323D36243BD99200E1CA8A /* CreateSongRequest.swift in Sources */,
 				FB1DFEC12416BEA5000CAD7B /* ErrorResponse.swift in Sources */,
 				FBEE25D2243A61520092F73F /* DeleteSagaRequest.swift in Sources */,
 				FBF19EED2425928400E836FD /* GameResponse.swift in Sources */,
@@ -1657,6 +1779,7 @@
 				FB8D50B82438DB040037BA52 /* GetSagasRequest.swift in Sources */,
 				FBEE25DB243A68280092F73F /* ModalGamesViewController.swift in Sources */,
 				FBEE25C8243A0D050092F73F /* SagaDetailViewModel.swift in Sources */,
+				FB323D47243BEF2F00E1CA8A /* GetGameRequest.swift in Sources */,
 				FBEE25C6243A0D050092F73F /* SagaDetailViewController.swift in Sources */,
 				FBF19EF624259AF400E836FD /* GameRepository.swift in Sources */,
 				FB463C87241D0BBF006F1A12 /* SagasViewController.swift in Sources */,
@@ -1664,6 +1787,7 @@
 				FB8E2236242D570800B043FB /* State+CoreDataProperties.swift in Sources */,
 				FBB1A370241C273200E91579 /* AuthData.swift in Sources */,
 				FB463C61241CFE53006F1A12 /* LoginApiClient.swift in Sources */,
+				FB8EA202243CA6CC008CC3C1 /* DeleteSongRequest.swift in Sources */,
 				FB9C41A3243111E7004526A6 /* ModalFilterViewController.swift in Sources */,
 				FB463C74241D0A48006F1A12 /* GamesRouter.swift in Sources */,
 				FB7EC32B242BCAD50022C447 /* GameDetailApiClient.swift in Sources */,
@@ -1673,10 +1797,10 @@
 				FB8E2233242D56E100B043FB /* Platform+CoreDataProperties.swift in Sources */,
 				FB463C60241CFE53006F1A12 /* LoginViewController.swift in Sources */,
 				FBA547F224157AE900C23DB3 /* AppDelegate.swift in Sources */,
-				FB8D50C22438E1F50037BA52 /* Game+CoreDataClass.swift in Sources */,
 				FB9C41A824314034004526A6 /* FilterActionButton.swift in Sources */,
 				FB62877E241E3D2800F5FF6E /* ActionButton.swift in Sources */,
 				FBA548342415809000C23DB3 /* BaseDataManager.swift in Sources */,
+				FB8EA1FC243C80A7008CC3C1 /* SongDetail.swift in Sources */,
 				FBF19EC924254BDE00E836FD /* Format+FormatResponse.swift in Sources */,
 				FB463C63241CFE53006F1A12 /* LoginDataManager.swift in Sources */,
 				FB463C91241D0C29006F1A12 /* RankingRouter.swift in Sources */,
@@ -1685,6 +1809,7 @@
 				FB448DEB24200410008ACE69 /* UpdatePasswordDataModelRequest.swift in Sources */,
 				FB8D50C72438E3860037BA52 /* SagaRepository.swift in Sources */,
 				FBF19EEA2425927600E836FD /* GetGamesRequest.swift in Sources */,
+				FB323D41243BE93E00E1CA8A /* Game+CoreDataProperties.swift in Sources */,
 				FB50FB0224300EE6009E6173 /* UnderlinedTextView.swift in Sources */,
 				FBF19EBA2425397000E836FD /* GetPlatformsRequest.swift in Sources */,
 				FB9C41A5243111E7004526A6 /* ModalFilterDataManager.swift in Sources */,
@@ -1695,6 +1820,7 @@
 				FB7EC329242BCAD50022C447 /* GameDetailRouter.swift in Sources */,
 				FB31D5C9241EB08800B16558 /* RegisterDataModelRequest.swift in Sources */,
 				FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */,
+				FB323D45243BE97500E1CA8A /* SongRepository.swift in Sources */,
 				FB8D50CA243948A70037BA52 /* SagaTableViewHeaderView.swift in Sources */,
 				FBF19ED52425522200E836FD /* Genre+CoreDataProperties.swift in Sources */,
 				FB6E00E9242EACBB00448CD3 /* DropdownButton.swift in Sources */,
@@ -1708,7 +1834,6 @@
 				FB463C88241D0BBF006F1A12 /* SagasApiClient.swift in Sources */,
 				FBF19EAC242536A600E836FD /* GetFormatsRequest.swift in Sources */,
 				FBE79E2C24314A1F0053C6FB /* RoundLabelButton.swift in Sources */,
-				FB8D50C32438E1F50037BA52 /* Game+CoreDataProperties.swift in Sources */,
 				FB448DDF241FE87F008ACE69 /* UserProfileViewController.swift in Sources */,
 				FB463C5F241CFE53006F1A12 /* LoginRouter.swift in Sources */,
 				FB8D50BA2438DB1B0037BA52 /* SagaResponse.swift in Sources */,
@@ -1727,6 +1852,7 @@
 				FBDEF512242921CC0076F832 /* UIFont+Extension.swift in Sources */,
 				FB7EC32C242BCAD50022C447 /* GameDetailViewModel.swift in Sources */,
 				FB6E00EE242ECDBB00448CD3 /* Date+Extension.swift in Sources */,
+				FB323D23243B5EAC00E1CA8A /* ModalSongViewModel.swift in Sources */,
 				FB448DE6242003EF008ACE69 /* UpdatePasswordRequest.swift in Sources */,
 				FB31D5BF241E7DF800B16558 /* RegisterDataManager.swift in Sources */,
 				FB463C93241D0C29006F1A12 /* RankingViewModel.swift in Sources */,
@@ -1735,21 +1861,27 @@
 				FB448DEE242029CF008ACE69 /* DeleteUserRequest.swift in Sources */,
 				FB463C78241D0A48006F1A12 /* GamesDataManager.swift in Sources */,
 				FBF19EC224253A7400E836FD /* GetStatesRequest.swift in Sources */,
+				FB323D22243B5EAC00E1CA8A /* ModalSongApiClient.swift in Sources */,
 				FBF19EF424259AEB00E836FD /* Game+GameResponse.swift in Sources */,
 				FBEE25D0243A416B0092F73F /* CreateSagaRequest.swift in Sources */,
 				FB7EC32A242BCAD50022C447 /* GameDetailViewController.swift in Sources */,
 				FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */,
 				FBB1A36A241C10E800E91579 /* Constants.swift in Sources */,
 				FBA5482B24157E4800C23DB3 /* CoreDataStack.swift in Sources */,
+				FB323D43243BE96700E1CA8A /* Song+SongResponse.swift in Sources */,
 				FBEE25CE243A39650092F73F /* SetSagaRequest.swift in Sources */,
 				FB1DFEB62416BAE8000CAD7B /* LoadingScreen.swift in Sources */,
+				FB323D3C243BE86E00E1CA8A /* Song+CoreDataClass.swift in Sources */,
 				FBF19ECB24254C2300E836FD /* FormatRepository.swift in Sources */,
 				FBC1F644242ABBCF003A87EA /* ModalSyncAppDataManager.swift in Sources */,
 				FB463CA4241D65DB006F1A12 /* LoginResponse.swift in Sources */,
+				FB323D40243BE93E00E1CA8A /* Game+CoreDataClass.swift in Sources */,
 				FBEE25DA243A68280092F73F /* ModalGamesRouter.swift in Sources */,
 				FB50FAFF242FED0D009E6173 /* LocalizedLabel.swift in Sources */,
+				FB323D2A243B65D700E1CA8A /* BaseModalViewController.swift in Sources */,
 				FB463C92241D0C29006F1A12 /* RankingViewController.swift in Sources */,
 				FB7DB5872424430B0040FC84 /* ModelHandlerProtocol.swift in Sources */,
+				FB323D33243BD6C200E1CA8A /* SongResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

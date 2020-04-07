@@ -61,6 +61,9 @@ class GameDetailViewController: BaseViewController {
     @IBOutlet weak var tvObservations: UnderlinedTextView!
     @IBOutlet weak var tvSaga: UnderlinedTextView!
     
+    @IBOutlet weak var btAddSong: UIButton!
+    @IBOutlet weak var stvSongs: UIStackView!
+    
     // MARK: - Private properties
     
     private var viewModel:GameDetailViewModelProtocol?
@@ -212,6 +215,10 @@ class GameDetailViewController: BaseViewController {
         btFinished.isSelected = sender == btFinished
     }
     
+    @IBAction func addSong(_ sender: Any) {
+        viewModel?.showAddSongModal()
+    }
+    
     @IBAction func deleteGame(_ sender: UIButton) {
         
         showConfirmationDialog(message: "GAME_DETAIL_DELETE_CONFIRMATION".localized(), handler: {
@@ -281,6 +288,18 @@ class GameDetailViewController: BaseViewController {
         lbScore.attributedText = NSAttributedString(string: "\(rating)",
                                                     attributes: [.font : UIFont.roman16,
                                                                  .foregroundColor: Color.color2])
+    }
+    
+    private func getSongDetail(song: SongResponse) -> SongDetail {
+        
+        let songDetail = SongDetail()
+        songDetail.song = song
+        songDetail.removeHandler = removeSong
+        return songDetail
+    }
+    
+    private func removeSong(songId: Int64) {
+        viewModel?.removeSong(songId: songId)
     }
 }
 
@@ -358,6 +377,14 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         tvObservations.text = game?.observations
         tvSaga.text = game?.saga?.name
         
+        stvSongs.removeSubviews()
+        if let songs = game?.songs {
+            for song in songs {
+                let songDetail = getSongDetail(song: song)
+                stvSongs.addArrangedSubview(songDetail)
+            }
+        }
+        
         view.layoutIfNeeded()
     }
     
@@ -385,6 +412,16 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         tvLoanedTo.isEnabled = enable
         tvVideoUrl.isEnabled = enable
         tvObservations.isEnabled = enable
+        
+        if currentGame != nil {
+            btAddSong.isHidden = !enable
+        }
+        
+        for subview in stvSongs.subviews {
+            if let songDetail = subview as? SongDetail {
+                songDetail.isEnabled = enable
+            }
+        }
     }
     
     func getGameData() -> GameResponse {
@@ -410,6 +447,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         let loanedTo = tvLoanedTo.text
         let observations = tvObservations.text
         let saga = currentGame?.saga
+        let songs = currentGame?.songs ?? SongsResponse()
         
         let game = GameResponse(id: id,
                                 name: name,
@@ -431,7 +469,8 @@ extension GameDetailViewController:  GameDetailViewProtocol {
                                 videoUrl: videoUrl,
                                 loanedTo: loanedTo,
                                 observations: observations,
-                                saga: saga)
+                                saga: saga,
+                                songs: songs)
         
         return game
     }

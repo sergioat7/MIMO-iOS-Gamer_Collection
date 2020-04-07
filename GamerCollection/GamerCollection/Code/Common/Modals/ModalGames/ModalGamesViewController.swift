@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ModalGamesViewProtocol: BaseViewProtocol {
+protocol ModalGamesViewProtocol: BaseModalViewProtocol {
     /**
      * Add here your methods for communication VIEW_MODEL -> VIEW
      */
@@ -21,7 +21,7 @@ protocol ModalGamesConfigurableViewProtocol: class {
     
 }
 
-class ModalGamesViewController: BaseViewController {
+class ModalGamesViewController: BaseModalViewController {
     
     // MARK: - Public properties
     
@@ -38,23 +38,14 @@ class ModalGamesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .clear
         configViews()
         viewModel?.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-            self.animatedDarkenBackground()
-        }
     }
     
     // MARK: - Actions
     
     @IBAction func cancel(_ sender: Any) {
-        closePopup()
+        closePopup(success: {})
     }
     
     @IBAction func save(_ sender: Any) {
@@ -70,7 +61,7 @@ class ModalGamesViewController: BaseViewController {
         }
         
         let handler = viewModel?.getHandler()
-        closePopup(gameIds: selectedGameIds, handler: handler)
+        close(gameIds: selectedGameIds, handler: handler)
     }
     
     // MARK: - Overrides
@@ -91,27 +82,11 @@ class ModalGamesViewController: BaseViewController {
         tvGames.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameCell")
     }
     
-    private func animatedDarkenBackground() {
+    private func close(gameIds: [Int64], handler: (([Int64]?) -> Void)?) {
         
-        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-            self.view.backgroundColor = Color.color1Light
-        }, completion:nil)
-    }
-    
-    private func animatedClearBackground() {
-        
-        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-            self.view.backgroundColor = UIColor.clear
-        }, completion:nil)
-    }
-    
-    private func closePopup(gameIds: [Int64]? = nil, handler: (([Int64]?) -> Void)? = nil) {
-        
-        animatedClearBackground()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.hidePopup()
+        closePopup(success: {
             handler?(gameIds)
-        }
+        })
     }
 }
 
