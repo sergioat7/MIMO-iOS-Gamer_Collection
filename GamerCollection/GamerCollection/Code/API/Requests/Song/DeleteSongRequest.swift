@@ -1,43 +1,39 @@
 //
-//  SetSongRequest.swift
+//  DeleteSongRequest.swift
 //  GamerCollection
 //
-//  Created by Sergio Aragonés on 06/04/2020.
+//  Created by Sergio Aragonés on 07/04/2020.
 //  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-class SetSongRequest: APIRequest {
+class DeleteSongRequest: APIRequest {
     
-    public typealias Response = SongResponse
+    public typealias Response = EmptyResponse
     
     public typealias Error = ErrorResponse
         
     public var resourceName: String {
-        return "/song"
+        return "/songs"
     }
     
     public var method: HTTPMethod {
-        return HTTPMethod.patch
+        return HTTPMethod.delete
     }
     
     public var resourcePath: String
     
-    public var body: Parameters? {
-        return song.dictionary
-    }
+    public var body: Parameters?
     
     public var interceptor: RequestInterceptor?
-    
-    private var song: SongResponse
             
     public init(token: String,
-                song: SongResponse) {
+                gameId: Int64,
+                songId: Int64) {
         let authorizationHandler = AuthorizationHandler(token: token)
         self.interceptor = authorizationHandler
-        self.song = song
-        self.resourcePath = String(format: "/%ld", song.id)
+        self.resourcePath = String(format: "/%ld/%ld", gameId, songId)
     }
 }

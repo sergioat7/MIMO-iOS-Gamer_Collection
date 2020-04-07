@@ -35,7 +35,6 @@
 		FB323D2A243B65D700E1CA8A /* BaseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D29243B65D700E1CA8A /* BaseModalViewController.swift */; };
 		FB323D33243BD6C200E1CA8A /* SongResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D32243BD6C200E1CA8A /* SongResponse.swift */; };
 		FB323D36243BD99200E1CA8A /* CreateSongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D35243BD99200E1CA8A /* CreateSongRequest.swift */; };
-		FB323D38243BDBA100E1CA8A /* SetSongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D37243BDBA100E1CA8A /* SetSongRequest.swift */; };
 		FB323D3C243BE86E00E1CA8A /* Song+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D3A243BE86E00E1CA8A /* Song+CoreDataClass.swift */; };
 		FB323D3D243BE86E00E1CA8A /* Song+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D3B243BE86E00E1CA8A /* Song+CoreDataProperties.swift */; };
 		FB323D40243BE93E00E1CA8A /* Game+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB323D3E243BE93E00E1CA8A /* Game+CoreDataClass.swift */; };
@@ -114,6 +113,7 @@
 		FB8E2237242D570800B043FB /* State+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2235242D570800B043FB /* State+CoreDataClass.swift */; };
 		FB8EA1FC243C80A7008CC3C1 /* SongDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EA1FB243C80A7008CC3C1 /* SongDetail.swift */; };
 		FB8EA1FE243C80B1008CC3C1 /* SongDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8EA1FD243C80B1008CC3C1 /* SongDetail.xib */; };
+		FB8EA202243CA6CC008CC3C1 /* DeleteSongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EA201243CA6CC008CC3C1 /* DeleteSongRequest.swift */; };
 		FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB935A262424D8A300352DA3 /* NSManagedObject+Extension.swift */; };
 		FB9C419A2430E403004526A6 /* CreateGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C41992430E403004526A6 /* CreateGameRequest.swift */; };
 		FB9C41A1243111E7004526A6 /* ModalFilterView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB9C419C243111E7004526A6 /* ModalFilterView.storyboard */; };
@@ -242,7 +242,6 @@
 		FB323D29243B65D700E1CA8A /* BaseModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModalViewController.swift; sourceTree = "<group>"; };
 		FB323D32243BD6C200E1CA8A /* SongResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResponse.swift; sourceTree = "<group>"; };
 		FB323D35243BD99200E1CA8A /* CreateSongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSongRequest.swift; sourceTree = "<group>"; };
-		FB323D37243BDBA100E1CA8A /* SetSongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSongRequest.swift; sourceTree = "<group>"; };
 		FB323D3A243BE86E00E1CA8A /* Song+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FB323D3B243BE86E00E1CA8A /* Song+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FB323D3E243BE93E00E1CA8A /* Game+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -321,6 +320,7 @@
 		FB8E2235242D570800B043FB /* State+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FB8EA1FB243C80A7008CC3C1 /* SongDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetail.swift; sourceTree = "<group>"; };
 		FB8EA1FD243C80B1008CC3C1 /* SongDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongDetail.xib; sourceTree = "<group>"; };
+		FB8EA201243CA6CC008CC3C1 /* DeleteSongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSongRequest.swift; sourceTree = "<group>"; };
 		FB935A262424D8A300352DA3 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
 		FB9C41992430E403004526A6 /* CreateGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameRequest.swift; sourceTree = "<group>"; };
 		FB9C419C243111E7004526A6 /* ModalFilterView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModalFilterView.storyboard; sourceTree = "<group>"; };
@@ -632,7 +632,7 @@
 			isa = PBXGroup;
 			children = (
 				FB323D35243BD99200E1CA8A /* CreateSongRequest.swift */,
-				FB323D37243BDBA100E1CA8A /* SetSongRequest.swift */,
+				FB8EA201243CA6CC008CC3C1 /* DeleteSongRequest.swift */,
 				FB323D31243BD6B400E1CA8A /* Model */,
 			);
 			path = Song;
@@ -1787,6 +1787,7 @@
 				FB8E2236242D570800B043FB /* State+CoreDataProperties.swift in Sources */,
 				FBB1A370241C273200E91579 /* AuthData.swift in Sources */,
 				FB463C61241CFE53006F1A12 /* LoginApiClient.swift in Sources */,
+				FB8EA202243CA6CC008CC3C1 /* DeleteSongRequest.swift in Sources */,
 				FB9C41A3243111E7004526A6 /* ModalFilterViewController.swift in Sources */,
 				FB463C74241D0A48006F1A12 /* GamesRouter.swift in Sources */,
 				FB7EC32B242BCAD50022C447 /* GameDetailApiClient.swift in Sources */,
@@ -1864,7 +1865,6 @@
 				FBF19EF424259AEB00E836FD /* Game+GameResponse.swift in Sources */,
 				FBEE25D0243A416B0092F73F /* CreateSagaRequest.swift in Sources */,
 				FB7EC32A242BCAD50022C447 /* GameDetailViewController.swift in Sources */,
-				FB323D38243BDBA100E1CA8A /* SetSongRequest.swift in Sources */,
 				FB935A272424D8A300352DA3 /* NSManagedObject+Extension.swift in Sources */,
 				FBB1A36A241C10E800E91579 /* Constants.swift in Sources */,
 				FBA5482B24157E4800C23DB3 /* CoreDataStack.swift in Sources */,
