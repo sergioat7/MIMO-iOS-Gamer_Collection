@@ -16,6 +16,7 @@ protocol GamesViewModelProtocol: class {
     func viewWillAppear()
     func getGameCellViewModels() -> [GameCellViewModel]
     func filterGamesByState(showPending: Bool, showInProgress: Bool, showFinished: Bool)
+    func sortGames(sortKey: String, ascending: Bool)
 }
 
 class GamesViewModel: BaseViewModel {
@@ -30,6 +31,8 @@ class GamesViewModel: BaseViewModel {
     private var gameCellViewModels: [GameCellViewModel] = []
     private var state: String?
     private var filters: FiltersModel?
+    private var sortKey = "name"
+    private var ascending = true
     
     // MARK: - Initialization
     
@@ -48,10 +51,15 @@ class GamesViewModel: BaseViewModel {
         view?.showError(message: error.error, handler: nil)
     }
     
-    private func getContent(state: String?, filters: FiltersModel?, success: @escaping ([GameCellViewModel]) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+    private func getContent(state: String?,
+                            filters: FiltersModel?,
+                            sortKey: String,
+                            ascending: Bool,
+                            success: @escaping ([GameCellViewModel]) -> Void,
+                            failure: @escaping (ErrorResponse) -> Void) {
         
         view?.showLoading()
-        dataManager.getGames(state: state, filters: filters, success: { games in
+        dataManager.getGames(state: state, filters: filters, sortKey: sortKey, ascending: ascending, success: { games in
             self.dataManager.getPlatforms(success: { platforms in
                 self.dataManager.getStates(success: { states in
                     
@@ -83,12 +91,16 @@ class GamesViewModel: BaseViewModel {
     private func applyFilters(filters: FiltersModel?) {
         
         self.filters = filters
-        getContent(state: state, filters: filters, success: { gameCellViewModels in
-            
-            self.gameCellViewModels = gameCellViewModels
-            self.view?.showGames()
-            self.view?.setGamesCount()
-            self.view?.hideLoading()
+        getContent(state: state,
+                   filters: filters,
+                   sortKey: sortKey,
+                   ascending: ascending,
+                   success: { gameCellViewModels in
+                    
+                    self.gameCellViewModels = gameCellViewModels
+                    self.view?.showGames()
+                    self.view?.setGamesCount()
+                    self.view?.hideLoading()
         }, failure: { error in
             self.manageError(error: error)
         })
@@ -106,12 +118,16 @@ extension GamesViewModel: GamesViewModelProtocol {
     
     func viewWillAppear() {
         
-        getContent(state: nil, filters: nil, success: { gameCellViewModels in
-            
-            self.gameCellViewModels = gameCellViewModels
-            self.view?.showGames()
-            self.view?.setGamesCount()
-            self.view?.hideLoading()
+        getContent(state: nil,
+                   filters: nil,
+                   sortKey: sortKey,
+                   ascending: ascending,
+                   success: { gameCellViewModels in
+                    
+                    self.gameCellViewModels = gameCellViewModels
+                    self.view?.showGames()
+                    self.view?.setGamesCount()
+                    self.view?.hideLoading()
         }, failure: { error in
             self.manageError(error: error)
         })
@@ -121,7 +137,9 @@ extension GamesViewModel: GamesViewModelProtocol {
         return gameCellViewModels
     }
     
-    func filterGamesByState(showPending: Bool, showInProgress: Bool, showFinished: Bool) {
+    func filterGamesByState(showPending: Bool,
+                            showInProgress: Bool,
+                            showFinished: Bool) {
         
         if showPending {
             state = Constants.State.pending
@@ -133,11 +151,33 @@ extension GamesViewModel: GamesViewModelProtocol {
             state = nil
         }
         
-        getContent(state: state, filters: filters, success: { gameCellViewModels in
-            
-            self.gameCellViewModels = gameCellViewModels
-            self.view?.showGames()
-            self.view?.hideLoading()
+        getContent(state: state,
+                   filters: filters,
+                   sortKey: sortKey,
+                   ascending: ascending,
+                   success: { gameCellViewModels in
+                    
+                    self.gameCellViewModels = gameCellViewModels
+                    self.view?.showGames()
+                    self.view?.hideLoading()
+        }, failure: { error in
+            self.manageError(error: error)
+        })
+    }
+    
+    func sortGames(sortKey: String, ascending: Bool) {
+        
+        self.sortKey = sortKey
+        self.ascending = ascending
+        getContent(state: state,
+                   filters: filters,
+                   sortKey: sortKey,
+                   ascending: ascending,
+                   success: { gameCellViewModels in
+                    
+                    self.gameCellViewModels = gameCellViewModels
+                    self.view?.showGames()
+                    self.view?.hideLoading()
         }, failure: { error in
             self.manageError(error: error)
         })

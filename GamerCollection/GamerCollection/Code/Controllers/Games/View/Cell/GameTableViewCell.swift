@@ -64,8 +64,8 @@ class GameTableViewCell: UITableViewCell {
             dateFormatter.dateStyle = .long
             dateFormatter.locale = Locale(identifier: Locale.current.languageCode ?? "en")
             dateFormatter.timeZone = NSTimeZone.local
+            dateFormatter.dateFormat = Locale.current.languageCode == "es" ? Constants.DateFormat.spanish : Constants.DateFormat.english
             
-            dateFormatter.dateFormat = "dd-MM-yyyy"
             let date = dateFormatter.date(from: releaseDate)
             
             if date?.compare(Date()) == .orderedDescending {

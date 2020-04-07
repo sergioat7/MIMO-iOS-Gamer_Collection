@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ActionSheetPicker_3_0
 
 protocol GamesViewProtocol: BaseViewProtocol {
     /**
@@ -56,8 +57,26 @@ class GamesViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func sortGames(_ sender: Any) {
-        print("sort")
-         //TODO sort games
+
+        let fieldKeys = ["name", "platform", "releaseDate", "purchaseDate", "price"]
+        let fieldValues = ["SORT_NAME".localized(), "SORT_PLATFORM".localized(), "SORT_RELEASE_DATE".localized(), "SORT_PURCHASE_DATE".localized(), "SORT_PRICE".localized()]
+        let orders = ["ASCENDING".localized(), "DESCENDING".localized()]
+        ActionSheetMultipleStringPicker.show(withTitle: "SORT_TITLE".localized(),
+                                             rows: [fieldValues, orders],
+                                             initialSelection: [0, 0],
+                                             doneBlock: { (_, indexes, _) in
+                                                
+                                                let fieldIndex = indexes?[0] as? Int ?? 0
+                                                let orderIndex = indexes?[1] as? Int ?? 0
+                                                let sortKey = fieldKeys[fieldIndex]
+                                                let ascending = orderIndex == 0
+                                                self.viewModel?.sortGames(sortKey: sortKey, ascending: ascending)
+                                                return
+                                             },
+                                             cancel: { _ in
+                                                return
+                                             },
+                                             origin: sender)
     }
     
     @IBAction func showPendingGames(_ sender: Any) {

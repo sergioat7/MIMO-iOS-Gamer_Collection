@@ -20,6 +20,8 @@
 "MIN" = "Min";
 "MAX" = "Max";
 "EMPTY_LIST" = "The list is empty";
+"ASCENDING" = "Ascending";
+"DESCENDING" = "Descending";
 
 // Login
 
@@ -133,6 +135,15 @@
 "MODAL_SONG_PLACEHOLDER_NAME" = "Add a name";
 "MODAL_SONG_PLACEHOLDER_SINGER" = "Add a singer";
 "MODAL_SONG_PLACEHOLDER_URL" = "Add a link";
+
+// Sort picker
+
+"SORT_TITLE" = "Select a field";
+"SORT_NAME" = "Name";
+"SORT_PLATFORM" = "Platform";
+"SORT_RELEASE_DATE" = "Release date";
+"SORT_PURCHASE_DATE" = "Purchase date";
+"SORT_PRICE" = "Price";
 
 // Errors
 

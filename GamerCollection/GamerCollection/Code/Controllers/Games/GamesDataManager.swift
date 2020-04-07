@@ -12,7 +12,7 @@ protocol GamesDataManagerProtocol: class {
     /**
      * Add here your methods for communication VIEW_MODEL -> DATA_MANAGER
      */
-    func getGames(state: String?, filters: FiltersModel?, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGames(state: String?, filters: FiltersModel?, sortKey: String, ascending: Bool, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getPlatforms(success: @escaping(PlatformsResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getStates(success: @escaping(StatesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
@@ -23,18 +23,15 @@ class GamesDataManager: BaseDataManager {
     
     // MARK: - Private variables
     
-    private let apiClient: GamesApiClientProtocol
     private let gameRepository: GameRepository
     private let platformRepository: PlatformRepository
     private let stateRepository: StateRepository
     
     // MARK: - Initialization
     
-    init(apiClient: GamesApiClientProtocol,
-         gameRepository: GameRepository,
+    init(gameRepository: GameRepository,
          platformRepository: PlatformRepository,
          stateRepository: StateRepository) {
-        self.apiClient = apiClient
         self.gameRepository = gameRepository
         self.platformRepository = platformRepository
         self.stateRepository = stateRepository
@@ -43,12 +40,12 @@ class GamesDataManager: BaseDataManager {
 
 extension GamesDataManager: GamesDataManagerProtocol {
     
-    func getGames(state: String?, filters: FiltersModel?, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+    func getGames(state: String?, filters: FiltersModel?, sortKey: String, ascending: Bool, success: @escaping(GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         
         let predicate = getFilterPredicates(state: state, filters: filters)
         
         var sortDescriptors = [NSSortDescriptor]()
-        sortDescriptors.append(NSSortDescriptor(key: "name", ascending: true))
+        sortDescriptors.append(NSSortDescriptor(key: sortKey, ascending: ascending))
         sortDescriptors.append(NSSortDescriptor(key: "id", ascending: true))
         
         gameRepository.execute(predicate: predicate,

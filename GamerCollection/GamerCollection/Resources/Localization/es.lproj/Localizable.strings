@@ -20,6 +20,8 @@
 "MIN" = "Min";
 "MAX" = "Max";
 "EMPTY_LIST" = "La lista está vacía";
+"ASCENDING" = "Ascendente";
+"DESCENDING" = "Descendente";
 
 // Login
 
@@ -133,6 +135,15 @@
 "MODAL_SONG_PLACEHOLDER_NAME" = "Añade un nombre";
 "MODAL_SONG_PLACEHOLDER_SINGER" = "Añade un artista";
 "MODAL_SONG_PLACEHOLDER_URL" = "Añade un enlace";
+
+// Sort picker
+
+"SORT_TITLE" = "Selecciona un campo";
+"SORT_NAME" = "Nombre";
+"SORT_PLATFORM" = "Plataforma";
+"SORT_RELEASE_DATE" = "Fecha de publicación";
+"SORT_PURCHASE_DATE" = "Fecha de compra";
+"SORT_PRICE" = "Precio";
 
 // Errors
 

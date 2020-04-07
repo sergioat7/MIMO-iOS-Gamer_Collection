@@ -61,7 +61,6 @@
 		FB463C73241D0A48006F1A12 /* GamesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB463C6D241D0A48006F1A12 /* GamesView.storyboard */; };
 		FB463C74241D0A48006F1A12 /* GamesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C6E241D0A48006F1A12 /* GamesRouter.swift */; };
 		FB463C75241D0A48006F1A12 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C6F241D0A48006F1A12 /* GamesViewController.swift */; };
-		FB463C76241D0A48006F1A12 /* GamesApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C70241D0A48006F1A12 /* GamesApiClient.swift */; };
 		FB463C77241D0A48006F1A12 /* GamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C71241D0A48006F1A12 /* GamesViewModel.swift */; };
 		FB463C78241D0A48006F1A12 /* GamesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C72241D0A48006F1A12 /* GamesDataManager.swift */; };
 		FB463C85241D0BBF006F1A12 /* SagasView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB463C7F241D0BBF006F1A12 /* SagasView.storyboard */; };
@@ -268,7 +267,6 @@
 		FB463C6D241D0A48006F1A12 /* GamesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GamesView.storyboard; sourceTree = "<group>"; };
 		FB463C6E241D0A48006F1A12 /* GamesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesRouter.swift; sourceTree = "<group>"; };
 		FB463C6F241D0A48006F1A12 /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
-		FB463C70241D0A48006F1A12 /* GamesApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesApiClient.swift; sourceTree = "<group>"; };
 		FB463C71241D0A48006F1A12 /* GamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewModel.swift; sourceTree = "<group>"; };
 		FB463C72241D0A48006F1A12 /* GamesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesDataManager.swift; sourceTree = "<group>"; };
 		FB463C7F241D0BBF006F1A12 /* SagasView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SagasView.storyboard; sourceTree = "<group>"; };
@@ -760,7 +758,6 @@
 		FB463C6C241D0908006F1A12 /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				FB463C7A241D0A52006F1A12 /* APIClient */,
 				FB463C72241D0A48006F1A12 /* GamesDataManager.swift */,
 				FB463C6E241D0A48006F1A12 /* GamesRouter.swift */,
 				FB463C6F241D0A48006F1A12 /* GamesViewController.swift */,
@@ -777,14 +774,6 @@
 				FB463C6D241D0A48006F1A12 /* GamesView.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		FB463C7A241D0A52006F1A12 /* APIClient */ = {
-			isa = PBXGroup;
-			children = (
-				FB463C70241D0A48006F1A12 /* GamesApiClient.swift */,
-			);
-			path = APIClient;
 			sourceTree = "<group>";
 		};
 		FB463C7B241D0A59006F1A12 /* View */ = {
@@ -1735,7 +1724,6 @@
 				FBF19EC624254A0A00E836FD /* Format+CoreDataClass.swift in Sources */,
 				FB7EC32D242BCAD50022C447 /* GameDetailDataManager.swift in Sources */,
 				FBB1A375241C4AC500E91579 /* UserManager.swift in Sources */,
-				FB463C76241D0A48006F1A12 /* GamesApiClient.swift in Sources */,
 				FBF19EC724254A0A00E836FD /* Format+CoreDataProperties.swift in Sources */,
 				FBC1F643242ABBCF003A87EA /* ModalSyncAppViewModel.swift in Sources */,
 				FBF19EBC2425397B00E836FD /* PlatformResponse.swift in Sources */,
