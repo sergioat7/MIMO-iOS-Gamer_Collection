@@ -10,7 +10,17 @@ import Foundation
 
 typealias FormatsResponse = [FormatResponse]
 
-struct FormatResponse: Codable {
+struct FormatResponse: Codable, Hashable {
     let id: String
     let name: String
+    
+    // MARK: - Hashable protocol
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: FormatResponse, rhs: FormatResponse) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

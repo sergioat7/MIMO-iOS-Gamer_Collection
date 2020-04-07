@@ -59,18 +59,27 @@ extension ModalSyncAppDataManager: ModalSyncAppDataManagerProtocol {
         
         loginApiClient.getFormats(success: { formats in
             
-            guard !formats.isEmpty else {
-                success(formats)
-                return
-            }
-            for (index, format) in formats.enumerated() {
-                self.formatRepository.update(item: format, success: { _ in
-                    
-                    if index == formats.count - 1 {
-                        success(formats)
-                    }
-                }, failure: failure)
-            }
+            self.formatRepository.getDisabledContent(enabledContent: formats,
+                                                     predicate: NSPredicate(value: true),
+                                                     success: { disableFormats in
+                                                        
+                                                        for disableFormat in disableFormats {
+                                                            self.formatRepository.delete(id: disableFormat.id, success: {}, failure: failure)
+                                                        }
+                                                        
+                                                        guard !formats.isEmpty else {
+                                                            success(formats)
+                                                            return
+                                                        }
+                                                        for (index, format) in formats.enumerated() {
+                                                            self.formatRepository.update(item: format, success: { _ in
+                                                                
+                                                                if index == formats.count - 1 {
+                                                                    success(formats)
+                                                                }
+                                                            }, failure: failure)
+                                                        }
+            }, failure: failure)
         }, failure: failure)
     }
     
