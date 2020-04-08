@@ -2,8 +2,8 @@
 //  UserProfileRouter.swift
 //  GamerCollection
 //
-//  Created by Sergio Aragonés on 14/03/2020.
-//  Copyright (c) 2020. All rights reserved.
+//  Created by Sergio Aragonés on 16/03/2020.
+//  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
 import UIKit
@@ -26,7 +26,26 @@ class UserProfileRouter: BaseRouter {
     }
     
     private var dataManager: UserProfileDataManagerProtocol {
-        return UserProfileDataManager()
+        return UserProfileDataManager(apiClient: apiClient,
+                                      userManager: userManager,
+                                      gameRepository: gameRepository,
+                                      sagaRepository: sagaRepository)
+    }
+    
+    private var apiClient: UserProfileApiClientProtocol {
+        return UserProfileApiClient(userManager: userManager)
+    }
+    
+    private var userManager: UserManager {
+        return UserManager()
+    }
+    
+    private var gameRepository: GameRepository {
+        return GameRepository()
+    }
+    
+    private var sagaRepository: SagaRepository {
+        return SagaRepository()
     }
     
     // MARK: - Initialization
@@ -44,8 +63,9 @@ class UserProfileRouter: BaseRouter {
         let tabBarController = UIViewController.getRootTabBarViewController()
         let viewController = view
         let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "profile"), tag: 0)//TODO set icons
+        navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "profile"), tag: 0)
         navigationController.tabBarItem.selectedImage = UIImage(named: "profile on")
+        navigationController.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         
         var viewControllers = tabBarController?.viewControllers ?? [UIViewController]()
         viewControllers.append(navigationController)

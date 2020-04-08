@@ -3,7 +3,7 @@
 //  GamerCollection
 //
 //  Created by Sergio Aragonés on 14/03/2020.
-//  Copyright (c) 2020. All rights reserved.
+//  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
 import UIKit
@@ -12,6 +12,9 @@ protocol LoginViewModelProtocol: class {
     /**
      * Add here your methods for communication VIEW -> VIEW_MODEL
      */
+    func viewDidLoad()
+    func login(username: String, password: String)
+    func register()
 }
 
 class LoginViewModel: BaseViewModel {
@@ -30,10 +33,85 @@ class LoginViewModel: BaseViewModel {
          dataManager: LoginDataManagerProtocol) {
         self.view = view
         self.dataManager = dataManager
+        super.init(view: view)
+    }
+    
+    // MARK: - Private functions
+    
+    private func manageError(error: ErrorResponse) {
+
+        view?.hideLoading()
+        view?.showError(message: error.error, handler: nil)
+    }
+    
+    private func syncApp() {
+        
+        dataManager.getFormats(success: { _ in
+            self.dataManager.getGenres(success: { _ in
+                self.dataManager.getPlatforms(success: { _ in
+                    self.dataManager.getStates(success: { _ in
+                        self.dataManager.getSagas(success: { _ in
+                            self.dataManager.getGames(success: { _ in
+                                
+                                MainTabBarController.show()
+                                self.view?.hideLoading()
+                            }, failure: { error in
+                                self.manageError(error: error)
+                            })
+                        }, failure: { error in
+                            self.manageError(error: error)
+                        })
+                    }, failure: { error in
+                        self.manageError(error: error)
+                    })
+                }, failure: { error in
+                    self.manageError(error: error)
+                })
+            }, failure: { error in
+                self.manageError(error: error)
+            })
+        }, failure: { error in
+            self.manageError(error: error)
+        })
     }
 }
 
 extension LoginViewModel: LoginViewModelProtocol {
     
+    func viewDidLoad() {
+        
+        view?.showLoading()
+        dataManager.getUsername(success: { username in
+            
+            self.view?.setUsernameTextField(username: username ?? "")
+            self.view?.hideLoading()
+        }, failure: { error in
+            self.view?.setUsernameTextField(username: "")
+            self.view?.hideLoading()
+        })
+    }
+    
+    func login(username: String, password: String) {
+        
+        view?.showLoading()
+        dataManager.login(username: username, password: password, success: { loginResponse in
+            self.dataManager.getFormats(success: { _ in
+
+                let userData = UserData(userName: username, password: password, isLoggedIn: true)
+                let authData = AuthData(token: loginResponse.token)
+                self.dataManager.storeUserData(userData: userData)
+                self.dataManager.storeCredentials(authData: authData)
+                self.syncApp()
+            }, failure: { error in
+                self.manageError(error: error)
+            })
+        }, failure: { error in
+            self.manageError(error: error)
+        })
+    }
+    
+    func register() {
+        RegisterRouter().push()
+    }
 }
 

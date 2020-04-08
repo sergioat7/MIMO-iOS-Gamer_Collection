@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,27 +14,163 @@
             <objects>
                 <viewController storyboardIdentifier="Games" id="BYZ-38-t0r" customClass="GamesViewController" customModule="Gamer_Collection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GamesView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84T-Ty-AUY">
-                                <rect key="frame" x="142.5" y="323" width="90" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kk-no-Ldf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ES-ek-0y2">
+                                        <rect key="frame" x="186" y="10" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOF-QP-TZB">
+                                        <rect key="frame" x="380" y="8" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="IOF-QP-TZB" secondAttribute="height" multiplier="1:1" id="QtU-31-bFE"/>
+                                            <constraint firstAttribute="height" constant="24" id="bZw-ht-b7P"/>
+                                        </constraints>
+                                        <state key="normal" image="sort"/>
+                                        <connections>
+                                            <action selector="sortGames:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fsJ-no-hz2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="color2SuperLight"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="IOF-QP-TZB" secondAttribute="trailing" constant="10" id="6TF-gM-vu4"/>
+                                    <constraint firstItem="2ES-ek-0y2" firstAttribute="centerY" secondItem="9kk-no-Ldf" secondAttribute="centerY" id="96r-PH-i79"/>
+                                    <constraint firstItem="2ES-ek-0y2" firstAttribute="centerX" secondItem="9kk-no-Ldf" secondAttribute="centerX" id="FpT-d9-cDA"/>
+                                    <constraint firstAttribute="height" constant="40" id="Qmd-cJ-XTM"/>
+                                    <constraint firstItem="IOF-QP-TZB" firstAttribute="centerY" secondItem="9kk-no-Ldf" secondAttribute="centerY" id="nGf-eY-Szb"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Sui-hr-4aD">
+                                <rect key="frame" x="0.0" y="84" width="414" height="70"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbL-8N-fGe">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgy-Jh-WF5" customClass="GameFilterButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                <rect key="frame" x="5" y="5" width="128" height="60"/>
+                                                <connections>
+                                                    <action selector="showPendingGames:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yc7-r8-67B"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="bgy-Jh-WF5" secondAttribute="trailing" constant="5" id="ByZ-zm-7vP"/>
+                                            <constraint firstItem="bgy-Jh-WF5" firstAttribute="leading" secondItem="IbL-8N-fGe" secondAttribute="leading" constant="5" id="ZOv-Sg-GoE"/>
+                                            <constraint firstItem="bgy-Jh-WF5" firstAttribute="top" secondItem="IbL-8N-fGe" secondAttribute="top" constant="5" id="jh7-mZ-aYJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="bgy-Jh-WF5" secondAttribute="bottom" constant="5" id="kq4-fi-puX"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQC-Dd-0fJ">
+                                        <rect key="frame" x="138" y="0.0" width="138" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYI-dh-rgE" customClass="GameFilterButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                <rect key="frame" x="5" y="5" width="128" height="60"/>
+                                                <connections>
+                                                    <action selector="showInProgressGames:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HbN-iM-fBf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="zYI-dh-rgE" secondAttribute="trailing" constant="5" id="7oZ-rq-3VI"/>
+                                            <constraint firstAttribute="bottom" secondItem="zYI-dh-rgE" secondAttribute="bottom" constant="5" id="89O-eR-Vb5"/>
+                                            <constraint firstItem="zYI-dh-rgE" firstAttribute="leading" secondItem="DQC-Dd-0fJ" secondAttribute="leading" constant="5" id="VbC-pw-wqU"/>
+                                            <constraint firstItem="zYI-dh-rgE" firstAttribute="top" secondItem="DQC-Dd-0fJ" secondAttribute="top" constant="5" id="azg-5d-irc"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvR-BR-2NJ">
+                                        <rect key="frame" x="276" y="0.0" width="138" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGD-Ym-YE4" customClass="GameFilterButton" customModule="Gamer_Collection" customModuleProvider="target">
+                                                <rect key="frame" x="5" y="5" width="128" height="60"/>
+                                                <connections>
+                                                    <action selector="showFinishedGames:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wMQ-dD-X4h"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="kGD-Ym-YE4" firstAttribute="top" secondItem="NvR-BR-2NJ" secondAttribute="top" constant="5" id="69r-Ab-Cea"/>
+                                            <constraint firstItem="kGD-Ym-YE4" firstAttribute="leading" secondItem="NvR-BR-2NJ" secondAttribute="leading" constant="5" id="RSq-0j-in6"/>
+                                            <constraint firstAttribute="trailing" secondItem="kGD-Ym-YE4" secondAttribute="trailing" constant="5" id="bdC-GO-Q7f"/>
+                                            <constraint firstAttribute="bottom" secondItem="kGD-Ym-YE4" secondAttribute="bottom" constant="5" id="zM3-Tj-wZq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="T6O-Fr-HVV"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BBt-gz-HqF">
+                                <rect key="frame" x="0.0" y="154" width="414" height="708"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="164" placeholderIntrinsicHeight="164" translatesAutoresizingMaskIntoConstraints="NO" id="r0J-KI-j6W">
+                                <rect key="frame" x="125" y="411" width="164" height="164"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="r0J-KI-j6W" secondAttribute="height" multiplier="1:1" id="e9O-c6-N93"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Db8-Pp-EBf">
+                                <rect key="frame" x="207" y="590" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="84T-Ty-AUY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kvP-HE-Ti1"/>
-                            <constraint firstItem="84T-Ty-AUY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="uZZ-1C-OTa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BBt-gz-HqF" secondAttribute="bottom" id="00T-xk-VWM"/>
+                            <constraint firstItem="Sui-hr-4aD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1gX-eW-etU"/>
+                            <constraint firstItem="r0J-KI-j6W" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.1" id="3QN-Dh-Nhj"/>
+                            <constraint firstItem="9kk-no-Ldf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ci6-qB-aHN"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Db8-Pp-EBf" secondAttribute="trailing" constant="20" id="H6z-7Z-k6j"/>
+                            <constraint firstItem="BBt-gz-HqF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jx8-sV-k9f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="r0J-KI-j6W" secondAttribute="trailing" id="KUt-gL-JBt"/>
+                            <constraint firstItem="r0J-KI-j6W" firstAttribute="width" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.4" id="L0i-jQ-eMY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BBt-gz-HqF" secondAttribute="trailing" id="MJ8-mP-Hko"/>
+                            <constraint firstItem="r0J-KI-j6W" firstAttribute="height" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.4" id="QTJ-Rl-ZTP"/>
+                            <constraint firstItem="Sui-hr-4aD" firstAttribute="top" secondItem="9kk-no-Ldf" secondAttribute="bottom" id="Swg-Js-ECb"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Db8-Pp-EBf" secondAttribute="bottom" id="T0y-tF-uPt"/>
+                            <constraint firstItem="Db8-Pp-EBf" firstAttribute="top" secondItem="r0J-KI-j6W" secondAttribute="bottom" priority="999" constant="15" id="WAB-zt-Pnh"/>
+                            <constraint firstItem="BBt-gz-HqF" firstAttribute="top" secondItem="Sui-hr-4aD" secondAttribute="bottom" id="ZA9-N3-3MU"/>
+                            <constraint firstItem="9kk-no-Ldf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bsc-NJ-4iA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9kk-no-Ldf" secondAttribute="trailing" id="cnO-Aa-fa0"/>
+                            <constraint firstItem="Sui-hr-4aD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fjj-dz-gMm"/>
+                            <constraint firstItem="r0J-KI-j6W" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hDs-Xa-KIs"/>
+                            <constraint firstItem="r0J-KI-j6W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iA9-Y0-90R"/>
+                            <constraint firstItem="Db8-Pp-EBf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="t4G-ge-jOw"/>
+                            <constraint firstItem="Db8-Pp-EBf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wCG-cE-Bdc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="btFinished" destination="kGD-Ym-YE4" id="Ff3-82-XQT"/>
+                        <outlet property="btInProgress" destination="zYI-dh-rgE" id="gJj-5B-XDL"/>
+                        <outlet property="btPending" destination="bgy-Jh-WF5" id="cOn-eQ-FWw"/>
+                        <outlet property="ivEmptyList" destination="r0J-KI-j6W" id="gWM-gD-qlQ"/>
+                        <outlet property="lbEmptyList" destination="Db8-Pp-EBf" id="o2a-7G-TSi"/>
+                        <outlet property="lbGamesNumber" destination="2ES-ek-0y2" id="J4D-bE-qcX"/>
+                        <outlet property="tvGames" destination="BBt-gz-HqF" id="MCX-a8-wf5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="134"/>
+            <point key="canvasLocation" x="132" y="133.00492610837438"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sort" width="24" height="24"/>
+        <namedColor name="color2SuperLight">
+            <color red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

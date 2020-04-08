@@ -7,13 +7,27 @@
 //
 
 import Foundation
+import SwifterSwift
 import KeychainAccess
 
 class UserManager {
     
+    private let userDefaults = UserDefaults.standard
     private let defaultKeychain: Keychain = Keychain(service: Bundle.main.bundleIdentifier!)
     
+    func isNewInstallation() -> Bool {
+        
+        let newInstall : Bool? = userDefaults.object(forKey: Constants.UserManagerKey.newInstallation) as? Bool
+        return (newInstall == nil)
+    }
+    
+    func setIsNewInstallation() {
+        userDefaults.set(true, forKey: Constants.UserManagerKey.newInstallation)
+        userDefaults.synchronize()
+    }
+    
     func isLoggedIn() -> Bool {
+        
         let userData: UserData? = getProperty(key: Constants.UserManagerKey.userData)
         let authData: AuthData? = getProperty(key: Constants.UserManagerKey.authData)
         return userData != nil && authData != nil
@@ -21,6 +35,15 @@ class UserManager {
     
     func storeUserData(userData: UserData) {
         setProperty(userData, forKey: Constants.UserManagerKey.userData)
+    }
+    
+    func storePassword(pasword: String) {
+        
+        guard var userData: UserData = getProperty(key: Constants.UserManagerKey.userData) else {
+            return
+        }
+        userData.password = pasword
+        storeUserData(userData: userData)
     }
     
     func storeCredentials(authData: AuthData) {
@@ -53,6 +76,15 @@ class UserManager {
     
     func removeUserData() {
         removeProperty(key: Constants.UserManagerKey.userData)
+    }
+    
+    func removePassword() {
+        
+        guard var userData: UserData = getProperty(key: Constants.UserManagerKey.userData) else {
+            return
+        }
+        userData.password = nil
+        storeUserData(userData: userData)
     }
     
     func removeCredentials() {

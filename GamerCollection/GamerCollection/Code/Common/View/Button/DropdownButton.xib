@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
+            <connections>
+                <outlet property="ivArrowDropdown" destination="Zqb-3e-YN4" id="UnQ-Dk-XYg"/>
+                <outlet property="lbTitle" destination="GGE-Oz-Cb6" id="6tr-2p-ySV"/>
+                <outlet property="lbValue" destination="oZR-gd-TMa" id="vyx-WX-3T7"/>
+                <outlet property="vwBottomLine" destination="pTC-n0-BO1" id="QS2-9N-sbv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGE-Oz-Cb6">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZR-gd-TMa">
+                    <rect key="frame" x="0.0" y="25.5" width="0.0" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_drop_down" translatesAutoresizingMaskIntoConstraints="NO" id="Zqb-3e-YN4">
+                    <rect key="frame" x="390" y="27" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Zqb-3e-YN4" secondAttribute="height" multiplier="1:1" id="3gg-CJ-C5R"/>
+                        <constraint firstAttribute="width" constant="24" id="Bhq-3s-gr0"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTC-n0-BO1">
+                    <rect key="frame" x="0.0" y="51" width="414" height="1"/>
+                    <color key="backgroundColor" name="color2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="6rL-JL-f2c"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Zqb-3e-YN4" secondAttribute="trailing" id="07V-iq-Xer"/>
+                <constraint firstAttribute="bottom" secondItem="pTC-n0-BO1" secondAttribute="bottom" id="0dK-cz-aEL"/>
+                <constraint firstAttribute="trailing" secondItem="GGE-Oz-Cb6" secondAttribute="trailing" id="AaF-Su-uqi"/>
+                <constraint firstItem="GGE-Oz-Cb6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Die-1N-X0f"/>
+                <constraint firstItem="oZR-gd-TMa" firstAttribute="top" secondItem="GGE-Oz-Cb6" secondAttribute="bottom" constant="5" id="GPZ-iB-LBb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pTC-n0-BO1" secondAttribute="trailing" id="NAt-Uw-7D6"/>
+                <constraint firstItem="oZR-gd-TMa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="NhO-Cm-WB6"/>
+                <constraint firstItem="Zqb-3e-YN4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oZR-gd-TMa" secondAttribute="trailing" constant="10" id="Rqk-hY-e0D"/>
+                <constraint firstItem="pTC-n0-BO1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="egV-UE-MZc"/>
+                <constraint firstItem="GGE-Oz-Cb6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="g8N-dX-t5S"/>
+                <constraint firstItem="pTC-n0-BO1" firstAttribute="top" secondItem="oZR-gd-TMa" secondAttribute="bottom" constant="5" id="hgY-lI-8CI"/>
+                <constraint firstItem="pTC-n0-BO1" firstAttribute="top" secondItem="Zqb-3e-YN4" secondAttribute="bottom" id="jKf-7A-pVu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="131.8840579710145" y="-155.35714285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow_drop_down" width="24" height="24"/>
+        <namedColor name="color2">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

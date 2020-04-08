@@ -3,4 +3,6 @@ use_frameworks!
 
 target 'GamerCollection' do
   pod 'PopupDialog', '~> 1.1'
+  pod 'ActionSheetPicker-3.0', '~> 2.4.2'
+  pod 'BEMCheckBox', '~> 1.4.1'
 end

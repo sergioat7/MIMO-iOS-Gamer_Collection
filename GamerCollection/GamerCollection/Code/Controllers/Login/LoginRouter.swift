@@ -3,7 +3,7 @@
 //  GamerCollection
 //
 //  Created by Sergio Aragonés on 14/03/2020.
-//  Copyright (c) 2020. All rights reserved.
+//  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
 import UIKit
@@ -26,11 +26,46 @@ class LoginRouter: BaseRouter {
     }
     
     private var dataManager: LoginDataManagerProtocol {
-        return LoginDataManager(apiClient: apiClient)
+        return LoginDataManager(apiClient: apiClient,
+                                userManager: userManager,
+                                formatRepository: formatRepository,
+                                genreRepository: genreRepository,
+                                platformRepository: platformRepository,
+                                stateRepository: stateRepository,
+                                gameRepository: gameRepository,
+                                sagaRepository: sagaRepository)
     }
     
     private var apiClient: LoginApiClientProtocol {
-        return LoginApiClient()
+        return LoginApiClient(userManager: userManager)
+    }
+    
+    private var userManager: UserManager {
+        return UserManager()
+    }
+    
+    private var formatRepository: FormatRepository {
+        return FormatRepository()
+    }
+    
+    private var genreRepository: GenreRepository {
+        return GenreRepository()
+    }
+    
+    private var platformRepository: PlatformRepository {
+        return PlatformRepository()
+    }
+    
+    private var stateRepository: StateRepository {
+        return StateRepository()
+    }
+    
+    private var gameRepository: GameRepository {
+        return GameRepository()
+    }
+    
+    private var sagaRepository: SagaRepository {
+        return SagaRepository()
     }
     
     // MARK: - Initialization

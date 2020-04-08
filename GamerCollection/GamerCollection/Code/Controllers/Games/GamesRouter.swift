@@ -3,7 +3,7 @@
 //  GamerCollection
 //
 //  Created by Sergio Aragonés on 14/03/2020.
-//  Copyright (c) 2020. All rights reserved.
+//  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
 import UIKit
@@ -26,11 +26,21 @@ class GamesRouter: BaseRouter {
     }
     
     private var dataManager: GamesDataManagerProtocol {
-        return GamesDataManager(apiClient: apiClient)
+        return GamesDataManager(gameRepository: gameRepository,
+                                platformRepository: platformRepository,
+                                stateRepository: stateRepository)
     }
     
-    private var apiClient: GamesApiClientProtocol {
-        return GamesApiClient()
+    private var gameRepository: GameRepository {
+        return GameRepository()
+    }
+    
+    private var platformRepository: PlatformRepository {
+        return PlatformRepository()
+    }
+    
+    private var stateRepository: StateRepository {
+        return StateRepository()
     }
     
     // MARK: - Initialization
@@ -50,6 +60,7 @@ class GamesRouter: BaseRouter {
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "games"), tag: 0)
         navigationController.tabBarItem.selectedImage = UIImage(named: "games on")
+        navigationController.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         
         var viewControllers = tabBarController?.viewControllers ?? [UIViewController]()
         viewControllers.append(navigationController)

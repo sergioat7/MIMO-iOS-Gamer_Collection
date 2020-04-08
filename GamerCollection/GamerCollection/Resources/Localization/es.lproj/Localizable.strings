@@ -7,17 +7,148 @@
   
 */
 
+// General
+
 "app_name" = "Gamer Collection";
+"ACCEPT" = "Aceptar";
+"CANCEL" = "Cancelar";
+"RESET" = "Reiniciar";
+"SAVE" = "Guardar";
+"EDIT" = "Editar";
+"DELETE" = "Borrar";
+"REMOVE" = "Eliminar";
+"MIN" = "Min";
+"MAX" = "Max";
+"EMPTY_LIST" = "La lista está vacía";
+"ASCENDING" = "Ascendente";
+"DESCENDING" = "Descendente";
+
+// Login
+
+"LOGIN_USERNAME" = "Usuario";
+"LOGIN_PASSWORD" = "Contraseña";
+"LOGIN_ACCESS" = "Acceder";
+"LOGIN_NOT_ACCOUNT" = "¿No tienes cuenta? ";
+"LOGIN_REGISTER" = "¡Regístrate!";
+
+// Register
+
+"REGISTRATION" = "Registro";
+"REGISTRATION_USERNAME" = "Usuario";
+"REGISTRATION_PASSWORD" = "Contraseña";
+"REGISTRATION_REPEAT_PASSWORD" = "Repetir contraseña";
+"REGISTER" = "Registrarse";
+
+// Games
 
 "GAMES" = "Mis Juegos";
+"GAMES_FILTER_BUTTON_TITLE_PENDING" = "Pendientes";
+"GAMES_FILTER_BUTTON_TITLE_IN_PROGRESS" = "En Progreso";
+"GAMES_FILTER_BUTTON_TITLE_FINISHED" = "Terminados";
+"GAMES_RELEASED" = "Lanzado";
+"GAMES_UNRELEASED" = "No lanzado";
+"GAMES_NUMBER_TITLE" = "juegos";
+
+// Game detail
+
+"GAME_DETAIL" = "Detalle";
+"GAME_DETAIL_PLACEHOLDER_NAME" = "Añade un nombre";
+"GAME_DETAIL_IMAGE_MODAL_TITLE" = "Introduce un enlace válido";
+"GAME_DETAIL_PLATFORM" = "Plataforma";
+"GAME_DETAIL_SELECT_PLATFORM" = "Selecciona una plataforma";
+"GAME_DETAIL_GENRE" = "Género";
+"GAME_DETAIL_SELECT_GENRE" = "Selecciona un género";
+"GAME_DETAIL_FORMAT" = "Formato";
+"GAME_DETAIL_SELECT_FORMAT" = "Selecciona un formato";
+"GAME_DETAIL_RELEASE_DATE" = "Fecha de publicación";
+"GAME_DETAIL_SELECT_DATE" = "Selecciona una fecha";
+"GAME_DETAIL_BUTTON_TITLE_PENDING" = "Pendiente";
+"GAME_DETAIL_BUTTON_TITLE_IN_PROGRESS" = "En Progreso";
+"GAME_DETAIL_BUTTON_TITLE_FINISHED" = "Terminado";
+"GAME_DETAIL_TITLE" = "Detalles";
+"GAME_DETAIL_DISTRIBUTOR" = "Distribuidor";
+"GAME_DETAIL_PLACEHOLDER_DISTRIBUTOR" = "Añade el distributor";
+"GAME_DETAIL_DEVELOPER" = "Desarrollador";
+"GAME_DETAIL_PLACEHOLDER_DEVELOPER" = "Añade el desarrollador";
+"GAME_DETAIL_PEGI" = "Pegi";
+"GAME_DETAIL_SELECT_PEGI" = "Selecciona una categoría";
+"GAME_DETAIL_PLAYERS" = "Nº Jugadores";
+"GAME_DETAIL_PLACEHOLDER_PLAYERS" = "Añade el nº de jugadores";
+"GAME_DETAIL_PRICE" = "Precio";
+"GAME_DETAIL_PLACEHOLDER_PRICE" = "Añade el precio";
+"GAME_DETAIL_PURCHASE_DATE" = "Fecha de compra";
+"GAME_DETAIL_PURCHASE_LOCATION" = "Lugar de compra";
+"GAME_DETAIL_PLACEHOLDER_PURCHASE_LOCATION" = "Añade el lugar de compra";
+"GAME_DETAIL_GOTY" = "Juego del año (GOTY)";
+"GAME_DETAIL_LOANED_TO" = "Prestado a";
+"GAME_DETAIL_PLACEHOLDER_LOANED_TO" = "Añade un usuario";
+"GAME_DETAIL_VIDEO_URL" = "Enlace de vídeo";
+"GAME_DETAIL_PLACEHOLDER_VIDEO_URL" = "Añade un enlace";
+"GAME_DETAIL_OBSERVATIONS" = "Observaciones";
+"GAME_DETAIL_PLACEHOLDER_OBSERVATIONS" = "Añade unas observaciones";
+"GAME_DETAIL_SAGA" = "Saga";
+"GAME_DETAIL_SONGS_TITLE" = "Canciones";
+"GAME_DETAIL_DELETE_CONFIRMATION" = "¿Estás seguro de que quieres borrar este juego? Esta acción no se puede deshacer";
+
+// Sagas
 
 "SAGAS" = "Mis Sagas";
 
+// Saga detail
+
+"SAGA_DETAIL" = "Detail";
+"SAGA_DETAIL_PLACEHOLDER_NAME" = "Añade un nombre";
+"SAGA_DETAIL_GAMES_TITLE" = "Juegos";
+"SAGA_DETAIL_DELETE_CONFIRMATION" = "¿Estás seguro de que quieres borrar esta saga? Esta acción no se puede deshacer";
+
+// Ranking
+
 "RANKING" = "Mi Ranking";
 
+// Profile
+
 "PROFILE" = "Mi Perfil";
+"PROFILE_LOGOUT_CONFIRMATION" = "¿Estás seguro de que quieres salir?";
+"PROFILE_DELETE_CONFIRMATION" = "¿Estás seguro de que quieres borrar tu usuario? Perderás toda la información almacenada sobre los juegos";
+
+// Synchronization
+
+"SYNC_TITLE" = "Sincronizando...";
+"SYNC_CONFIRMATION" = "¿Estás seguro de que quieres sincronizar la app? Este proceso puede llevar un tiempo";
+
+// Modal filter
+
+"MODAL_FILTER_PLATFORM" = "Plataforma";
+"MODAL_FILTER_GENRE" = "Género";
+"MODAL_FILTER_FORMAT" = "Formato";
+"MODAL_FILTER_SCORE" = "Puntuación";
+"MODAL_FILTER_RELEASE_DATE" = "Fecha de publicación";
+"MODAL_FILTER_PURCHASE_DATE" = "Fecha de compra";
+"MODAL_FILTER_PRICE" = "Precio";
+"MODAL_FILTER_GOTY" = "GOTY";
+"MODAL_FILTER_LOANED" = "Prestado";
+"MODAL_FILTER_HAS_SAGA" = "Tiene saga";
+"MODAL_FILTER_HAS_SONGS" = "Tiene canciones";
+
+// Modal song
+
+"MODAL_SONG_PLACEHOLDER_NAME" = "Añade un nombre";
+"MODAL_SONG_PLACEHOLDER_SINGER" = "Añade un artista";
+"MODAL_SONG_PLACEHOLDER_URL" = "Añade un enlace";
+
+// Sort picker
+
+"SORT_TITLE" = "Ordenar por";
+"SORT_NAME" = "Nombre";
+"SORT_PLATFORM" = "Plataforma";
+"SORT_RELEASE_DATE" = "Fecha de publicación";
+"SORT_PURCHASE_DATE" = "Fecha de compra";
+"SORT_PRICE" = "Precio";
 
 // Errors
 
 "ERROR_BUTTON_ACCEPT" = "Aceptar";
 "ERROR_SERVER" = "Hubo un error al recuperar los datos. Por favor, inténtalo otra vez";
+"ERROR_REGISTRATION_EMPTY_DATA" = "El usuario y la contraseña no pueden estar vacíos";
+"ERROR_REGISTRATION_DIFFERENT_PASSWORDS" = "Las contraseñas no coinciden";
+"ERROR_CORE_DATA" = "Error en la base de datos. Por favor, inténtalo otra vez";
