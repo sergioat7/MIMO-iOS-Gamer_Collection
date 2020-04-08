@@ -137,10 +137,23 @@ extension Game: ModelHandlerProtocol {
         
         let songRepository = SongRepository()
         
-        for song in item.songs {
-            songRepository.update(item: song, success: { songResponse in
-                self.addToSongs(songResponse)
-            }, failure: failure)
-        }
+        songRepository.getDisabledContent(enabledContent: item.songs,
+                                          predicate: NSPredicate(format: "game.id = %ld", item.id),
+                                          success: { disabledSongs in
+                                            
+                                            for disabledSong in disabledSongs {
+                                                songRepository.delete(id: disabledSong.id, success: {}, failure: failure)
+                                            }
+                                            
+                                            guard !item.songs.isEmpty else {
+                                                return
+                                            }
+                                            
+                                            for song in item.songs {
+                                                songRepository.update(item: song, success: { songResponse in
+                                                    self.addToSongs(songResponse)
+                                                }, failure: failure)
+                                            }
+        }, failure: failure)
     }
 }

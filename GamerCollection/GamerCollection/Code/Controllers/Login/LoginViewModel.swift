@@ -50,8 +50,8 @@ class LoginViewModel: BaseViewModel {
             self.dataManager.getGenres(success: { _ in
                 self.dataManager.getPlatforms(success: { _ in
                     self.dataManager.getStates(success: { _ in
-                        self.dataManager.getGames(success: { _ in
-                            self.dataManager.getSagas(success: { _ in
+                        self.dataManager.getSagas(success: { _ in
+                            self.dataManager.getGames(success: { _ in
                                 
                                 MainTabBarController.show()
                                 self.view?.hideLoading()
