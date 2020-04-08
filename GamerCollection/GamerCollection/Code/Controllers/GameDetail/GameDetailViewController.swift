@@ -286,7 +286,7 @@ class GameDetailViewController: BaseViewController {
     
     private func setScoreLabel(rating: Double) {
         lbScore.attributedText = NSAttributedString(string: "\(rating)",
-                                                    attributes: [.font : UIFont.roman16,
+                                                    attributes: [.font : UIFont.regular16,
                                                                  .foregroundColor: Color.color2])
     }
     
@@ -354,7 +354,7 @@ extension GameDetailViewController:  GameDetailViewProtocol {
         
         vwScore.rating = game?.score ?? 0.0
         lbScore.attributedText = NSAttributedString(string: "\(game?.score ?? 0.0)",
-                                                    attributes: [.font : UIFont.roman16,
+                                                    attributes: [.font : UIFont.regular16,
                                                                  .foregroundColor: Color.color2])
         
         if let stateId = game?.state {

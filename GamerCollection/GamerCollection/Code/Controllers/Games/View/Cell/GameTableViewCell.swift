@@ -55,7 +55,7 @@ class GameTableViewCell: UITableViewCell {
                                                    attributes: [.font : UIFont.bold18,
                                                                 .foregroundColor: Color.color1])
         lbPlatform.attributedText = NSAttributedString(string: gameCellViewModel?.platformName ?? "",
-                                                       attributes: [.font : UIFont.roman14,
+                                                       attributes: [.font : UIFont.regular14,
                                                                     .foregroundColor: Color.color1])
         
         if let releaseDate = gameCellViewModel?.releaseDate, !releaseDate.isEmpty, gameCellViewModel?.stateId == Constants.State.pending {

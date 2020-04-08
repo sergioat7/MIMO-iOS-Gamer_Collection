@@ -80,7 +80,7 @@ class DropdownButton: UIButton {
         
         let color = theme == .dark ? Color.color2 : Color.color1
         lbTitle.attributedText = NSAttributedString(string: title,
-                                                    attributes: [.font : UIFont.roman12,
+                                                    attributes: [.font : UIFont.regular12,
                                                                  .foregroundColor: color])
     }
     
@@ -90,7 +90,7 @@ class DropdownButton: UIButton {
 
             let color = theme == .dark ? Color.color2 : Color.color1
             lbValue.attributedText = NSAttributedString(string: value,
-                                                        attributes: [.font : UIFont.roman16,
+                                                        attributes: [.font : UIFont.regular16,
                                                                      .foregroundColor: color])
         } else {
             setPlaceholder(placeholder: placeholder ?? "")
@@ -103,7 +103,7 @@ class DropdownButton: UIButton {
         let color = theme == .dark ? Color.color2SuperLight : Color.color1SuperLight
         guard let val = value, !val.isEmpty else {
             lbValue.attributedText = NSAttributedString(string: placeholder,
-                                                        attributes: [.font : UIFont.roman16,
+                                                        attributes: [.font : UIFont.regular16,
                                                                      .foregroundColor: color])
             return
         }

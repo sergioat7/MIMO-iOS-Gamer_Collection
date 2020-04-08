@@ -43,7 +43,7 @@ class RoundLabelButton: UIButton {
             
             let color = newValue ? selectedTitleColor : titleColor
             setAttributedTitle(NSAttributedString(string: self.currentTitle ?? "",
-                               attributes: [.font : UIFont.roman14,
+                               attributes: [.font : UIFont.regular14,
                                             .foregroundColor: color]),
                                for: UIControl.State())
             backgroundColor = newValue ? selectedBackground : background
@@ -73,7 +73,7 @@ class RoundLabelButton: UIButton {
         contentEdgeInsets = UIEdgeInsets(horizontal: 30, vertical: 15)
                 
         setAttributedTitle(NSAttributedString(string: self.currentTitle ?? "",
-                                              attributes: [.font : UIFont.roman14,
+                                              attributes: [.font : UIFont.regular14,
                                                            .foregroundColor: titleColor]),
                            for: UIControl.State())
         

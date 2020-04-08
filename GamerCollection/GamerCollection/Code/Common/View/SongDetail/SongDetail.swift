@@ -55,12 +55,12 @@ class SongDetail: UIView {
         
         let singer = song?.singer ?? ""
         lbSinger.attributedText = NSAttributedString(string: singer,
-                                                     attributes: [.font : UIFont.roman16,
+                                                     attributes: [.font : UIFont.regular16,
                                                                   .foregroundColor: Color.color2])
         
         let url = song?.url ?? ""
         lbUrl.attributedText = NSAttributedString(string: url,
-                                                  attributes: [.font : UIFont.roman16,
+                                                  attributes: [.font : UIFont.regular16,
                                                                .foregroundColor: Color.color2])
         
         btRemove.setAttributedTitle(NSAttributedString(string: "REMOVE".localized(),

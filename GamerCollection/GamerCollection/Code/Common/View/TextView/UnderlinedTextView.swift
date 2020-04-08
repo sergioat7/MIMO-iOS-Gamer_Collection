@@ -28,7 +28,7 @@ class UnderlinedTextView: UITextView {
         }
     }
     
-    var textFont: UIFont = .roman16
+    var textFont: UIFont = .regular16
     
     var placeholder: String? {
         didSet {
@@ -36,7 +36,7 @@ class UnderlinedTextView: UITextView {
         }
     }
     
-    var placeholderFont: UIFont = .roman16
+    var placeholderFont: UIFont = .regular16
     
     var isEnabled: Bool = true {
         didSet {

@@ -26,7 +26,7 @@ class SagaTableViewHeaderView: UITableViewHeaderFooterView {
                                                                  .foregroundColor: Color.color2])
         
         btEdit.setAttributedTitle(NSAttributedString(string: "EDIT".localized(),
-                                                     attributes: [.font : UIFont.roman16,
+                                                     attributes: [.font : UIFont.regular16,
                                                                   .foregroundColor: Color.color2]),
                                   for: UIControl.State())
         btEdit.addTarget(self, action: #selector(editSaga), for: .touchUpInside)

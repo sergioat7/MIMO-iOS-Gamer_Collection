@@ -72,7 +72,7 @@ class GameFilterButton: UIButton {
     private func setTitle(title: String) {
         
         lbTitle.attributedText = NSAttributedString(string: title,
-                                                    attributes: [.font : UIFont.roman16,
+                                                    attributes: [.font : UIFont.regular16,
                                                                  .foregroundColor: Color.color2])
     }
     

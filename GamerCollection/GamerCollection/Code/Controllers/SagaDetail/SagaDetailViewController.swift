@@ -103,7 +103,7 @@ extension SagaDetailViewController:  SagaDetailViewProtocol {
                 
                 label = UILabel()
                 label.attributedText = NSAttributedString(string: "- \(name)",
-                                                          attributes: [.font: UIFont.roman16,
+                                                          attributes: [.font: UIFont.regular16,
                                                                        .foregroundColor: Color.color2])
                 label.numberOfLines = 0
                 label.setContentHuggingPriority(.required, for: .vertical)

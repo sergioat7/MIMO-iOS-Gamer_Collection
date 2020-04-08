@@ -48,13 +48,13 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Sui-hr-4aD">
-                                <rect key="frame" x="0.0" y="84" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="84" width="414" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbL-8N-fGe">
-                                        <rect key="frame" x="0.0" y="0.0" width="138" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgy-Jh-WF5" customClass="GameFilterButton" customModule="Gamer_Collection" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="5" width="128" height="50"/>
+                                                <rect key="frame" x="5" y="5" width="128" height="60"/>
                                                 <connections>
                                                     <action selector="showPendingGames:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yc7-r8-67B"/>
                                                 </connections>
@@ -69,10 +69,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQC-Dd-0fJ">
-                                        <rect key="frame" x="138" y="0.0" width="138" height="60"/>
+                                        <rect key="frame" x="138" y="0.0" width="138" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYI-dh-rgE" customClass="GameFilterButton" customModule="Gamer_Collection" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="5" width="128" height="50"/>
+                                                <rect key="frame" x="5" y="5" width="128" height="60"/>
                                                 <connections>
                                                     <action selector="showInProgressGames:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HbN-iM-fBf"/>
                                                 </connections>
@@ -87,10 +87,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvR-BR-2NJ">
-                                        <rect key="frame" x="276" y="0.0" width="138" height="60"/>
+                                        <rect key="frame" x="276" y="0.0" width="138" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGD-Ym-YE4" customClass="GameFilterButton" customModule="Gamer_Collection" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="5" width="128" height="50"/>
+                                                <rect key="frame" x="5" y="5" width="128" height="60"/>
                                                 <connections>
                                                     <action selector="showFinishedGames:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wMQ-dD-X4h"/>
                                                 </connections>
@@ -106,11 +106,11 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="T6O-Fr-HVV"/>
+                                    <constraint firstAttribute="height" constant="70" id="T6O-Fr-HVV"/>
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BBt-gz-HqF">
-                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="154" width="414" height="708"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>

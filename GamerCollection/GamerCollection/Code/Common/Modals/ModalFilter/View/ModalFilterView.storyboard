@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Modal Filter View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -24,16 +29,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="262.5" height="417"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrY-zm-n8F" userLabel="Content View">
-                                                <rect key="frame" x="20" y="20" width="222.5" height="870"/>
+                                                <rect key="frame" x="20" y="20" width="222.5" height="881"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_PLATFORM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIi-Rx-M8I" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="222.5" height="18"/>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="222.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCw-kL-NTG">
-                                                        <rect key="frame" x="0.0" y="28" width="222.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="29" width="222.5" height="30"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="222.5" placeholderIntrinsicHeight="30" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qmx-OE-R69">
                                                                 <rect key="frame" x="0.0" y="0.0" width="222.5" height="30"/>
@@ -49,13 +54,13 @@
                                                         </constraints>
                                                     </scrollView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_GENRE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkL-Am-aPa" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="78" width="222.5" height="18"/>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="79" width="222.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoy-Q7-saw">
-                                                        <rect key="frame" x="0.0" y="106" width="222.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="108" width="222.5" height="30"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="222.5" placeholderIntrinsicHeight="30" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DLx-7y-qTd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="222.5" height="30"/>
@@ -71,13 +76,13 @@
                                                         </constraints>
                                                     </scrollView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_FORMAT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imA-8U-joz" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="156" width="222.5" height="18"/>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="158" width="222.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEU-20-hEq">
-                                                        <rect key="frame" x="0.0" y="184" width="222.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="187" width="222.5" height="30"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="222.5" placeholderIntrinsicHeight="30" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="o3n-i4-85b">
                                                                 <rect key="frame" x="0.0" y="0.0" width="222.5" height="30"/>
@@ -93,13 +98,13 @@
                                                         </constraints>
                                                     </scrollView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_SCORE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyO-KK-eBQ" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="234" width="222.5" height="18"/>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="237" width="222.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="202.5" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-TF-hgr" customClass="CosmosView" customModule="Cosmos">
-                                                        <rect key="frame" x="10" y="262" width="202.5" height="0.0"/>
+                                                        <rect key="frame" x="10" y="266" width="202.5" height="0.0"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
                                                                 <integer key="value" value="5"/>
@@ -131,7 +136,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="202.5" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="aqW-ZW-js4" customClass="CosmosView" customModule="Cosmos">
-                                                        <rect key="frame" x="10" y="282" width="202.5" height="0.0"/>
+                                                        <rect key="frame" x="10" y="286" width="202.5" height="0.0"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
                                                                 <integer key="value" value="5"/>
@@ -163,13 +168,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_RELEASE_DATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSt-3a-2DY" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="302" width="222.5" height="18"/>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="306" width="222.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BjG-Pd-x43">
-                                                        <rect key="frame" x="0.0" y="330" width="222.5" height="34"/>
+                                                        <rect key="frame" x="0.0" y="335" width="222.5" height="34"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22A-bU-lDU" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="106" height="34"/>
@@ -189,13 +194,13 @@
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_PURCHASE_DATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxv-8C-lWJ" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="384" width="222.5" height="18"/>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="389" width="222.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tJC-qW-sQd">
-                                                        <rect key="frame" x="0.0" y="412" width="222.5" height="34"/>
+                                                        <rect key="frame" x="0.0" y="418" width="222.5" height="34"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsp-rG-DNz" customClass="DropdownButton" customModule="Gamer_Collection" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="106" height="34"/>
@@ -215,13 +220,13 @@
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_PRICE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhq-hV-1ck" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="466" width="222.5" height="18"/>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="472" width="222.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DEP-xJ-ebz">
-                                                        <rect key="frame" x="0.0" y="494" width="222.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="501" width="222.5" height="30"/>
                                                         <subviews>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48S-ig-gJV" customClass="UnderlinedTextView" customModule="Gamer_Collection" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="108.5" height="30"/>
@@ -241,46 +246,46 @@
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_GOTY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ije-2E-jhH" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="544" width="222.5" height="18"/>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="551" width="222.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SDj-26-8nF">
-                                                        <rect key="frame" x="86.5" y="572" width="51" height="31"/>
+                                                        <rect key="frame" x="86.5" y="580" width="51" height="31"/>
                                                         <color key="onTintColor" name="color3"/>
                                                         <color key="thumbTintColor" name="color2"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_LOANED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o27-9B-Qs4" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="623" width="222.5" height="18"/>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="631" width="222.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jD0-Ic-ARk">
-                                                        <rect key="frame" x="86.5" y="651" width="51" height="31"/>
+                                                        <rect key="frame" x="86.5" y="660" width="51" height="31"/>
                                                         <color key="onTintColor" name="color3"/>
                                                         <color key="thumbTintColor" name="color2"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_HAS_SAGA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m1-bE-eF2" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="702" width="222.5" height="18"/>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="711" width="222.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="E3A-Ui-syE">
-                                                        <rect key="frame" x="86.5" y="730" width="51" height="31"/>
+                                                        <rect key="frame" x="86.5" y="740" width="51" height="31"/>
                                                         <color key="onTintColor" name="color3"/>
                                                         <color key="thumbTintColor" name="color2"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="MODAL_FILTER_HAS_SONGS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKE-5e-eBK" customClass="LocalizedLabel" customModule="Gamer_Collection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="781" width="222.5" height="18"/>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="791" width="222.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                         <color key="textColor" name="color2"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vfz-jY-8Xt">
-                                                        <rect key="frame" x="86.5" y="819" width="51" height="31"/>
+                                                        <rect key="frame" x="86.5" y="830" width="51" height="31"/>
                                                         <color key="onTintColor" name="color3"/>
                                                         <color key="thumbTintColor" name="color2"/>
                                                     </switch>

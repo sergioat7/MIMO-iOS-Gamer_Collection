@@ -51,6 +51,8 @@
 		FB448DE6242003EF008ACE69 /* UpdatePasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DE5242003EF008ACE69 /* UpdatePasswordRequest.swift */; };
 		FB448DEB24200410008ACE69 /* UpdatePasswordDataModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DEA24200410008ACE69 /* UpdatePasswordDataModelRequest.swift */; };
 		FB448DEE242029CF008ACE69 /* DeleteUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB448DED242029CF008ACE69 /* DeleteUserRequest.swift */; };
+		FB45A823243E3C10009B0153 /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB45A821243E2C90009B0153 /* SFProDisplay-Bold.ttf */; };
+		FB45A824243E3C13009B0153 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB45A822243E2C91009B0153 /* SFProDisplay-Regular.ttf */; };
 		FB463C5E241CFE53006F1A12 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB463C58241CFE53006F1A12 /* LoginView.storyboard */; };
 		FB463C5F241CFE53006F1A12 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C59241CFE53006F1A12 /* LoginRouter.swift */; };
 		FB463C60241CFE53006F1A12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463C5A241CFE53006F1A12 /* LoginViewController.swift */; };
@@ -257,6 +259,8 @@
 		FB448DE5242003EF008ACE69 /* UpdatePasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordRequest.swift; sourceTree = "<group>"; };
 		FB448DEA24200410008ACE69 /* UpdatePasswordDataModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordDataModelRequest.swift; sourceTree = "<group>"; };
 		FB448DED242029CF008ACE69 /* DeleteUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserRequest.swift; sourceTree = "<group>"; };
+		FB45A821243E2C90009B0153 /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		FB45A822243E2C91009B0153 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		FB463C58241CFE53006F1A12 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
 		FB463C59241CFE53006F1A12 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		FB463C5A241CFE53006F1A12 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -358,8 +362,6 @@
 		FBC1F63D242ABBCF003A87EA /* ModalSyncAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSyncAppViewController.swift; sourceTree = "<group>"; };
 		FBC1F63E242ABBCF003A87EA /* ModalSyncAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSyncAppViewModel.swift; sourceTree = "<group>"; };
 		FBC1F63F242ABBCF003A87EA /* ModalSyncAppDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSyncAppDataManager.swift; sourceTree = "<group>"; };
-		FBDEF50E2429213B0076F832 /* Palatino-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palatino-Bold.ttf"; sourceTree = "<group>"; };
-		FBDEF50F2429213B0076F832 /* Palatino-Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palatino-Roman.ttf"; sourceTree = "<group>"; };
 		FBDEF511242921CC0076F832 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		FBE79E2B24314A1F0053C6FB /* RoundLabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLabelButton.swift; sourceTree = "<group>"; };
 		FBEE25BE243A0D050092F73F /* SagaDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SagaDetailView.storyboard; sourceTree = "<group>"; };
@@ -1275,8 +1277,8 @@
 		FBDEF50D2429211B0076F832 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				FBDEF50E2429213B0076F832 /* Palatino-Bold.ttf */,
-				FBDEF50F2429213B0076F832 /* Palatino-Roman.ttf */,
+				FB45A821243E2C90009B0153 /* SFProDisplay-Bold.ttf */,
+				FB45A822243E2C91009B0153 /* SFProDisplay-Regular.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -1639,8 +1641,10 @@
 				FBEE25C4243A0D050092F73F /* SagaDetailView.storyboard in Resources */,
 				FB448DDD241FE87F008ACE69 /* UserProfileView.storyboard in Resources */,
 				FB323D1F243B5EAC00E1CA8A /* ModalSongView.storyboard in Resources */,
+				FB45A824243E3C13009B0153 /* SFProDisplay-Regular.ttf in Resources */,
 				FB463C85241D0BBF006F1A12 /* SagasView.storyboard in Resources */,
 				FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */,
+				FB45A823243E3C10009B0153 /* SFProDisplay-Bold.ttf in Resources */,
 				FB6E00EB242EACC300448CD3 /* DropdownButton.xib in Resources */,
 				FB9C41A1243111E7004526A6 /* ModalFilterView.storyboard in Resources */,
 				FB7EC328242BCAD50022C447 /* GameDetailView.storyboard in Resources */,
