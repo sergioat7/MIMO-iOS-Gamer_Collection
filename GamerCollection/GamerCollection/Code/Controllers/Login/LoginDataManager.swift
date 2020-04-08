@@ -85,18 +85,28 @@ extension LoginDataManager: LoginDataManagerProtocol {
         
         apiClient.getFormats(success: { formats in
             
-            guard !formats.isEmpty else {
-                success(formats)
-                return
-            }
-            for (index, format) in formats.enumerated() {
-                self.formatRepository.update(item: format, success: { _ in
-                    
-                    if index == formats.count - 1 {
-                        success(formats)
-                    }
-                }, failure: failure)
-            }
+            self.formatRepository.getDisabledContent(enabledContent: formats,
+                                                     predicate: NSPredicate(value: true),
+                                                     success: { disableFormats in
+                                                        
+                                                        for disableFormat in disableFormats {
+                                                            self.formatRepository.delete(id: disableFormat.id, success: {}, failure: failure)
+                                                        }
+                                                        
+                                                        guard !formats.isEmpty else {
+                                                            success(formats)
+                                                            return
+                                                        }
+                                                        
+                                                        for (index, format) in formats.enumerated() {
+                                                            self.formatRepository.update(item: format, success: { _ in
+                                                                
+                                                                if index == formats.count - 1 {
+                                                                    success(formats)
+                                                                }
+                                                            }, failure: failure)
+                                                        }
+            }, failure: failure)
         }, failure: failure)
     }
     
@@ -104,18 +114,28 @@ extension LoginDataManager: LoginDataManagerProtocol {
         
         apiClient.getGenres(success: { genres in
             
-            guard !genres.isEmpty else {
-                success(genres)
-                return
-            }
-            for (index, genre) in genres.enumerated() {
-                self.genreRepository.update(item: genre, success: { _ in
-                    
-                    if index == genres.count - 1 {
-                        success(genres)
-                    }
-                }, failure: failure)
-            }
+            self.genreRepository.getDisabledContent(enabledContent: genres,
+                                                    predicate: NSPredicate(value: true),
+                                                    success: { disabledGenres in
+                                                        
+                                                        for disabledGenre in disabledGenres {
+                                                            self.genreRepository.delete(id: disabledGenre.id, success: {}, failure: failure)
+                                                        }
+                                                        
+                                                        guard !genres.isEmpty else {
+                                                            success(genres)
+                                                            return
+                                                        }
+                                                        
+                                                        for (index, genre) in genres.enumerated() {
+                                                            self.genreRepository.update(item: genre, success: { _ in
+                                                                
+                                                                if index == genres.count - 1 {
+                                                                    success(genres)
+                                                                }
+                                                            }, failure: failure)
+                                                        }
+            }, failure: failure)
         }, failure: failure)
     }
     
@@ -123,18 +143,28 @@ extension LoginDataManager: LoginDataManagerProtocol {
         
         apiClient.getPlatforms(success: { platforms in
             
-            guard !platforms.isEmpty else {
-                success(platforms)
-                return
-            }
-            for (index, platform) in platforms.enumerated() {
-                self.platformRepository.update(item: platform, success: { _ in
-                    
-                    if index == platforms.count - 1 {
-                        success(platforms)
-                    }
-                }, failure: failure)
-            }
+            self.platformRepository.getDisabledContent(enabledContent: platforms,
+                                                       predicate: NSPredicate(value: true),
+                                                       success: { disabledPlatforms in
+                                                        
+                                                        for disabledPlatform in disabledPlatforms {
+                                                            self.platformRepository.delete(id: disabledPlatform.id, success: {}, failure: failure)
+                                                        }
+                                                        
+                                                        guard !platforms.isEmpty else {
+                                                            success(platforms)
+                                                            return
+                                                        }
+                                                        
+                                                        for (index, platform) in platforms.enumerated() {
+                                                            self.platformRepository.update(item: platform, success: { _ in
+                                                                
+                                                                if index == platforms.count - 1 {
+                                                                    success(platforms)
+                                                                }
+                                                            }, failure: failure)
+                                                        }
+            }, failure: failure)
         }, failure: failure)
     }
     
@@ -142,18 +172,28 @@ extension LoginDataManager: LoginDataManagerProtocol {
         
         apiClient.getStates(success: { states in
             
-            guard !states.isEmpty else {
-                success(states)
-                return
-            }
-            for (index, state) in states.enumerated() {
-                self.stateRepository.update(item: state, success: { _ in
-                    
-                    if index == states.count - 1 {
-                        success(states)
-                    }
-                }, failure: failure)
-            }
+            self.stateRepository.getDisabledContent(enabledContent: states,
+                                                    predicate: NSPredicate(value: true),
+                                                    success: { disabledStates in
+                                                        
+                                                        for disabledState in disabledStates {
+                                                            self.stateRepository.delete(id: disabledState.id, success: {}, failure: failure)
+                                                        }
+                                                        
+                                                        guard !states.isEmpty else {
+                                                            success(states)
+                                                            return
+                                                        }
+                                                        
+                                                        for (index, state) in states.enumerated() {
+                                                            self.stateRepository.update(item: state, success: { _ in
+                                                                
+                                                                if index == states.count - 1 {
+                                                                    success(states)
+                                                                }
+                                                            }, failure: failure)
+                                                        }
+            }, failure: failure)
         }, failure: failure)
     }
     
@@ -161,19 +201,28 @@ extension LoginDataManager: LoginDataManagerProtocol {
         
         apiClient.getGames(success: { games in
             
-            guard !games.isEmpty else {
-                success(games)
-                return
-            }
-            
-            for (index, game) in games.enumerated() {
-                self.gameRepository.update(item: game, success: { _ in
-                    
-                    if index == games.count - 1 {
-                        success(games)
-                    }
-                }, failure: failure)
-            }
+            self.gameRepository.getDisabledContent(enabledContent: games,
+                                                   predicate: NSPredicate(value: true),
+                                                   success: { disabledGames in
+                                                    
+                                                    for disabledGame in disabledGames {
+                                                        self.gameRepository.delete(id: disabledGame.id, success: {}, failure: failure)
+                                                    }
+                                                    
+                                                    guard !games.isEmpty else {
+                                                        success(games)
+                                                        return
+                                                    }
+                                                    
+                                                    for (index, game) in games.enumerated() {
+                                                        self.gameRepository.update(item: game, success: { _ in
+                                                            
+                                                            if index == games.count - 1 {
+                                                                success(games)
+                                                            }
+                                                        }, failure: failure)
+                                                    }
+            }, failure: failure)
         }, failure: failure)
     }
     
@@ -181,19 +230,28 @@ extension LoginDataManager: LoginDataManagerProtocol {
         
         apiClient.getSagas(success: { sagas in
             
-            guard !sagas.isEmpty else {
-                success(sagas)
-                return
-            }
-            
-            for (index, saga) in sagas.enumerated() {
-                self.sagaRepository.update(item: saga, success: { _ in
-                    
-                    if index == sagas.count - 1 {
-                        success(sagas)
-                    }
-                }, failure: failure)
-            }
+            self.sagaRepository.getDisabledContent(enabledContent: sagas,
+                                                   predicate: NSPredicate(value: true),
+                                                   success: { disabledSagas in
+                                                    
+                                                    for disableSaga in disabledSagas {
+                                                        self.sagaRepository.delete(id: disableSaga.id, success: {}, failure: failure)
+                                                    }
+                                                    
+                                                    guard !sagas.isEmpty else {
+                                                        success(sagas)
+                                                        return
+                                                    }
+                                                    
+                                                    for (index, saga) in sagas.enumerated() {
+                                                        self.sagaRepository.update(item: saga, success: { _ in
+                                                            
+                                                            if index == sagas.count - 1 {
+                                                                success(sagas)
+                                                            }
+                                                        }, failure: failure)
+                                                    }
+            }, failure: failure)
         }, failure: failure)
     }
 }

@@ -109,7 +109,7 @@ class GameDetailViewModel: BaseViewModel {
             } else {
                 
                 dataManager.createGame(game: gameData, success: {
-                    self.dataManager.updateGame(success: {
+                    self.dataManager.updateGames(success: {
                         
                         self.view?.hideLoading()
                         self.view?.popViewController()

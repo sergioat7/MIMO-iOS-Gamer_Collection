@@ -77,14 +77,28 @@ extension RegisterDataManager: RegisterDataManagerProtocol {
         
         loginApiClient.getFormats(success: { formats in
             
-            for (index, format) in formats.enumerated() {
-                self.formatRepository.update(item: format, success: { _ in
-                    
-                    if index == formats.count - 1 {
-                        success(formats)
-                    }
-                }, failure: failure)
-            }
+            self.formatRepository.getDisabledContent(enabledContent: formats,
+                                                     predicate: NSPredicate(value: true),
+                                                     success: { disableFormats in
+                                                        
+                                                        for disableFormat in disableFormats {
+                                                            self.formatRepository.delete(id: disableFormat.id, success: {}, failure: failure)
+                                                        }
+                                                        
+                                                        guard !formats.isEmpty else {
+                                                            success(formats)
+                                                            return
+                                                        }
+                                                        
+                                                        for (index, format) in formats.enumerated() {
+                                                            self.formatRepository.update(item: format, success: { _ in
+                                                                
+                                                                if index == formats.count - 1 {
+                                                                    success(formats)
+                                                                }
+                                                            }, failure: failure)
+                                                        }
+            }, failure: failure)
         }, failure: failure)
     }
     
@@ -92,14 +106,28 @@ extension RegisterDataManager: RegisterDataManagerProtocol {
         
         loginApiClient.getGenres(success: { genres in
             
-            for (index, genre) in genres.enumerated() {
-                self.genreRepository.update(item: genre, success: { _ in
-                    
-                    if index == genres.count - 1 {
-                        success(genres)
-                    }
-                }, failure: failure)
-            }
+            self.genreRepository.getDisabledContent(enabledContent: genres,
+                                                    predicate: NSPredicate(value: true),
+                                                    success: { disabledGenres in
+                                                        
+                                                        for disabledGenre in disabledGenres {
+                                                            self.genreRepository.delete(id: disabledGenre.id, success: {}, failure: failure)
+                                                        }
+                                                        
+                                                        guard !genres.isEmpty else {
+                                                            success(genres)
+                                                            return
+                                                        }
+                                                        
+                                                        for (index, genre) in genres.enumerated() {
+                                                            self.genreRepository.update(item: genre, success: { _ in
+                                                                
+                                                                if index == genres.count - 1 {
+                                                                    success(genres)
+                                                                }
+                                                            }, failure: failure)
+                                                        }
+            }, failure: failure)
         }, failure: failure)
     }
     
@@ -107,14 +135,28 @@ extension RegisterDataManager: RegisterDataManagerProtocol {
         
         loginApiClient.getPlatforms(success: { platforms in
             
-            for (index, platform) in platforms.enumerated() {
-                self.platformRepository.update(item: platform, success: { _ in
-                    
-                    if index == platforms.count - 1 {
-                        success(platforms)
-                    }
-                }, failure: failure)
-            }
+            self.platformRepository.getDisabledContent(enabledContent: platforms,
+                                                       predicate: NSPredicate(value: true),
+                                                       success: { disabledPlatforms in
+                                                        
+                                                        for disabledPlatform in disabledPlatforms {
+                                                            self.platformRepository.delete(id: disabledPlatform.id, success: {}, failure: failure)
+                                                        }
+                                                        
+                                                        guard !platforms.isEmpty else {
+                                                            success(platforms)
+                                                            return
+                                                        }
+                                                        
+                                                        for (index, platform) in platforms.enumerated() {
+                                                            self.platformRepository.update(item: platform, success: { _ in
+                                                                
+                                                                if index == platforms.count - 1 {
+                                                                    success(platforms)
+                                                                }
+                                                            }, failure: failure)
+                                                        }
+            }, failure: failure)
         }, failure: failure)
     }
     
@@ -122,14 +164,28 @@ extension RegisterDataManager: RegisterDataManagerProtocol {
         
         loginApiClient.getStates(success: { states in
             
-            for (index, state) in states.enumerated() {
-                self.stateRepository.update(item: state, success: { _ in
-                    
-                    if index == states.count - 1 {
-                        success(states)
-                    }
-                }, failure: failure)
-            }
+            self.stateRepository.getDisabledContent(enabledContent: states,
+                                                    predicate: NSPredicate(value: true),
+                                                    success: { disabledStates in
+                                                        
+                                                        for disabledState in disabledStates {
+                                                            self.stateRepository.delete(id: disabledState.id, success: {}, failure: failure)
+                                                        }
+                                                        
+                                                        guard !states.isEmpty else {
+                                                            success(states)
+                                                            return
+                                                        }
+                                                        
+                                                        for (index, state) in states.enumerated() {
+                                                            self.stateRepository.update(item: state, success: { _ in
+                                                                
+                                                                if index == states.count - 1 {
+                                                                    success(states)
+                                                                }
+                                                            }, failure: failure)
+                                                        }
+            }, failure: failure)
         }, failure: failure)
     }
 }

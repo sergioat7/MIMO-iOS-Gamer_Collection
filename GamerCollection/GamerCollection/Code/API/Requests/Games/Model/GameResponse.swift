@@ -10,7 +10,7 @@ import Foundation
 
 typealias GamesResponse = [GameResponse]
 
-struct GameResponse: Codable {
+struct GameResponse: Codable, Hashable {
     let id: Int64
     let name: String?
     let platform: String?
@@ -33,4 +33,14 @@ struct GameResponse: Codable {
     let observations: String?
     var saga: SagaResponse?
     let songs: SongsResponse
+    
+    // MARK: - Hashable protocol
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: GameResponse, rhs: GameResponse) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

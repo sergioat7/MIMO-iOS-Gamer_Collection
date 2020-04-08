@@ -23,9 +23,7 @@ extension Saga: ModelHandlerProtocol {
         
         id = item.id
         name = item.name
-        
-        manageGames(item: item, failure: failure)
-        
+                
         do {
             try CoreDataStack.shared.saveContext(context)
         } catch {
@@ -54,19 +52,5 @@ extension Saga: ModelHandlerProtocol {
         }
         
         success(sagaResponse)
-    }
-    
-    // MARK: - Private functions
-    
-    private func manageGames(item: SagaResponse, failure: @escaping (ErrorResponse) -> Void) {
-        
-        let gameRepository = GameRepository()
-        
-        for game in item.games {
-            
-            gameRepository.update(item: game, success: { gameResponse in
-                self.addToGames(gameResponse)
-            }, failure: failure)
-        }
     }
 }
