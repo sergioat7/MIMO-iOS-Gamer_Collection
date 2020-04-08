@@ -15,6 +15,7 @@ protocol GameDetailApiClientProtocol {
     func deleteSong(gameId: Int64, songId: Int64, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func createGame(game: GameResponse, success: @escaping (EmptyResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
     func getGame(gameId: Int64, success: @escaping (GameResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
+    func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void)
 }
 
 class GameDetailApiClient: GameDetailApiClientProtocol {
@@ -87,6 +88,15 @@ class GameDetailApiClient: GameDetailApiClientProtocol {
             
             let request = GetGameRequest(token: authData.token,
                                          gameId: gameId)
+            APIClient.shared.sendServer(request, success: success, failure: failure)
+        }, failure: failure)
+    }
+    
+    func getGames(success: @escaping (GamesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
+        
+        getCredentials(success: { authData in
+            
+            let request = GetGamesRequest(token: authData.token)
             APIClient.shared.sendServer(request, success: success, failure: failure)
         }, failure: failure)
     }
