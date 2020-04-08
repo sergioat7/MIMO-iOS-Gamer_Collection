@@ -89,6 +89,7 @@ extension RegisterDataManager: RegisterDataManagerProtocol {
                                                             success(formats)
                                                             return
                                                         }
+                                                        
                                                         for (index, format) in formats.enumerated() {
                                                             self.formatRepository.update(item: format, success: { _ in
                                                                 
@@ -117,6 +118,7 @@ extension RegisterDataManager: RegisterDataManagerProtocol {
                                                             success(genres)
                                                             return
                                                         }
+                                                        
                                                         for (index, genre) in genres.enumerated() {
                                                             self.genreRepository.update(item: genre, success: { _ in
                                                                 
@@ -145,6 +147,7 @@ extension RegisterDataManager: RegisterDataManagerProtocol {
                                                             success(platforms)
                                                             return
                                                         }
+                                                        
                                                         for (index, platform) in platforms.enumerated() {
                                                             self.platformRepository.update(item: platform, success: { _ in
                                                                 
@@ -173,6 +176,7 @@ extension RegisterDataManager: RegisterDataManagerProtocol {
                                                             success(states)
                                                             return
                                                         }
+                                                        
                                                         for (index, state) in states.enumerated() {
                                                             self.stateRepository.update(item: state, success: { _ in
                                                                 
