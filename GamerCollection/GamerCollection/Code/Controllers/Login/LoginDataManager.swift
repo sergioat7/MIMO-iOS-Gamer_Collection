@@ -201,19 +201,28 @@ extension LoginDataManager: LoginDataManagerProtocol {
         
         apiClient.getGames(success: { games in
             
-            guard !games.isEmpty else {
-                success(games)
-                return
-            }
-            
-            for (index, game) in games.enumerated() {
-                self.gameRepository.update(item: game, success: { _ in
-                    
-                    if index == games.count - 1 {
-                        success(games)
-                    }
-                }, failure: failure)
-            }
+            self.gameRepository.getDisabledContent(enabledContent: games,
+                                                   predicate: NSPredicate(value: true),
+                                                   success: { disabledGames in
+                                                    
+                                                    for disabledGame in disabledGames {
+                                                        self.gameRepository.delete(id: disabledGame.id, success: {}, failure: failure)
+                                                    }
+                                                    
+                                                    guard !games.isEmpty else {
+                                                        success(games)
+                                                        return
+                                                    }
+                                                    
+                                                    for (index, game) in games.enumerated() {
+                                                        self.gameRepository.update(item: game, success: { _ in
+                                                            
+                                                            if index == games.count - 1 {
+                                                                success(games)
+                                                            }
+                                                        }, failure: failure)
+                                                    }
+            }, failure: failure)
         }, failure: failure)
     }
     
