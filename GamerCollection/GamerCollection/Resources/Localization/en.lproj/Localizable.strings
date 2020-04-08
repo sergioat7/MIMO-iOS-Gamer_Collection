@@ -138,7 +138,7 @@
 
 // Sort picker
 
-"SORT_TITLE" = "Select a field";
+"SORT_TITLE" = "Order by";
 "SORT_NAME" = "Name";
 "SORT_PLATFORM" = "Platform";
 "SORT_RELEASE_DATE" = "Release date";
