@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import GamerCollection
+@testable import Gamer_Collection
 
 class GamerCollectionTests: XCTestCase {
 
