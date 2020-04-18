@@ -34,6 +34,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = Color.color1
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem?.tintColor = Color.color1
@@ -49,11 +50,13 @@ class BaseViewController: UIViewController {
     // MARK: - BaseViewProtocol
     
     func showLoading() {
+        
         loadingScreen.show(view: view)
         isLoading = true
     }
     
     func hideLoading() {
+        
         loadingScreen.hide(completion: nil)
         isLoading = false
     }
@@ -105,6 +108,7 @@ class BaseViewController: UIViewController {
     }
     
     func showPopup(viewControllerToPresent: UIViewController) {
+        
         viewControllerToPresent.modalPresentationStyle = .overFullScreen
         present(viewControllerToPresent, animated: true, completion: nil)
     }
@@ -179,6 +183,7 @@ class BaseViewController: UIViewController {
     // MARK: - Private functions
     
     private func setupDialog() {
+        
         let dialogAppearance = PopupDialogDefaultView.appearance()
         
         dialogAppearance.backgroundColor = .white
@@ -192,6 +197,7 @@ class BaseViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
+        
         let userInfo: NSDictionary = notification.userInfo! as NSDictionary
         let keyboardInfo = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue
         let keyboardSize = keyboardInfo.cgRectValue.size
@@ -201,8 +207,8 @@ class BaseViewController: UIViewController {
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
+        
         scrollView?.contentInset = .zero
         scrollView?.scrollIndicatorInsets = .zero
     }
-    
 }

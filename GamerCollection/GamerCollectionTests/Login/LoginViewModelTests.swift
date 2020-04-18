@@ -2,7 +2,8 @@
 //  LoginViewModelTests.swift
 //  GamerCollectionTests
 //
-//  Created by alumno on 18/04/2020.
+//  Created by Sergio Aragonés on 18/04/2020.
+//  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
 import XCTest
@@ -11,12 +12,13 @@ import XCTest
 class LoginViewModelTests: XCTestCase {
     
     var sut: LoginViewModelProtocol!
-    var userManager = UserManager()
+    var userManager: UserManager!
     var view: LoginViewController!
 
     override func setUpWithError() throws {
         
         super.setUp()
+        userManager = UserManager()
         let dataManager = LoginDataManager(apiClient: LoginApiClient(userManager: userManager),
                                            userManager: userManager,
                                            formatRepository: FormatRepository(),
@@ -37,6 +39,8 @@ class LoginViewModelTests: XCTestCase {
     override func tearDownWithError() throws {
         
         sut = nil
+        view = nil
+        userManager = nil
         super.tearDown()
     }
 

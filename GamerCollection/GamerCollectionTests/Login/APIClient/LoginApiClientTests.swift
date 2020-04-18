@@ -26,7 +26,7 @@ class LoginApiClientTests: XCTestCase {
         super.tearDown()
     }
     
-    func testLoginRight() {
+    func testLoginRight() throws {
         
         var token: String?
         var error: ErrorResponse?
@@ -48,7 +48,7 @@ class LoginApiClientTests: XCTestCase {
         XCTAssertNil(error)
     }
     
-    func testLoginWrong() {
+    func testLoginWrong() throws {
                 
         var token: String?
         var error: ErrorResponse?
@@ -69,7 +69,7 @@ class LoginApiClientTests: XCTestCase {
         XCTAssertNotNil(error)
     }
     
-    func testGetFormats() {
+    func testGetFormats() throws {
         
         var formats: FormatsResponse?
         var error: ErrorResponse?
@@ -91,7 +91,7 @@ class LoginApiClientTests: XCTestCase {
         XCTAssertNil(error)
     }
     
-    func testGetGenres() {
+    func testGetGenres() throws {
         
         var genres: GenresResponse?
         var error: ErrorResponse?
@@ -113,7 +113,7 @@ class LoginApiClientTests: XCTestCase {
         XCTAssertNil(error)
     }
     
-    func testGetPlatforms() {
+    func testGetPlatforms() throws {
         
         var platforms: PlatformsResponse?
         var error: ErrorResponse?
@@ -135,7 +135,7 @@ class LoginApiClientTests: XCTestCase {
         XCTAssertNil(error)
     }
     
-    func testGetStates() {
+    func testGetStates() throws {
         
         var states: StatesResponse?
         var error: ErrorResponse?
@@ -157,7 +157,7 @@ class LoginApiClientTests: XCTestCase {
         XCTAssertNil(error)
     }
     
-    func testGetGames() {
+    func testGetGames() throws {
         
         var games: GamesResponse?
         var error: ErrorResponse?
@@ -186,7 +186,7 @@ class LoginApiClientTests: XCTestCase {
         XCTAssertNil(error)
     }
     
-    func testGetSagas() {
+    func testGetSagas() throws {
         
         var sagas: SagasResponse?
         var error: ErrorResponse?
@@ -214,5 +214,4 @@ class LoginApiClientTests: XCTestCase {
         XCTAssertNotNil(sagas)
         XCTAssertNil(error)
     }
-
 }
