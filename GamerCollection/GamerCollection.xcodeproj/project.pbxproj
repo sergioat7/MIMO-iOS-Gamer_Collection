@@ -136,6 +136,7 @@
 		FBA5483D2415834000C23DB3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5483C2415834000C23DB3 /* UIViewController+Extension.swift */; };
 		FBA6F22D244B23FD00917846 /* GamerCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5480B24157AEA00C23DB3 /* GamerCollectionTests.swift */; };
 		FBA6F230244B4A7000917846 /* LoginApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6F22F244B4A7000917846 /* LoginApiClientTests.swift */; };
+		FBA6F234244B4B4300917846 /* LoginDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6F233244B4B4300917846 /* LoginDataManagerTests.swift */; };
 		FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A366241C103600E91579 /* UIColor+Extension.swift */; };
 		FBB1A36A241C10E800E91579 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A369241C10E800E91579 /* Constants.swift */; };
 		FBB1A36D241C221F00E91579 /* AuthorizationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A36C241C221F00E91579 /* AuthorizationHandler.swift */; };
@@ -351,6 +352,7 @@
 		FBA54839241580D400C23DB3 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		FBA5483C2415834000C23DB3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		FBA6F22F244B4A7000917846 /* LoginApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApiClientTests.swift; sourceTree = "<group>"; };
+		FBA6F233244B4B4300917846 /* LoginDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManagerTests.swift; sourceTree = "<group>"; };
 		FBB1A366241C103600E91579 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FBB1A369241C10E800E91579 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FBB1A36C241C221F00E91579 /* AuthorizationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationHandler.swift; sourceTree = "<group>"; };
@@ -1203,6 +1205,7 @@
 			isa = PBXGroup;
 			children = (
 				FBA6F232244B4A8300917846 /* APIClient */,
+				FBA6F233244B4B4300917846 /* LoginDataManagerTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1900,6 +1903,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA6F234244B4B4300917846 /* LoginDataManagerTests.swift in Sources */,
 				FBA6F22D244B23FD00917846 /* GamerCollectionTests.swift in Sources */,
 				FBA6F230244B4A7000917846 /* LoginApiClientTests.swift in Sources */,
 			);
