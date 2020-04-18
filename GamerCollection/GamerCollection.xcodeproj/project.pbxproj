@@ -354,6 +354,7 @@
 		FBA6F22F244B4A7000917846 /* LoginApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApiClientTests.swift; sourceTree = "<group>"; };
 		FBA6F233244B4B4300917846 /* LoginDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManagerTests.swift; sourceTree = "<group>"; };
 		FBA6F235244B629300917846 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		FBA6F238244B776100917846 /* LoginTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LoginTests.xctestplan; sourceTree = "<group>"; };
 		FBA6F239244B791C00917846 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		FBB1A366241C103600E91579 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FBB1A369241C10E800E91579 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -1089,6 +1090,7 @@
 		FBA5480A24157AEA00C23DB3 /* GamerCollectionTests */ = {
 			isa = PBXGroup;
 			children = (
+				FBA6F238244B776100917846 /* LoginTests.xctestplan */,
 				FBA5480D24157AEA00C23DB3 /* Info.plist */,
 				FBA6F231244B4A7800917846 /* Login */,
 			);

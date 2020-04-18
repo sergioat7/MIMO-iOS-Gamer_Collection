@@ -1,0 +1,53 @@
+{
+  "configurations" : [
+    {
+      "id" : "F2DFC062-2199-40B9-8490-2FDC21226179",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : [
+        "LoginApiClientTests\/testExample()",
+        "LoginApiClientTests\/testGetFormats()",
+        "LoginApiClientTests\/testGetGames()",
+        "LoginApiClientTests\/testGetGenres()",
+        "LoginApiClientTests\/testGetPlatforms()",
+        "LoginApiClientTests\/testGetSagas()",
+        "LoginApiClientTests\/testGetStates()",
+        "LoginApiClientTests\/testLoginRight()",
+        "LoginApiClientTests\/testLoginWrong()",
+        "LoginApiClientTests\/testPerformanceExample()",
+        "LoginDataManagerTests\/testGetFormats()",
+        "LoginDataManagerTests\/testGetGames()",
+        "LoginDataManagerTests\/testGetGenres()",
+        "LoginDataManagerTests\/testGetPlatforms()",
+        "LoginDataManagerTests\/testGetSagas()",
+        "LoginDataManagerTests\/testGetStates()",
+        "LoginDataManagerTests\/testGetUsernameRight()",
+        "LoginDataManagerTests\/testGetUsernameWrong()",
+        "LoginDataManagerTests\/testLoginRight()",
+        "LoginDataManagerTests\/testLoginWrong()",
+        "LoginDataManagerTests\/testStoreCredentials()",
+        "LoginDataManagerTests\/testStoreUserData()",
+        "LoginViewControllerTests\/testPerformanceExample()",
+        "LoginViewControllerTests\/testView()",
+        "LoginViewModelTests\/testGoToRegisterView()",
+        "LoginViewModelTests\/testViewDidLoad1()",
+        "LoginViewModelTests\/testViewDidLoad2()"
+      ],
+      "target" : {
+        "containerPath" : "container:GamerCollection.xcodeproj",
+        "identifier" : "FBA5480624157AEA00C23DB3",
+        "name" : "GamerCollectionTests"
+      }
+    }
+  ],
+  "version" : 1
+}
