@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "A3DF16E4-765D-4696-B09D-D90E7D4BC7E7",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:GamerCollection.xcodeproj",
+        "identifier" : "FBA5480624157AEA00C23DB3",
+        "name" : "GamerCollectionTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:GamerCollection.xcodeproj",
+        "identifier" : "FBA5481124157AEA00C23DB3",
+        "name" : "GamerCollectionUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

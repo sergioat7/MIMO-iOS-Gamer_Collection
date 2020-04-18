@@ -359,6 +359,7 @@
 		FBA6F239244B791C00917846 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		FBA6F23B244B89D800917846 /* UITestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UITestPlan.xctestplan; sourceTree = "<group>"; };
 		FBA6F23C244B8A1B00917846 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FBA6F23F244B8BC100917846 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		FBB1A366241C103600E91579 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FBB1A369241C10E800E91579 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FBB1A36C241C221F00E91579 /* AuthorizationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationHandler.swift; sourceTree = "<group>"; };
@@ -1063,6 +1064,7 @@
 				FBA547F024157AE900C23DB3 /* GamerCollection */,
 				FBA5480A24157AEA00C23DB3 /* GamerCollectionTests */,
 				FBA5481524157AEA00C23DB3 /* GamerCollectionUITests */,
+				FBA6F23F244B8BC100917846 /* TestPlan.xctestplan */,
 				FBA547EF24157AE900C23DB3 /* Products */,
 				D1EFE7973DA2FCBCD969B9F2 /* Pods */,
 				B1C18FEA9EF1837B7FAD04B1 /* Frameworks */,
