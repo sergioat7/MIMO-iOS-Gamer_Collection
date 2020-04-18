@@ -95,16 +95,12 @@ extension LoginViewModel: LoginViewModelProtocol {
         
         view?.showLoading()
         dataManager.login(username: username, password: password, success: { loginResponse in
-            self.dataManager.getFormats(success: { _ in
-
-                let userData = UserData(userName: username, password: password, isLoggedIn: true)
-                let authData = AuthData(token: loginResponse.token)
-                self.dataManager.storeUserData(userData: userData)
-                self.dataManager.storeCredentials(authData: authData)
-                self.syncApp()
-            }, failure: { error in
-                self.manageError(error: error)
-            })
+            
+            let userData = UserData(userName: username, password: password, isLoggedIn: true)
+            let authData = AuthData(token: loginResponse.token)
+            self.dataManager.storeUserData(userData: userData)
+            self.dataManager.storeCredentials(authData: authData)
+            self.syncApp()
         }, failure: { error in
             self.manageError(error: error)
         })
