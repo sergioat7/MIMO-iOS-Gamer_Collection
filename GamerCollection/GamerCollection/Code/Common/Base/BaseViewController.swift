@@ -38,6 +38,7 @@ class BaseViewController: UIViewController {
         view.backgroundColor = Color.color1
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem?.tintColor = Color.color1
+        view.accessibilityIdentifier = NSStringFromClass(self.classForCoder)
     }
     
     override func viewDidAppear(_ animated: Bool) {
