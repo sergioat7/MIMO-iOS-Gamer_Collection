@@ -89,7 +89,7 @@ class RegisterView: XCTestCase {
         showRegisterView()
         initialCheking()
         
-        app.navigationBars[localized("REGISTRATION")].buttons["Atrás"].tap()
+        app.navigationBars[localized("REGISTRATION")].buttons[localized("BACK")].tap()
         
         XCTAssert(app.otherElements["Gamer_Collection.LoginViewController"].exists)
     }

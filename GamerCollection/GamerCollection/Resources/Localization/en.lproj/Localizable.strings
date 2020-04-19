@@ -22,6 +22,7 @@
 "EMPTY_LIST" = "The list is empty";
 "ASCENDING" = "Ascending";
 "DESCENDING" = "Descending";
+"BACK" = "Back";
 
 // Login
 

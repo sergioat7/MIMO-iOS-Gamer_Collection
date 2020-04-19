@@ -22,6 +22,7 @@
 "EMPTY_LIST" = "La lista está vacía";
 "ASCENDING" = "Ascendente";
 "DESCENDING" = "Descendente";
+"BACK" = "Atrás";
 
 // Login
 
