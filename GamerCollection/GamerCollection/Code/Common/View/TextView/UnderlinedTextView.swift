@@ -2,7 +2,8 @@
 //  UnderlinedTextView.swift
 //  GamerCollection
 //
-//  Created by alumno on 29/03/2020.
+//  Created by Sergio Aragonés on 29/03/2020.
+//  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
 import UIKit
