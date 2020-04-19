@@ -33,10 +33,13 @@
             default = "YES">
          </TestPlanReference>
          <TestPlanReference
+            reference = "container:GamerCollectionUITests/UITests.xctestplan">
+         </TestPlanReference>
+         <TestPlanReference
             reference = "container:GamerCollectionTests/LoginTests.xctestplan">
          </TestPlanReference>
          <TestPlanReference
-            reference = "container:GamerCollectionUITests/UITests.xctestplan">
+            reference = "container:GamerCollectionTests/RegisterTests.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>

@@ -305,6 +305,7 @@
 		FB5844B5244C7CEB00F61464 /* UITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UITests.xctestplan; sourceTree = "<group>"; };
 		FB5844B8244C800200F61464 /* RegisterApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApiClientTests.swift; sourceTree = "<group>"; };
 		FB5844BA244C81B000F61464 /* RegisterDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataManagerTests.swift; sourceTree = "<group>"; };
+		FB5844BE244C916200F61464 /* RegisterTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = RegisterTests.xctestplan; sourceTree = "<group>"; };
 		FB62877D241E3D2800F5FF6E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		FB6E00E8242EACBB00448CD3 /* DropdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButton.swift; sourceTree = "<group>"; };
 		FB6E00EA242EACC300448CD3 /* DropdownButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButton.xib; sourceTree = "<group>"; };
@@ -1122,6 +1123,7 @@
 				FBA6F231244B4A7800917846 /* Login */,
 				FBA6F238244B776100917846 /* LoginTests.xctestplan */,
 				FB5844B6244C7D7200F61464 /* Register */,
+				FB5844BE244C916200F61464 /* RegisterTests.xctestplan */,
 			);
 			path = GamerCollectionTests;
 			sourceTree = "<group>";
