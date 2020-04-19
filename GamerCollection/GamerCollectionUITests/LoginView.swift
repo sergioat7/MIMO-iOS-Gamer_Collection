@@ -28,6 +28,9 @@ class LoginView: XCTestCase {
         
         XCTAssert(app.otherElements["Gamer_Collection.LoginViewController"].exists)
         
+        XCTAssert(app.textFields[localized("LOGIN_USERNAME")].title.isEmpty)
+        XCTAssert(app.otherElements["Gamer_Collection.LoginViewController"].secureTextFields[localized("LOGIN_PASSWORD")].title.isEmpty)
+        
         app.textFields[localized("LOGIN_USERNAME")].tap()
         app.keyboards.keys["t"].tap()
         app.keyboards.keys["e"].tap()
@@ -51,11 +54,30 @@ class LoginView: XCTestCase {
         
         XCTAssert(app.otherElements["Gamer_Collection.LoginViewController"].exists)
         
+        XCTAssert(app.textFields[localized("LOGIN_USERNAME")].title.isEmpty)
+        XCTAssert(app.otherElements["Gamer_Collection.LoginViewController"].secureTextFields[localized("LOGIN_PASSWORD")].title.isEmpty)
+        
         app.textFields[localized("LOGIN_USERNAME")].tap()
         app.keyboards.keys["t"].tap()
         app.keyboards.keys["e"].tap()
         app.keyboards.keys["s"].tap()
         app.keyboards.keys["t"].tap()
+        
+        app.buttons[localized("LOGIN_ACCESS").uppercased()].staticTexts[localized("LOGIN_ACCESS").uppercased()].tap()
+        
+        let errorDialog = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element(boundBy: 0).children(matching: .other).element
+        XCTAssert(errorDialog.exists)
+    }
+
+    func testLoginWrong2() throws {
+        
+        app.launchArguments.append("--uitesting")
+        app.launch()
+        
+        XCTAssert(app.otherElements["Gamer_Collection.LoginViewController"].exists)
+        
+        XCTAssert(app.textFields[localized("LOGIN_USERNAME")].title.isEmpty)
+        XCTAssert(app.otherElements["Gamer_Collection.LoginViewController"].secureTextFields[localized("LOGIN_PASSWORD")].title.isEmpty)
         
         app.buttons[localized("LOGIN_ACCESS").uppercased()].staticTexts[localized("LOGIN_ACCESS").uppercased()].tap()
         
