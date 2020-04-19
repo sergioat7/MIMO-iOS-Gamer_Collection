@@ -32,22 +32,24 @@ class LoginView: XCTestCase {
         XCTAssert(app.otherElements["Gamer_Collection.LoginViewController"].secureTextFields[localized("LOGIN_PASSWORD")].title.isEmpty)
         
         app.textFields[localized("LOGIN_USERNAME")].tap()
-        app.keyboards.keys["t"].tap()
-        app.keyboards.keys["e"].tap()
-        app.keyboards.keys["s"].tap()
-        app.keyboards.keys["t"].tap()
+        
+        let keyboard = app.keyboards
+        keyboard.keys["t"].tap()
+        keyboard.keys["e"].tap()
+        keyboard.keys["s"].tap()
+        keyboard.keys["t"].tap()
         
         app.keyboards.buttons["Return"].tap()
         
-        app.keyboards.keys["t"].tap()
-        app.keyboards.keys["e"].tap()
-        app.keyboards.keys["s"].tap()
-        app.keyboards.keys["t"].tap()
+        keyboard.keys["t"].tap()
+        keyboard.keys["e"].tap()
+        keyboard.keys["s"].tap()
+        keyboard.keys["t"].tap()
         
         app.buttons[localized("LOGIN_ACCESS").uppercased()].staticTexts[localized("LOGIN_ACCESS").uppercased()].tap()
     }
 
-    func testLoginWrong() throws {
+    func testLoginWrongWithNoPassword() throws {
         
         app.launchArguments.append("--uitesting")
         app.launch()
@@ -58,10 +60,12 @@ class LoginView: XCTestCase {
         XCTAssert(app.otherElements["Gamer_Collection.LoginViewController"].secureTextFields[localized("LOGIN_PASSWORD")].title.isEmpty)
         
         app.textFields[localized("LOGIN_USERNAME")].tap()
-        app.keyboards.keys["t"].tap()
-        app.keyboards.keys["e"].tap()
-        app.keyboards.keys["s"].tap()
-        app.keyboards.keys["t"].tap()
+        
+        let keyboard = app.keyboards
+        keyboard.keys["t"].tap()
+        keyboard.keys["e"].tap()
+        keyboard.keys["s"].tap()
+        keyboard.keys["t"].tap()
         
         app.buttons[localized("LOGIN_ACCESS").uppercased()].staticTexts[localized("LOGIN_ACCESS").uppercased()].tap()
         
@@ -69,7 +73,7 @@ class LoginView: XCTestCase {
         XCTAssert(errorDialog.exists)
     }
 
-    func testLoginWrong2() throws {
+    func testLoginWrongWithNoUserNorPassword() throws {
         
         app.launchArguments.append("--uitesting")
         app.launch()
