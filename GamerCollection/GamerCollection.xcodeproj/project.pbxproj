@@ -300,6 +300,7 @@
 		FB50FB0324300EF1009E6173 /* UnderlinedTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnderlinedTextView.xib; sourceTree = "<group>"; };
 		FB50FB0524303755009E6173 /* DeleteGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteGameRequest.swift; sourceTree = "<group>"; };
 		FB5844B3244C73D100F61464 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		FB5844B5244C7CEB00F61464 /* UITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UITests.xctestplan; sourceTree = "<group>"; };
 		FB62877D241E3D2800F5FF6E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		FB6E00E8242EACBB00448CD3 /* DropdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButton.swift; sourceTree = "<group>"; };
 		FB6E00EA242EACC300448CD3 /* DropdownButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButton.xib; sourceTree = "<group>"; };
@@ -359,7 +360,6 @@
 		FBA6F235244B629300917846 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		FBA6F238244B776100917846 /* LoginTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LoginTests.xctestplan; sourceTree = "<group>"; };
 		FBA6F239244B791C00917846 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
-		FBA6F23B244B89D800917846 /* UITestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UITestPlan.xctestplan; sourceTree = "<group>"; };
 		FBA6F23C244B8A1B00917846 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FBA6F23F244B8BC100917846 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		FBB1A366241C103600E91579 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -1110,7 +1110,7 @@
 				FBA5481824157AEA00C23DB3 /* Info.plist */,
 				FBA6F23C244B8A1B00917846 /* LoginView.swift */,
 				FB5844B3244C73D100F61464 /* RegisterView.swift */,
-				FBA6F23B244B89D800917846 /* UITestPlan.xctestplan */,
+				FB5844B5244C7CEB00F61464 /* UITests.xctestplan */,
 			);
 			path = GamerCollectionUITests;
 			sourceTree = "<group>";
