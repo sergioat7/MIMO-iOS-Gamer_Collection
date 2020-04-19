@@ -85,6 +85,7 @@
 		FB50FB0224300EE6009E6173 /* UnderlinedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50FB0124300EE6009E6173 /* UnderlinedTextView.swift */; };
 		FB50FB0424300EF1009E6173 /* UnderlinedTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB50FB0324300EF1009E6173 /* UnderlinedTextView.xib */; };
 		FB50FB0624303755009E6173 /* DeleteGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50FB0524303755009E6173 /* DeleteGameRequest.swift */; };
+		FB5844B4244C73D100F61464 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5844B3244C73D100F61464 /* RegisterView.swift */; };
 		FB62877E241E3D2800F5FF6E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB62877D241E3D2800F5FF6E /* ActionButton.swift */; };
 		FB6E00E9242EACBB00448CD3 /* DropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E00E8242EACBB00448CD3 /* DropdownButton.swift */; };
 		FB6E00EB242EACC300448CD3 /* DropdownButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6E00EA242EACC300448CD3 /* DropdownButton.xib */; };
@@ -298,6 +299,7 @@
 		FB50FB0124300EE6009E6173 /* UnderlinedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextView.swift; sourceTree = "<group>"; };
 		FB50FB0324300EF1009E6173 /* UnderlinedTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnderlinedTextView.xib; sourceTree = "<group>"; };
 		FB50FB0524303755009E6173 /* DeleteGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteGameRequest.swift; sourceTree = "<group>"; };
+		FB5844B3244C73D100F61464 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		FB62877D241E3D2800F5FF6E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		FB6E00E8242EACBB00448CD3 /* DropdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButton.swift; sourceTree = "<group>"; };
 		FB6E00EA242EACC300448CD3 /* DropdownButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButton.xib; sourceTree = "<group>"; };
@@ -1107,6 +1109,7 @@
 			children = (
 				FBA5481824157AEA00C23DB3 /* Info.plist */,
 				FBA6F23C244B8A1B00917846 /* LoginView.swift */,
+				FB5844B3244C73D100F61464 /* RegisterView.swift */,
 				FBA6F23B244B89D800917846 /* UITestPlan.xctestplan */,
 			);
 			path = GamerCollectionUITests;
@@ -1928,6 +1931,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBA6F23D244B8A1B00917846 /* LoginView.swift in Sources */,
+				FB5844B4244C73D100F61464 /* RegisterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
