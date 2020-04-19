@@ -29,7 +29,7 @@ class RegisterApiClientTests: XCTestCase {
         
         var error: ErrorResponse?
         
-        let promise = expectation(description: "Login successfull")
+        let promise = expectation(description: "Register unsuccessfull")
         sut.register(username: "test", password: "test", success: { _ in
             promise.fulfill()
         }, failure: { errorResponse in
