@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "F82B3BEB-67AF-438C-8112-CF395675A4BE",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:GamerCollection.xcodeproj",
+        "identifier" : "FBA5481124157AEA00C23DB3",
+        "name" : "GamerCollectionUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

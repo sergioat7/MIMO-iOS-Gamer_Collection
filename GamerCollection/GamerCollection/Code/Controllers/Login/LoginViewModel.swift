@@ -86,6 +86,7 @@ extension LoginViewModel: LoginViewModelProtocol {
             self.view?.setUsernameTextField(username: username ?? "")
             self.view?.hideLoading()
         }, failure: { error in
+            
             self.view?.setUsernameTextField(username: "")
             self.view?.hideLoading()
         })
@@ -94,17 +95,17 @@ extension LoginViewModel: LoginViewModelProtocol {
     func login(username: String, password: String) {
         
         view?.showLoading()
-        dataManager.login(username: username, password: password, success: { loginResponse in
-            self.dataManager.getFormats(success: { _ in
-
-                let userData = UserData(userName: username, password: password, isLoggedIn: true)
-                let authData = AuthData(token: loginResponse.token)
-                self.dataManager.storeUserData(userData: userData)
-                self.dataManager.storeCredentials(authData: authData)
-                self.syncApp()
-            }, failure: { error in
-                self.manageError(error: error)
-            })
+        dataManager.login(username: username,
+                          password: password,
+                          success: { loginResponse in
+                            
+                            let userData = UserData(userName: username,
+                                                    password: password,
+                                                    isLoggedIn: true)
+                            let authData = AuthData(token: loginResponse.token)
+                            self.dataManager.storeUserData(userData: userData)
+                            self.dataManager.storeCredentials(authData: authData)
+                            self.syncApp()
         }, failure: { error in
             self.manageError(error: error)
         })

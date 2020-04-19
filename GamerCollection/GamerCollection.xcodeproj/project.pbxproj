@@ -85,11 +85,16 @@
 		FB50FB0224300EE6009E6173 /* UnderlinedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50FB0124300EE6009E6173 /* UnderlinedTextView.swift */; };
 		FB50FB0424300EF1009E6173 /* UnderlinedTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB50FB0324300EF1009E6173 /* UnderlinedTextView.xib */; };
 		FB50FB0624303755009E6173 /* DeleteGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50FB0524303755009E6173 /* DeleteGameRequest.swift */; };
+		FB5844B4244C73D100F61464 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5844B3244C73D100F61464 /* RegisterView.swift */; };
+		FB5844B9244C800200F61464 /* RegisterApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5844B8244C800200F61464 /* RegisterApiClientTests.swift */; };
+		FB5844BB244C81B100F61464 /* RegisterDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5844BA244C81B000F61464 /* RegisterDataManagerTests.swift */; };
 		FB62877E241E3D2800F5FF6E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB62877D241E3D2800F5FF6E /* ActionButton.swift */; };
 		FB6E00E9242EACBB00448CD3 /* DropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E00E8242EACBB00448CD3 /* DropdownButton.swift */; };
 		FB6E00EB242EACC300448CD3 /* DropdownButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6E00EA242EACC300448CD3 /* DropdownButton.xib */; };
 		FB6E00EE242ECDBB00448CD3 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E00ED242ECDBB00448CD3 /* Date+Extension.swift */; };
 		FB6E00F4242ED3B100448CD3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E00F3242ED3B100448CD3 /* String+Extension.swift */; };
+		FB7A18C3244B96E000655D6C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB1DFEC72416DB83000CAD7B /* Localizable.strings */; };
+		FB7A18C4244B96E300655D6C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB1DFECD2416DBD3000CAD7B /* Localizable.strings */; };
 		FB7DB585242441D50040FC84 /* CoreDataRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DB584242441D50040FC84 /* CoreDataRepositoryProtocol.swift */; };
 		FB7DB5872424430B0040FC84 /* ModelHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DB5862424430B0040FC84 /* ModelHandlerProtocol.swift */; };
 		FB7EC328242BCAD50022C447 /* GameDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB7EC322242BCAD50022C447 /* GameDetailView.storyboard */; };
@@ -127,14 +132,17 @@
 		FBA547FC24157AE900C23DB3 /* GamerCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBA547FA24157AE900C23DB3 /* GamerCollection.xcdatamodeld */; };
 		FBA547FE24157AEA00C23DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA547FD24157AEA00C23DB3 /* Assets.xcassets */; };
 		FBA5480124157AEA00C23DB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBA547FF24157AEA00C23DB3 /* LaunchScreen.storyboard */; };
-		FBA5480C24157AEA00C23DB3 /* GamerCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5480B24157AEA00C23DB3 /* GamerCollectionTests.swift */; };
-		FBA5481724157AEA00C23DB3 /* GamerCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5481624157AEA00C23DB3 /* GamerCollectionUITests.swift */; };
 		FBA5482B24157E4800C23DB3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5482A24157E4800C23DB3 /* CoreDataStack.swift */; };
 		FBA548342415809000C23DB3 /* BaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA548332415809000C23DB3 /* BaseDataManager.swift */; };
 		FBA54836241580B600C23DB3 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA54835241580B600C23DB3 /* BaseRouter.swift */; };
 		FBA54838241580C300C23DB3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA54837241580C300C23DB3 /* BaseViewController.swift */; };
 		FBA5483A241580D400C23DB3 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA54839241580D400C23DB3 /* BaseViewModel.swift */; };
 		FBA5483D2415834000C23DB3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5483C2415834000C23DB3 /* UIViewController+Extension.swift */; };
+		FBA6F230244B4A7000917846 /* LoginApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6F22F244B4A7000917846 /* LoginApiClientTests.swift */; };
+		FBA6F234244B4B4300917846 /* LoginDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6F233244B4B4300917846 /* LoginDataManagerTests.swift */; };
+		FBA6F236244B629300917846 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6F235244B629300917846 /* LoginViewModelTests.swift */; };
+		FBA6F23A244B791C00917846 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6F239244B791C00917846 /* LoginViewControllerTests.swift */; };
+		FBA6F23D244B8A1B00917846 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6F23C244B8A1B00917846 /* LoginView.swift */; };
 		FBB1A367241C103600E91579 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A366241C103600E91579 /* UIColor+Extension.swift */; };
 		FBB1A36A241C10E800E91579 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A369241C10E800E91579 /* Constants.swift */; };
 		FBB1A36D241C221F00E91579 /* AuthorizationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1A36C241C221F00E91579 /* AuthorizationHandler.swift */; };
@@ -293,6 +301,11 @@
 		FB50FB0124300EE6009E6173 /* UnderlinedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextView.swift; sourceTree = "<group>"; };
 		FB50FB0324300EF1009E6173 /* UnderlinedTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnderlinedTextView.xib; sourceTree = "<group>"; };
 		FB50FB0524303755009E6173 /* DeleteGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteGameRequest.swift; sourceTree = "<group>"; };
+		FB5844B3244C73D100F61464 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		FB5844B5244C7CEB00F61464 /* UITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UITests.xctestplan; sourceTree = "<group>"; };
+		FB5844B8244C800200F61464 /* RegisterApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApiClientTests.swift; sourceTree = "<group>"; };
+		FB5844BA244C81B000F61464 /* RegisterDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataManagerTests.swift; sourceTree = "<group>"; };
+		FB5844BE244C916200F61464 /* RegisterTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = RegisterTests.xctestplan; sourceTree = "<group>"; };
 		FB62877D241E3D2800F5FF6E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		FB6E00E8242EACBB00448CD3 /* DropdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButton.swift; sourceTree = "<group>"; };
 		FB6E00EA242EACC300448CD3 /* DropdownButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButton.xib; sourceTree = "<group>"; };
@@ -338,10 +351,8 @@
 		FBA5480024157AEA00C23DB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBA5480224157AEA00C23DB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBA5480724157AEA00C23DB3 /* GamerCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamerCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBA5480B24157AEA00C23DB3 /* GamerCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamerCollectionTests.swift; sourceTree = "<group>"; };
 		FBA5480D24157AEA00C23DB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBA5481224157AEA00C23DB3 /* GamerCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamerCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBA5481624157AEA00C23DB3 /* GamerCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamerCollectionUITests.swift; sourceTree = "<group>"; };
 		FBA5481824157AEA00C23DB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBA5482A24157E4800C23DB3 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FBA548332415809000C23DB3 /* BaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataManager.swift; sourceTree = "<group>"; };
@@ -349,6 +360,13 @@
 		FBA54837241580C300C23DB3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FBA54839241580D400C23DB3 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		FBA5483C2415834000C23DB3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		FBA6F22F244B4A7000917846 /* LoginApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApiClientTests.swift; sourceTree = "<group>"; };
+		FBA6F233244B4B4300917846 /* LoginDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManagerTests.swift; sourceTree = "<group>"; };
+		FBA6F235244B629300917846 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		FBA6F238244B776100917846 /* LoginTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LoginTests.xctestplan; sourceTree = "<group>"; };
+		FBA6F239244B791C00917846 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
+		FBA6F23C244B8A1B00917846 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FBA6F23F244B8BC100917846 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		FBB1A366241C103600E91579 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FBB1A369241C10E800E91579 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FBB1A36C241C221F00E91579 /* AuthorizationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationHandler.swift; sourceTree = "<group>"; };
@@ -865,6 +883,23 @@
 			path = TextView;
 			sourceTree = "<group>";
 		};
+		FB5844B6244C7D7200F61464 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FB5844B7244C7FDF00F61464 /* APIClient */,
+				FB5844BA244C81B000F61464 /* RegisterDataManagerTests.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		FB5844B7244C7FDF00F61464 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				FB5844B8244C800200F61464 /* RegisterApiClientTests.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
 		FB62877C241E3C2600F5FF6E /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -1053,6 +1088,7 @@
 				FBA547F024157AE900C23DB3 /* GamerCollection */,
 				FBA5480A24157AEA00C23DB3 /* GamerCollectionTests */,
 				FBA5481524157AEA00C23DB3 /* GamerCollectionUITests */,
+				FBA6F23F244B8BC100917846 /* TestPlan.xctestplan */,
 				FBA547EF24157AE900C23DB3 /* Products */,
 				D1EFE7973DA2FCBCD969B9F2 /* Pods */,
 				B1C18FEA9EF1837B7FAD04B1 /* Frameworks */,
@@ -1083,8 +1119,11 @@
 		FBA5480A24157AEA00C23DB3 /* GamerCollectionTests */ = {
 			isa = PBXGroup;
 			children = (
-				FBA5480B24157AEA00C23DB3 /* GamerCollectionTests.swift */,
 				FBA5480D24157AEA00C23DB3 /* Info.plist */,
+				FBA6F231244B4A7800917846 /* Login */,
+				FBA6F238244B776100917846 /* LoginTests.xctestplan */,
+				FB5844B6244C7D7200F61464 /* Register */,
+				FB5844BE244C916200F61464 /* RegisterTests.xctestplan */,
 			);
 			path = GamerCollectionTests;
 			sourceTree = "<group>";
@@ -1092,8 +1131,10 @@
 		FBA5481524157AEA00C23DB3 /* GamerCollectionUITests */ = {
 			isa = PBXGroup;
 			children = (
-				FBA5481624157AEA00C23DB3 /* GamerCollectionUITests.swift */,
 				FBA5481824157AEA00C23DB3 /* Info.plist */,
+				FBA6F23C244B8A1B00917846 /* LoginView.swift */,
+				FB5844B3244C73D100F61464 /* RegisterView.swift */,
+				FB5844B5244C7CEB00F61464 /* UITests.xctestplan */,
 			);
 			path = GamerCollectionUITests;
 			sourceTree = "<group>";
@@ -1194,6 +1235,25 @@
 				FBB1A364241C101700E91579 /* UIViewController */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBA6F231244B4A7800917846 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FBA6F232244B4A8300917846 /* APIClient */,
+				FBA6F233244B4B4300917846 /* LoginDataManagerTests.swift */,
+				FBA6F235244B629300917846 /* LoginViewModelTests.swift */,
+				FBA6F239244B791C00917846 /* LoginViewControllerTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FBA6F232244B4A8300917846 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				FBA6F22F244B4A7000917846 /* LoginApiClientTests.swift */,
+			);
+			path = APIClient;
 			sourceTree = "<group>";
 		};
 		FBB1A364241C101700E91579 /* UIViewController */ = {
@@ -1667,6 +1727,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB7A18C3244B96E000655D6C /* Localizable.strings in Resources */,
+				FB7A18C4244B96E300655D6C /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1881,7 +1943,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBA5480C24157AEA00C23DB3 /* GamerCollectionTests.swift in Sources */,
+				FBA6F23A244B791C00917846 /* LoginViewControllerTests.swift in Sources */,
+				FBA6F236244B629300917846 /* LoginViewModelTests.swift in Sources */,
+				FBA6F234244B4B4300917846 /* LoginDataManagerTests.swift in Sources */,
+				FBA6F230244B4A7000917846 /* LoginApiClientTests.swift in Sources */,
+				FB5844BB244C81B100F61464 /* RegisterDataManagerTests.swift in Sources */,
+				FB5844B9244C800200F61464 /* RegisterApiClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1889,7 +1956,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBA5481724157AEA00C23DB3 /* GamerCollectionUITests.swift in Sources */,
+				FBA6F23D244B8A1B00917846 /* LoginView.swift in Sources */,
+				FB5844B4244C73D100F61464 /* RegisterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2118,7 +2186,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GamerCollection.app/GamerCollection";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gamer Collection.app/Gamer Collection";
 			};
 			name = Debug;
 		};
@@ -2140,7 +2208,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GamerCollection.app/GamerCollection";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gamer Collection.app/Gamer Collection";
 			};
 			name = Release;
 		};

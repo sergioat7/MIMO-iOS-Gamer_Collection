@@ -2,7 +2,8 @@
 //  LocalizedLabel.swift
 //  GamerCollection
 //
-//  Created by alumno on 28/03/2020.
+//  Created by Sergio Aragonés on 28/03/2020.
+//  Copyright (c) 2020 Sergio Aragonés. All rights reserved.
 //
 
 import UIKit

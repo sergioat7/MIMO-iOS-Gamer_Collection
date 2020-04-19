@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        if CommandLine.arguments.contains("--uitesting") {
+            resetState()
+        }
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         
         checkIsNewInstallation()
@@ -43,5 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    // MARK: - Private functions
+    
+    private func resetState() {
+        
+        let userManager = UserManager()
+        userManager.removeUserData()
+        userManager.removeCredentials()
+    }
 }
 

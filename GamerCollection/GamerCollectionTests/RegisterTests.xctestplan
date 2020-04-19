@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "3521311F-7512-4572-94EE-96F2DFDD2691",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : [
+        "RegisterApiClientTests\/testRegisterExistantUser()",
+        "RegisterDataManagerTests\/testGetFormats()",
+        "RegisterDataManagerTests\/testGetGenres()",
+        "RegisterDataManagerTests\/testGetPlatforms()",
+        "RegisterDataManagerTests\/testGetStates()",
+        "RegisterDataManagerTests\/testLoginRight()",
+        "RegisterDataManagerTests\/testLoginWrong()",
+        "RegisterDataManagerTests\/testRegisterExistantUser()",
+        "RegisterDataManagerTests\/testStoreCredentials()",
+        "RegisterDataManagerTests\/testStoreUserData()"
+      ],
+      "target" : {
+        "containerPath" : "container:GamerCollection.xcodeproj",
+        "identifier" : "FBA5480624157AEA00C23DB3",
+        "name" : "GamerCollectionTests"
+      }
+    }
+  ],
+  "version" : 1
+}
